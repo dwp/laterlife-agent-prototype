@@ -7,13 +7,29 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <h2 class="govuk-heading-l">
+      MVP end-to-end
+    </h2>
+    {{ govukButton({
+      text: "Start now",
+      href: "mvp/0/find",
+      isStartButton: true
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+    <h2 class="govuk-heading-l">
+      Iterations end-to-end
+    </h2>
+    {{ govukButton({
+      text: "Start now",
+      href: "iterations/0/find",
+      isStartButton: true
+    }) }}
   </div>
 </div>
 
