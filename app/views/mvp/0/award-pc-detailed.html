@@ -1,0 +1,211 @@
+{% extends "layouts/record-view.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      {% include '../../includes/user-details.html' %}
+      {% include '../../includes/nav-list.html' %}
+      <h2 class="govuk-heading-m">Current Pension Credit award</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            From
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 April 2022
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason
+          </dt>
+          <dd class="govuk-summary-list__value">
+            First award
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Awarded amount / Guarantee Credit?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £147.19 a week
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-s">Components</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Standard minimum amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £218.15
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Disability premium
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £81.50
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Carers premium
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £45.60
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Partner addition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £114.80
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Child addition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £76.79
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Savings credit (pre-2016 cases)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £10.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total components (unadjusted amount?)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £546.84
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-s">Deductions</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £242.65
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="income.html">Details</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Capital (tariff income)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £25.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other deductions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £150.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total deductions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £417.65
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Award history</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" style="width: 25%">From</th>
+            <th class="govuk-table__header" scope="col" style="width: 25%">To</th>
+            <th class="govuk-table__header " scope="col" style="width: 30%">Weekly amount</th>
+            <th class="govuk-table__header" scope="col" style="width: 20%">Adjustment</th>
+            <th class="govuk-table__header" scope="col" style="width: 15%"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">8 Apr 2021</td>
+            <td class="govuk-table__cell">9 Apr 2022</td>
+            <td class="govuk-table__cell">£160.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"><a href="award-previous">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">15 Jun 2020</td>
+            <td class="govuk-table__cell">7 Apr 2021</td>
+            <td class="govuk-table__cell">£155.27</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"><a href="">Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+<div class="govuk-grid-column-one-third">
+  {% include '../../includes/timeline.html' %}
+</div>
+</div>
+
+{% endblock %}

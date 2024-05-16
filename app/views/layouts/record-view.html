@@ -1,0 +1,24 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+{% from "timeline/macro.njk" import dwpTimeline %}
+
+{% block header %}
+    {{
+        dwpHeader({
+            serviceName: "Service name",
+            serviceHref: '../index',
+            container: true
+        })
+    }}
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% block beforeContent %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layouts/record-view.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      {% include '../../includes/user-details.html' %}
+      {% include '../../includes/nav-list.html' %}
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Income
+      </h2>
+  </div>
+<div class="govuk-grid-column-one-third">
+  {% include '../../includes/timeline.html' %}
+</div>
+</div>
+
+{% endblock %}
