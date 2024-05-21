@@ -5,4 +5,22 @@
 
 // Add extra styles here
 .govuk-tag { max-width:130% !important;}
-.govuk-summary-list__key {width: 50%;}
+.govuk-summary-list__key {width: 40%;}
+.verified-badge {
+    color: #6f777b;
+    float: left;
+    font-size: 0.8em;
+    margin: 0.4em 0 0;
+    position: relative;
+}
+
+.not-verified::before {
+    background-image: url("/public/images/button_cross.svg");
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.1em;
+    left: -1.3em;
+    position: absolute;
+    top: 0;
+    width: 1em;
+}

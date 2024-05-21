@@ -9,7 +9,7 @@
   <div class="govuk-grid-column-two-thirds">
       {% include '../../includes/user-details.html' %}
       {% include '../../includes/nav-list.html' %}
-      <h2 class="govuk-heading-m">Current Pension Credit award</h2>
+      <h2 class="govuk-heading-l">Current Pension Credit award</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-6">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -46,7 +46,7 @@
         </div>
       </dl>
 
-      <h2 class="govuk-heading-s">Components</h2>
+      <h2 class="govuk-heading-m">Components</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-6">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -127,7 +127,7 @@
         </div>
       </dl>
 
-      <h2 class="govuk-heading-s">Deductions</h2>
+      <h2 class="govuk-heading-m">Deductions</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -204,8 +204,31 @@
       </table>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../includes/timeline.html' %}
+  {% include '../../includes/timeline-award-pc.html' %}
 </div>
 </div>
 
 {% endblock %}
+
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "award-pc",
+            text: "Basic award with less stuff"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

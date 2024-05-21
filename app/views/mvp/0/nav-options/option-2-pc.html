@@ -7,8 +7,8 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../includes/user-details.html' %}
-      {% include '../../includes/nav-list.html' %}
+      {% include '../../../includes/user-details.html' %}
+      {% include '../../../includes/nav-primary-and-secondary-pc.html' %}
       <h2 class="govuk-heading-l">Current Pension Credit award</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -134,7 +134,7 @@
       </table>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../includes/timeline-award-pc.html' %}
+  {% include '../../../includes/timeline-award-pc.html' %}
 </div>
 </div>
 
@@ -145,8 +145,20 @@
       meta: {
         items: [
           {
-            href: "award-pc-detailed",
-            text: "Award with more stuff"
+            href: "option-1",
+            text: "Nav option 1"
+          },
+          {
+            href: "option-2",
+            text: "Nav option 2"
+          },
+          {
+            href: "option-3",
+            text: "Nav option 3"
+          },
+          {
+            href: "option-4",
+            text: "Nav option 4"
           },
           {
             href: "manage-prototype",
