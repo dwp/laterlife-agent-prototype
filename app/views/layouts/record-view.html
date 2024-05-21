@@ -6,13 +6,15 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "internal-service-header/macro.njk" import dwpHeader %}
 {% from "timeline/macro.njk" import dwpTimeline %}
-{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
 {% block header %}
     {{
         dwpHeader({
             serviceName: "Service name",
-            serviceHref: '../index',
+            serviceHref: '/index',
             container: true
         })
     }}
