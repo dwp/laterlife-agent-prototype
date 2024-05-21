@@ -9,58 +9,11 @@
   <div class="govuk-grid-column-two-thirds">
       {% include '../../includes/user-details.html' %}
       {% include '../../includes/nav-list.html' %}
-      <h2 class="govuk-heading-l">State Pension payment details</h2>
+      <h2 class="govuk-heading-l">Personal details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Total
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £165.15
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payment date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Monday 20 May 2024
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            22 Apr 2024 to 19 May 2024
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Sent
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a href="">Recall payment</a> -->
-          </dd>
-        </div>
-      </dl>
-      <h3 class="govuk-heading-m">Account the payment was sent to</h3>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Account holder
+            Full name
           </dt>
           <dd class="govuk-summary-list__value">
             John Doe
@@ -71,10 +24,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Sort code
+            National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            11 22 33
+            QQ 12 34 56 X
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -82,10 +35,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Account number
+            Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            12345678
+            12 December 1952
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -93,20 +46,90 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Bank or building society name
+            State Pension date
           </dt>
           <dd class="govuk-summary-list__value">
-            Barclays
+            10 April 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Marital status
+          </dt>
+          <dd class="govuk-summary-list__value">
+              Married
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="partner">Details</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Lived or worked abroad
+          </dt>
+          <dd class="govuk-summary-list__value">
+              No
           </dd>
           <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
       </dl>
+
+      <h2 class="govuk-heading-m">People living with John Doe</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jane Doe
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Partner
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="partner">Details again?</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            James Doe
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Son
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="son">Details</a>
+          </dd>
+        </div>
+      </dl>
   </div>
-  <div class="govuk-grid-column-one-third">
-    {% include '../../includes/timeline-payment-sp.html' %}
-  </div>
+<div class="govuk-grid-column-one-third">
+  {% include '../../includes/timeline-personal.html' %}
+</div>
 </div>
 
 {% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "personal",
+            text: "Personal details basic"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

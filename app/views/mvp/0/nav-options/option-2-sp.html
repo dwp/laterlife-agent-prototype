@@ -7,9 +7,9 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../includes/user-details.html' %}
-      {% include '../../includes/nav-list.html' %}
-      <h2 class="govuk-heading-l">Current Pension Credit award</h2>
+      {% include '../../../includes/user-details.html' %}
+      {% include '../../../includes/nav-primary-and-secondary-sp.html' %}
+      <h2 class="govuk-heading-l">Current State Pension award</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -18,7 +18,7 @@
           <dd class="govuk-summary-list__value">
             10 April 2022
           </dd>
-          <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__value">
             
           </dd>
         </div>
@@ -27,79 +27,89 @@
             Reason
           </dt>
           <dd class="govuk-summary-list__value">
-            First award
+            Inheritance
           </dd>
-          <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__value">
             
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Awarded weekly amount / Guarantee Credit?
+            Total
           </dt>
           <dd class="govuk-summary-list__value">
-            £75.50
+            £164.68
           </dd>
-          <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            New State Pension
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £160.00
+          </dd>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Protected payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+              £0.00
+          </dd>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Extra State Pension
+          </dt>
+          <dd class="govuk-summary-list__value">
+              £0.00
+          </dd>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Inherited extra State Pension
+          </dt>
+          <dd class="govuk-summary-list__value">
+              £4.68
+          </dd>
+          <dd class="govuk-summary-list__value">
             
           </dd>
         </div>
       </dl>
-
-      <h2 class="govuk-heading-m">Components</h2>
+      <h2 class="govuk-heading-m">Inherited amounts</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Standard minimum amount
+            Additional Pension
           </dt>
           <dd class="govuk-summary-list__value">
-            £218.15
+            £4.38
           </dd>
-          <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__value">
             
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Total components (unadjusted amount?)
+            Graduated benefit
           </dt>
           <dd class="govuk-summary-list__value">
-            £218.15
+            £0.30
           </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">Deductions</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Income
-          </dt>
           <dd class="govuk-summary-list__value">
-            £142.65
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="income.html">Details</a>
-          </dd>
-        </div>
-        <div class="govuk-!-padding-2">
-            {{ govukDetails({
-              summaryText: "Income details",
-              text: "More here rather than separate page?",
-              classes: "govuk-!-margin-bottom-0"
-            }) }}
-        </div>
-        <div class="govuk-summary-list__row"style="border-top: 1px solid #b1b4b6;padding-top:15px;">
-          <dt class="govuk-summary-list__key">
-            Total deductions
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £0.00
-          </dd>
-          <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
@@ -134,7 +144,7 @@
       </table>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../includes/timeline-award-pc.html' %}
+  {% include '../../../includes/timeline-award-sp.html' %}
 </div>
 </div>
 
@@ -145,8 +155,20 @@
       meta: {
         items: [
           {
-            href: "award-pc-detailed",
-            text: "Award with more stuff"
+            href: "option-1",
+            text: "Nav option 1"
+          },
+          {
+            href: "option-2",
+            text: "Nav option 2"
+          },
+          {
+            href: "option-3",
+            text: "Nav option 3"
+          },
+          {
+            href: "option-4",
+            text: "Nav option 4"
           },
           {
             href: "manage-prototype",
