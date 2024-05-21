@@ -7,14 +7,51 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
+    <h2 class="govuk-heading-l">
+      MVP end-to-end
+    </h2>
+    {{ govukButton({
+      text: "Start now",
+      href: "0/find",
+      isStartButton: true
+    }) }}
+
+  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+  <h2 class="govuk-heading-l">
+    Navigation options
+  </h2>
+  <ul class="govuk-list">
+    <li>
+    <a class="govuk-link" href="0/nav-options/option-1">Option 1</a>
+    </li>
+    <li>
+    <a class="govuk-link" href="0/nav-options/option-2">Option 2</a>
+    </li>
+    <li>
+    <a class="govuk-link" href="0/nav-options/option-3">Option 3</a>
+    </li>
+    <li>
+    <a class="govuk-link" href="0/nav-options/option-4">Option 4</a>
+    </li>
+</ul>
+
+
+  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+    <!-- <h2 class="govuk-heading-l">
+      Enhancements end-to-end
+    </h2>
+    {{ govukButton({
+      text: "Start now",
+      href: "enhancements/0/find",
+      isStartButton: true
+    }) }}
+  </div> -->
 </div>
 
 {% endblock %}

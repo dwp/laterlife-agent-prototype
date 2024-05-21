@@ -7,6 +7,7 @@
   "dependencies": {
     "@dwp/dwp-frontend": "^2.6.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
+    "@ministryofjustice/frontend": "^2.1.3",
     "govuk-frontend": "5.3.1",
     "govuk-prototype-kit": "13.16.2"
   }
