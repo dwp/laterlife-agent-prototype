@@ -42,3 +42,33 @@
   </div>
 
 {% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "find",
+            text: "Find someone"
+          },  
+          {
+            href: "find-result",
+            text: "Find result GySP and AfPC"
+          },
+          {
+            href: "find-gysp",
+            text: "Find result GySP only"
+          },
+          {
+            href: "find-no-result",
+            text: "Find no result"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
