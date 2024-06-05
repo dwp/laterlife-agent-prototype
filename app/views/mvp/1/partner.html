@@ -7,16 +7,16 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../../includes/user-details.html' %}
-      {% include '../../../includes/nav-primary-blocks-personal.html' %}
-      <h2 class="govuk-heading-l">Personal details</h2>
+      {% include '../../includes/user-details.html' %}
+      {% include '../../includes/nav-primary-blocks-personal.html' %}
+      <h2 class="govuk-heading-m">Marital details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Full name
+            Status
           </dt>
           <dd class="govuk-summary-list__value">
-            John Doe
+            Married
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -24,10 +24,49 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            National Insurance number
+            Date of marriage
           </dt>
           <dd class="govuk-summary-list__value">
-            QQ 12 34 56 X
+            9 April 1975
+            <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-1">
+              Not verified
+            </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+      <h3 class="govuk-heading-m">Spouse/Partner details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jane
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Doe
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other names
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -38,7 +77,10 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            12 December 1952
+            9 April 1956
+            <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-1">
+              Not verified
+            </strong>
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -46,32 +88,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            State Pension date
+            National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            10 April 2019
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Marital status
-          </dt>
-          <dd class="govuk-summary-list__value">
-              Never been married or in a civil partnership
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Lived or worked abroad
-          </dt>
-          <dd class="govuk-summary-list__value">
-              No
+            QQ 12 34 56 D
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -80,42 +100,8 @@
       </dl>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../../includes/timeline-personal.html' %}
+  {% include '../../includes/timeline-personal.html' %}
 </div>
 </div>
 
 {% endblock %}
-
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "option-1",
-            text: "Nav option 1"
-          },
-          {
-            href: "option-2",
-            text: "Nav option 2"
-          },
-          {
-            href: "option-3",
-            text: "Nav option 3"
-          },
-          {
-            href: "option-4",
-            text: "Nav option 4"
-          },
-          {
-            href: "manage-prototype",
-            text: "Manage your prototype"
-          },
-          {
-            href: "manage-prototype/clear-data",
-            text: "Clear data"
-          }
-        ],
-        visuallyHiddenTitle: "Footer links"
-      }
-    }) }}
-  {% endblock %}
