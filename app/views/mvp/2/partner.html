@@ -1,0 +1,107 @@
+{% extends "layouts/record-view.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      {% include '../../includes/user-details.html' %}
+      {% include '../../includes/nav-primary-and-secondary-personal.html' %}
+      <h2 class="govuk-heading-m">Marital details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Married
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of marriage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9 April 1975
+            <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-1">
+              Not verified
+            </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+      <h3 class="govuk-heading-m">Spouse/Partner details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jane
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Doe
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other names
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9 April 1956
+            <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-1">
+              Not verified
+            </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 D
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+  </div>
+<div class="govuk-grid-column-one-third">
+  {% include '../../includes/timeline-personal.html' %}
+</div>
+</div>
+
+{% endblock %}

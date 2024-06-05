@@ -3,16 +3,16 @@
   items: [
     {
       text: 'Claimant details',
-      href: 'option-2'
+      href: 'personal'
     },
     {
       text: 'State Pension',
-      href: 'option-2-sp'
+      href: 'award-sp',
+      active: true
     },
     {
       text: 'Pension Credit',
-      href: 'option-2-pc',
-      active: true
+      href: 'award-pc'
     }
   ]
 }) }}
@@ -21,10 +21,10 @@
   label: 'Sub navigation',
   items: [{
     text: 'Award',
-    href: '#'
-  }, {
-    text: 'Payments',
-    href: '#',
-    active: true
-  }]
+    href: 'award-sp'
+  },{
+      text: 'Payment',
+      href: 'payment-sp',
+      active: true
+    }]
 }) }}
