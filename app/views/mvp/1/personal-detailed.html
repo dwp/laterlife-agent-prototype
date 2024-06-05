@@ -7,8 +7,8 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../../includes/user-details.html' %}
-      {% include '../../../includes/nav-primary-blocks-personal.html' %}
+      {% include '../../includes/user-details.html' %}
+      {% include '../../includes/nav-primary-blocks-personal.html' %}
       <h2 class="govuk-heading-l">Personal details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -60,10 +60,10 @@
             Marital status
           </dt>
           <dd class="govuk-summary-list__value">
-              Never been married or in a civil partnership
+              Married
           </dd>
           <dd class="govuk-summary-list__actions">
-            
+            <a href="partner">Details</a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -78,9 +78,35 @@
           </dd>
         </div>
       </dl>
+
+      <h2 class="govuk-heading-m">People living with John Doe</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jane Doe
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Partner
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="partner">Details again?</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            James Doe
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Son
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="son">Details</a>
+          </dd>
+        </div>
+      </dl>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../../includes/timeline-personal.html' %}
+  {% include '../../includes/timeline-personal.html' %}
 </div>
 </div>
 
@@ -91,20 +117,8 @@
       meta: {
         items: [
           {
-            href: "option-1",
-            text: "Nav option 1"
-          },
-          {
-            href: "option-2",
-            text: "Nav option 2"
-          },
-          {
-            href: "option-3",
-            text: "Nav option 3"
-          },
-          {
-            href: "option-4",
-            text: "Nav option 4"
+            href: "personal",
+            text: "Personal details basic"
           },
           {
             href: "manage-prototype",
