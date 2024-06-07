@@ -7,16 +7,43 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../includes/user-details.html' %}
-      {% include '../../includes/nav-primary-blocks-personal.html' %}
-      <h2 class="govuk-heading-m">Marital details</h2>
+      {% include '../../../../includes/user-details.html' %}
+      {% include '../../../../includes/nav-primary-blocks-contact.html' %}
+
+      <h2 class="govuk-heading-l">Contact details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Status
+            Address
           </dt>
           <dd class="govuk-summary-list__value">
-            Married
+              123 Square Street<br>
+              York<br>
+              YO3 1SQ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address we send letters to
+          </dt>
+          <dd class="govuk-summary-list__value">
+              123 Square Street<br>
+              York<br>
+              YO3 1SQ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+              01943 345928
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -24,27 +51,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date of marriage
+            Work phone number
           </dt>
           <dd class="govuk-summary-list__value">
-            9 April 1975
-            <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-1">
-              Not verified
-            </strong>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-      </dl>
-      <h3 class="govuk-heading-m">Spouse/Partner details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            First name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Jane
+              01943 28837
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -52,10 +62,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Last name
+            Mobile phone number
           </dt>
           <dd class="govuk-summary-list__value">
-            Doe
+              077123 45678
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -63,10 +73,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Other names
+            Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            
+              email@me.co.uk
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -74,24 +84,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date of birth
+            Alternative format for letters
           </dt>
           <dd class="govuk-summary-list__value">
-            9 April 1956
-            <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-1">
-              Not verified
-            </strong>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Insurance number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            QQ 12 34 56 D
+              Braille
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -100,7 +96,7 @@
       </dl>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../includes/timeline-personal.html' %}
+  {% include '../../../../includes/timeline-contact.html' %}
 </div>
 </div>
 

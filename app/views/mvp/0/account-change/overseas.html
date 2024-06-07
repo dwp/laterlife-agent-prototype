@@ -21,34 +21,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/location-of-account" method="post">
+      <h2 class="govuk-heading-l">Overseas account</h2>
 
-        {{ govukRadios({
-          name: "account-location",
-          fieldset: {
-            legend: {
-              text: "Where is the new bank or building society account held?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "uk",
-              text: "In the UK"
-            },
-            {
-              value: "overseas",
-              text: "Overseas"
-            }
-          ]
-        }) }}
+      <p>Instructional to agent to send new account details to international team, and check payment situation in case a recall is required.</p>
+
+      <p>Currently details are written into an email to the international team - could we automate this from service to ensure right info collected and emails not missed?</p>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Return to record?",
+          href: "../payment-pc"
         }) }}
-
-      </form>
 
     </div>
   </div>

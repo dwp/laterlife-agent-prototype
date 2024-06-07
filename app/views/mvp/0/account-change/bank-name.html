@@ -1,32 +1,38 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/internal-service.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
+      {% include '../../../includes/user-details.html' %}
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">
         Confirm bank name
-      </h1>
+      </h2>
       <div class="govuk-inset-text">Lloyds</div>
-      <form class="form" action="check-answers" method="post">
+      <form class="form" action="/confirm-bank-name" method="post">
 
         {{ govukRadios({
+          classes: "govuk-radios--inline",
           name: "confirm-bank",
           fieldset: {
             legend: {
               text: "Confirm bank name",
-              classes: "hidden"
+              classes: "govuk-visually-hidden"
             }
           },
           items: [

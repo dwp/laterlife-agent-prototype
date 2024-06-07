@@ -7,16 +7,16 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../includes/user-details.html' %}
-      {% include '../../includes/nav-primary-blocks-personal.html' %}
-      <h2 class="govuk-heading-m">James Doe details</h2>
+      {% include '../../../../includes/user-details.html' %}
+      {% include '../../../../includes/nav-primary-blocks-payment-pc.html' %}
+      <h2 class="govuk-heading-l">Pension Credit payment details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Relationship to claimant
+            Total
           </dt>
           <dd class="govuk-summary-list__value">
-            Son
+            £165.15
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -24,10 +24,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Full name
+            Payment date
           </dt>
           <dd class="govuk-summary-list__value">
-            James Doe
+            Monday 20 May 2024
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -35,10 +35,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date of birth
+            Period
           </dt>
           <dd class="govuk-summary-list__value">
-            17 May 1974
+            22 Apr 2024 to 19 May 2024
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -46,10 +46,24 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date started living together
+            Status
           </dt>
           <dd class="govuk-summary-list__value">
-            20 May 2022
+            Sent
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a href="">Recall payment</a> -->
+          </dd>
+        </div>
+      </dl>
+      <h3 class="govuk-heading-m">Account the payment was sent to</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Account holder
+          </dt>
+          <dd class="govuk-summary-list__value">
+            John Doe
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -57,10 +71,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Paying towards rent or mortgage
+            Sort code
           </dt>
           <dd class="govuk-summary-list__value">
-            No
+            11 22 33
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -68,10 +82,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            In education
+            Account number
           </dt>
           <dd class="govuk-summary-list__value">
-            Full time
+            12345678
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -79,32 +93,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            In employment
+            Bank or building society name
           </dt>
           <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Self-employed
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Registered blind or severely sight impaired
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
+            Barclays
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -112,9 +104,9 @@
         </div>
       </dl>
   </div>
-<div class="govuk-grid-column-one-third">
-  {% include '../../includes/timeline-personal.html' %}
-</div>
+  <div class="govuk-grid-column-one-third">
+    {% include '../../../../includes/timeline-payment-pc.html' %}
+  </div>
 </div>
 
 {% endblock %}
