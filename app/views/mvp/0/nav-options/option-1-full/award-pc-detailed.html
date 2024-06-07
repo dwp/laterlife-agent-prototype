@@ -7,18 +7,18 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      {% include '../../includes/user-details.html' %}
-      {% include '../../includes/nav-primary-and-secondary-award-sp.html' %}
-      <h2 class="govuk-heading-l">Current State Pension award</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
+      {% include '../../../../includes/user-details.html' %}
+      {% include '../../../../includes/nav-primary-blocks-award-pc.html' %}
+      <h2 class="govuk-heading-l">Current Pension Credit award</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
             From
           </dt>
           <dd class="govuk-summary-list__value">
             10 April 2022
           </dd>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
@@ -27,89 +27,149 @@
             Reason
           </dt>
           <dd class="govuk-summary-list__value">
-            Inheritance
+            First award
           </dd>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Total
+            Awarded amount / Guarantee Credit?
           </dt>
           <dd class="govuk-summary-list__value">
-            £164.68
+            £147.19 a week
           </dd>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            New State Pension
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £160.00
-          </dd>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Protected payment
-          </dt>
-          <dd class="govuk-summary-list__value">
-              £0.00
-          </dd>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Extra State Pension
-          </dt>
-          <dd class="govuk-summary-list__value">
-              £0.00
-          </dd>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Inherited extra State Pension
-          </dt>
-          <dd class="govuk-summary-list__value">
-              £4.68
-          </dd>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
       </dl>
-      <h2 class="govuk-heading-m">Inherited amounts</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <h2 class="govuk-heading-m">Components</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Additional Pension
+            Standard minimum amount
           </dt>
           <dd class="govuk-summary-list__value">
-            £4.38
+            £218.15
           </dd>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Graduated benefit
+            Disability premium
           </dt>
           <dd class="govuk-summary-list__value">
-            £0.30
+            £81.50
           </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Carers premium
+          </dt>
           <dd class="govuk-summary-list__value">
+            £45.60
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Partner addition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £114.80
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Child addition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £76.79
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Savings credit (pre-2016 cases)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £10.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total components (unadjusted amount?)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £546.84
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Deductions</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £242.65
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="income.html">Details</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Capital (tariff income)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £25.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other deductions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £150.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total deductions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £417.65
+          </dd>
+          <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
@@ -144,8 +204,31 @@
       </table>
   </div>
 <div class="govuk-grid-column-one-third">
-  {% include '../../includes/timeline-award-sp.html' %}
+  {% include '../../../../includes/timeline-award-pc.html' %}
 </div>
 </div>
 
 {% endblock %}
+
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "award-pc",
+            text: "Basic award with less stuff"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

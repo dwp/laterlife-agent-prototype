@@ -1,104 +1,143 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/internal-service.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include '../../../includes/user-details.html' %}
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div>
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">
+      <h2 class="govuk-heading-l">
         Check details before updating record
-      </h1>
+      </h2>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Question 1"
-            },
-            value: {
-              text: "Answer 1"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 1"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 2"
-            },
-            value: {
-              text: "Answer 2"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 2"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 3"
-            },
-            value: {
-              text: "Answer 3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 3"
-            },
-            value: {
-              text: "Answer 3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Which payment account do you want to change?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['which-benefits'] %}
+              {{ data['which-benefits'] }}
+            {% else %}
+              Both State Pension and Pension Credit
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="benefits">Change<span class="govuk-visually-hidden"> which payment account will be changed</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where is the new bank or building society account held?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            In the UK
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="location">Change<span class="govuk-visually-hidden"> where the new bank or building society account is held</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="border:0;">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            New account details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="account-details.html">
+              Change<span class="govuk-visually-hidden"> new account details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="border:0;">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Account holder name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['accountHolder'] %}
+              {{ data['accountHolder'] }}
+            {% else %}
+              Jane Doe
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="border:0;">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Sort code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['sortCode'] %}
+              {{ data['sortCode'] }}
+            {% else %}
+              112233
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="border:0;">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Account number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['accountNumber'] %}
+              {{ data['accountNumber'] }}
+            {% else %}
+              12345678
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Building society roll or reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['rollNumber'] %}
+              {{ data['rollNumber'] }}
+            {% else %}
+              Not provided
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is this account with Lloyds?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="bank-name">Change<span class="govuk-visually-hidden"> bank name</span></a>
+          </dd>
+        </div>
+      </dl>
 
-      <form action="" method="post" novalidate>
+      <form action="../payment-pc.html" method="post" novalidate>
 
         {{ govukButton({
-          text: "Save (in GySP)"
+          text: "Save (button wording in GySP)"
         }) }}
 
       </form>

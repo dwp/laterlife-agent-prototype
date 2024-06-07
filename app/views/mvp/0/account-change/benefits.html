@@ -1,18 +1,23 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/internal-service.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
 
 {% block content %}
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include '../../../includes/user-details.html' %}
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div>
+  </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -23,21 +28,21 @@
           fieldset: {
             legend: {
               text: "Which payment account do you want to change?",
-              isPageHeading: true,
+              isPageHeading: false,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "sp",
+              value: "State Pension only",
               text: "State Pension only"
             },
             {
-              value: "pc",
+              value: "Pension Credit only",
               text: "Pension Credit only"
             },
             {
-              value: "both",
+              value: "Both State Pension and Pension Credit",
               text: "Both State Pension and Pension Credit"
             }
           ]
