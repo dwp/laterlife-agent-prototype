@@ -1,7 +1,7 @@
 {% extends "layouts/internal-service.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Check details before updating record – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -137,7 +137,7 @@
       <form action="../payment-pc.html" method="post" novalidate>
 
         {{ govukButton({
-          text: "Save (button wording in GySP)"
+          text: "Save and continue"
         }) }}
 
       </form>
