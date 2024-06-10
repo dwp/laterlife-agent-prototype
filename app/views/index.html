@@ -12,40 +12,24 @@
     </h1>
 
     <h2 class="govuk-heading-l">
-      MVP end-to-end
+      Navigation option 1
     </h2>
     {{ govukButton({
-      text: "Start now",
-      href: "mvp/0/find",
+      text: "Start now - option 1",
+      href: "mvp/0/nav-options/option-1-full/find",
       isStartButton: true
     }) }}
 
   <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
 
-  <h2 class="govuk-heading-l">
-    Navigation options
-  </h2>
-  <ul class="govuk-list">
-    <li>
-    <a class="govuk-link" href="mvp/0/nav-options/option-1">Option 1</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="mvp/0/nav-options/option-1-full/personal.html">Option 1 - end to end</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="mvp/0/nav-options/option-4">Option 1 with full width nav</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="mvp/0/nav-options/option-2">Option 2</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="mvp/0/nav-options/option-5">Option 2 with full width nav</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="mvp/0/nav-options/option-3">Option 3</a>
-    </li>
-</ul>
-
+    <h2 class="govuk-heading-l">
+      Navigation option 2
+    </h2>
+    {{ govukButton({
+      text: "Start now - option 2",
+      href: "mvp/0/find",
+      isStartButton: true
+    }) }}
 
   <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
 
@@ -61,3 +45,25 @@
 </div>
 
 {% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
