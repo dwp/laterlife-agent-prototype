@@ -22,7 +22,11 @@
             Account holder
           </dt>
           <dd class="govuk-summary-list__value">
-            John Doe
+            {% if data['accountHolder'] %}
+              {{ data['accountHolder'] }}
+            {% else %}
+              John Doe
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -33,7 +37,11 @@
             Sort code
           </dt>
           <dd class="govuk-summary-list__value">
-            11 22 33
+            {% if data['sortCode'] %}
+              {{ data['sortCode'] }}
+            {% else %}
+              665544
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -44,7 +52,11 @@
             Account number
           </dt>
           <dd class="govuk-summary-list__value">
-            12345678
+            {% if data['accountNumber'] %}
+              {{ data['accountNumber'] }}
+            {% else %}
+              99900099
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -55,7 +67,7 @@
             Bank or building society name
           </dt>
           <dd class="govuk-summary-list__value">
-            Barclays
+            Lloyds
           </dd>
           <dd class="govuk-summary-list__actions">
             
