@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Full history – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include './_namebar.html' %}
+
+      <nav class="navigation-secondary">
+        <ul>
+
+          <li>
+              <a href="personal">Personal</a>
+            </li>
+          <li>
+            <a href="contact" >Contact</a>
+          </li>
+
+          <li>
+            <a href="award">Award</a>
+          </li>
+            <li>
+              <a href="payment">Payment</a>
+            </li>
+            <li>
+              <a href="history" class="active" aria-current="page">Full history</a>
+            </li>
+        </ul>
+      </nav>
+
+
+<br><br>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+{% endblock %}
