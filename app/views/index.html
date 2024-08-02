@@ -12,36 +12,45 @@
     </h1>
 
     <h2 class="govuk-heading-l">
-      Navigation option 1
+    MVP
     </h2>
-    {{ govukButton({
-      text: "Start now - option 1",
-      href: "mvp/0/nav-options/option-1-full/find",
-      isStartButton: true
-    }) }}
+<a href="/mvp/find.html" class="govuk-button govuk-button--start">Prototype</a>
 
-  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
-    <h2 class="govuk-heading-l">
-      Navigation option 2
-    </h2>
-    {{ govukButton({
-      text: "Start now - option 2",
-      href: "mvp/0/find",
-      isStartButton: true
-    }) }}
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          Navigation
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+      <h2 class="govuk-heading-m">
+        Navigation option 1
+      </h2>
+      {{ govukButton({
+        text: "Start now - option 1",
+        href: "mvp/0/nav-options/option-1-full/find",
+        isStartButton: true
+      }) }}
 
-  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+      <h2 class="govuk-heading-m">
+        Navigation option 2
+      </h2>
+      {{ govukButton({
+        text: "Start now - option 2",
+        href: "mvp/0/find",
+        isStartButton: true
+      }) }}
 
-    <!-- <h2 class="govuk-heading-l">
-      Enhancements end-to-end
-    </h2>
-    {{ govukButton({
-      text: "Start now",
-      href: "enhancements/0/find",
-      isStartButton: true
-    }) }}
-  </div> -->
+    </div>
+  </div>
+
+</div>
+
+
 </div>
 
 {% endblock %}
