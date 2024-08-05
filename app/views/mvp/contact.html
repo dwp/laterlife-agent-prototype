@@ -26,28 +26,27 @@
 
       {% include './_namebar.html' %}
 
-      <nav class="navigation-secondary">
-        <ul>
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="personal">Personal</a>
+        </li>
 
-          <li>
-              <a href="personal">Personal</a>
-            </li>
-          <li>
-            <a href="contact" class="active" aria-current="page">Contact</a>
-          </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="contact">Contact</a>
+        </li>
 
-          <li>
-            <a href="award">Award</a>
-          </li>
-            <li>
-              <a href="payment">Payment</a>
-            </li>
-            <li>
-              <!-- <li>
-                <a href="history">Full history</a>
-              </li> -->
-        </ul>
-      </nav>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="award">Award</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="payment">Payment</a>
+        </li>
+
+        <!-- <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="history">Full history</a>
+        </li>-->
+      </ul>
 
 
 <br><br>
@@ -139,7 +138,7 @@
       {% if data['email-remove'] === 'yes' %}
       {% elseif data.email %}
       {{data.email}}
-      {% else %} 
+      {% else %}
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
