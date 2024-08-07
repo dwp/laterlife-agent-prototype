@@ -86,12 +86,10 @@ router.post('/confirm-bank-name0', function (req, res) {
 // MVP routes
 
 router.post('/mvp/stop-benefit', function (req, res) {
-  if (req.body['stopbenefit'] === 'death') {
-    res.redirect('death')
-  } else if (req.body['stopbenefit'] === 'prison') {
-    res.redirect('prison')
-  } else if (req.body['stopbenefit'] === 'suspension') {
+  if  (req.body['stopbenefit'] === 'suspend') {
     res.redirect('suspend-benefit')
+  } else if (req.body['stopbenefit'] === 'legacy') {
+    res.redirect('legacy-benefit')
   } else {
     res.redirect('stop-benefit')
   }
