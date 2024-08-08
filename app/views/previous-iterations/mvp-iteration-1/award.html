@@ -1,0 +1,368 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="personal">Personal</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="contact">Contact</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="award">Award</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="payment">Payment</a>
+        </li>
+
+        <!-- <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="history">Full history</a>
+        </li>-->
+      </ul>
+
+
+<br><br>
+
+        <h2 class="govuk-heading-m">Award details</h2>
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Pension Credit</h2>
+            <a href="" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Review Pension Credit award</span>
+            </a>
+          </div>
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 From
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  10 April 2024
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reason
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Uprating
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Total
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <B>£93.47</b>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="govuk-summary-card__content">
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+              Components
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__value">
+                Guarantee Credit
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £218.15
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Total
+                </dt>
+                <dd class="govuk-summary-list__value">
+              £218.15
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+            </div>
+
+            <div class="govuk-summary-card__content">
+
+              <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                  Deductions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      <span class="govuk-visually-hidden"> </span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__value">
+                  State Pension
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £124.68
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      <span class="govuk-visually-hidden"> </span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__value">
+                  Other income
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £0.00
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      <span class="govuk-visually-hidden"> </span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                  Total deductions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  £124.68
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      <span class="govuk-visually-hidden"> </span>
+                    </a>
+                  </dd>
+                </div>
+
+              </dl>
+
+<br>
+            <p class="govuk-body">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">Previous awards</a>
+            </p>
+
+
+          </div>
+        </div>
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">State Pension</h2>
+            <a href="" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Review State Pension award</span>
+            </a>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 From
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  10 April 2024
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> whether details are known</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reason
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Uprating
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> relationship to lead tenant</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Total
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <B>£124.68</b>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                New State Pension
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £124.68
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Protected payment
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £0.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Extra State Pension
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £0.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Inherited extra State Pension
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £0.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> </span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+<br>
+            <p class="govuk-body">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">Previous awards</a>
+            </p>
+
+
+          </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <div class="dwp-timeline">
+      <h1 class="govuk-heading-m">Award changes</h1>
+      <ol class="dwp-timeline__events">
+      <li class="dwp-timeline__events--entry">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Event</h2>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent/System/Online</p>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">11 August 2023</p>
+        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
+      </li>
+      <li class="dwp-timeline__events--entry">
+      <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+      </li>
+      </ol>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+{% endblock %}
