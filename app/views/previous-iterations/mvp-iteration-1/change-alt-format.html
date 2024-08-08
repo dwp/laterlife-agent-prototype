@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Alternative formats – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+
+      <h2 class="govuk-heading-l">Alternative format for letters</h2>
+
+    <form method="post" action="contact">
+      <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="alt-hint">
+                <div id="contactrequirement-hint" class="govuk-hint">
+                  Select one option.
+                </div>
+
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="altformat" name="altformat" type="radio" value="Audio cassette">
+                    <label class="govuk-label govuk-radios__label" for="altformat">
+                      Audio cassette
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="altformat-2" name="altformat" type="radio" value="Audio CD">
+                    <label class="govuk-label govuk-radios__label" for="altformat-2">
+                      Audio CD
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="altformat-3" name="altformat" type="radio" value="Audio MP3">
+                    <label class="govuk-label govuk-radios__label" for="altformat-3">
+                      Audio MP3
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="altformat-4" name="altformat" type="radio" value="Braille">
+                    <label class="govuk-label govuk-radios__label" for="altformat-4">
+                      Braille
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="altformat-4" name="altformat" type="radio" value="Large print">
+                    <label class="govuk-label govuk-radios__label" for="altformat-5">
+                      Large print
+                    </label>
+                  </div>
+                </div>
+
+                <div class="govuk-radios__divider"></div>
+                <div class="govuk-radios__divider">or</div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="altformat-6" name="altformat" type="radio" value="none">
+    <label class="govuk-label govuk-radios__label" for="altformat-6">
+      None
+    </label>
+  </div
+</div>
+</div>
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save
+</button>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
