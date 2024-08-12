@@ -35,35 +35,30 @@
 
 
 
-    <form method="post">
+    <form method="post" action="personal-restarted">
 
       <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="restart-hint">
+    <fieldset class="govuk-fieldset" aria-describedby="homephone-remove-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-          What payments do you want to restart?
+          Are you sure you want to restart Pension Credit payments?
         </h1>
       </legend>
 <br>
 
-      <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="restart" name="restart" type="radio" value="both">
-          <label class="govuk-label govuk-radios__label" for="restart">
-          Both Pension Credit and State Pension
+          <input class="govuk-radios__input" id="homephone-remove" name="homephone-remove" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="homephone-remove">
+          Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="restart-2" name="restart" type="radio" value="pc">
-          <label class="govuk-label govuk-radios__label" for="restart-2">
-          Only Pension Credit
+          <input class="govuk-radios__input" id="homephone-remove-2" name="homephone-remove" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="homephone-remove-2">
+          No
           </label>
-        </div>  <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="restart-2" name="restart" type="radio" value="sp">
-            <label class="govuk-label govuk-radios__label" for="restart-2">
-            Only State Pension
-            </label>
-          </div>
+        </div>
       </div>
     </fieldset>
   </div>

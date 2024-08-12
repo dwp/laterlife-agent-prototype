@@ -52,9 +52,6 @@
 
 </nav>
 
-
-<br><br>
-
 <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 <strong class="govuk-warning-text__text">
@@ -156,11 +153,11 @@ payments have been suspended pending investigation.
 
 {% if data['suspension'] === 'pc' %}
 <p class="govuk-body">
-<a href="#" class="govuk-link govuk-link--no-visited-state">Stop State Pension</a>
+<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend State Pension</a>
 </p>
 {% elseif data['suspension'] === 'sp' %}
 <p class="govuk-body">
-<a href="#" class="govuk-link govuk-link--no-visited-state">Stop Pension Credit</a>
+<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend Pension Credit</a>
 </p>
 {% else %}
 {% endif %}
