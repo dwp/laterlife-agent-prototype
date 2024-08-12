@@ -118,7 +118,15 @@ router.post('/mvp/bank-uk-overseas', function (req, res) {
   }
 })
 
-
+router.post('/mvp/restart', function (req, res) {
+  if (req.body['restart'] === 'both') {
+    res.redirect('personal-restarted')
+  } else if (req.body['restart'] === 'sp') {
+    res.redirect('personal-suspended')
+  } else if (req.body['restart'] === 'pc') {
+    res.redirect('personal-suspended')
+  }
+})
 
 
 
