@@ -60,6 +60,10 @@
   Pension Credit
 {% elseif data['suspension'] === 'sp' %}
 State Penison
+{% elseif data['restart'] === 'pc' %}
+State Pension
+  {% elseif data['restart'] === 'sp' %}
+Pension Credit
 {% else %}
   Pension Credit and State Pension
 {% endif %}
@@ -68,12 +72,17 @@ payments have been suspended pending investigation.
   <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments.</a>
 {% elseif data['suspension'] === 'sp' %}
   <a href="restart-sp" class="govuk-link govuk-link--no-visited-state">Restart State Pension payments.</a>
+  {% elseif data['restart'] === 'pc' %}
+    <a href="restart-sp" class="govuk-link govuk-link--no-visited-state">Restart State Pension payments.</a>
+    {% elseif data['restart'] === 'sp' %}
+  <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments.</a>
 {% else %}
   <a href="restart" class="govuk-link govuk-link--no-visited-state">Restart payments.</a>
 {% endif %}
 
 </strong>
 </div>
+
 
 
         <h2 class="govuk-heading-m">Personal details</h2>
