@@ -1,0 +1,140 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Bank account name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+
+    <form method="post" action="payment">
+
+
+      <h2 class="govuk-heading-l">
+        Check details before updating record
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Which payment account do you want to change?
+          </dt>
+          <dd class="govuk-summary-list__value" style="width:50%;">
+            {% if data['which-benefits'] %}
+              {{ data['which-benefits'] }}
+            {% else %}
+              State Pension and Pension Credit
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" c>
+            Account holder name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['accountHolder'] %}
+              {{ data['accountHolder'] }}
+            {% else %}
+              John Doe
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Sort code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['sortCode'] %}
+              {{ data['sortCode'] }}
+            {% else %}
+              112233
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Account number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['accountNumber'] %}
+              {{ data['accountNumber'] }}
+            {% else %}
+              12345678
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Building society roll or reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['rollNumber'] %}
+              {{ data['rollNumber'] }}
+            {% else %}
+              Not provided
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Bank name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            LLoyds
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Confirm
+</button>
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
