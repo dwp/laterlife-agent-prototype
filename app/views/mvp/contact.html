@@ -53,137 +53,92 @@
 
         <h2 class="govuk-heading-m">Contact details</h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      12 Park Place<br>
-      Carron<br>
-      AB38 6HB
-    </dd>
-    <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-address">Change</a>
-    </dd>
-  </div>
+
+        <table class="govuk-table">
 
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-    Correspondence address
-    </dt>
-    <dd class="govuk-summary-list__value">
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="change-correspondence">
-        <span class="govuk-visually-hidden"> </span></a>
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-    Home phone number
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {% if data['homephone-remove'] === 'yes' %}
-      {% elseif data.homephone %}
-      {{data.homephone}}
-      {% else %}
-      01632 960005
-      {% endif %}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="change-home-phone">
-        {% if data.homephone %}
-          <a class="govuk-link" href="change-home-phone">Change</a>
-          <a class="govuk-link" href="remove-home-phone">Remove</a>
-        {% else %}
-        <a class="govuk-link" href="change-home-phone">Change</a>
-        <a class="govuk-link" href="remove-home-phone">Remove</a>
-        {% endif %}
-
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-    Mobile phone number
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {% if data['mobilephone-remove'] === 'yes' %}
-      {% elseif data.mobilephone %}
-      {{data.mobilephone}}
-      {% else %}
-
-      {% endif %}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="change-mobile-phone">
-        {% if data.mobilephone %}
-          <a class="govuk-link" href="change-mobile-phone">Change</a>
-          <a class="govuk-link" href="change-mobile-phone">Remove</a>
-        {% else %}
-      <a class="govuk-link" href="remove-mobile-phone">Add</a>
-        {% endif %}
-        <span class="govuk-visually-hidden"> </span></a>
-    </dd>
-  </div>
+          <tbody class="govuk-table__body">
 
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-  Email address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {% if data['email-remove'] === 'yes' %}
-      {% elseif data.email %}
-      {{data.email}}
-      {% else %}
-      {% endif %}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="change-email">
-        {% if data.email %}
-          <a class="govuk-link" href="change-email">Change</a>
-          <a class="govuk-link" href="change-email">Remove</a>
-        {% else %}
-      <a class="govuk-link" href="remove-email">Add</a>
-        {% endif %}
-        <span class="govuk-visually-hidden"> </span></a>
-    </dd>
-  </div>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 47%"><b>Address</b></td>
+              <td class="govuk-table__cell"style="width: 43%">	12 Park Place<br>
+                Carron<br>
+                AB38 6HB</td>
+              <td class="govuk-table__cell"style="width: 5%"></td>
+              <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-address">Change</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 47%"><b>Correspondence address</b></td>
+              <td class="govuk-table__cell"style="width: 43%"></td>
+              <td class="govuk-table__cell"style="width: 5%"></td>
+              <td class="govuk-table__cell"style="width: 5%"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 47%"><b>Home phone number</b></td>
+              <td class="govuk-table__cell"style="width: 43%">
+                {% if data['homephone-remove'] === 'yes' %}
+                    {% elseif data.homephone %}
+                    {{data.homephone}}
+                    {% else %}
+                    01632 960005
+                    {% endif %}</td>
+
+                    {% if data.homephone %}
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-home-phone">Change</a></td>
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-home-phone">Remove</a></td>
+                    {% else %}
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-home-phone">Change</a></td>
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-home-phone">Remove</a></td>
+                    {% endif %}
 
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-  Alternative format for letters
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {% if data['alt-format-remove'] === 'Yes' %}
-      {% elseif data['altformat'] === 'none' %}
-      {% elseif data.altformat %}
-      {{data.altformat}}
-      {% else %}
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 47%"><b>Mobile phone number</b></td>
+              <td class="govuk-table__cell"style="width: 43%">
+                {% if data['mobilephone-remove'] === 'yes' %}
+                    {% elseif data.mobilephone %}
+                    {{data.mobilephone}}
+                    {% else %}
+                    {% endif %}</td>
 
-      {% endif %}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="change-alt-format">
-        {% if data['altformat-remove'] === 'yes' %}
-        Add
-        {% elseif data['altformat'] === 'none' %}
-        Add
-        {% elseif data.altformat %}
-        Change
-        {% else %}
-        Add
-        {% endif %}
-        <span class="govuk-visually-hidden"> </span></a>
-    </dd>
-  </div>
+                    {% if data.mobilephone %}
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-mobile-phone">Change</a></td>
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-mobile-phone">Remove</a></td>
+                    {% else %}
+                    <td class="govuk-table__cell" style="width: 5%"><a class="govuk-link" href=""></a></td>
+                    <td class="govuk-table__cell" style="text-align: right" style="width: 5%"><a class="govuk-link" href="add-mobile-phone">Add</a></td>
+                    {% endif %}
+            </tr>
 
-</dl>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 47%"><b>Email address</b></td>
+              <td class="govuk-table__cell"style="width: 43%">
+                {% if data['email-remove'] === 'yes' %}
+                    {% elseif data.email %}
+                    {{data.email}}
+                    {% else %}
+                    {% endif %}</td>
+
+                    {% if data.email %}
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-email">Change</a></td>
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-email">Remove</a></td>
+                    {% else %}
+                    <td class="govuk-table__cell" style="width: 5%"><a class="govuk-link" href=""></a></td>
+                    <td class="govuk-table__cell" style="text-align: right" style="width: 5%"><a class="govuk-link" href="add-email">Add</a></td>
+                    {% endif %}
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 47%"><b>Alternative format for letters</b></td>
+              <td class="govuk-table__cell"style="width: 43%"></td>
+              <td class="govuk-table__cell"style="width: 5%"></td>
+              <td class="govuk-table__cell"style="width: 5%"></td>
+            </tr>
+
+            </tbody>
+            </table>
 
 
 
