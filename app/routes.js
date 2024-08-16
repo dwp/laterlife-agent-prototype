@@ -101,7 +101,7 @@ router.post('/mvp/change-bank', function (req, res) {
   if (req.body['changebank'] === 'pc') {
     res.redirect('bank-details-pc')
   } else if (req.body['changebank'] === 'sp') {
-    res.redirect('bank-uk-overseas')
+    res.redirect('bank-details-sp-uk')
   } else if (req.body['changebank'] === 'both') {
     res.redirect('bank-details')
   } else {
@@ -110,13 +110,6 @@ router.post('/mvp/change-bank', function (req, res) {
 })
 
 
-router.post('/mvp/bank-uk-overseas', function (req, res) {
-  if (req.body['bankukoverseas'] === 'uk') {
-    res.redirect('bank-details-sp-uk')
-  } else {
-    res.redirect('bank-details-sp-overseas')
-  }
-})
 
 router.post('/mvp/restart', function (req, res) {
   if (req.body['restart'] === 'both') {

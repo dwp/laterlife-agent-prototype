@@ -40,93 +40,77 @@
         Check details before updating record
       </h2>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Which payment account do you want to change?
-          </dt>
-          <dd class="govuk-summary-list__value" style="width:50%;">
-            {% if data['which-benefits'] %}
-              {{ data['which-benefits'] }}
-            {% else %}
-              State Pension and Pension Credit
-            {% endif %}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" c>
-            Account holder name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['accountHolder'] %}
-              {{ data['accountHolder'] }}
-            {% else %}
-              John Doe
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Sort code
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['sortCode'] %}
-              {{ data['sortCode'] }}
-            {% else %}
-              112233
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Account number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['accountNumber'] %}
-              {{ data['accountNumber'] }}
-            {% else %}
-              12345678
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Building society roll or reference number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['rollNumber'] %}
-              {{ data['rollNumber'] }}
-            {% else %}
-              Not provided
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Bank name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            LLoyds
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-      </dl>
-
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Which payment do you need to update account details for?</th>
+            <td class="govuk-table__cell" style="width: 50%">
+                  {% if data['changebank'] === 'pc' %}
+                  Pension Credit only
+                  {% elseif data['changebank'] === 'sp' %}
+                  State Pension only
+                  {% else %}
+                  Both Pension Credit and State Pension
+                  {% endif %}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Account holder name</th>
+            <td class="govuk-table__cell">
+                              {% if data['changebank'] === 'pc' %}
+                              {{data.pcaccountname}}
+                              {% elseif data['changebank'] === 'sp' %}
+                              {{data.spaccountname}}
+                              {% else %}
+                              {{data.accountname}}
+                              {% endif %}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Sort code</th>
+            <td class="govuk-table__cell">
+              {% if data['changebank'] === 'pc' %}
+              {{data.pcsortcode}}
+              {% elseif data['changebank'] === 'sp' %}
+              {{data.spsortcode}}
+              {% else %}
+              {{data.sortcode}}
+              {% endif %}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Account number</th>
+            <td class="govuk-table__cell">
+              {% if data['changebank'] === 'pc' %}
+              {{data.pcaccountnumber}}
+              {% elseif data['changebank'] === 'sp' %}
+              {{data.spaccountnumber}}
+              {% else %}
+              {{data.accountnumber}}
+              {% endif %}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Building society roll or reference number</th>
+            <td class="govuk-table__cell">
+              {% if data['changebank'] === 'pc' %}
+                {{data.pcrollnumber}}
+              {% elseif data['changebank'] === 'sp' %}
+                {{data.sprollnumber}}
+              {% else %}
+                {{data.rollnumber}}
+              {% endif %}</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Bank name</th>
+              <td class="govuk-table__cell">
+                Lloyds</td>
+            </tr>
+        </tbody>
+      </table>
 
 
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Confirm
 </button>
+
 
 
     </div>
