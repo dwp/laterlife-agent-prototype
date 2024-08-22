@@ -35,15 +35,16 @@
 
     <form method="post" action="payment">
 
+      <span class="govuk-caption-l">Pension Credit and State Pension</span>
 
       <h2 class="govuk-heading-l">
-        Check details before updating record
+        Check the details before updating their record
       </h2>
 
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Which payment do you need to update account details for?</th>
+            <th scope="row" class="govuk-table__header">Update account details for</th>
             <td class="govuk-table__cell" style="width: 50%">
                   {% if data['changebank'] === 'pc' %}
                   Pension Credit only
