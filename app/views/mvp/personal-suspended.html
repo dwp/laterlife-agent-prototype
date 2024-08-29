@@ -67,7 +67,7 @@ Pension Credit
 {% else %}
   Pension Credit and State Pension
 {% endif %}
-payments have been suspended pending investigation.
+payments have been suspended for investigation.
 {% if data['suspension'] === 'pc' %}
   <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments.</a>
 {% elseif data['suspension'] === 'sp' %}
@@ -162,11 +162,11 @@ payments have been suspended pending investigation.
 
 {% if data['suspension'] === 'pc' %}
 <p class="govuk-body">
-<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend State Pension</a>
+<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend State Pension or move the record</a>
 </p>
 {% elseif data['suspension'] === 'sp' %}
 <p class="govuk-body">
-<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend Pension Credit</a>
+<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend Pension Credit or move the record</a>
 </p>
 {% else %}
 {% endif %}
@@ -184,21 +184,21 @@ payments have been suspended pending investigation.
 
       {% if data['suspension'] === 'pc' %}
       <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended pending investigation</h2>
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended for investigation</h2>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
         <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
       </li>
       {% elseif data['suspension'] === 'sp' %}
       <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended pending investigation</h2>
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended for investigation</h2>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
         <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
       </li>
       {% else %}
       <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension suspended pending investigation</h2>
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension suspended for investigation</h2>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
         <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
