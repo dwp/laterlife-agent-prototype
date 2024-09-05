@@ -1,0 +1,225 @@
+{% extends "layouts/main-without-back.html" %}
+
+{% set pageName = "Index" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">{{serviceName}} prototype</h1>
+
+      <p>The project is currently in Alpha.</p>
+
+      <p>If you have any questions contact:
+        <br>
+        <a href="mailto:eleanor.langton@hmrc.gov.uk">Ellie Langton</a> (Product Manager)
+        <br>
+      </p>
+     
+      <p>UCD team:
+        <br>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>Jen Weston-Charles (Interaction Designer)</li>
+        <li>Rachel McKinnie (Content Designer)</li>
+        <li>Madison Rear (User Researcher)</li>
+       </ul>
+      </p>
+      <h2 class="govuk-heading-l">Prototype</h2>
+
+      <h2 class="govuk-heading-m">Current prototype version</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Version</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Updates made</th>
+          </tr>
+        </thead>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/v4">Version 4</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Iterated minor content changes to improve clarity</li>
+              <li>Kept the check your answers pattern for decline journey based on feedback from the internal crit</li>
+              <li>Removed the GOV.UK page from the underpaid and overpaid journeys as was not needed for user testing</li>
+              <li>Added a link back to the dashboard at the end of the user journeys</li>
+              <li>Created mockups of stand alone dashboard scenarios</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">Previous prototype versions</span>
+
+        </summary>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Version</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date created</th>
+              <th scope="col" class="govuk-table__header">Updates made</th>
+            </tr>
+          </thead>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="v1/start">Version 1</a>
+            </td>
+            <td class="govuk-table__cell">February 2024</td>
+            <td class="govuk-table__cell">
+              Prototype standard payment user journey. 
+              Pages include:
+              <ul class="govuk-list govuk-list--bullet">
+                <br>
+                <li>GOV.UK page</li>
+                <li>Temporary sign in page</li>
+                <li>Calculation breakdown</li>
+                <li>Make a decision page</li>
+                <li>Accept or decline</li>
+                <li>Bank details</li>
+                <li>Check your answers</li>
+                <li>Confirmation pages</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="v2/start">Version 2</a>
+            </td>
+            <td class="govuk-table__cell">March 2024</td>
+            <td class="govuk-table__cell">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Mockup are you sure page</li>
+                <li>Check you answers: layout change to split account details into its own section</li>
+                <li>Check you answers: add field name for each field for account details section</li>
+                <li>Confirmation page: remove reference number</li>
+                <li>Iterated content on the calculation breakdown, make a decision and confirmation pages</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="/v3">Version 3</a>
+            </td>
+            <td class="govuk-table__cell">March - April 2024</td>
+            <td class="govuk-table__cell">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Split into 3 journeys standard payment, underpaid and overpaid</li>
+                <li>Underpaid: updated content on the calculation breakdown</li>
+                <li>Updated content on the make a decision page and the decline confirmation page to say the payment is still available</li>
+              </ul>
+            </td>
+          </tr>
+
+        </table>
+      </details>
+
+      <h2 class="govuk-heading-l govuk-!-padding-top-6">Dashboard scenarios</h2>
+      <p class="govuk-body">Additional dashboard scenarios that have been mocked up, but do not form part of the prototype flows.</p>
+      <h2 class="govuk-heading-m">Dashboards</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Title</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Notes</th>
+          </tr>
+        </thead>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/standard-dashboard-decline">Standard journey: declined</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard if the user has declined the payment. Note that the status chip still reads 'payment available'.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/standard-dashboard-accepted-pending">Standard journey: payment pending</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard for when the user has accepted the payment and the payment is pending.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/standard-dashboard-accepted-paid">Standard journey: payment accepted</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard if the user has accepted and payment has been made.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/underpaid-dashboard-accepted-pending">Underpaid journey: payment pending</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard if the user has accepted an additional payment and the payment is pending.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/underpaid-dashboard-accepted-paid">Underpaid journey: payment accepted</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard if the user has accepted an additional payment and the payment has been made.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/overpaid-dashboard-repaid">Overpaid journey: payment repaid</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard if the user has repaid HMRC.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/overpaid-dashboard-overdue">Overpaid journey: payment overdue</a>
+          </td>
+          <td class="govuk-table__cell">April 2024</td>
+          <td class="govuk-table__cell">
+            Dashboard if the user has not repaid HMRC before the 90 days, and the case has been been passed to Debt Management. 
+          </td>
+        </tr>
+      </table>
+
+      <h2 class="govuk-heading-l govuk-!-padding-top-6">Standalone pages</h2>
+      <p class="govuk-body">Standalone pages and components that are not part of a journey in the prototype, and were built to experiment with layout and style.</p>
+      <h2 class="govuk-heading-m">Pages and components</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Title</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Notes</th>
+          </tr>
+        </thead>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="components/are-you-sure">Are you sure page</a>
+          </td>
+          <td class="govuk-table__cell">March 2024</td>
+          <td class="govuk-table__cell">
+            Mockup of a page asking the user if they're sure they want to decline. This page was not tested with users and will not be used in the journey as we are using the check your answers format instead.
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+{% endblock %}
