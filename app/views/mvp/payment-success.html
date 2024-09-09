@@ -19,7 +19,18 @@
 
 {% block content %}
 
-
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Bank or building society details changed
+    </h3>
+  </div>
+</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -135,7 +146,7 @@
               {% endif %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-               Bank or building society name
+              Bank or building society name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   Lloyds
@@ -241,6 +252,12 @@
       <div class="dwp-timeline">
       <h1 class="govuk-heading-m">Payment changes</h1>
       <ol class="dwp-timeline__events">
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension bank or building society details changed</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Friday 6 September</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
+        </li>
       <li class="dwp-timeline__events--entry">
         <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Event</h2>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent/System/Online</p>

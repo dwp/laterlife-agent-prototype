@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Bank details {{ serviceName }} – GOV.UK Prototype Kit
+  Bank details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -34,45 +34,43 @@
 
 
     <form method="post" action="bank-name">
-      <span class="govuk-caption-l">Pension Credit</span>
+
+<span class="govuk-caption-l">Pension Credit and State Pension</span>
       <h2 class="govuk-heading-l">Where would they like to be paid?</h2>
 
-
       <div class="govuk-form-group">
-        <label class="govuk-label" for="pcaccountname">
+        <label class="govuk-label" for="accountname">
           Account holder name
         </label>
-        <input class="govuk-input" id="pcaccountname" name="pcaccountname" type="text" spellcheck="false">
+        <input class="govuk-input" id="accountname" name="accountname" type="text" spellcheck="false">
       </div>
-
       <div class="govuk-form-group">
-        <label class="govuk-label" for="pcsortcode">
+        <label class="govuk-label" for="sortcode">
           Sort code
         </label>
         <div id="sort-code-hint" class="govuk-hint">
           Must be 6 digits long. You do not need to type hyphens.
         </div>
-        <input class="govuk-input govuk-input--width-5" id="pcsortcode" name="pcsortcode" type="text" aria-describedby="pcsortcode-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+        <input class="govuk-input govuk-input--width-5" id="sortcode" name="sortcode" type="text" aria-describedby="sortcode-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
       </div>
-
       <div class="govuk-form-group">
-        <label class="govuk-label" for="pcaccountnumber">
+        <label class="govuk-label" for="accountnumber">
           Account number
         </label>
         <div id="account-number-hint" class="govuk-hint">
           Must be between 6 and 8 digits long
         </div>
-        <input class="govuk-input govuk-input--width-10" id="pcaccountnumber" name="pcaccountnumber" type="text" aria-describedby="pcaccountnumber-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+        <input class="govuk-input govuk-input--width-10" id="accountnumber" name="accountnumber" type="text" aria-describedby="accountnumber-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="pcrollnumber">
+        <label class="govuk-label" for="rollnumber">
           Building society roll or reference number (if they have one)
         </label>
         <div id="roll-number-hint" class="govuk-hint">
           They can find it on their card, statement or passbook
         </div>
-        <input class="govuk-input govuk-input--width-10" id="pcrollnumber" name="pcrollnumber" type="text" aria-describedby="pcrollnumber-hint" spellcheck="false">
+        <input class="govuk-input govuk-input--width-10" id="rollnumber" name="rollnumber" type="text" aria-describedby="rollnumber-hint" spellcheck="false">
       </div>
 
 

@@ -1,0 +1,167 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Bank account name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+
+    <form method="post" action="payment-success">
+
+      <span class="govuk-caption-l">Pension Credit and State Pension</span>
+
+      <h2 class="govuk-heading-l">
+        Check the details before updating their record
+      </h2>
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Update account details for"
+            },
+            value: {
+              text: data['changebank'] 
+            },
+            actions: {
+              items: [
+                {
+                  href: "/mvp/change-bank",
+                  text: "Change",
+                  visuallyHiddenText: "Update account details for"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Account holder name"
+            },
+            value: {
+              text: data['accountname']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/mvp/bank-details",
+                  text: "Change",
+                  visuallyHiddenText: "Account holder name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: data['sortcode']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "Sort code"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: data['accountnumber']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "Account number"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Building society roll or reference number"
+            },
+            value: {
+              text: data['rollnumber']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "Building society roll or reference number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is the bank or building society name 
+Lloyds?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 6"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/confirmation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+
+      </form>
+
+
+  </div>
+
+{% endblock %}
