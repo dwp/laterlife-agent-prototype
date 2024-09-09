@@ -32,13 +32,14 @@
   })
 }}
 
-
-    <form method="post" action="bank-cya-v2">
-
-
       <div class="govuk-form-group">
-        <span class="govuk-caption-l">Pension Credit and State Pension</span>
-
+        <span class="govuk-caption-l">{% if data['changebank'] === 'Pension Credit' %}
+          Pension Credit
+          {% elseif data['changebank'] === 'State Pension' %}
+          State Pension
+          {% else %}
+          Pension Credit and State Pension
+          {% endif %}</span> 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
               Is this the name of their bank or building society?
@@ -49,35 +50,32 @@
           </legend>
 
 
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="bank-name" name="bank-name" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="bank-name">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="bank-name-2" name="bank-name" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="bank-name-2">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
+          <form class="form" action="/changed-bank-answer" method="post">
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "changed-bank",
+  value: data['changed-bank'],
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
 
-
-
+          <br>
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
 </button>
 
-
+</form>
     </div>
-
-
-
 
 
   </div>
