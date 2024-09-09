@@ -42,6 +42,7 @@ Bank details – {{ serviceName }} – GOV.UK Prototype Kit
         <label class="govuk-label" for="spaccountname">
           Account holder name
         </label>
+
         <input class="govuk-input" id="spaccountname" name="spaccountname" type="text" spellcheck="false">
       </div>
 
@@ -49,6 +50,9 @@ Bank details – {{ serviceName }} – GOV.UK Prototype Kit
         <label class="govuk-label" for="spsortcode">
           Sort code
         </label>
+        <div id="sort-code-hint" class="govuk-hint">
+          Must be 6 digits long. You do not need to type hyphens.
+        </div>
         <input class="govuk-input govuk-input--width-5" id="spsortcode" name="spsortcode" type="text" aria-describedby="spsortcode-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
       </div>
 
@@ -56,13 +60,19 @@ Bank details – {{ serviceName }} – GOV.UK Prototype Kit
         <label class="govuk-label" for="spaccountnumber">
           Account number
         </label>
+        <div id="account-number-hint" class="govuk-hint">
+          Must be between 6 and 8 digits long
+        </div>
         <input class="govuk-input govuk-input--width-10" id="spaccountnumber" name="spaccountnumber" type="text" aria-describedby="spaccountnumberhint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="sprollnumber">
-          Building society roll or reference number
+          Building society roll or reference number (if they have one)
         </label>
+        <div id="roll-number-hint" class="govuk-hint">
+          They can find it on their card, statement or passbook
+        </div>
         <input class="govuk-input govuk-input--width-10" id="sprollnumber" name="sprollnumber" type="text" aria-describedby="sprollnumberhint" spellcheck="false">
       </div>
 
