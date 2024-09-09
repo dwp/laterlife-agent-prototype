@@ -35,7 +35,13 @@
 
     <form method="post" action="bank-name">
 
-<span class="govuk-caption-l">Pension Credit and State Pension</span>
+      <span class="govuk-caption-l">{% if data['changebank'] === 'Pension Credit' %}
+        Pension Credit
+        {% elseif data['changebank'] === 'State Pension' %}
+        State Pension
+        {% else %}
+        Pension Credit and State Pension
+        {% endif %}</span> 
       <h2 class="govuk-heading-l">Where would they like to be paid?</h2>
 
       <div class="govuk-form-group">

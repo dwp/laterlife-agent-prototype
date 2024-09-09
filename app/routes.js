@@ -8,75 +8,21 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-// MVP VERSION 0
-
-// Run this code when a form is submitted to 'location-of-account'
-router.post('/location-of-account', function (req, res) {
-
-    // Make a variable and give it the value from 'account-location'
-    var accountLocation = req.session.data['account-location']
-
-    // Check whether the variable matches a condition
-    if (accountLocation == "uk"){
-      // Send user to next page
-      res.redirect('/mvp/0/account-change/account-details')
-    } else {
-      // Send user to ineligible page
-      res.redirect('/mvp/0/account-change/overseas')
-    }
-
-  });
+// MVP VERSION 2
 
 
-// Run this code when a form is submitted to 'location-of-account' in option 1 nav
-router.post('/location-of-account0', function (req, res) {
-
-  // Make a variable and give it the value from 'account-location'
-  var accountLocation0 = req.session.data['account-location']
-
-  // Check whether the variable matches a condition
-  if (accountLocation0 == "uk"){
-    // Send user to next page
-    res.redirect('/mvp/0/nav-options/option-1-full/account-change/account-details')
-  } else {
-    // Send user to ineligible page
-    res.redirect('/mvp/0/nav-options/option-1-full/account-change/overseas')
-  }
-
-});
-
-
-
-// Run this code when a form is submitted to 'confirm-bank-name'
-router.post('/confirm-bank-name', function (req, res) {
+// Run this code when a form is submitted to 'bank-name-answer'
+router.post('/changed-bank-answer', function (req, res) {
 
   // Make a variable and give it the value from 'confirm-bank'
-  var bankNameConfirm = req.session.data['confirm-bank']
+  var bankNameConfirm = req.session.data['changed-bank']
 
   // Check whether the variable matches a condition
   if (bankNameConfirm == "yes"){
     // Send user to next page
-    res.redirect('/mvp/bank-cya-v2')
+    res.redirect('/mvp/bank-cya')
   } else {
-    // Send user bank to enter account details page
-    res.redirect('/mvp/bank-name-incorrect')
-  }
-
-});
-
-
-// Run this code when a form is submitted to 'confirm-bank-name' in option 1 nav
-router.post('/confirm-bank-name0', function (req, res) {
-
-  // Make a variable and give it the value from 'confirm-bank'
-  var bankNameConfirm0 = req.session.data['confirm-bank']
-
-  // Check whether the variable matches a condition
-  if (bankNameConfirm0 == "yes"){
-    // Send user to next page
-    res.redirect('/mvp/bank-cya-v2')
-  } else {
-    // Send user bank to enter account details page
+    // Send user to name incorrect page 
     res.redirect('/mvp/bank-name-incorrect')
   }
 
@@ -96,19 +42,6 @@ router.post('/mvp/stop-benefit', function (req, res) {
   }
 })
 
-// redirecting to different pages - can we just update the heading field dynamically on the same page instead? 
-
-router.post('/mvp/change-bank', function (req, res) {
-  if (req.body['changebank'] === 'Pension Credit') {
-    res.redirect('bank-details-pc')
-  } else if (req.body['changebank'] === 'State Pension') {
-    res.redirect('bank-details-sp-uk')
-  } else if (req.body['changebank'] === 'Both Pension Credit and State Pension') {
-    res.redirect('bank-details')
-  } else {
-    res.redirect('change-bank')
-  }
-})
 
 
 

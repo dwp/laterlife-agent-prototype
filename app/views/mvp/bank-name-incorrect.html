@@ -37,7 +37,13 @@
 
 
       <div class="govuk-form-group">
-        <span class="govuk-caption-l">Pension Credit and State Pension</span>
+        <span class="govuk-caption-l">{% if data['changebank'] === 'Pension Credit' %}
+          Pension Credit
+          {% elseif data['changebank'] === 'State Pension' %}
+          State Pension
+          {% else %}
+          Pension Credit and State Pension
+          {% endif %}</span> 
 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
