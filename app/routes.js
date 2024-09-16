@@ -29,6 +29,58 @@ router.post('/changed-bank-answer', function (req, res) {
 });
 
 
+// Run this code when a form is submitted to remove a contact - email 'contact-remove-email'
+router.post('/contact-remove-email', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var ContactRemove = req.session.data['email-remove']
+
+  // Check whether the variable matches a condition
+  if (ContactRemove == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/contact-success')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/contact')
+  }
+
+});
+
+// Run this code when a form is submitted to remove a contact - homephone 'contact-remove-homephone'
+router.post('/contact-remove-homephone', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var ContactRemove = req.session.data['homephone-remove']
+
+  // Check whether the variable matches a condition
+  if (ContactRemove == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/contact-success')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/contact')
+  }
+
+});
+
+// Run this code when a form is submitted to remove a contact - mobile 'contact-remove-mobile'
+router.post('/contact-remove-mobile', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var ContactRemove = req.session.data['mobilephone-remove']
+
+  // Check whether the variable matches a condition
+  if (ContactRemove == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/contact-success')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/contact')
+  }
+
+});
+
+
 
 // MVP routes
 
