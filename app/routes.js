@@ -80,34 +80,63 @@ router.post('/contact-remove-mobile', function (req, res) {
 
 });
 
-
-
-// MVP routes
-
+// Run this code when a wants to suspend a benefit 
 router.post('/mvp/stop-benefit', function (req, res) {
   if  (req.body['stopbenefit'] === 'suspend') {
     res.redirect('suspend-benefit')
-  } else if (req.body['stopbenefit'] === 'legacy') {
-    res.redirect('legacy-benefit')
+  } else if (req.body['stopbenefit'] === 'death') {
+    res.redirect('personal-suspended-death')
   } else {
     res.redirect('stop-benefit')
   }
 })
 
 
-
-
+// Run this code when a user has stopped both SP & PC and then they want to start a payment again
 router.post('/mvp/restart', function (req, res) {
   if (req.body['restart'] === 'both') {
     res.redirect('personal-restarted')
   } else if (req.body['restart'] === 'sp') {
-    res.redirect('personal-suspended')
+    res.redirect('personal-restarted')
   } else if (req.body['restart'] === 'pc') {
-    res.redirect('personal-suspended')
+    res.redirect('personal-restarted')
   }
 })
 
+// Run this code when a user wants to restart PC payments - radio buttons 
+router.post('/changed-restart-answer', function (req, res) {
 
+  // Make a variable and give it the value from 'personal restarted'
+  var restartPayments = req.session.data['restart-pc']
+
+  // Check whether the variable matches a condition
+  if (restartPayments == "yes"){
+    // Send user to restart page
+    res.redirect('/mvp/personal-restarted')
+  } else {
+    // Send user to suspended page
+    res.redirect('/mvp/personal-suspended')
+  }
+
+});
+
+
+// Run this code when a user wants to restart SP payments - radio buttons 
+router.post('/changed-restart-answer-sp', function (req, res) {
+
+  // Make a variable and give it the value from 'personal restarted'
+  var restartPaymentsSP = req.session.data['restart-sp']
+
+  // Check whether the variable matches a condition
+  if (restartPaymentsSP == "yes"){
+    // Send user to restart page
+    res.redirect('/mvp/personal-restarted')
+  } else {
+    // Send user to suspended page
+    res.redirect('/mvp/personal-suspended')
+  }
+
+});
 
 //-------------------------------------------------------------------
 

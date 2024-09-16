@@ -19,7 +19,6 @@
 
 {% block content %}
 
-
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -28,21 +27,11 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      {% if data['suspension'] === 'pc' %}
-  Pension Credit
-{% elseif data['suspension'] === 'sp' %}
-State Penison
-{% elseif data['restart'] === 'pc' %}
-State Pension
-  {% elseif data['restart'] === 'sp' %}
-Pension Credit
-{% else %}
-  Pension Credit and State Pension
-{% endif %}
-payments have been restarted
+      Charlotte has died so Pension Credit and State Pension payments have been stopped
     </h3>
   </div>
 </div>
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -75,6 +64,16 @@ payments have been restarted
 
 </nav>
 
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    Charlotte has died so Pension Credit and State Pension 
+payments have been stopped. You must complete the next 
+steps offline.
+
+  </strong>
+</div>
         <h2 class="govuk-heading-m">Personal details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-7">
@@ -149,87 +148,44 @@ payments have been restarted
   </div>
 </dl>
 
-
-<p class="govuk-body">
-  <a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop or suspend payments</a>
-</p>
-
-
     </div>
-
-
     <div class="govuk-grid-column-one-third">
 
-    <div class="dwp-timeline">
-    <h1 class="govuk-heading-m">Action history</h1>
-    <ol class="dwp-timeline__events">
+      <div class="dwp-timeline">
+      <h1 class="govuk-heading-m">Action history</h1>
+      <ol class="dwp-timeline__events">
+  
+  
 
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Death reported, payments stopped</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
+        </li>
 
-      {% if data['suspension'] === 'pc' %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit restarted</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% elseif data['suspension'] === 'sp' %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension restarted</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% else %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension restarted</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% endif %}
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended for investigation</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
+        </li>
 
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended for investigation</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
+        </li>
 
+        <li class="dwp-timeline__events--entry">
+          <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+          </li>
 
-
-    <li class="dwp-timeline__events--entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit claim received</h2>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">Online</p>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">12 Janurary 2024</p>
-      <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
-    </li>
-    <li class="dwp-timeline__events--entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension claim received</h2>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">Online</p>
-      <p class="govuk-caption-m">7 November 2023</p>
-    </li>
-    <li class="dwp-timeline__events--entry">
-    <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
-    </li>
-    </ol>
+      </div>
+  
+  
+  
     </div>
-
-    </div>
-
-
-
-  </div>
-
-{% endblock %}
+  
+  {% endblock %}

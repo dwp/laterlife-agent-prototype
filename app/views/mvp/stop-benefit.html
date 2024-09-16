@@ -33,7 +33,7 @@
 }}
 
 
-      <h2 class="govuk-heading-l">What do you want to do?</h2>
+      <h2 class="govuk-heading-l">Why are you stopping the claimant's payments?</h2>
 
     <form class="form" method="post">
 
@@ -41,20 +41,22 @@
         <fieldset class="govuk-fieldset">
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-2" name="stopbenefit" type="radio" value="suspend">
-              <label class="govuk-label govuk-radios__label" for="stopbenefit-2">
-            Temporarily suspend payments
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit" name="stopbenefit" type="radio" value="legacy">
+              <input class="govuk-radios__input" id="stopbenefit" name="stopbenefit" type="radio" value="death">
               <label class="govuk-label govuk-radios__label" for="stopbenefit">
-            Move the record outside of this service
+            Claimant has died 
               </label>
             </div>
-          </div>
+         
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="stopbenefit-2" name="stopbenefit" type="radio" value="suspend">
+                  <label class="govuk-label govuk-radios__label" for="stopbenefit-2">
+                Temporary suspend for investigation
+                  </label>
+                </div>
+              </div>
         </fieldset>
       </div>
+
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Continue

@@ -20,6 +20,30 @@
 {% block content %}
 
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      {% if data['suspension'] === 'pc' %}
+  Pension Credit
+{% elseif data['suspension'] === 'sp' %}
+State Penison
+{% elseif data['restart'] === 'pc' %}
+State Pension
+  {% elseif data['restart'] === 'sp' %}
+Pension Credit
+{% else %}
+  Pension Credit and State Pension
+{% endif %}
+payments have been suspended for investigation.
+    </h3>
+  </div>
+</div>
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -51,6 +75,7 @@
   </ul>
 
 </nav>
+
 
 <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -162,15 +187,17 @@ payments have been suspended for investigation.
 
 {% if data['suspension'] === 'pc' %}
 <p class="govuk-body">
-<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend State Pension or move the record</a>
+<a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop payments or suspend State Pension</a>
 </p>
 {% elseif data['suspension'] === 'sp' %}
 <p class="govuk-body">
-<a href="#" class="govuk-link govuk-link--no-visited-state">Temporarily suspend Pension Credit or move the record</a>
+<a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop payments or suspend Pension Credit</a>
 </p>
 {% else %}
+<p class="govuk-body">
+  <a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop payments</a>
+  </p>
 {% endif %}
-
 
     </div>
 
