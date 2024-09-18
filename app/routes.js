@@ -38,7 +38,7 @@ router.post('/contact-remove-email', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/mvp/contact-success')
+    res.redirect('/mvp/contact-success-remove-email')
   } else {
     // Send user to name incorrect page 
     res.redirect('/mvp/contact')
@@ -55,7 +55,7 @@ router.post('/contact-remove-homephone', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/mvp/contact-success')
+    res.redirect('/mvp/contact-success-remove-homephone.html')
   } else {
     // Send user to name incorrect page 
     res.redirect('/mvp/contact')
@@ -72,7 +72,7 @@ router.post('/contact-remove-mobile', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/mvp/contact-success')
+    res.redirect('/mvp/contact-success-remove-mobile')
   } else {
     // Send user to name incorrect page 
     res.redirect('/mvp/contact')
@@ -115,7 +115,7 @@ router.post('/changed-restart-answer', function (req, res) {
     res.redirect('/mvp/personal-restarted')
   } else {
     // Send user to suspended page
-    res.redirect('/mvp/personal-suspended')
+    res.redirect('/mvp/personal-suspended-no-success')
   }
 
 });
@@ -133,7 +133,7 @@ router.post('/changed-restart-answer-sp', function (req, res) {
     res.redirect('/mvp/personal-restarted')
   } else {
     // Send user to suspended page
-    res.redirect('/mvp/personal-suspended')
+    res.redirect('/mvp/personal-suspended-no-success')
   }
 
 });
