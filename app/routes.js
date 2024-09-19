@@ -91,27 +91,10 @@ router.post('/mvp/stop-benefit', function (req, res) {
   }
 })
 
-// Run this code when a wants to suspend a benefit - Death or SP only 
-router.post('/mvp/stop-benefit-suspend-SP', function (req, res) {
-  if  (req.body['stopbenefit-death-SP'] === 'suspend-3') {
-    res.redirect('suspend-benefit')
-  } else if (req.body['stopbenefit-death-SP'] === 'death-3') {
-    res.redirect('personal-suspended-death')
-  } else {
-    res.redirect('stop-benefit-suspend-SP')
-  }
-})
 
-// Run this code when a wants to suspend a benefit - Death or PC only 
-router.post('/mvp/stop-benefit-suspend-PC', function (req, res) {
-  if  (req.body['stopbenefit-death-PC'] === 'suspend-2') {
-    res.redirect('suspend-benefit')
-  } else if (req.body['stopbenefit-death-PC'] === 'death-2') {
-    res.redirect('personal-suspended-death')
-  } else {
-    res.redirect('stop-benefit-suspend-PC')
-  }
-})
+
+
+
 
 
 // Run this code when a user has stopped both SP & PC and then they want to start a payment again
@@ -173,6 +156,43 @@ router.post('/confirm-death', function (req, res) {
   } else {
     // Send user to suspended page
     res.redirect('/mvp/personal-suspended-no-success')
+  }
+
+});
+
+
+
+// Run this code when a user wants to choose to suspend due to death or SP only
+router.post('/stop-benefit-death-sp', function (req, res) {
+
+  // Make a variable and give it the value from 'death confirm'
+  var confirmDeathSP = req.session.data['stopbenefit-death-sp']
+
+  // Check whether the variable matches a condition
+  if (confirmDeathSP == "death"){
+    // Send user to restart page
+    res.redirect('/mvp/personal-suspended-death')
+  } else {
+    // Send user to suspended page
+    res.redirect('/mvp/personal-suspended-sp')
+  }
+
+});
+
+
+// Run this code when a user wants to choose to suspend due to death or PC only
+router.post('/stop-benefit-death-pc', function (req, res) {
+
+  // Make a variable and give it the value from 'death confirm'
+  var confirmDeathPC = req.session.data['stopbenefit-death-pc']
+
+  // Check whether the variable matches a condition
+  if (confirmDeathPC == "death"){
+    // Send user to restart page
+    res.redirect('/mvp/personal-suspended-death')
+  } else {
+    // Send user to suspended page
+    res.redirect('/mvp/personal-suspended-pc')
   }
 
 });
