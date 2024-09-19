@@ -39,7 +39,7 @@ Pension Credit
 {% else %}
   Pension Credit and State Pension
 {% endif %}
-payments have been suspended for investigation.
+temporarily suspended for investigation
     </h3>
   </div>
 </div>
@@ -187,15 +187,15 @@ payments have been suspended for investigation.
 
 {% if data['suspension'] === 'pc' %}
 <p class="govuk-body">
-<a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop payments or suspend State Pension</a>
+<a href="stop-benefit-suspend-SP" class="govuk-link govuk-link--no-visited-state">Report death or suspend State Pension</a>
 </p>
 {% elseif data['suspension'] === 'sp' %}
 <p class="govuk-body">
-<a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop payments or suspend Pension Credit</a>
+<a href="stop-benefit-suspend-PC" class="govuk-link govuk-link--no-visited-state">Report death or suspend Pension Credit</a>
 </p>
 {% else %}
 <p class="govuk-body">
-  <a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Stop payments</a>
+  <a href="are-you-sure-death" class="govuk-link govuk-link--no-visited-state">Report death</a>
   </p>
 {% endif %}
 

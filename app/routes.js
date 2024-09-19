@@ -80,7 +80,7 @@ router.post('/contact-remove-mobile', function (req, res) {
 
 });
 
-// Run this code when a wants to suspend a benefit 
+// Run this code when a wants to suspend a benefit - Death or both 
 router.post('/mvp/stop-benefit', function (req, res) {
   if  (req.body['stopbenefit'] === 'suspend') {
     res.redirect('suspend-benefit')
@@ -88,6 +88,28 @@ router.post('/mvp/stop-benefit', function (req, res) {
     res.redirect('personal-suspended-death')
   } else {
     res.redirect('stop-benefit')
+  }
+})
+
+// Run this code when a wants to suspend a benefit - Death or SP only 
+router.post('/mvp/stop-benefit-suspend-SP', function (req, res) {
+  if  (req.body['stopbenefit-death-SP'] === 'suspend-3') {
+    res.redirect('suspend-benefit')
+  } else if (req.body['stopbenefit-death-SP'] === 'death-3') {
+    res.redirect('personal-suspended-death')
+  } else {
+    res.redirect('stop-benefit-suspend-SP')
+  }
+})
+
+// Run this code when a wants to suspend a benefit - Death or PC only 
+router.post('/mvp/stop-benefit-suspend-PC', function (req, res) {
+  if  (req.body['stopbenefit-death-PC'] === 'suspend-2') {
+    res.redirect('suspend-benefit')
+  } else if (req.body['stopbenefit-death-PC'] === 'death-2') {
+    res.redirect('personal-suspended-death')
+  } else {
+    res.redirect('stop-benefit-suspend-PC')
   }
 })
 
@@ -137,6 +159,25 @@ router.post('/changed-restart-answer-sp', function (req, res) {
   }
 
 });
+
+// Run this code when a user wants to confirm a death
+router.post('/confirm-death', function (req, res) {
+
+  // Make a variable and give it the value from 'death confirm'
+  var confirmDeath = req.session.data['death-confirm']
+
+  // Check whether the variable matches a condition
+  if (confirmDeath == "yes"){
+    // Send user to restart page
+    res.redirect('/mvp/personal-suspended-death')
+  } else {
+    // Send user to suspended page
+    res.redirect('/mvp/personal-suspended-no-success')
+  }
+
+});
+
+
 
 //-------------------------------------------------------------------
 
