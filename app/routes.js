@@ -94,15 +94,12 @@ router.post('/mvp/stop-benefit', function (req, res) {
 
 
 
-
-
-
 // Run this code when a user has stopped both SP & PC and then they want to start a payment again
 router.post('/mvp/restart', function (req, res) {
   if (req.body['restart'] === 'both') {
     res.redirect('personal-restarted')
   } else if (req.body['restart'] === 'sp') {
-    res.redirect('personal-restarted')
+    res.redirect('personal-restarted-sp')
   } else if (req.body['restart'] === 'pc') {
     res.redirect('personal-restarted-pc')
   }
@@ -117,7 +114,7 @@ router.post('/changed-restart-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (restartPayments == "yes"){
     // Send user to restart page
-    res.redirect('/mvp/personal-restarted')
+    res.redirect('/mvp/personal-restarted-pc')
   } else {
     // Send user to suspended page
     res.redirect('/mvp/personal-suspended-no-success')
@@ -135,7 +132,7 @@ router.post('/changed-restart-answer-sp', function (req, res) {
   // Check whether the variable matches a condition
   if (restartPaymentsSP == "yes"){
     // Send user to restart page
-    res.redirect('/mvp/personal-restarted')
+    res.redirect('/mvp/personal-restarted-sp')
   } else {
     // Send user to suspended page
     res.redirect('/mvp/personal-suspended-no-success')
