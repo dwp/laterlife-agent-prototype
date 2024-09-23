@@ -104,7 +104,7 @@ router.post('/mvp/restart', function (req, res) {
   } else if (req.body['restart'] === 'sp') {
     res.redirect('personal-restarted')
   } else if (req.body['restart'] === 'pc') {
-    res.redirect('personal-restarted')
+    res.redirect('personal-restarted-pc')
   }
 })
 
