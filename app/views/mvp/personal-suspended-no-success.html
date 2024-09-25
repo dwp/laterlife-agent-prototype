@@ -69,15 +69,15 @@ Pension Credit
 {% endif %}
 temporarily suspended for investigation
 {% if data['suspension'] === 'pc' %}
-  <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments.</a>
+  <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments</a>.
 {% elseif data['suspension'] === 'sp' %}
-  <a href="restart-sp" class="govuk-link govuk-link--no-visited-state">Restart State Pension payments.</a>
+  <a href="restart-sp" class="govuk-link govuk-link--no-visited-state">Restart State Pension payments</a>.
   {% elseif data['restart'] === 'pc' %}
-    <a href="restart-sp" class="govuk-link govuk-link--no-visited-state">Restart State Pension payments.</a>
+    <a href="restart-sp" class="govuk-link govuk-link--no-visited-state">Restart State Pension payments</a>.
     {% elseif data['restart'] === 'sp' %}
-  <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments.</a>
+  <a href="restart-pc" class="govuk-link govuk-link--no-visited-state">Restart Pension Credit payments</a>.
 {% else %}
-  <a href="restart" class="govuk-link govuk-link--no-visited-state">Restart payments.</a>
+  <a href="restart" class="govuk-link govuk-link--no-visited-state">Restart payments</a>.
 {% endif %}
 
 </strong>
