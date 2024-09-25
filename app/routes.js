@@ -171,7 +171,7 @@ router.post('/stop-benefit-death-sp', function (req, res) {
     res.redirect('/mvp/personal-suspended-death')
   } else {
     // Send user to suspended page
-    res.redirect('/mvp/personal-suspended-sp')
+    res.redirect('/mvp/personal-suspended-sp-both')
   }
 
 });
@@ -189,7 +189,7 @@ router.post('/stop-benefit-death-pc', function (req, res) {
     res.redirect('/mvp/personal-suspended-death')
   } else {
     // Send user to suspended page
-    res.redirect('/mvp/personal-suspended-pc')
+    res.redirect('/mvp/personal-suspended-pc-both')
   }
 
 });
