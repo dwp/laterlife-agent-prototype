@@ -158,6 +158,21 @@ State Penison payments have been suspended for investigation.
 </p>
 
 
+
+{% if data['suspension'] === 'pc' %}
+<p class="govuk-body">
+<a href="stop-benefit-suspend-sp" class="govuk-link govuk-link--no-visited-state">Report death or suspend State Pension</a>
+</p>
+{% elseif data['suspension'] === 'sp' %}
+<p class="govuk-body">
+<a href="stop-benefit-suspend-pc" class="govuk-link govuk-link--no-visited-state">Report death or suspend Pension Credit</a>
+</p>
+{% else %}
+<p class="govuk-body">
+  <a href="are-you-sure-death" class="govuk-link govuk-link--no-visited-state">Report death</a>
+  </p>
+{% endif %}
+
     </div>
 
 
@@ -168,30 +183,12 @@ State Penison payments have been suspended for investigation.
     <ol class="dwp-timeline__events">
 
 
-      {% if data['suspension'] === 'pc' %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% elseif data['suspension'] === 'sp' %}
       <li class="dwp-timeline__events--entry">
         <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended for investigation</h2>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
         <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
       </li>
-      {% else %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% endif %}
-
-
 
 
     <li class="dwp-timeline__events--entry">
@@ -216,5 +213,4 @@ State Penison payments have been suspended for investigation.
 
 
   </div>
-
 {% endblock %}
