@@ -20,12 +20,11 @@
 {% block content %}
 
 
-
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% include './_namebar.html' %}
+
 
 <!-- tags design WIP
       <strong class="govuk-tag govuk-!-margin-right-2">
@@ -44,27 +43,40 @@
   })
 }}
 
+<form method="post" action="add-corr-address-confirm">
+<h2 class="govuk-heading-l">Correspondence address</h2>
 
-  <h2 class="govuk-heading-l">No addresses found</h2>
-  <p class="govuk-body">
-    There are no results for <strong>1</strong> and <strong>NE4 5DP.</strong> <a href="#" class="govuk-link govuk-!-margin-left-1"> Search again</a>
-  </p>
-  <p class="govuk-body">
-    If no addresses are found then after searching again, enter the address manually.
-  </p>
-  <p class="govuk-body">
-    <a href="#" class="govuk-link"> Enter address manually</a>
-  </p>
-  <br>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="propertynumber">
+    Property number or name
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="propertynumber" name="propertynumber" type="text" spellcheck="false">
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="postcode">
+    UK postcode
+  </label>
+  <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" spellcheck="false">
+</div>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Search again
-        </button>
 
-      </form>
 
-      </div>
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+Confirm
+</button>
+
+
+
+        <!-- <p class="govuk-body">
+          <a href="#" class="govuk-link">Enter an international address</a>
+        </p>
+         -->
+
 
     </div>
 
-  {% endblock %}
+  </div>
+
+{% endblock %}

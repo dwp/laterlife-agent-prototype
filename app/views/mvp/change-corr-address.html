@@ -25,6 +25,8 @@
 
       {% include './_namebar.html' %}
 
+
+<!-- tags design WIP
       <strong class="govuk-tag govuk-!-margin-right-2">
         Receiving State Pension 
       </strong>
@@ -32,20 +34,21 @@
       <strong class="govuk-tag govuk-!-margin-bottom-0">
         Receiving Pension Credit
       </strong>
-
 <br><br>
+-->
+
       {{ govukBackLink({
     "text": "Back",
     "href": "javascript: window.history.go(-1)"
   })
 }}
 
-<form method="post" action="change-address-confirm">
-<h2 class="govuk-heading-l">What is their UK address?</h2>
+<form method="post" action="change-corr-address-confirm">
+<h2 class="govuk-heading-l">Correspondence address</h2>
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="propertynumber">
-    Property number or name?
+    Property number or name
   </label>
   <input class="govuk-input govuk-input--width-10" id="propertynumber" name="propertynumber" type="text" spellcheck="false">
 </div>
