@@ -15,11 +15,16 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/select-address', function(request, response) {
 
   var selectAddress = request.session.data['select-address']
-  if (selectAddress == "yes"){
-      response.redirect("/mvp/contact-success-change-address")
-  } else {
-      response.redirect("/mvp/change-address-manual")
-  }
+  if (selectAddress == "1 Elm Street"){
+      response.redirect("/mvp/contact-success-change-address")} 
+  else if (selectAddress == "10 Elm Street"){
+        response.redirect("/mvp/contact-success-change-address")} 
+  else if (selectAddress == "11 Elm Street"){
+          response.redirect("/mvp/contact-success-change-address")} 
+  else {
+    response.redirect("/mvp/change-address-manual")
+} 
+  
 })
 
 

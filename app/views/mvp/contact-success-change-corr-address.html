@@ -81,7 +81,15 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" style="width: 47%"><b>Correspondence address</b></td>
-              <td class="govuk-table__cell"style="width: 43%">3 Oldham Street<br> Manchester<br> M4 1LE</td>
+              <td class="govuk-table__cell"style="width: 43%">
+                {% if data['select-corr-address'] === '3 Oldham Street' %}
+                3 Oldham Street<br> Manchester<br> M4 1LE</td>
+                  {% elseif data['select-corr-address'] === '13 Oldham Street' %}
+                  13 Oldham Street<br> Manchester<br> M4 1LE</td>
+                  {% else %}
+                  33 Oldham Street<br> Manchester<br> M4 1LE</td>
+                  {% endif %}
+                
               <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-corr-address">Change</a></td>
               <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-corr-address">Remove</a></td>
             </tr>
