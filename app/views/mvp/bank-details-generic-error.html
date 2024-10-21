@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Sorry, there is a problem with the service
+      </h1>
+      <p class="govuk-body">Try again later.</p>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Return to the record view</a>.
+      </p>
+</ul>
+
+      
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
