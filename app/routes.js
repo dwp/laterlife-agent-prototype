@@ -11,6 +11,20 @@ const router = govukPrototypeKit.requests.setupRouter()
 // MVP VERSION 2
 
 
+// Run this code when a user wants to select a residential address or enter manually
+router.post('/select-address', function(request, response) {
+
+  var selectAddress = request.session.data['select-address']
+  if (selectAddress == "yes"){
+      response.redirect("/mvp/contact-success-change-address")
+  } else {
+      response.redirect("/mvp/change-address-manual")
+  }
+})
+
+
+
+
 // Run this code when a form is submitted to 'bank-name-answer'
 router.post('/changed-bank-answer', function (req, res) {
 
