@@ -38,7 +38,15 @@
             <h1 class="govuk-fieldset__heading">
             Remove the correspondence adress from this account
             </h1><br>
-            <p class="govuk-body">49 Featherstone Street,<br> London,<br> EC1Y 8SY<br></p>
+            <p class="govuk-body">
+              {% if data['select-corr-address'] === '3 Oldham Street' %}
+              3 Oldham Street<br> Manchester<br> M4 1LE</td>
+                {% elseif data['select-corr-address'] === '13 Oldham Street' %}
+                13 Oldham Street<br> Manchester<br> M4 1LE</td>
+                {% else %}
+                33 Oldham Street<br> Manchester<br> M4 1LE</td>
+                {% endif %}
+            </p>
           </legend>
 
 
