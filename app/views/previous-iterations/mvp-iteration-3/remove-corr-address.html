@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Remove email address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Later life</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <!-- <span class="govuk-caption-l">Pension Credit and State Pension</span> -->
+            <h1 class="govuk-fieldset__heading">
+            Remove the correspondence adress from this account
+            </h1><br>
+            <p class="govuk-body">
+              {% if data['select-corr-address'] === '3 Oldham Street' %}
+              3 Oldham Street<br> Manchester<br> M4 1LE</td>
+                {% elseif data['select-corr-address'] === '13 Oldham Street' %}
+                13 Oldham Street<br> Manchester<br> M4 1LE</td>
+                {% elseif data['corrAddress'] === 'yes' %}
+                49 Featherstone Street<br> London<br> EC1Y 8SY</td>
+                {% else %}
+                33 Oldham Street<br> Manchester<br> M4 1LE</td>
+                {% endif %}
+            </p>
+          </legend>
+      
+
+
+          <a href="contact-success-remove-corr-add" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-!-margin-right-1" data-module="govuk-button">
+            Remove address
+          </a>
+
+          <a href="contact-change-corr-address" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </a>
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
