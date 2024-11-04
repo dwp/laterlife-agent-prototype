@@ -8,6 +8,47 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+
+// MVP VERSION 4
+
+
+// Run this code when when PC is already suspended and a user wants to also suspend SP. Radios are on the are you sure page. 
+router.post('/confirm-sp-suspend', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var suspendSPConfirm = req.session.data['suspend-sp-confirm']
+
+  // Check whether the variable matches a condition
+  if (suspendSPConfirm == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/personal-suspended-sp-both')
+  } else {
+    // Send user back to the personal tab
+    res.redirect('/mvp/personal-suspended-no-success')
+  }
+
+});
+
+// Run this code when when SP is already suspended and a user wants to also suspend PC. Radios are on the are you sure page. 
+router.post('/confirm-pc-suspend', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var suspendPCConfirm = req.session.data['suspend-pc-confirm']
+
+  // Check whether the variable matches a condition
+  if (suspendPCConfirm == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/personal-suspended-pc-both')
+  } else {
+    // Send user back to the personal tab
+    res.redirect('/mvp/personal-suspended-no-success')
+  }
+
+});
+
+
+
+
 // MVP VERSION 2
 
 
