@@ -1,0 +1,179 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">{{serviceName}}</h1>
+  
+        {{ govukBackLink({
+          "text": "Back",
+          "href": "javascript: window.history.go(-1)"
+        })
+      }}
+      <br><br>
+
+    <h2 class="govuk-heading-l">
+    Standalone pages
+    </h2>
+
+
+<h3 class="govuk-heading-m">Search Citizen - For Later Life Agent</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/find-result-sp-pc" target="_blank">Receiving State Pension and Pension Credit</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">November 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">Agents can have full access to the LL service. There is also an option to access GySP.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/find-result-sp-only" target="_blank">Receiving State Pension only</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">November 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">As there is no PC award information, the agent can't access the LL service. There is a link to access GySP.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/find-result-pc-only" target="_blank">Receiving Pension Credit only</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">November 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">As there is no SP award information, the agent can't access the LL service. There is a link to access AfPC.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/find-result-sp-nil-pc" target="_blank">Receiving State Pension with a nil Pension Credit award</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">November 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">As there is a nil award for PC, the agent can't access the LL service. There are links to access GySP or AfPC.</p>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="mvp/find-result-none-found" target="_blank">No SP or PC results found</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">November 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">As there are no awards found, the agent can't access the LL service. There are links to access GySP or AfPC.</p>
+          </td>
+        </tr>
+        
+      </table>
+
+      <br>
+<h3 class="govuk-heading-m">Bank details - errors</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+
+<!--  Generic bank validation error (de-scoped 30 Oct 2024) 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/bank-account-details-error" target="_blank">Bank account detail error</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">Bank account validation error page.</p>
+          </td>
+        </tr>-->
+
+        <tr class="govuk-table__row">
+         <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/bank-details-technical-error" target="_blank">Bank details technical error</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">Bank details technical error page.</p>
+          </td>
+        </tr> 
+      </table>
+
+<br>
+
+<h3 class="govuk-heading-m">Change address - none found</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/change-address-none-found" target="_blank">Change residential address - none found</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">No addresses are found during the change address journey.</p>
+          </td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/mvp/change-corr-address-none-found" target="_blank">Change correspondence address - none found</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">No addresses are found during the change correspondence journey.</p>
+          </td>
+        </tr>
+
+      </table>
+
+
+
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
