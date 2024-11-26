@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Result – {{ serviceName }} – GOV.UK Prototype Kit
+  Home phone number – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -21,39 +21,47 @@
 
 
 
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+<!--
+      {% include './_namebar.html' %}
+-->
+<!-- tags design WIP
+      <strong class="govuk-tag govuk-!-margin-right-2">
+        Receiving State Pension 
+      </strong>
+      
+      <strong class="govuk-tag govuk-!-margin-bottom-0">
+        Receiving Pension Credit
+      </strong>
+<br><br>
+-->
 
-      <h1 class="govuk-heading-xl">
-      Charlotte Mudd<br>
-      <span class="govuk-caption-xl">XX 12 34 56</span>
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
 
 
-      </h1>
+  <h2 class="govuk-heading-l">No results found</h2>
+  <p class="govuk-body">
+    There are no results for <strong>JP543272P</strong></strong> 
+  </p>
+  <p class="govuk-body">
+   You could check the details are correct and try searching again.
+  </p>
+  <br>
 
-<br>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Search again
+        </button>
 
-<p class="govuk-body">There are no awards found for State Pension or Pension Credit.</p>
+      </form>
 
-<!-- Primary CTA - needed on this page? 
-      <a href="personal" button type="submit" class="govuk-button">
-        Go to Later Life
-    </a> 
-    <br>
-    <p class="govuk-body">
-      Go to <a href="#" class="govuk-link">Get Your State Pension</a>.
-    </p>
-    <p class="govuk-body">
-      Go to <a href="#" class="govuk-link">AfPC</a>.
-    </p>-->
+      </div>
 
     </div>
 
-
-
-
-
-  </div>
-  <br><br><br><br><br><br><br><br><br>
-
-{% endblock %}
+  {% endblock %}
