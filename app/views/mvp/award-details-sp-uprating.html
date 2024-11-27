@@ -46,7 +46,15 @@
       </ul>
 
 
-<br><br>
+      
+      <br>
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
 
 <table class="govuk-table">
 
@@ -94,9 +102,6 @@
         </tbody>
       </table>
 
-
-
-<a href="award" class="govuk-button">Back to awards</a>
 </div>   
 <!--
 <div class="govuk-grid-column-one-third">
