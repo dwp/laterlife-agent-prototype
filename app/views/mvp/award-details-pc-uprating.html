@@ -44,13 +44,19 @@
         </li>
 
       </ul>
+<br>
 
-
-<br><br>
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+})
+}}
 
 <table class="govuk-table">
 
   <tbody class="govuk-table__body">
+
+      <br><br>
     <caption class="govuk-table__caption govuk-table__caption--l">New Pension Credit award</caption>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header" scope="col" style="width: 50%">From</th>
@@ -119,8 +125,6 @@
 -->
 
 
-
-<a href="award" class="govuk-button">Back to awards</a>
 </div>   
 <!--
 <div class="govuk-grid-column-one-third">
