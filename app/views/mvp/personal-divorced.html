@@ -20,18 +20,6 @@
 {% block content %}
 
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-Pension Credit payments have been restarted
-    </h3>
-  </div>
-</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -63,10 +51,8 @@ Pension Credit payments have been restarted
   </ul>
 
 </nav>
-
-        <h2 class="govuk-heading-m">Personal details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+<h2 class="govuk-heading-m">Personal details</h2>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-7">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Full name
@@ -75,7 +61,7 @@ Pension Credit payments have been restarted
     Charlotte Mudd
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">    <span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="#"><span class="govuk-visually-hidden">name</span></a>
     </dd>
   </div>
 
@@ -114,17 +100,22 @@ Pension Credit payments have been restarted
       <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> address</span></a>
     </dd>
   </div>
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Marital status
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">Never been married</p>
+      Divorced
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> contact details</span></a>
+      <a class="govuk-link" href="personal-divorced-details">Details<span class="govuk-visually-hidden"> marital details</span></a>
     </dd>
   </div>
+
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
     Lived or worked abroad
@@ -133,15 +124,16 @@ Pension Credit payments have been restarted
       <p class="govuk-body">No</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden">No</span></a>
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> worked abroad</span></a>
     </dd>
   </div>
 </dl>
 
 
+<!--Suspend benefits de-scoped for MVP (this link take your into the suspend journey)
 <p class="govuk-body">
-  <a href="stop-benefit" class="govuk-link govuk-link--no-visited-state">Report death or suspend State Pension</a>
-</p>
+  <a href="suspend-benefit" class="govuk-link govuk-link--no-visited-state">Suspend payments</a>
+</p>-->
 
 
     </div>
@@ -150,19 +142,8 @@ Pension Credit payments have been restarted
     <div class="govuk-grid-column-one-third">
 
     <div class="dwp-timeline">
-    <h1 class="govuk-heading-m">Action history</h1>
+    <h1 class="govuk-heading-m">Personal changes</h1>
     <ol class="dwp-timeline__events">
-
-
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspension lifted</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-
-
-
     <li class="dwp-timeline__events--entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit claim received</h2>
       <p class="govuk-caption-m govuk-!-margin-bottom-1">Online</p>
