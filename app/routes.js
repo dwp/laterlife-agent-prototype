@@ -12,6 +12,27 @@ const router = govukPrototypeKit.requests.setupRouter()
 // MVP VERSION 4
 
 
+// Run this code when when you want to remove claimant and either change amount or the claimant is no longer entitled.  
+router.post('/selectReasonRemovePC', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var removePCChangeReason = req.session.data['selectReasonRemovePC']
+
+  // Check whether the variable matches a condition
+  if (removePCChangeReason == "PC-change"){
+    // Send user to next page
+    res.redirect('/mvp/remove-claimant-pay-next')
+  } else {
+    // Send user back to the personal tab
+    res.redirect('/mvp/remove-claimant-date')
+  }
+
+});
+
+
+
+
+
 // Run this code when when PC is already suspended and a user wants to also suspend SP. Radios are on the are you sure page. 
 router.post('/confirm-sp-suspend', function (req, res) {
 
