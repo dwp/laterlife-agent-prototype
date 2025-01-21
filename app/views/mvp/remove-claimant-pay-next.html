@@ -44,32 +44,39 @@
   })
 }}
 
-<form class="form" action="/selectReasonRemovePC" method="post">
+<form class="form" action="/payNextConfirm" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Why do you want to remove the claimant?
+                Do you want to pay the next Pension Credit payment?
               </h1>
             </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="removePCChange" name="selectReasonRemovePC" type="radio" value="PC-change">
-                <label class="govuk-label govuk-radios__label" for="removePCChange">
-                  They are still entitled to Pension Credit but I cannot manage the change of circumstance in this service
-                </label>
-              </div>
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="removePCChange-2" name="selectReasonRemovePC" type="radio" value="PC-nil">
-                <label class="govuk-label govuk-radios__label" for="removePCChange-2">
-                  The claimant is no longer entitled to Pension Credit
-                </label>
-              </div>
-
+            <div class="govuk-inset-text">
+              The next payment is £203.85 on Friday 11 August 2025 <br><br>
+              The last payment was £203.85 on Friday 4 August 2025
             </div>
-          </fieldset>
-        </div>
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="payNextConfirm" name="payNextConfirm" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="payNextConfirm">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="payNextConfirm-2" name="payNextConfirm" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="payNextConfirm-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Continue
