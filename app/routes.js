@@ -12,6 +12,25 @@ const router = govukPrototypeKit.requests.setupRouter()
 // MVP VERSION 4
 
 
+// Run this code when you want to choose to pay the next PC payment in the remove claimant journey
+router.post('/payNextConfirm', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var payNextConfirm = req.session.data['payNextConfirm']
+
+  // Check whether the variable matches a condition
+  if (payNextConfirm == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/remove-claimant-pay-next-confirm-A')
+  } else {
+    // Send user back to the personal tab
+    res.redirect('/mvp/remove-claimant-pay-next-confirm-B')
+  }
+
+});
+
+
+
 // Run this code when when you want to remove claimant and either change amount or the claimant is no longer entitled.  
 router.post('/selectReasonRemovePC', function (req, res) {
 
