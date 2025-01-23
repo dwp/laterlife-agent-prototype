@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Home phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+<!-- tags design WIP
+      <strong class="govuk-tag govuk-!-margin-right-2">
+        Receiving State Pension 
+      </strong>
+      
+      <strong class="govuk-tag govuk-!-margin-bottom-0">
+        Receiving Pension Credit
+      </strong>
+<br><br>
+-->
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        
+        {% call govukFieldset({
+          legend: {
+            text: "What is their international address?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            id: "address-line-1",
+            name: "addressLine1",
+            autocomplete: "address-line1"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 2"
+            },
+            id: "address-line-2",
+            name: "addressLine2",
+            autocomplete: "address-line2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 3 (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-line-3",
+            name: "addressLine3",
+            autocomplete: "address-line3"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 4 (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-line-4",
+            name: "addressLine4",
+            autocomplete: "address-line4"
+          }) }}
+        
+
+          {{ govukInput({
+            label: {
+              text: "Address line 5 (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-line-5",
+            name: "addressLine5",
+            autocomplete: "address-line5"
+          }) }}
+
+        
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-country",
+            name: "addressCounry",
+            autocomplete: "address-country"
+          }) }}
+        
+        {% endcall %}
+
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save
+      </button>
+
+    </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}
