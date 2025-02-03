@@ -18,8 +18,6 @@
 {% endblock %}
 
 {% block content %}
-
-
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -32,7 +30,6 @@
     </h3>
   </div>
 </div>
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -74,18 +71,17 @@
 </nav>
 
 
-        <h2 class="govuk-heading-m">Personal details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+<h2 class="govuk-heading-m">Personal details</h2>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-7">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Full name
     </dt>
     <dd class="govuk-summary-list__value">
-    Charlotte Mudd
+    Eric Erikson
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">    <span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="#"><span class="govuk-visually-hidden">name</span></a>
     </dd>
   </div>
 
@@ -106,7 +102,7 @@
       Date of birth
     </dt>
     <dd class="govuk-summary-list__value">
-      5 January 1958
+      9 January 1959
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">    <span class="govuk-visually-hidden"> date of birth</span></a>
@@ -118,12 +114,13 @@
       State Pension date
     </dt>
     <dd class="govuk-summary-list__value">
-       5 January 2024
+       9 January 2025
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> address</span></a>
     </dd>
   </div>
+  <!-- Removing marital status for MVP
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Marital status
@@ -132,9 +129,9 @@
       <p class="govuk-body">Never been married</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> contact details</span></a>
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> marital details</span></a>
     </dd>
-  </div>
+  </div>-->
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
     Lived or worked abroad
@@ -143,62 +140,26 @@
       <p class="govuk-body">No</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden">No</span></a>
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> worked abroad</span></a>
     </dd>
   </div>
 </dl>
 
 
-{% if data['suspension'] === 'pc' %}
+<!--Suspend benefits de-scoped for MVP (this link take your into the suspend journey)
 <p class="govuk-body">
-<a href="are-you-sure-suspend-sp" class="govuk-link govuk-link--no-visited-state">Suspend State Pension</a>
-</p>
-{% elseif data['suspension'] === 'sp' %}
-<p class="govuk-body">
-<a href="are-you-sure-suspend-pc" class="govuk-link govuk-link--no-visited-state">Suspend Pension Credit</a>
-</p>
-{% else %}
-<p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state"></a>
-  </p>
-{% endif %}
+  <a href="suspend-benefit" class="govuk-link govuk-link--no-visited-state">Suspend payments</a>
+</p>-->
+
 
     </div>
 
-
+  <!-- Removing timeline for MVP
     <div class="govuk-grid-column-one-third">
 
     <div class="dwp-timeline">
-    <h1 class="govuk-heading-m">Action history</h1>
+    <h1 class="govuk-heading-m">Personal changes</h1>
     <ol class="dwp-timeline__events">
-
-
-      {% if data['suspension'] === 'pc' %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% elseif data['suspension'] === 'sp' %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% else %}
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit and State Pension suspended for investigation</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
-      </li>
-      {% endif %}
-
-
-
-
     <li class="dwp-timeline__events--entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit claim received</h2>
       <p class="govuk-caption-m govuk-!-margin-bottom-1">Online</p>
@@ -217,7 +178,7 @@
     </div>
 
     </div>
-
+-->
 
 
   </div>

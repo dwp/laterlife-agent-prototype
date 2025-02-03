@@ -82,8 +82,8 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" style="width: 47%"><b>Correspondence address</b></td>
               <td class="govuk-table__cell"style="width: 43%">49 Featherstone Street<br> London<br> EC1Y 8SY</td>
+              <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-corr-address"></a></td>
               <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-corr-address">Change</a></td>
-              <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-corr-address">Remove</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" style="width: 47%"><b>Home phone number</b></td>
@@ -96,11 +96,13 @@
                     {% endif %}</td>
 
                     {% if data.homephone %}
+               
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-home-phone"></a></td>
                     <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-home-phone">Change</a></td>
-                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-home-phone">Remove</a></td>
                     {% else %}
+                  
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-home-phone"></a></td>
                     <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-home-phone">Change</a></td>
-                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-home-phone">Remove</a></td>
                     {% endif %}
 
 
@@ -116,7 +118,7 @@
 
                     {% if data.mobilephone %}
                     <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-mobile-phone">Change</a></td>
-                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-mobile-phone">Remove</a></td>
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-mobile-phone"></a></td>
                     {% else %}
                     <td class="govuk-table__cell" style="width: 5%"><a class="govuk-link" href=""></a></td>
                     <td class="govuk-table__cell" style="text-align: right" style="width: 5%"><a class="govuk-link" href="add-mobile-phone">Add</a></td>
@@ -134,25 +136,27 @@
 
                     {% if data.email %}
                     <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="change-email">Change</a></td>
-                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-email">Remove</a></td>
+                    <td class="govuk-table__cell"style="width: 5%"><a class="govuk-link" href="remove-email"></a></td>
                     {% else %}
                     <td class="govuk-table__cell" style="width: 5%"><a class="govuk-link" href=""></a></td>
                     <td class="govuk-table__cell" style="text-align: right" style="width: 5%"><a class="govuk-link" href="add-email">Add</a></td>
                     {% endif %}
             </tr>
 
+            <!-- Remove alt format 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" style="width: 47%"><b>Alternative format for letters</b></td>
               <td class="govuk-table__cell"style="width: 43%"></td>
               <td class="govuk-table__cell"style="width: 5%"></td>
               <td class="govuk-table__cell"style="width: 5%"></td>
-            </tr>
+            </tr>-->
 
             </tbody>
             </table>
 
     </div>
 
+    <!-- Remove timeline 
 
         <div class="govuk-grid-column-one-third">
 
@@ -171,7 +175,7 @@
           </div>
 
         </div>
-
+-->
 
   </div>
 
