@@ -10,7 +10,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // MVP VERSION 5
 
-
 // Remove claimant journey code 
 
 // Run this code when you want to choose to pay the next PC payment in the remove claimant journey
@@ -48,6 +47,98 @@ router.post('/selectReasonRemovePC', function (req, res) {
 
 });
 
+
+
+// Remove contact details code 
+
+// Run this code when a form is submitted to remove a contact - email 'contact-remove-email'
+router.post('/contact-remove-email', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var ContactRemove = req.session.data['email-remove']
+
+  // Check whether the variable matches a condition
+  if (ContactRemove == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/contact-success-remove-email')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/contact')
+  }
+
+});
+
+
+
+// Run this code when a form is submitted to remove a contact - homephone 'contact-remove-homephone'
+router.post('/contact-remove-homephone', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var ContactRemove = req.session.data['homephone-remove']
+
+  // Check whether the variable matches a condition
+  if (ContactRemove == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/contact-success-remove-homephone.html')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/contact')
+  }
+
+});
+
+// Run this code when a form is submitted to remove a contact - mobile 'contact-remove-mobile'
+router.post('/contact-remove-mobile', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var ContactRemove = req.session.data['mobilephone-remove']
+
+  // Check whether the variable matches a condition
+  if (ContactRemove == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/contact-success-remove-mobile')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/contact')
+  }
+
+});
+
+
+
+// Run this code when a user wants to select a residential address or enter manually
+router.post('/select-address', function(request, response) {
+
+  var selectAddress = request.session.data['select-address']
+  if (selectAddress == "1 Elm Street"){
+      response.redirect("/contact-success-change-address")} 
+  else if (selectAddress == "10 Elm Street"){
+        response.redirect("/contact-success-change-address")} 
+  else if (selectAddress == "11 Elm Street"){
+          response.redirect("/contact-success-change-address")} 
+  else {
+    response.redirect("/mvp/change-address-manual")
+} 
+  
+})
+
+
+// Run this code when a form is submitted to 'bank-name-answer'
+router.post('/changed-bank-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var bankNameConfirm = req.session.data['changed-bank']
+
+  // Check whether the variable matches a condition
+  if (bankNameConfirm == "yes"){
+    // Send user to next page
+    res.redirect('/mvp/bank-cya')
+  } else {
+    // Send user to name incorrect page 
+    res.redirect('/mvp/bank-name-incorrect')
+  }
+
+});
 
 
 
@@ -105,10 +196,10 @@ router.post('/contact-remove-email', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/contact-success-remove-email')
+    res.redirect('/mvp-iteration-4/contact-success-remove-email')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/contact')
+    res.redirect('/mvp-iteration-4/contact')
   }
 
 });
@@ -124,10 +215,10 @@ router.post('/contact-remove-homephone', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/contact-success-remove-homephone.html')
+    res.redirect('/mvp-iteration-4/contact-success-remove-homephone.html')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/contact')
+    res.redirect('/mvp-iteration-4/contact')
   }
 
 });
@@ -141,10 +232,10 @@ router.post('/contact-remove-mobile', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/contact-success-remove-mobile')
+    res.redirect('/mvp-iteration-4/contact-success-remove-mobile')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/contact')
+    res.redirect('/mvp-iteration-4/contact')
   }
 
 });
@@ -162,7 +253,7 @@ router.post('/select-address', function(request, response) {
   else if (selectAddress == "11 Elm Street"){
           response.redirect("/contact-success-change-address")} 
   else {
-    response.redirect("/change-address-manual")
+    response.redirect("/mvp-iteration-4/change-address-manual")
 } 
   
 })
@@ -177,10 +268,10 @@ router.post('/changed-bank-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (bankNameConfirm == "yes"){
     // Send user to next page
-    res.redirect('/bank-cya')
+    res.redirect('/mvp-iteration-4/bank-cya')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/bank-name-incorrect')
+    res.redirect('/mvp-iteration-4/bank-name-incorrect')
   }
 
 });
