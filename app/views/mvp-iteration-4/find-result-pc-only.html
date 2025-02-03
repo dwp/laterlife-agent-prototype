@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+      Charlotte Mudd<br>
+      <span class="govuk-caption-xl">XX 12 34 56</span>
+
+
+      </h1>
+
+      <strong class="govuk-tag govuk-!-margin-bottom-2">
+        Not entitled to Pension Credit
+      </strong>
+      
+<br><br>
+
+<p class="govuk-body">We cannot find a State Pension record.</p>
+<p class="govuk-body">This record is not managed in the Later Life service.</p>
+<!-- Primary CTA - needed on this page? 
+      <a href="personal" button type="submit" class="govuk-button">
+        Go to Later Life
+    </a> -->
+    <p class="govuk-body">
+     <a href="#" class="govuk-link">View the record in Apply for Pension Credit</a>.
+    </p>
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
