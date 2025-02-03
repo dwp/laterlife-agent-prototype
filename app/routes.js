@@ -111,11 +111,11 @@ router.post('/select-address', function(request, response) {
 
   var selectAddress = request.session.data['select-address']
   if (selectAddress == "1 Elm Street"){
-      response.redirect("/contact-success-change-address")} 
+      response.redirect("/mvp/contact-success-change-address")} 
   else if (selectAddress == "10 Elm Street"){
-        response.redirect("/contact-success-change-address")} 
+        response.redirect("/mvp/contact-success-change-address")} 
   else if (selectAddress == "11 Elm Street"){
-          response.redirect("/contact-success-change-address")} 
+          response.redirect("/mvp/contact-success-change-address")} 
   else {
     response.redirect("/mvp/change-address-manual")
 } 
