@@ -27,6 +27,7 @@
       {% include './_namebar.html' %}
 
       <!--
+
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="personal">Personal</a>
@@ -44,30 +45,26 @@
           <a class="moj-sub-navigation__link" href="payment">Payment</a>
         </li>
 
-      </ul>-->
-<br>
 
-{{ govukBackLink({
-  "text": "Back",
-  "href": "javascript: window.history.go(-1)"
-})
-}}
+      </ul>
+-->
+      
+      <br>
 
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
 <table class="govuk-table">
-
+  <caption class="govuk-table__caption govuk-table__caption--l">Current State Pension award</caption>
   <tbody class="govuk-table__body">
-
-      <br><br>
-    <caption class="govuk-table__caption govuk-table__caption--l">New Pension Credit award</caption>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header" scope="col" style="width: 50%">From</th>
-      <td class="govuk-table__cell">10 April 2025</td>
+      <td class="govuk-table__cell">9 January 2025</td>
     </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">4 weekly amount</th>
-      <td class="govuk-table__cell">&pound;117.36</td>
-    </tr>
-    <!-- Removing the reason for MVP as more BA/UR required 
+    <!-- Hiding reason
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Reason</th>
       <td class="govuk-table__cell">Annual uprating</td>
@@ -75,58 +72,51 @@
   </tbody>
 </table>
 
-
-      <table class="govuk-table">
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" scope="col" style="width: 50%">Total</th>
-            <th scope="row" class="govuk-table__header">&pound;29.34 a week</th>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Guarantee credit</td>
-            <td class="govuk-table__cell">&pound;29.34</td>
-          </tr>
-        </tbody>
-      </table>
-
-
 <table class="govuk-table">
   <tbody class="govuk-table__body">
-    <caption class="govuk-table__caption govuk-table__caption--m">How Guarantee Credit is calculated</caption>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header" scope="col" style="width: 50%">Appropriate minimum guarantee</th>
-      <td class="govuk-table__header">&pound;227.10</td>
+      <th scope="row" class="govuk-table__header" scope="col" style="width: 50%">Total</th>
+      <th scope="row" class="govuk-table__header">&pound;189.99 a week</th>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Standard minimum guarantee for single people</td>
-      <td class="govuk-table__cell">&pound;227.10</td>
+      <td class="govuk-table__cell">New State Pension</td>
+      <td class="govuk-table__cell">&pound;189.99</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Protected payment</td>
+      <td class="govuk-table__cell">&pound;0.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Extra State Pension</td>
+      <td class="govuk-table__cell">&pound;0.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Inherited extra State Pension</td>
+      <td class="govuk-table__cell">&pound;0.00</td>
     </tr>
   </tbody>
 </table>
 
+<!--Don't have inherited or witheld amounts in our example
 <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Inherited amounts</caption>
+
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header" scope="col" style="width: 50%">Total weekly income</th>
-      <td class="govuk-table__header">&pound;197.76</td>
+      <td class="govuk-table__cell">Additional Pension</td>
+      <td class="govuk-table__cell" scope="col" style="width: 50%">&pound;5.21</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">State Pension</td>
-      <td class="govuk-table__cell">&pound;197.76</td>
+      <td class="govuk-table__cell">Graduated benefit</td>
+      <td class="govuk-table__cell">&pound;2.72</td>
     </tr>
   </tbody>
 </table>
-
-<!-- caluculation not needed for MVP
-    <div class="govuk-inset-text">
-      <p class="govuk-body">Calculation:</p>
-      <p class="govuk-body">&pound;255.31 (appropriate minimum guarantee) - &pound;235.10 (total weekly income) = &pound;20.21 (Guarantee Credit)</p>
-     </div>
 -->
 
 
 </div>   
+
 <!--
 <div class="govuk-grid-column-one-third">
   <div class="dwp-timeline">
@@ -155,10 +145,35 @@
   </li>
   </ol>
   </div>
+
+-->
+
 </div>
 
-  </div>
+<!--
+<div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m">Witheld amounts</h2>
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col" style="width: 25%">Weekly amount</th>
+              <th class="govuk-table__header" scope="col" style="width: 25%">Reason</th>
+              <th class="govuk-table__header" scope="col" style="width:25%">Date from</th>
+              <th class="govuk-table__header" scope="col" style="width: 25%">Date to</th>
+            </tr>
+          </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">&pound;7.93</td>
+          <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">5 Jul 2024</td>
+          <td class="govuk-table__cell">22 Aug 2024</td>
+        </tr>
+        </tbody>
+        </table>
 -->
+
+  </div>
 
 </div>
 
