@@ -44,39 +44,32 @@
   })
 }}
 
-<form class="form" action="/payNextConfirm" method="post">
+<form class="form" action="selectReasonRemovePC" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Do you want to pay the next Pension Credit payment?
+                Why do you want to move the claimant?
               </h1>
             </legend>
-<br>
-            <div class="govuk-body">
-              They will get £12.16 on Friday 14 August 2025. 
-              <br><br>This is for the period Friday 15 July 2025 to Thursday 13 August 2025.
-            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="removePCChange" name="selectReasonRemovePC" type="radio" value="PC-change">
+                <label class="govuk-label govuk-radios__label" for="removePCChange">
+                  They are still entitled to Pension Credit but I cannot manage the change in this system
+                </label>
+              </div>
 
-      <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="payNextConfirm" name="payNextConfirm" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="payNextConfirm">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="payNextConfirm-2" name="payNextConfirm" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="payNextConfirm-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="removePCChange-2" name="selectReasonRemovePC" type="radio" value="PC-nil">
+                <label class="govuk-label govuk-radios__label" for="removePCChange-2">
+                  They are no longer entitled to Pension Credit
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Continue

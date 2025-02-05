@@ -31,7 +31,7 @@ router.post('/payNextConfirm', function (req, res) {
 
 
 // Run this code when when you want to remove claimant and either change amount or the claimant is no longer entitled.  
-router.post('/selectReasonRemovePC', function (req, res) {
+router.post('selectReasonRemovePC', function (req, res) {
 
   // Make a variable and give it the value from 'confirm-bank'
   var removePCChangeReason = req.session.data['selectReasonRemovePC']
@@ -39,10 +39,10 @@ router.post('/selectReasonRemovePC', function (req, res) {
   // Check whether the variable matches a condition
   if (removePCChangeReason == "PC-change"){
     // Send user to next page
-    res.redirect('/remove-claimant-pay-next')
+    res.redirect('remove-claimant-pay-next')
   } else {
     // Send user back to the personal tab
-    res.redirect('/remove-claimant-date')
+    res.redirect('remove-claimant-date')
   }
 
 });
@@ -199,7 +199,7 @@ router.post('/confirm-pc-suspend', function (req, res) {
 
 
 // Run this code when a wants to suspend a benefit - Death or both 
-router.post('/mvp-iteration-3/stop-benefit', function (req, res) {
+router.post('/stop-benefit', function (req, res) {
   if  (req.body['stopbenefit'] === 'suspend') {
     res.redirect('suspend-benefit')
   } else if (req.body['stopbenefit'] === 'death') {
@@ -321,3 +321,4 @@ router.post('/stop-benefit-death-pc', function (req, res) {
 
 
 //-------------------------------------------------------------------
+module.exports = router
