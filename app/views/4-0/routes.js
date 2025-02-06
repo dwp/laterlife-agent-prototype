@@ -8,7 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-// MVP VERSION 5
+// MVP VERSION 4 & 5
 
 // Remove claimant journey code 
 
@@ -21,20 +21,20 @@ router.post('/payNextConfirm', function (req, res) {
   // Check whether the variable matches a condition
   if (payNextConfirm == "yes"){
     // Send user to next page
-    res.redirect('/remove-claimant-pay-next-confirm-A')
+    res.redirect('remove-claimant-pay-next-confirm-A')
   } else {
     // Send user back to the personal tab
-    res.redirect('/remove-claimant-pay-next-confirm-B')
+    res.redirect('remove-claimant-pay-next-confirm-B')
   }
 
 });
 
 
 // Run this code when when you want to remove claimant and either change amount or the claimant is no longer entitled.  
-router.post('selectReasonRemovePC', function (req, res) {
+router.post('/selectReasonRemovePC', function (req, res) {
 
   // Make a variable and give it the value from 'confirm-bank'
-  var removePCChangeReason = req.session.data['selectReasonRemovePC']
+  var removePCChangeReason = req.session.data['/selectReasonRemovePC']
 
   // Check whether the variable matches a condition
   if (removePCChangeReason == "PC-change"){
@@ -106,18 +106,19 @@ router.post('/contact-remove-mobile', function (req, res) {
 
 
 
+
 // Run this code when a user wants to select a residential address or enter manually
 router.post('/select-address', function(request, response) {
 
   var selectAddress = request.session.data['select-address']
   if (selectAddress == "1 Elm Street"){
-      response.redirect("/contact-success-change-address")} 
+      response.redirect('contact-success-change-address')} 
   else if (selectAddress == "10 Elm Street"){
-        response.redirect("/contact-success-change-address")} 
+        response.redirect('contact-success-change-address')} 
   else if (selectAddress == "11 Elm Street"){
-          response.redirect("/contact-success-change-address")} 
+          response.redirect('contact-success-change-address')} 
   else {
-    response.redirect("/change-address-manual")
+    response.redirect('/change-address-manual')
 } 
   
 })
@@ -143,7 +144,7 @@ router.post('/changed-bank-answer', function (req, res) {
 
 
 
-// MVP VERSION 4
+
 
 
 
