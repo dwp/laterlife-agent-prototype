@@ -223,12 +223,24 @@ You have changed the State Pension payment frequency to weekly to every 4 weeks
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
-          <td class="govuk-table__cell">Wednesday 12 March 2025</td>
+          <td class="govuk-table__cell">
+            {% if data['pcfrequency'] === 'weekly' %}
+            Wednesday 19 February 2025
+              {% else %}
+            Wednesday 12 March 2025
+              {% endif %} 
+            </td>
           <td class="govuk-table__cell"></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment amount</td>
-          <td class="govuk-table__cell">£112.64</td>
+          <td class="govuk-table__cell">
+            {% if data['pcfrequency'] === 'weekly' %}
+            £28.16
+              {% else %}
+              £112.64
+              {% endif %} 
+              </td>
           <td class="govuk-table__cell"></td>
         </tr>
       </tbody>
