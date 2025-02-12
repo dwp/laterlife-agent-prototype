@@ -36,30 +36,29 @@
 <span class="govuk-caption-l">Pension Credit</span>
       <h2 class="govuk-heading-l">How often do they want to get paid?</h2>
 
-    <form method="post" action="payment-success-pc-freq-weekly">
+    <form method="post" action="payment-success-frequency">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pcfrequency" name="pcfrequency" type="radio" value="weekly">
-              <label class="govuk-label govuk-radios__label" for="pcfrequency">
-                Every week
-              </label>
-            </div>
-           <!-- <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pcfrequency-2" name="pcfrequency" type="radio" value="2weeks">
-              <label class="govuk-label govuk-radios__label" for="pcfrequency-2">
-                Every 2 weeks
-              </label>
-            </div>
-             <div class="govuk-radios__divider">or</div>
+            
+            {% if data['pcfrequency'] === 'weekly' %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="pcfrequency-2" name="pcfrequency" type="radio" value="4weeks">
               <label class="govuk-label govuk-radios__label" for="pcfrequency-2">
-              Keep payments every 4 weeks
+              Every 4 weeks
               </label>
-            </div>-->
+            </div>
+              {% else %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pcfrequency" name="pcfrequency" type="radio" value="weekly">
+                <label class="govuk-label govuk-radios__label" for="pcfrequency">
+                  Every week
+                </label>
+              </div>
+              {% endif %} 
+            
+          
           </div>
         </fieldset>
       </div>

@@ -20,38 +20,6 @@
 {% block content %}
 
 
-<!--
-  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Success
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <h3 class="govuk-notification-banner__heading">
-         
-{% if data['pcfrequency'] === 'weekly' %}
-You have changed the Pension Credit payment frequency to weekly
-{% elseif data['pcfrequency'] === '2weeks' %}
-You have changed the Pension Credit payment frequency to every 2 weeks
-  {% else %}
-You have changed the Pension Credit payment frequency to weekly to every 4 weeks
-  {% endif %} 
-
-      </h3>
-    </div>
-  </div>
--->
-<!--
-  {% if data['spfrequency'] === 'weekly' %}
-You have changed the State Pension payment frequency to weekly
-{% elseif data['spfrequency'] === '2weeks' %}
-You have changed the State Pension payment frequency to every 2 weeks
-  {% else %}
-You have changed the State Pension payment frequency to weekly to every 4 weeks
-  {% endif %} 
--->
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% include './_namebar.html' %}
@@ -92,7 +60,7 @@ You have changed the State Pension payment frequency to weekly to every 4 weeks
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">Pension Credit and State Pension</h2>
-            <a href="change-bank" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Change</span>
+            <a href="change-bank" class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Change</span>
             </a>
           </div>
           <div class="govuk-summary-card__content">
@@ -164,19 +132,7 @@ You have changed the State Pension payment frequency to weekly to every 4 weeks
               </div>
               {% else %}
               {% endif %}
-              <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-               Bank or building society name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Lloyds
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                    <span class="govuk-visually-hidden"></span>
-                  </a>
-                </dd>
-              </div> -->
+  
             </dl>
           </div>
         </div>
@@ -219,7 +175,7 @@ You have changed the State Pension payment frequency to weekly to every 4 weeks
             Every 4 weeks
                 {% endif %} 
             </td>
-          <td class="govuk-table__cell"><a href="change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+          <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
@@ -246,6 +202,7 @@ You have changed the State Pension payment frequency to weekly to every 4 weeks
       </tbody>
     </table>
   </div>
+
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="state-pension-payment-details">
     <table class="govuk-table">
       <tbody class="govuk-table__body">
@@ -259,17 +216,32 @@ You have changed the State Pension payment frequency to weekly to every 4 weeks
                 {% else %}
             Every 4 weeks
                 {% endif %}</td>
-          <td class="govuk-table__cell"><a href="change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span>
-                      </a></td>
+          <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
-          <td class="govuk-table__cell">Wednesday 12 March 2025</td>
+          <td class="govuk-table__cell">
+            {% if data['spfrequency'] === 'weekly' %}
+            Wednesday 19 February 2025
+            {% elseif data['spfrequency'] === '2weeks' %}
+            Wednesday 26 February 2025
+              {% else %}
+            Wednesday 12 March 2025
+              {% endif %} 
+            </td>
           <td class="govuk-table__cell"></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment amount</td>
-          <td class="govuk-table__cell">£759.96</td>
+          <td class="govuk-table__cell">
+            {% if data['spfrequency'] === 'weekly' %}
+            £189.99
+            {% elseif data['spfrequency'] === '2weeks' %}
+            £379.98
+              {% else %}
+              £759.96
+              {% endif %} 
+            </td>
           <td class="govuk-table__cell"></td>
         </tr>
       </tbody>
