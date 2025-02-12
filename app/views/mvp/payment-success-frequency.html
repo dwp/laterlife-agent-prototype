@@ -73,7 +73,7 @@
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">Pension Credit and State Pension</h2>
-    <a href="change-bank" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Change</span>
+    <a href="change-bank" class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Change</span>
     </a>
   </div>
   <div class="govuk-summary-card__content">
@@ -145,19 +145,7 @@
       </div>
       {% else %}
       {% endif %}
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-       Bank or building society name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Lloyds
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            <span class="govuk-visually-hidden"></span>
-          </a>
-        </dd>
-      </div> -->
+
     </dl>
   </div>
 </div>
@@ -200,49 +188,84 @@ State Pension
     Every 4 weeks
         {% endif %} 
     </td>
-  <td class="govuk-table__cell"><a href="change-pc-frequency-monthly" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+    <td class="govuk-table__cell"><a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+    <!--
+    <td class="govuk-table__cell">
+      {% if data['pcfrequency'] === 'weekly' %}<a href="change-pc-frequency-monthly" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+    {% else %}
+    <a href="change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+      {% endif %} -->
+  </tr>
 </tr>
 <tr class="govuk-table__row">
   <td class="govuk-table__header">Next payment date</td>
-  <td class="govuk-table__cell">Wednesday 19 February 2025</td>
+  <td class="govuk-table__cell">
+    {% if data['pcfrequency'] === 'weekly' %}
+            Wednesday 19 February 2025
+              {% else %}
+            Wednesday 12 March 2025
+              {% endif %} 
+  </td>
   <td class="govuk-table__cell"></td>
 </tr>
 <tr class="govuk-table__row">
   <td class="govuk-table__header">Next payment amount</td>
-  <td class="govuk-table__cell">£28.16</td>
+  <td class="govuk-table__cell">
+    {% if data['pcfrequency'] === 'weekly' %}
+    £28.16
+      {% else %}
+      £112.64
+      {% endif %} 
+  </td>
   <td class="govuk-table__cell"></td>
 </tr>
 </tbody>
 </table>
 </div>
+
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="state-pension-payment-details">
-<table class="govuk-table">
-<tbody class="govuk-table__body">
-<tr class="govuk-table__row">
-  <td class="govuk-table__header">Payment frequency</td>
-  <td class="govuk-table__cell">
-   {% if data['spfrequency'] === 'weekly' %}
-      Every week
-    {% elseif data['spfrequency'] === '2weeks' %}
-        Every 2 weeks
-        {% else %}
-    Every 4 weeks
-        {% endif %}</td>
-  <td class="govuk-table__cell"><a href="change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span>
-              </a></td>
-</tr>
-<tr class="govuk-table__row">
-  <td class="govuk-table__header">Next payment date</td>
-  <td class="govuk-table__cell">Wednesday 12 March 2025</td>
-  <td class="govuk-table__cell"></td>
-</tr>
-<tr class="govuk-table__row">
-  <td class="govuk-table__header">Next payment amount</td>
-  <td class="govuk-table__cell">£759.96</td>
-  <td class="govuk-table__cell"></td>
-</tr>
-</tbody>
-</table>
+  <table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Payment frequency</td>
+        <td class="govuk-table__cell">
+         {% if data['spfrequency'] === 'weekly' %}
+            Every week
+          {% elseif data['spfrequency'] === '2weeks' %}
+              Every 2 weeks
+              {% else %}
+          Every 4 weeks
+              {% endif %}</td>
+        <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Next payment date</td>
+        <td class="govuk-table__cell">
+          {% if data['spfrequency'] === 'weekly' %}
+          Wednesday 19 February 2025
+          {% elseif data['spfrequency'] === '2weeks' %}
+          Wednesday 26 February 2025
+            {% else %}
+          Wednesday 12 March 2025
+            {% endif %} 
+          </td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Next payment amount</td>
+        <td class="govuk-table__cell">
+          {% if data['spfrequency'] === 'weekly' %}
+          £189.99
+          {% elseif data['spfrequency'] === '2weeks' %}
+          £379.98
+            {% else %}
+            £759.96
+            {% endif %} 
+          </td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 </div>
 

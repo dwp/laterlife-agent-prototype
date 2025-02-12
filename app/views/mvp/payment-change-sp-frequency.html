@@ -36,47 +36,58 @@
 <span class="govuk-caption-l">State Pension</span>
       <h2 class="govuk-heading-l">How often do they want to get paid?</h2>
 
-    <form method="post" action="payment">
+    <form method="post" action="payment-success-frequency">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="spfrequency" name="spfrequency" type="radio" value="weekly">
-              <label class="govuk-label govuk-radios__label" for="spfrequency">
-                Every week
-              </label>
-            </div>
+            {% if data['spfrequency'] === 'weekly' %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="spfrequency-2" name="spfrequency" type="radio" value="2weeks">
               <label class="govuk-label govuk-radios__label" for="spfrequency-2">
                 Every 2 weeks
               </label>
             </div>
-            <!--
-             <div class="govuk-radios__divider">or</div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="spfrequency-2" name="spfrequency" type="radio" value="4weeks">
               <label class="govuk-label govuk-radios__label" for="spfrequency-2">
-              Keep payments every 4 weeks
+              Every 4 weeks
               </label>
-            </div>-->
-          </div>
+            </div>
+              {% elseif data['spfrequency'] === '2weeks' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="spfrequency" name="spfrequency" type="radio" value="weekly">
+                <label class="govuk-label govuk-radios__label" for="spfrequency">
+                  Every week
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="spfrequency-2" name="spfrequency" type="radio" value="4weeks">
+                <label class="govuk-label govuk-radios__label" for="spfrequency-2">
+                Every 4 weeks
+                </label>
+              </div>
+              {% else %} 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="spfrequency" name="spfrequency" type="radio" value="weekly">
+                <label class="govuk-label govuk-radios__label" for="spfrequency">
+                  Every week
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="spfrequency-2" name="spfrequency" type="radio" value="2weeks">
+                <label class="govuk-label govuk-radios__label" for="spfrequency-2">
+                  Every 2 weeks
+                </label>
+              </div>
+              {% endif %} 
         </fieldset>
       </div>
-
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save
       </button>
-
     </form>
-
     </div>
-
-
-
-
-
   </div>
 
 {% endblock %}
