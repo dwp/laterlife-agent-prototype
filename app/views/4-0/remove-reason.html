@@ -44,7 +44,33 @@
   })
 }}
 
-<form class="form" action="selectReasonRemovePC" method="post">
+
+<form class="form" action="/selectReason" method="post">
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Why do you want to move the claimant?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="removeReason" name="removeReason" type="radio" value="entitled">
+        <label class="govuk-label govuk-radios__label" for="removeReason">
+          They are still entitled to Pension Credit but I cannot manage the change in this system
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="removeReason-2" name="removeReason" type="radio" value="nil-entitled">
+        <label class="govuk-label govuk-radios__label" for="removeReason-2">
+          They are no longer entitled to Pension Credit
+        </label>
+    </div>
+  </fieldset>
+</div>
+
+<!--
+<form class="form" action="/selectReasonRemovePC" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -54,14 +80,14 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="removePCChange" name="selectReasonRemovePC" type="radio" value="PC-change">
+                <input class="govuk-radios__input" id="removePCChange" name="RemovePC" type="radio" value="PC-change">
                 <label class="govuk-label govuk-radios__label" for="removePCChange">
                   They are still entitled to Pension Credit but I cannot manage the change in this system
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="removePCChange-2" name="selectReasonRemovePC" type="radio" value="PC-nil">
+                <input class="govuk-radios__input" id="removePCChange-2" name="RemovePC" type="radio" value="PC-nil">
                 <label class="govuk-label govuk-radios__label" for="removePCChange-2">
                   They are no longer entitled to Pension Credit
                 </label>
@@ -70,10 +96,10 @@
             </div>
           </fieldset>
         </div>
-
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+-->
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
 
     </form>
 
