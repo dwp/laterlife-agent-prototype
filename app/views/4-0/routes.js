@@ -12,35 +12,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Move to CAM or GySP journey
 
-// Run this code when you want to choose to pay the next PC payment in the remove claimant journey
-router.post('/payNextConfirm', function (req, res) {
+// Removing this code from here as it's making v4 jump into v4 for some reason. 
 
-  // Make a variable and give it the value from 'confirm-bank'
-  var payNextConfirm = req.session.data['payNextConfirm']
-
-  // Check whether the variable matches a condition
-  if (payNextConfirm == "yes"){
-    // Send user to confirm page
-    res.redirect('/4-0/remove-claimant-pay-next-confirm-A')
-  } else {
-    // Send user back to other confirm page 
-    res.redirect('/4-0/remove-claimant-pay-next-confirm-B')
-  }
-
-});
-
-
-// Radio buttons page 'Why do you want to move the claimant?' 
-
-router.post('/selectReason', function(request, response) {
-
-  var RemovePC = request.session.data['removeReason']
-  if (RemovePC == "entitled"){
-      response.redirect("/4-0/remove-claimant-pay-next")
-  } else {
-      response.redirect("/4-0/remove-claimant-date")
-  }
-})
 
 
 // Change contact details 
