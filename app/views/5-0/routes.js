@@ -12,6 +12,25 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Move to CAM or GySP journey
 
+
+// Run this code when you are sure the change of circ is a date in the future
+router.post('/confirm-future', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var confirmFuture = req.session.data['confirm-future']
+
+  // Check whether the variable matches a condition
+  if (confirmFuture == "yes"){
+    // Send user to confirm page
+    res.redirect('/5-0/remove-claimant-date-confirm-future')
+  } else {
+    // Send user back to other confirm page 
+    res.redirect('/5-0/remove-claimant-date')
+  }
+
+});
+
+
 // Run this code when you want to choose to pay the next PC payment in the remove claimant journey
 router.post('/payNextConfirm', function (req, res) {
 
