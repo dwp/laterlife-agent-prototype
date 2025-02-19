@@ -8,9 +8,28 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-// MVP VERSION 4
+// MVP VERSION 5
 
 // Move to CAM or GySP journey
+
+
+// Run this code when you are sure the change of circ is a date in the future
+router.post('/confirm-future', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var confirmFuture = req.session.data['confirm-future']
+
+  // Check whether the variable matches a condition
+  if (confirmFuture == "yes"){
+    // Send user to confirm page
+    res.redirect('remove-claimant-date-confirm-future')
+  } else {
+    // Send user back to other confirm page 
+    res.redirect('remove-claimant-date')
+  }
+
+});
+
 
 // Run this code when you want to choose to pay the next PC payment in the remove claimant journey
 router.post('/payNextConfirm', function (req, res) {
@@ -21,10 +40,10 @@ router.post('/payNextConfirm', function (req, res) {
   // Check whether the variable matches a condition
   if (payNextConfirm == "yes"){
     // Send user to confirm page
-    res.redirect('/4-0/remove-claimant-pay-next-confirm-A')
+    res.redirect('remove-claimant-pay-next-confirm-A')
   } else {
     // Send user back to other confirm page 
-    res.redirect('/4-0/remove-claimant-pay-next-confirm-B')
+    res.redirect('remove-claimant-pay-next-confirm-B')
   }
 
 });
@@ -36,9 +55,9 @@ router.post('/selectReason', function(request, response) {
 
   var RemovePC = request.session.data['removeReason']
   if (RemovePC == "entitled"){
-      response.redirect("/4-0/remove-claimant-pay-next")
+      response.redirect('remove-claimant-pay-next')
   } else {
-      response.redirect("/4-0/remove-claimant-date")
+      response.redirect('remove-claimant-date')
   }
 })
 
@@ -55,10 +74,10 @@ router.post('/contact-remove-email', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/4-0//contact-success-remove-email')
+    res.redirect('contact-success-remove-email')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/4-0//contact')
+    res.redirect('contact')
   }
 
 });
@@ -74,10 +93,10 @@ router.post('/contact-remove-homephone', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/4-0/contact-success-remove-homephone.html')
+    res.redirect('contact-success-remove-homephone.html')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/4-0/contact')
+    res.redirect('contact')
   }
 
 });
@@ -91,10 +110,10 @@ router.post('/contact-remove-mobile', function (req, res) {
   // Check whether the variable matches a condition
   if (ContactRemove == "yes"){
     // Send user to next page
-    res.redirect('/4-0/contact-success-remove-mobile')
+    res.redirect('contact-success-remove-mobile')
   } else {
     // Send user to name incorrect page 
-    res.redirect('/4-0/contact')
+    res.redirect('contact')
   }
 
 });
@@ -105,16 +124,18 @@ router.post('/select-address', function(request, response) {
 
   var selectAddress = request.session.data['select-address']
   if (selectAddress == "1 Elm Street"){
-      response.redirect("/4-0/contact-success-change-address")} 
+      response.redirect('contact-success-change-address')} 
   else if (selectAddress == "10 Elm Street"){
-        response.redirect("/4-0/contact-success-change-address")} 
+        response.redirect('contact-success-change-address')} 
   else if (selectAddress == "11 Elm Street"){
-          response.redirect("/4-0//contact-success-change-address")} 
+          response.redirect('contact-success-change-address')} 
   else {
-    response.redirect("/4-0/change-address-manual")
+    response.redirect('change-address-manual')
 } 
   
 })
+
+
 
 
 
