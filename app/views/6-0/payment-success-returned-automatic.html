@@ -20,9 +20,20 @@
 {% block content %}
 
 
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% include './_namebar.html' %}
+  
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Pension Credit and State Pension payments have stopped because payments have been returned.
+        </strong>
+      </div>
+
       {% include './_remove-link.html' %}
 
       <ul class="moj-sub-navigation__list">
@@ -173,6 +184,8 @@
             </td>
           <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
+
+        <!-- Don't show the payment date and amount when the future payments are stopped with a returned payment
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -194,7 +207,7 @@
               {% endif %} 
               </td>
           <td class="govuk-table__cell"></td>
-        </tr>
+        </tr>-->
       </tbody>
     </table>
   </div>
@@ -214,6 +227,8 @@
                 {% endif %}</td>
           <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
+
+         <!-- Don't show the payment date and amount when the future payments are stopped with a returned payment
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -239,7 +254,7 @@
               {% endif %} 
             </td>
           <td class="govuk-table__cell"></td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -292,9 +307,9 @@
           <td class="govuk-table__cell">Wed 12 Feb 2025</td>
             <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
             <td class="govuk-table__cell">£112.64 </td>
-            <td class="govuk-table__cell" class="govuk-orange">Paid
+            <td class="govuk-table__cell" class="govuk-orange">Returned
             </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1">Details</a></td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1-reissue-automatic">Details</a></td>
           </tr>
 
           <tr class="govuk-table__row">
@@ -302,9 +317,9 @@
             <td class="govuk-table__cell">Wed 12 Feb 2025</td>
             <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
             <td class="govuk-table__cell">£759.96</td>
-            <td class="govuk-table__cell" class="govuk-orange">Paid
+            <td class="govuk-table__cell" class="govuk-orange">Returned
             </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2-reissue">Details</a></td>
           </tr> 
 
           <tr class="govuk-table__row">
