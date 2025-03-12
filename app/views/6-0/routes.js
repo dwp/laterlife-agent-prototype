@@ -8,6 +8,31 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+// VERSION 6 (post MVP)
+
+
+// Move to CAM or GySP journey
+
+
+// Run this code when you are sure the change of circ is a date in the future
+router.post('/confirm-return', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var confirmReturn = req.session.data['confirm-return']
+
+  // Check whether the variable matches a condition
+  if (confirmReturn == "yes"){
+    // Send user to confirm page
+    res.redirect('payment-success-returned')
+  } else {
+    // Send user back to other confirm page 
+    res.redirect('payment-details-1')
+  }
+
+});
+
+
+
 // MVP VERSION 5
 
 // Move to CAM or GySP journey

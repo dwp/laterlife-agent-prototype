@@ -19,10 +19,24 @@
 
 {% block content %}
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Pension Credit payment reissued. Pension Credit payments restarted.
+    </h3>
+  </div>
+</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% include './_namebar.html' %}
+  
+
       {% include './_remove-link.html' %}
 
       <ul class="moj-sub-navigation__list">
@@ -86,11 +100,7 @@
                   Sort code
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data.sortcode %}
-                  {{data.sortcode}}
-                  {% else %}
-                  54 76 98
-                  {% endif %}
+                  48 00 24
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">
@@ -103,11 +113,7 @@
                   Account number
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data.accountnumber %}
-                  {{data.accountnumber}}
-                  {% else %}
-                  98765409
-                  {% endif %}
+                  42678914
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">
@@ -173,6 +179,7 @@
             </td>
           <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
+
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -292,9 +299,9 @@
           <td class="govuk-table__cell">Wed 12 Feb 2025</td>
             <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
             <td class="govuk-table__cell">£112.64 </td>
-            <td class="govuk-table__cell" class="govuk-orange">Paid
+            <td class="govuk-table__cell" class="govuk-orange">Reissued
             </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1">Details</a></td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1-status-reissued">Details</a></td>
           </tr>
 
           <tr class="govuk-table__row">
