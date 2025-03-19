@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+<br>
+
+<p class="govuk-body">There are no awards found for Pension Credit or State Pension.</p>
+
+<!-- Primary CTA - needed on this page? 
+      <a href="personal" button type="submit" class="govuk-button">
+        Go to Later Life
+    </a> 
+    <br>
+    <p class="govuk-body">
+      Go to <a href="#" class="govuk-link">Get Your State Pension</a>.
+    </p>
+    <p class="govuk-body">
+      Go to <a href="#" class="govuk-link">AfPC</a>.
+    </p>-->
+
+    </div>
+
+
+
+
+
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+
+{% endblock %}
