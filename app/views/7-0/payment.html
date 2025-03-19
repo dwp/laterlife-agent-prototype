@@ -158,8 +158,28 @@
   </ul>
   <div class="govuk-tabs__panel" id="pension-credit-payment-details">
     <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Sequence</th>
+          <th scope="col" class="govuk-table__header">Dates</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
       <tbody class="govuk-table__body">
-       
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">First payment</td>
+          <td class="govuk-table__cell">Wednesday 19 March 2025</td>
+          <td class="govuk-table__cell">£77.40</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Next payment</td>
+          <td class="govuk-table__cell">Wednesday 16 April 2025</td>
+          <td class="govuk-table__cell">£77.40</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Payment frequency</td>
           <td class="govuk-table__cell">
@@ -173,6 +193,7 @@
             </td>
           <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
+        <!-- hiding this for presentation purposes
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -194,12 +215,13 @@
               {% endif %} 
               </td>
           <td class="govuk-table__cell"></td>
-        </tr>
+        </tr>-->
       </tbody>
     </table>
   </div>
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="state-pension-payment-details">
+
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -214,16 +236,11 @@
                 {% endif %}</td>
           <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
+  
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
-            {% if data['spfrequency'] === 'weekly' %}
-            Wednesday 19 February 2025
-            {% elseif data['spfrequency'] === '2weeks' %}
-            Wednesday 26 February 2025
-              {% else %}
-            Wednesday 12 March 2025
-              {% endif %} 
+            Wednesday 9 April 2025
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
@@ -240,7 +257,7 @@
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
-      </tbody>
+ 
     </table>
   </div>
 </div>
@@ -287,6 +304,7 @@
             </thead>
         <tbody class="govuk-table__body">
 
+          <!--
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
           <td class="govuk-table__cell">Wed 12 Feb 2025</td>
@@ -295,7 +313,18 @@
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1">Details</a></td>
-          </tr>
+          </tr>-->
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">Wed 12 Mar 2025</td>
+            <td class="govuk-table__cell">13 Feb 2025 to 12 Mar 2025</td>
+            <td class="govuk-table__cell">£759.96</td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
+          </tr> 
+
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">State Pension</td>
@@ -307,6 +336,7 @@
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
           </tr> 
 
+          <!--
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
           <td class="govuk-table__cell">Wed 15 Jan 2025</td>
@@ -315,7 +345,7 @@
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-3">Details</a></td>
-          </tr>
+          </tr>-->
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">State Pension</td>
