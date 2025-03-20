@@ -193,7 +193,7 @@
             Every 4 weeks
                 {% endif %} 
             </td>
-          <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+          <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
 
         <!-- Don't show the payment date and amount when the future payments are stopped with a returned payment
@@ -236,7 +236,7 @@
                 {% else %}
             Every 4 weeks
                 {% endif %}</td>
-          <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
@@ -296,64 +296,90 @@
 
     </div> -->
 
-    <div class="govuk-grid-column-full">
-      <h2 class="govuk-heading-m">Payment history</h2>
-      <table class="govuk-table">
-          <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col" style="width: 15%">Benefit</th>
-                <th class="govuk-table__header" scope="col" style="width: 15%">Payment date</th>
-                <th class="govuk-table__header" scope="col" style="width:25%">Period</th>
-                <th class="govuk-table__header" scope="col" style="width: 12%">Amount</th>
-                <th class="govuk-table__header" scope="col" style="width: 5%">Status</th>
-                <th class="govuk-table__header" scope="col" style="width: 5%;"></th>
-              </tr>
-            </thead>
-        <tbody class="govuk-table__body">
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Pension Credit</td>
-          <td class="govuk-table__cell">Wed 12 Feb 2025</td>
-            <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
-            <td class="govuk-table__cell">£112.64 </td>
-            <td class="govuk-table__cell" class="govuk-orange">Returned
-            </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1-reissue">Details</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">State Pension</td>
-            <td class="govuk-table__cell">Wed 12 Feb 2025</td>
-            <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
-            <td class="govuk-table__cell">£759.96</td>
-            <td class="govuk-table__cell" class="govuk-orange">Paid
-            </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
-          </tr> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Pension Credit</td>
-          <td class="govuk-table__cell">Wed 15 Jan 2025</td>
-            <td class="govuk-table__cell">9 Jan 2025 to 15 Jan 2025</td>
-            <td class="govuk-table__cell">£28.16 </td>
-            <td class="govuk-table__cell" class="govuk-orange">Paid
-            </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-3">Details</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">State Pension</td>
-            <td class="govuk-table__cell">Wed 15 Jan 2025</td>
-            <td class="govuk-table__cell">9 Jan 2025 to 15 Jan 2025</td>
-            <td class="govuk-table__cell">£189.99</td>
-            <td class="govuk-table__cell" class="govuk-orange">Paid
-            </td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-4">Details</a></td>
-          </tr>
 
 
-          </tbody>
-          </table>
+
+          <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-m">Payment history</h2>
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col" style="width: 15%">Benefit</th>
+                      <th class="govuk-table__header" scope="col" style="width: 15%">Payment date</th>
+                      <th class="govuk-table__header" scope="col" style="width:25%">Period</th>
+                      <th class="govuk-table__header" scope="col" style="width: 12%">Amount</th>
+                      <th class="govuk-table__header" scope="col" style="width: 5%">Status</th>
+                      <th class="govuk-table__header" scope="col" style="width: 5%;"></th>
+                    </tr>
+                  </thead>
+              <tbody class="govuk-table__body">
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Pension Credit</td>
+                <td class="govuk-table__cell">Wed 12 Mar 2025</td>
+                  <td class="govuk-table__cell">13 Feb 2025 to 12 Mar 2025</td>
+                  <td class="govuk-table__cell">£112.64 </td>
+                  <td class="govuk-table__cell" class="govuk-orange">Sent
+                  </td>
+                  <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-6">Details</a></td>
+                </tr>
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">State Pension</td>
+                  <td class="govuk-table__cell">Wed 12 Mar 2025</td>
+                  <td class="govuk-table__cell">13 Feb 2025 to 12 Mar 2025</td>
+                  <td class="govuk-table__cell">£759.96</td>
+                  <td class="govuk-table__cell" class="govuk-orange">Sent
+                  </td>
+                  <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
+                </tr> 
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Pension Credit</td>
+                <td class="govuk-table__cell">Wed 12 Feb 2025</td>
+                  <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
+                  <td class="govuk-table__cell">£112.64 </td>
+                  <td class="govuk-table__cell" class="govuk-orange">Returned
+                  </td>
+                  <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1-reissue">Details</a></td>
+                </tr>
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">State Pension</td>
+                  <td class="govuk-table__cell">Wed 12 Feb 2025</td>
+                  <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
+                  <td class="govuk-table__cell">£759.96</td>
+                  <td class="govuk-table__cell" class="govuk-orange">Paid
+                  </td>
+                  <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
+                </tr> 
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Pension Credit</td>
+                <td class="govuk-table__cell">Wed 15 Jan 2025</td>
+                  <td class="govuk-table__cell">9 Jan 2025 to 15 Jan 2025</td>
+                  <td class="govuk-table__cell">£28.16 </td>
+                  <td class="govuk-table__cell" class="govuk-orange">Paid
+                  </td>
+                  <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-3">Details</a></td>
+                </tr>
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">State Pension</td>
+                  <td class="govuk-table__cell">Wed 15 Jan 2025</td>
+                  <td class="govuk-table__cell">9 Jan 2025 to 15 Jan 2025</td>
+                  <td class="govuk-table__cell">£189.99</td>
+                  <td class="govuk-table__cell" class="govuk-orange">Paid
+                  </td>
+                  <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-4">Details</a></td>
+                </tr>
+      
+      
+                </tbody>
+                </table>
+
+
+
 
     </div>
 
