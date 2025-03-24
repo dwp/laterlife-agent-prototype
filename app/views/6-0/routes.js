@@ -11,6 +11,29 @@ const router = govukPrototypeKit.requests.setupRouter()
 // VERSION 6 (post MVP)
 
 
+
+
+// Manage payments - confirm recall in CPS. HTML page: payment-recall-cps-local.html
+
+// Run this code when you are sure the change of circ is a date in the future
+router.post('/confirm-recall', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var confirmRecall = req.session.data['confirmRecallCps']
+
+  // Check whether the variable matches a condition
+  if (confirmRecall == "yes"){
+    // Send user to confirm page
+    res.redirect('payment-success-recalled')
+  } else {
+    // Send user back to other confirm page 
+    res.redirect('payment-success-recalled-unsuccessful')
+  }
+
+});
+
+
+
 // Move to CAM or GySP journey
 
 
