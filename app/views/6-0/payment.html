@@ -201,6 +201,7 @@
             {% endif %}
           </td>
         </tr>
+        {% if data.PCpaymentStatus == "In payment" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -223,6 +224,7 @@
               </td>
           <td class="govuk-table__cell"></td>
         </tr>
+        {% endif %}
       </tbody>
     </table>
   </div>
@@ -255,6 +257,7 @@
             {% endif %}
           </td>
         </tr>
+        {% if data.SPpaymentStatus == "In payment" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -281,6 +284,7 @@
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
+        {% endif %}
       </tbody>
     </table>
   </div>
