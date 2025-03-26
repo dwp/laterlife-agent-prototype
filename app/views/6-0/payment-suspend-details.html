@@ -23,45 +23,45 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% include './_namebar.html' %}
-      
-      <h2 class="govuk-heading-l">Payments {{data.detailType}} details</h2>
-      <div class="govuk-form-group">
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data.detailType == "suspended" %}12 March 2025
-              {% else %}16 March 2025
+    
+      {% for event in data['paymentTimelineArray'] %}
+        {% if loop.index0 ==  data.index %}
+        <h2 class="govuk-heading-l">Payments {% if event.title.includes('stopped') %}stopped{%else%}restarted{%endif%} details</h2>
+          <div class="govuk-form-group">
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{event.date | govukDate}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefit
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if event.benefits == "SPPC" %}State Pension and Pension Credit
+                  {% elseif event.benefits == "PC" %}Pension Credit
+                  {% elseif event.benefits == "SP" %}State Pension
+                  {% endif %}
+                </dd>
+              </div>
+              {% if event.title.includes('stopped') %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reason
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{event.reason}}
+                </dd>
+              </div>
               {% endif %}
-            </dd>
+            </dl>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Benefit
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data.benefitSuspend == "both" %}State Pension and Pension Credit
-              {% elseif data.benefitSuspend == "PC" %}Pension Credit
-              {% else %}State Pension
-              {% endif %}
-            </dd>
-          </div>
-          {% if data.detailType == "suspended" %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reason
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data.suspendReason}}
-            </dd>
-          </div>
-          {% endif %}
-        </dl>
-        
-      </div>
-      
+        {% endif %}
+      {% endfor %}      
       <div class="govuk-form-group">
         <form method="post" action="payment">
           <button type="submit" class="govuk-button" data-module="govuk-button">
