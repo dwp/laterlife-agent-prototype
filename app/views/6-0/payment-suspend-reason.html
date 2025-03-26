@@ -33,12 +33,14 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <div class="govuk-radios" data-module="govuk-radios">
+              {% if data.benefitSuspend != 'SP'%}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suspendReason-1" name="suspendReason" type="radio" value="To process a change of circumstances">
                 <label class="govuk-label govuk-radios__label" for="suspendReason-1">
                   To process a change of circumstances
                 </label>
               </div>
+              {% endif %}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suspendReason-2" name="suspendReason" type="radio" value="Request from a local authority for safeguarding">
                 <label class="govuk-label govuk-radios__label" for="suspendReason-2">
