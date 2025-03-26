@@ -215,41 +215,77 @@ router.post('/payment-suspend', function(req, res) {
 
 router.post('/payment-suspend-reason', function(req, res) {
   if(req.session.data['suspendReason'] == 'other'){
-    req.session.data['timelineStage'] = 0;
     res.redirect("payment-suspend-error")
   }
   else{
+    let temporaryArray = [];
+    if(req.session.data['paymentTimelineArray']){
+      temporaryArray = req.session.data['paymentTimelineArray']
+    }
+    let personArray = ["John Jones", "Alice Webb", "Sandra Dean", "Stuart Rith"];
+    let random = Math.floor(Math.random() * personArray.length);
+    let title;
+    let date = new Date();
+    let benefits;
+
     if( req.session.data['benefitSuspend'] == "both"){
+      title = "Payments stopped";
+      benefits= "SPPC";
       req.session.data['SPpaymentStatus'] = "Suspended";
       req.session.data['PCpaymentStatus'] = "Suspended";
-      req.session.data['timelineStage'] = 1;
     }
     else if(req.session.data['benefitSuspend'] == 'PC'){
+      title = "Pension Credit payments stopped";
+      benefits= "PC";
       req.session.data['PCpaymentStatus'] = "Suspended";
-      req.session.data['timelineStage'] = 1;
     }
     else if(req.session.data['benefitSuspend'] == 'SP'){
+      title = "State Pension payments stopped";
+      benefits= "SP";
       req.session.data['SPpaymentStatus'] = "Suspended";
-      req.session.data['timelineStage'] = 1;
     }
+
+    let temporaryObject = {date: date, benefits: benefits, title: title, person: personArray[random], reason: req.session.data['suspendReason']}
+    temporaryArray.unshift(temporaryObject);
+    req.session.data['paymentTimelineArray'] =  temporaryArray;
+
     req.session.data['successBanner'] = 'true';
     res.redirect("payment")
   }
 });
 
 router.post('/payment-suspend-resume', function(req, res) {
-  req.session.data['timelineStage'] = 2;
+  let temporaryArray = [];
+    if(req.session.data['paymentTimelineArray']){
+      temporaryArray = req.session.data['paymentTimelineArray']
+    }
+    let personArray = ["John Jones", "Alice Webb", "Sandra Dean", "Stuart Rith"];
+    let random = Math.floor(Math.random() * personArray.length);
+    let title;
+    let date = new Date();
+    let benefits;
   
-  if(req.session.data['benefitResumed']=='both'){
-    req.session.data['SPpaymentStatus'] = 'In payment';
-    req.session.data['PCpaymentStatus'] = 'In payment';
-  }
-  else if(req.session.data['benefitResumed']=='PC'){
-    req.session.data['PCpaymentStatus'] = 'In payment';
-  }
-  else{
-    req.session.data['SPpaymentStatus'] = 'In payment';
-  }
+    if( req.session.data['benefitResumed'] == "both"){
+      title = "Payments restarted";
+      benefits= "SPPC";
+      req.session.data['SPpaymentStatus'] = "In payment";
+      req.session.data['PCpaymentStatus'] = "In payment";
+    }
+    else if(req.session.data['benefitResumed'] == 'PC'){
+      title = "Pension Credit payments restarted";
+      benefits= "PC";
+      req.session.data['PCpaymentStatus'] = "In payment";
+    }
+    else if(req.session.data['benefitResumed'] == 'SP'){
+      title = "State Pension payments restarted";
+      benefits= "SP";
+      req.session.data['SPpaymentStatus'] = "In payment";
+    }
+
+    let temporaryObject = {date: date, benefits: benefits, title: title, person: personArray[random], reason: req.session.data['suspendReason']}
+    temporaryArray.unshift(temporaryObject);
+    req.session.data['paymentTimelineArray'] =  temporaryArray;
+
   req.session.data['successBanner'] = 'true';
   res.redirect("payment")
 });
