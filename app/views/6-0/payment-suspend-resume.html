@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Which payments would you like to suspend?
+{% endblock %}
+
+{% block header %}
+  <header data-module="govuk-header" class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+      <div class="dwp-header__service-name">
+        <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+      </div>
+      {% include './_nav.html' %}
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({"text": "Back", "href": "javascript: window.history.go(-1)"}) }}
+      
+      {% if data.benefitSuspend == 'both' %}
+        <h2 class="govuk-heading-l">Which payments would you like to resume?</h2>
+        <form method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitResumed-1" name="benefitResumed" type="radio" value="both">
+                  <label class="govuk-label govuk-radios__label" for="benefitResumed-1">
+                    Both Pension Credit and State Pension
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitResumed-2" name="benefitResumed" type="radio" value="PC">
+                  <label class="govuk-label govuk-radios__label" for="benefitResumed-2">
+                    Pension Credit only
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitResumed-3" name="benefitResumed" type="radio" value="SP">
+                  <label class="govuk-label govuk-radios__label" for="benefitResumed-3">
+                    State Pension only
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      {% else %}
+        <h2 class="govuk-heading-l">Are you sure you want to resume {% if data.benefitSuspend == 'SP'%}State Pension{% else %}Pension Credit{%endif%} payments?</h2>
+        <form method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitResumed-2" name="benefitResumed" type="radio" value="{{data.benefitSuspend}}">
+                  <label class="govuk-label govuk-radios__label" for="benefitResumed-2">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitResumed-3" name="benefitResumed" type="radio" value="none">
+                  <label class="govuk-label govuk-radios__label" for="benefitResumed-3">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
