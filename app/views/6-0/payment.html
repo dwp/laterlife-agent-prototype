@@ -27,8 +27,18 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          {% if data.benefitResumed %}Payments resumed
-          {% else %}Payments suspended
+          {% if data.paymentTimelineArray[0].benefits == 'SPPC' %}
+          Payments 
+          {% elseif data.paymentTimelineArray[0].benefits == 'SP' %}
+          State Pension payments 
+          {% elseif data.paymentTimelineArray[0].benefits == 'PC' %}
+          Pension Credit payments 
+          {% endif %}
+
+          {% if data.paymentTimelineArray[0].title.includes('stopped')%}
+            stopped
+          {% else %}
+            restarted
           {% endif %}
         </h3>
       </div>
@@ -192,12 +202,12 @@
           <td class="govuk-table__header">Status</td>
           <td class="govuk-table__cell">
             {% if data.PCpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
-            {% elseif data.PCpaymentStatus == "Suspended" %} <strong class="govuk-tag govuk-tag--red"> Suspended </strong>
+            {% elseif data.PCpaymentStatus == "Suspended" %} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
             {% endif %}
           </td>
           <td class="govuk-table__cell">
-            {% if data.PCpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Suspend</a>
-            {% elseif data.PCpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?successBanner=false">Resume</a>
+            {% if data.PCpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+            {% elseif data.PCpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=PC&successBanner=false">Restart</a>
             {% endif %}
           </td>
         </tr>
@@ -248,12 +258,12 @@
           <td class="govuk-table__header">Status</td>
           <td class="govuk-table__cell">
             {% if data.SPpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
-            {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Suspended </strong>
+            {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
             {% endif %}
           </td>
           <td class="govuk-table__cell">
-            {% if data.SPpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Suspend</a>
-            {% elseif data.SPpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?successBanner=false">Resume</a>
+            {% if data.SPpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+            {% elseif data.SPpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=SP&successBanner=false">Restart</a>
             {% endif %}
           </td>
         </tr>
@@ -291,51 +301,23 @@
 </div>
 
     </div>
+
     <!--- SUSPEND TIMELINE -->
     <div class="govuk-grid-column-one-third">
-      {% if data.timelineStage > 0 %}
         <div class="dwp-timeline">
-            <ol class="dwp-timeline__items">
-                {% if data.timelineStage > 1 %}
+          <ol class="dwp-timeline__items">
+            {% for event in data['paymentTimelineArray'] %}
                 <li class="dwp-timeline__item">
-                <p class="dwp-timeline__datetime">16 March 2025 at 2:28pm</p>
-                <h2 class="dwp-timeline__heading">
-                  {% if data.benefitSuspend == 'both' %}
-                  Payments resumed
-                  {% elseif data.benefitSuspend == 'SP' %}
-                  State Pension resumed
-                  {% elseif data.benefitSuspend == 'PC' %}
-                  Pension Credit resumed
-                  {% endif %}
-                </h2>
-                <p class="dwp-timeline__by-line">by Jo Smith</p>
-                <a href="payment-suspend-details?detailType=resumed&successBanner=false" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 15 May 2024 at 4:01pm</span></a>
+                <p class="dwp-timeline__datetime">{{event.date | govukDateTime}}</p>
+                <h2 class="dwp-timeline__heading">{{event.title}}</h2>
+                <p class="dwp-timeline__by-line">by {{event.person}}</p>
+                <a href="payment-suspend-details?index={{loop.index0}}&successBanner=false" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on </span></a>
                 </li>
-                {% endif %} 
-    
-                {% if data.timelineStage > 0 %}
-                <li class="dwp-timeline__item">
-                <p class="dwp-timeline__datetime">12 March 2025 at 10:16am</p>
-                <h2 class="dwp-timeline__heading">
-                  {% if data.benefitSuspend == 'both' %}
-                  Payments suspended
-                  {% elseif data.benefitSuspend == 'SP' %}
-                  State Pension suspended
-                  {% elseif data.benefitSuspend == 'PC' %}
-                  Pension Credit suspended
-                  {% else %}
-                  Payments suspended
-                  {% endif %}
-                </h2>
-                <p class="dwp-timeline__by-line">by Sam Taylor</p>
-                <a href="payment-suspend-details?detailType=suspended&successBanner=false" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 15 May 2024 at 4:01pm</span></a>
-                </li>
-                {% endif %}
-            </ol>
+            {% endfor %}
+          </ol>
         </div>
-      {% endif %}
-  
     </div>
+    <!--- END OF SUSPEND TIMELINE -->
 
     <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-m">Payment history</h2>

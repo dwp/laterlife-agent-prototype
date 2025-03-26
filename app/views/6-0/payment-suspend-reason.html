@@ -26,14 +26,14 @@
 
       {{ govukBackLink({"text": "Back", "href": "javascript: window.history.go(-1)"}) }}
       
-      <h2 class="govuk-heading-l">Why do you need to suspend payments?</h2>
+      <h2 class="govuk-heading-l">Why do you need to stop payments?</h2>
 
       <form method="post" action="payment-suspend-reason">
         
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <div class="govuk-radios" data-module="govuk-radios">
-              {% if data.benefitSuspend != 'SP'%}
+              {% if data.benefitSuspend == 'PC'%}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="suspendReason-1" name="suspendReason" type="radio" value="To process a change of circumstances">
                 <label class="govuk-label govuk-radios__label" for="suspendReason-1">

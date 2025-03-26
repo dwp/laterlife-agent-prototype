@@ -26,8 +26,8 @@
 
       {{ govukBackLink({"text": "Back", "href": "javascript: window.history.go(-1)"}) }}
       
-      {% if data.benefitSuspend == 'both' %}
-        <h2 class="govuk-heading-l">Which payments would you like to resume?</h2>
+      {% if data.SPpaymentStatus == 'Suspended' and  data.PCpaymentStatus == 'Suspended' %}
+        <h2 class="govuk-heading-l">Which payments would you like to restart?</h2>
         <form method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -58,7 +58,7 @@
           </button>
         </form>
       {% else %}
-        <h2 class="govuk-heading-l">Are you sure you want to resume {% if data.benefitSuspend == 'SP'%}State Pension{% else %}Pension Credit{%endif%} payments?</h2>
+        <h2 class="govuk-heading-l">Are you sure you want to restart {% if data.benefitSuspend == 'SP'%}State Pension{% else %}Pension Credit{%endif%} payments?</h2>
         <form method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
