@@ -185,7 +185,74 @@ router.post('/select-address', function(request, response) {
 
 
 
+////// SUSPEND PAYMENTS /////
+let version = '6-0'
 
+router.get('/find', function (req, res) {
+  req.session.data['timelineStage'] = 0;
+  req.session.data['SPpaymentStatus'] = 'In payment';
+  req.session.data['PCpaymentStatus'] = 'In payment';
+  res.render("/" + version + "/find");
+});
+
+router.get('/payment-suspend', function (req, res) {
+  if(req.session.data['SPpaymentStatus'] == 'In payment' && req.session.data['PCpaymentStatus'] == 'In payment'){
+   res.render("/" + version + "/payment-suspend");
+  }
+  else if(req.session.data['SPpaymentStatus'] == 'In payment'){
+    req.session.data['benefitSuspend'] = 'SP';
+    res.redirect("payment-suspend-reason")
+  }
+  else if(req.session.data['PCpaymentStatus'] == 'In payment'){
+    req.session.data['benefitSuspend'] = 'PC';
+    res.redirect("payment-suspend-reason")
+  }
+});
+
+router.post('/payment-suspend', function(req, res) {
+  res.redirect("payment-suspend-reason")
+});
+
+router.post('/payment-suspend-reason', function(req, res) {
+  if(req.session.data['benefitSuspend'] == 'other'){
+    req.session.data['timelineStage'] = 0;
+    res.redirect("payment-suspend-error")
+  }
+  else{
+    if( req.session.data['benefitSuspend'] == "both"){
+      req.session.data['SPpaymentStatus'] = "Suspended";
+      req.session.data['PCpaymentStatus'] = "Suspended";
+      req.session.data['timelineStage'] = 1;
+    }
+    else if(req.session.data['benefitSuspend'] == 'PC'){
+      req.session.data['PCpaymentStatus'] = "Suspended";
+      req.session.data['timelineStage'] = 1;
+    }
+    else if(req.session.data['benefitSuspend'] == 'SP'){
+      req.session.data['SPpaymentStatus'] = "Suspended";
+      req.session.data['timelineStage'] = 1;
+    }
+    req.session.data['successBanner'] = 'true';
+    res.redirect("payment")
+  }
+});
+
+router.post('/payment-suspend-resume', function(req, res) {
+  req.session.data['timelineStage'] = 2;
+  
+  if(req.session.data['benefitResumed']=='both'){
+    req.session.data['SPpaymentStatus'] = 'In payment';
+    req.session.data['PCpaymentStatus'] = 'In payment';
+  }
+  else if(req.session.data['benefitResumed']=='PC'){
+    req.session.data['PCpaymentStatus'] = 'In payment';
+  }
+  else{
+    req.session.data['SPpaymentStatus'] = 'In payment';
+  }
+  req.session.data['successBanner'] = 'true';
+  res.redirect("payment")
+});
 
 
 
