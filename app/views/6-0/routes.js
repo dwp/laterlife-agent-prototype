@@ -214,7 +214,7 @@ router.post('/payment-suspend', function(req, res) {
 });
 
 router.post('/payment-suspend-reason', function(req, res) {
-  if(req.session.data['benefitSuspend'] == 'other'){
+  if(req.session.data['suspendReason'] == 'other'){
     req.session.data['timelineStage'] = 0;
     res.redirect("payment-suspend-error")
   }
