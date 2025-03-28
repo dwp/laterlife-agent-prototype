@@ -189,22 +189,27 @@ router.post('/select-address', function(request, response) {
 let version = '6-0'
 
 router.get('/find', function (req, res) {
-  req.session.data['timelineStage'] = 0;
+  //This just sets up the necesary data we'll need for the payment suspend journey
   req.session.data['SPpaymentStatus'] = 'In payment';
   req.session.data['PCpaymentStatus'] = 'In payment';
   res.render("/" + version + "/find");
 });
 
 router.get('/payment-suspend', function (req, res) {
+  //This if statement is looking to see if one of the benefits has already been stopped
+
+  // if no benefit has been stopped we show the page
   if(req.session.data['SPpaymentStatus'] == 'In payment' && req.session.data['PCpaymentStatus'] == 'In payment'){
    res.render("/" + version + "/payment-suspend");
   }
+  // else if SP is in payment then we're suspending SP we don't need to ask the which benefit question
   else if(req.session.data['SPpaymentStatus'] == 'In payment'){
-    req.session.data['benefitSuspend'] = 'SP';
+    req.session.data['benefitSuspend'] = 'SP';// set the benefit to suspend as SP this replicates what the question would have done
     res.redirect("payment-suspend-reason")
   }
+  // else if PC is in payment then we're suspending PC we don't need to ask the which benefit question
   else if(req.session.data['PCpaymentStatus'] == 'In payment'){
-    req.session.data['benefitSuspend'] = 'PC';
+    req.session.data['benefitSuspend'] = 'PC'; // set the benefit to suspend as PC this replicates what the question would have done
     res.redirect("payment-suspend-reason")
   }
 });
@@ -218,19 +223,24 @@ router.post('/payment-suspend-reason', function(req, res) {
     res.redirect("payment-suspend-error")
   }
   else{
-    let temporaryArray = [];
+    // this is where we create our objects to add to the paymentTimelineArray
+    let temporaryArray = []; // creates a temporary array
     if(req.session.data['paymentTimelineArray']){
-      temporaryArray = req.session.data['paymentTimelineArray']
+      temporaryArray = req.session.data['paymentTimelineArray'] //checks to see if we already have objects in the paymentTimelineArray
     }
-    let personArray = ["John Jones", "Alice Webb", "Sandra Dean", "Stuart Rith"];
-    let random = Math.floor(Math.random() * personArray.length);
+    let personArray = ["John Jones", "Alice Webb", "Sandra Dean", "Stuart Rith"]; // This creates an array of names to use later
+    let random = Math.floor(Math.random() * personArray.length); // This is a random number generatot. It will create a random number between 1 and the number of names in the above array
+    
+    // just setting up some variables to use in the object
     let title;
-    let date = new Date();
+    let date = new Date(); //this gets the current timestamp
     let benefits;
 
     if( req.session.data['benefitSuspend'] == "both"){
+      // we now set the data to use in the timeline
       title = "Payments stopped";
       benefits= "SPPC";
+      // we also set the seperate sesssion data that controls what happens to the oayments on the payment page
       req.session.data['SPpaymentStatus'] = "Suspended";
       req.session.data['PCpaymentStatus'] = "Suspended";
     }
@@ -244,10 +254,12 @@ router.post('/payment-suspend-reason', function(req, res) {
       benefits= "SP";
       req.session.data['SPpaymentStatus'] = "Suspended";
     }
-
+    // now we create the obkect
     let temporaryObject = {date: date, benefits: benefits, title: title, person: personArray[random], reason: req.session.data['suspendReason']}
-    temporaryArray.unshift(temporaryObject);
-    req.session.data['paymentTimelineArray'] =  temporaryArray;
+    
+    // add the object to the array
+    temporaryArray.unshift(temporaryObject); // unshift add it to the beginning of the array so we keep this in reverse chronilogical order
+    req.session.data['paymentTimelineArray'] =  temporaryArray; // next we store the array of objects into a session to use in the timeline
 
     req.session.data['successBanner'] = 'true';
     res.redirect("payment")
@@ -255,6 +267,7 @@ router.post('/payment-suspend-reason', function(req, res) {
 });
 
 router.post('/payment-suspend-resume', function(req, res) {
+  // this does exactly the same as the above to add the events for restart/resume
   let temporaryArray = [];
     if(req.session.data['paymentTimelineArray']){
       temporaryArray = req.session.data['paymentTimelineArray']
