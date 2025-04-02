@@ -23,10 +23,18 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% include './_namebar.html' %}
-    
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    })
+    }}
       {% for event in data['paymentTimelineArray'] %}
         {% if loop.index0 ==  data.index %}
-        <h2 class="govuk-heading-l">Payments {% if event.title.includes('stopped') %}stopped{%else%}restarted{%endif%} details</h2>
+        <h2 class="govuk-heading-l">  {% if event.benefits == "SPPC" %}Payments
+          {% elseif event.benefits == "PC" %}Pension Credit payments
+          {% elseif event.benefits == "SP" %}State Pension payments
+          {% endif %} {% if event.title.includes('stopped') %}stopped{%else%}restarted{%endif%}</h2>
+          <h3 class="govuk-heading-m">Details</h3>
           <div class="govuk-form-group">
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
@@ -37,17 +45,7 @@
                   {{event.date | govukDate}}
                 </dd>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Benefit
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {% if event.benefits == "SPPC" %}State Pension and Pension Credit
-                  {% elseif event.benefits == "PC" %}Pension Credit
-                  {% elseif event.benefits == "SP" %}State Pension
-                  {% endif %}
-                </dd>
-              </div>
+
               {% if event.title.includes('stopped') %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -61,7 +59,7 @@
             </dl>
           </div>
         {% endif %}
-      {% endfor %}      
+      {% endfor %}
       <div class="govuk-form-group">
         <form method="post" action="payment">
           <button type="submit" class="govuk-button" data-module="govuk-button">
