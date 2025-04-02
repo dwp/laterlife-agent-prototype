@@ -186,6 +186,19 @@
           </td>
         <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
       </tr>
+      <tr>
+        <td class="govuk-table__header">Status</td>
+        <td class="govuk-table__cell">
+          {% if data.PCpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+          {% elseif data.PCpaymentStatus == "Suspended" %} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell">
+          {% if data.PCpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+          {% elseif data.PCpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=PC&successBanner=false">Restart</a>
+          {% endif %}
+        </td>
+      </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__header">Next payment date</td>
         <td class="govuk-table__cell">
@@ -197,6 +210,9 @@
           </td>
         <td class="govuk-table__cell"></td>
       </tr>
+
+
+      
       <tr class="govuk-table__row">
         <td class="govuk-table__header">Next payment amount</td>
         <td class="govuk-table__cell">
@@ -226,6 +242,19 @@
           Every 4 weeks
               {% endif %}</td>
         <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Status</td>
+        <td class="govuk-table__cell">
+          {% if data.SPpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+          {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell">
+          {% if data.SPpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+          {% elseif data.SPpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=SP&successBanner=false">Restart</a>
+          {% endif %}
+        </td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__header">Next payment date</td>
@@ -259,31 +288,7 @@
 </div>
 
   </div>
-<!--Hiding timeline for MVP
-  <div class="govuk-grid-column-one-third">
 
-    <div class="dwp-timeline">
-    <h1 class="govuk-heading-m">Payment changes</h1>
-    <ol class="dwp-timeline__events">
-    <li class="dwp-timeline__events--entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Event</h2>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent/System/Online</p>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">11 August 2023</p>
-      <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
-    </li>
-    <li class="dwp-timeline__events--entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Event</h2>
-      <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent/System/Online</p>
-      <p class="govuk-caption-m">10 August 2023</p>
-      <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
-    </li>
-    <li class="dwp-timeline__events--entry">
-    <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
-    </li>
-    </ol>
-    </div>
-
-  </div> -->
 
   <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-m">Payment history</h2>

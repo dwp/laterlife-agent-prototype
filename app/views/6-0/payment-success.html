@@ -186,6 +186,20 @@
           </td>
         <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
       </tr>
+      <tr>
+        <td class="govuk-table__header">Status</td>
+        <td class="govuk-table__cell">
+          {% if data.PCpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+          {% elseif data.PCpaymentStatus == "Suspended" %} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell">
+          {% if data.PCpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+          {% elseif data.PCpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=PC&successBanner=false">Restart</a>
+          {% endif %}
+        </td>
+      </tr>
+  
       <tr class="govuk-table__row">
         <td class="govuk-table__header">Next payment date</td>
         <td class="govuk-table__cell">
@@ -211,7 +225,6 @@
     </tbody>
   </table>
 </div>
-
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="state-pension-payment-details">
   <table class="govuk-table">
     <tbody class="govuk-table__body">
@@ -227,6 +240,18 @@
               {% endif %}</td>
         <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
       </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Status</td>
+        <td class="govuk-table__cell">
+          {% if data.SPpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+          {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell">
+          {% if data.SPpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+          {% elseif data.SPpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=SP&successBanner=false">Restart</a>
+          {% endif %}
+        </td>
       <tr class="govuk-table__row">
         <td class="govuk-table__header">Next payment date</td>
         <td class="govuk-table__cell">
