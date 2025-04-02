@@ -180,6 +180,19 @@
             </td>
           <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
+        <tr>
+          <td class="govuk-table__header">Status</td>
+          <td class="govuk-table__cell">
+            {% if data.PCpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+            {% elseif data.PCpaymentStatus == "Suspended" %} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">
+            {% if data.PCpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+            {% elseif data.PCpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=PC&successBanner=false">Restart</a>
+            {% endif %}
+          </td>
+        </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
           <td class="govuk-table__cell">
@@ -219,7 +232,22 @@
                 {% else %}
             Every 4 weeks
                 {% endif %}</td>
+                
           <td class="govuk-table__cell"><a href="payment-change-sp-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Status</td>
+          <td class="govuk-table__cell">
+            {% if data.SPpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+            {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">
+            {% if data.SPpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
+            {% elseif data.SPpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=SP&successBanner=false">Restart</a>
+            {% endif %}
+          </td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment date</td>
@@ -234,6 +262,7 @@
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
+        
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Next payment amount</td>
           <td class="govuk-table__cell">
@@ -253,34 +282,27 @@
 </div>
 
     </div>
-<!--Hiding timeline for MVP
-    <div class="govuk-grid-column-one-third">
 
-      <div class="dwp-timeline">
-      <h1 class="govuk-heading-m">Payment changes</h1>
-      <ol class="dwp-timeline__events">
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Event</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent/System/Online</p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">11 August 2023</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
+        <!-- NEW TIMELINE -->
+  <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">Payment changes</h1>
+    <div class="dwp-timeline">
+    <ol class="dwp-timeline__items">
+      <li class="dwp-timeline__item">
+        <p class="dwp-timeline__datetime">2 April 2025 at 7:25pm</p>
+        <h2 class="dwp-timeline__heading">Pension Credit payments restarted</h2>
+        <p class="dwp-timeline__by-line">by Jane Smith</p>
       </li>
-      <li class="dwp-timeline__events--entry">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Event</h2>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent/System/Online</p>
-        <p class="govuk-caption-m">10 August 2023</p>
-        <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Details</a></p>
+      <li class="dwp-timeline__item">
+        <p class="dwp-timeline__datetime">2 April 2025 at 1:15pm</p>
+        <h2 class="dwp-timeline__heading">Pension Credit payments stopped</h2>
+        <p class="dwp-timeline__by-line">by John Doe</p>
+        <a href="timeline-details-pc-payments-stopped" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 2 April 2025 at 1:15pm</span></a> 
       </li>
-      <li class="dwp-timeline__events--entry">
-      <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
-      </li>
-      </ol>
-      </div>
-
-    </div> -->
-
-
-
+    </ol>
+    </div>
+    <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+  </div>
 
 
           <div class="govuk-grid-column-full">
