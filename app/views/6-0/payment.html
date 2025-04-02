@@ -28,11 +28,11 @@
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
           {% if data.paymentTimelineArray[0].benefits == 'SPPC' %}
-          Payments 
+          Payments
           {% elseif data.paymentTimelineArray[0].benefits == 'SP' %}
-          State Pension payments 
+          State Pension payments
           {% elseif data.paymentTimelineArray[0].benefits == 'PC' %}
-          Pension Credit payments 
+          Pension Credit payments
           {% endif %}
 
           {% if data.paymentTimelineArray[0].title.includes('stopped')%}
@@ -156,7 +156,7 @@
               </div>
               {% else %}
               {% endif %}
-  
+
             </dl>
           </div>
         </div>
@@ -184,7 +184,7 @@
   <div class="govuk-tabs__panel" id="pension-credit-payment-details">
     <table class="govuk-table">
       <tbody class="govuk-table__body">
-       
+
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Payment frequency</td>
           <td class="govuk-table__cell">
@@ -194,7 +194,7 @@
                 Every 2 weeks
                 {% else %}
             Every 4 weeks
-                {% endif %} 
+                {% endif %}
             </td>
           <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
         </tr>
@@ -219,7 +219,7 @@
             Wednesday 19 March 2025
               {% else %}
               Wednesday 9 April 2025
-              {% endif %} 
+              {% endif %}
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
@@ -230,7 +230,7 @@
             £28.16
               {% else %}
               £112.64
-              {% endif %} 
+              {% endif %}
               </td>
           <td class="govuk-table__cell"></td>
         </tr>
@@ -277,7 +277,7 @@
             Wednesday 26 March 2025
               {% else %}
             Wednesday 9 April 2025
-              {% endif %} 
+              {% endif %}
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
@@ -290,7 +290,7 @@
             £379.98
               {% else %}
               £759.96
-              {% endif %} 
+              {% endif %}
             </td>
           <td class="govuk-table__cell"></td>
         </tr>
@@ -304,7 +304,7 @@
 
     <!--- SUSPEND TIMELINE -->
     <div class="govuk-grid-column-one-third">
-        {% if data['paymentTimelineArray'] %}<h2 class="govuk-heading-m">Payment changes</h2>{% endif %}
+        {% if data['paymentTimelineArray'] %}<h2 class="govuk-heading-m">Payment changes</h2>
         <div class="dwp-timeline">
           <ol class="dwp-timeline__items">
             {% for event in data['paymentTimelineArray'] %}
@@ -318,6 +318,8 @@
                 </li>
             {% endfor %}
           </ol>
+          <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>{% endif %}
+
         </div>
     </div>
     <!--- END OF SUSPEND TIMELINE -->
@@ -355,7 +357,7 @@
             <td class="govuk-table__cell" class="govuk-orange">Sent
             </td>
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
-          </tr> 
+          </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
@@ -375,7 +377,7 @@
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
-          </tr> 
+          </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
