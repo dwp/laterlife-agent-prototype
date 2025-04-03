@@ -297,7 +297,7 @@ router.post('/payment-suspend-resume', function(req, res) {
       req.session.data['SPpaymentStatus'] = "In payment";
     }
 
-    let temporaryObject = {date: date, benefits: benefits, title: title, person: personArray[random], reason: req.session.data['suspendReason']}
+    let temporaryObject = {date: date, benefits: benefits, title: title, person: personArray[random], reason:""}
     temporaryArray.unshift(temporaryObject);
     req.session.data['paymentTimelineArray'] =  temporaryArray;
 
