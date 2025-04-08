@@ -34,11 +34,40 @@
   })
 }}
 
-<tr class="govuk-table__row" style="width: 20%"></tr>
 
+<!--SHOW SMALL RADIO EXAMPLE
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Show
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="timelineShow" name="timelineShow" type="radio" value="15">
+        <label class="govuk-label govuk-radios__label" for="timelineShow">
+          15 
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="timelineShow-2" name="timelineShow" type="radio" value="All">
+        <label class="govuk-label govuk-radios__label" for="timelineShow-2">
+          All 
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+-->
 <br><br>
+<h1 class="govuk-heading-l">Full history</h1>
+<p class="govuk-body">
+  Show: <a href="#" class="govuk-link govuk-!-padding-left-2">15</a> 
+<a href="#" class="govuk-link govuk-!-padding-left-2">50</a> 
+<a href="#" class="govuk-link govuk-!-padding-left-2">All</a> </p>
+</p>
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--l">Full history</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" style="width: 30%">Date</th>
@@ -48,55 +77,76 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <!--<th scope="row" class="govuk-table__header">1 April 2025</th>-->
       <th scope="row" class="govuk-table__header">1 April 2025</th>
       <td class="govuk-table__cell"><a href="timeline-details-move-gysp-cam" class="govuk-link">Claimant moved to Legacy and GySP</a></td>
       <td class="govuk-table__cell">Jane Doe</td>
     </tr>
     <tr class="govuk-table__row">
-    <!-- <th scope="row" class="govuk-table__header">27 March 2025</th> -->
       <th scope="row" class="govuk-table__header">27 March 2025</th>
       <td class="govuk-table__cell">Bank details changed</td>
       <td class="govuk-table__cell">System</td>
     </tr>
     <tr class="govuk-table__row">
-      <!-- <th scope="row" class="govuk-table__header">15 March 2025</th> -->
       <th scope="row" class="govuk-table__header">18 March 2025</th>
       <td class="govuk-table__cell"><a href="timeline-details-pc-payments-stopped" class="govuk-link">Pension Credit payments stopped</a></td>
       <td class="govuk-table__cell">John Smith</td>
     </tr>
     <tr class="govuk-table__row">
-      <!-- <th scope="row" class="govuk-table__header">15 March 2025</th> -->
-      <th scope="row" class="govuk-table__header">15 March 2025</th>
+      <th scope="row" class="govuk-table__header">17 March 2025</th>
       <td class="govuk-table__cell">Address changed</td>
       <td class="govuk-table__cell">Online</td>
     </tr>
     <tr class="govuk-table__row">
-      <!-- <th scope="row" class="govuk-table__header">15 March 2025</th> -->
+      <th scope="row" class="govuk-table__header">15 March 2025</th>
+      <td class="govuk-table__cell">Correspondence address changed</td>
+      <td class="govuk-table__cell">Onine</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">15 March 2025</th>
+      <td class="govuk-table__cell">Pension Credit payment frequency changed</td>
+      <td class="govuk-table__cell">Jane Doe</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">14 March 2025</th>
+      <td class="govuk-table__cell">Email address changed</td>
+      <td class="govuk-table__cell">Timothy Cook</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">12 March 2025</th>
+      <td class="govuk-table__cell">Mobile phone number added</td>
+      <td class="govuk-table__cell">Bill Wilson</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">11 March 2025</th>
+      <td class="govuk-table__cell">Phone number changed</td>
+      <td class="govuk-table__cell">Online</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">10 March 2025</th>
+      <td class="govuk-table__cell">Email address changed</td>
+      <td class="govuk-table__cell">Timothy Cook</td>
+    </tr>
+    <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">8 March 2025</th>
       <td class="govuk-table__cell">Correspondence address added</td>
       <td class="govuk-table__cell">Onine</td>
     </tr>
     <tr class="govuk-table__row">
-      <!-- <th scope="row" class="govuk-table__header">15 March 2025</th> -->
       <th scope="row" class="govuk-table__header">22 February 2025</th>
       <td class="govuk-table__cell">Payment frequency changed</td>
       <td class="govuk-table__cell">Lucy Williams</td>
     </tr>
     <tr class="govuk-table__row">
-      <!-- <th scope="row" class="govuk-table__header">15 March 2025</th> -->
       <th scope="row" class="govuk-table__header">11 February 2025</th>
       <td class="govuk-table__cell">Email address added</td>
       <td class="govuk-table__cell">Online</td>
     </tr>
     <tr class="govuk-table__row">
-      <!-- <th scope="row" class="govuk-table__header">9 Janurary 2025</th> -->
       <th scope="row" class="govuk-table__header">9 Janurary 2025</th>
       <td class="govuk-table__cell"><a href="timeline-details-pc-application-processed" class="govuk-link">Pension credit application processed</a></td>
       <td class="govuk-table__cell">System</td>
     </tr>
     <tr class="govuk-table__row">
-       <!-- <th scope="row" class="govuk-table__header">9 Janurary 2025</th> -->
       <th scope="row" class="govuk-table__header">9 Janurary 2025</th>
       <td class="govuk-table__cell">State Pension claim received</td>
       <td class="govuk-table__cell">System</td>
