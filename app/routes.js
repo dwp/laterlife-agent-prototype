@@ -6,7 +6,9 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+
 router.use('/retirement-showcase', require('./views/retirement-showcase/routes'))
+router.use('/7-0', require('./views/7-0/routes'))
 router.use('/6-0', require('./views/6-0/routes'))
 router.use('/5-0', require('./views/5-0/routes'))
 router.use('/4-0', require('./views/4-0/routes'))

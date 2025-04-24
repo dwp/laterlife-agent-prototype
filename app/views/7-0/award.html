@@ -1,0 +1,166 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include './_namebar.html' %}
+      {% include './_remove-link.html' %}
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="personal">Personal</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="contact">Contact</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="award">Award</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="payment">Payment</a>
+        </li>
+
+
+      </ul>
+
+
+<br><br>
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      These awards will change on 10 April 2025.<br>
+      <a class="govuk-notification-banner__link" href="award-details-pc-uprating">View new Pension Credit award</a>.<br>
+      <a class="govuk-notification-banner__link" href="award-details-sp-uprating">View new State Pension award</a>.
+    </p>
+  </div>
+</div>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m">Pension Credit awards</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">From</th>
+      <th scope="col" class="govuk-table__header">Weekly amount</th>
+      <th scope="col" class="govuk-table__header">Adjustment</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">9 January 2025</td>
+      <td class="govuk-table__cell">&pound;28.16</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><a href="award-details-pc-1" class="govuk-link">Details</a></td>
+    </tr> 
+
+  <!-- Hiding temporarily so SME's can screenshot an accurate example
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">10 April 2025</td>
+      <td class="govuk-table__cell">&pound;29.34</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><a href="award-details-pc" class="govuk-link">Details</a></td>
+    </tr>   
+  </tbody>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">9 January 2025</td>
+      <td class="govuk-table__cell">&pound;28.16</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><a href="award-details-pc-prev-1" class="govuk-link">Details</a></td>
+    </tr>   -->
+  </tbody>
+</table>
+<br>
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m">State Pension awards</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">From</th>
+      <th scope="col" class="govuk-table__header">Weekly amount</th>
+      <th scope="col" class="govuk-table__header">Adjustment</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">9 January 2025</td>
+      <td class="govuk-table__cell">&pound;189.99</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><a href="award-details-sp-1" class="govuk-link">Details</a></td>
+    </tr> 
+   
+   <!-- Hiding for the screenshot for the SMEs
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">10 April 2025</td>
+      <td class="govuk-table__cell">&pound;197.76</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell"><a href="award-details-sp" class="govuk-link">Details</a></td>
+    </tr>  
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">9 January 2025</td>
+      <td class="govuk-table__cell">&pound;189.99</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><a href="award-details-sp-prev-1" class="govuk-link">Details</a></td>
+    </tr>   -->
+
+  </tbody>
+</table>
+</div>   
+
+<!-- NEW TIMELINE DESIGN-->
+<div class="govuk-grid-column-one-third">
+  <h1 class="govuk-heading-m">Award changes</h1>
+  <div class="dwp-timeline">
+  <ol class="dwp-timeline__items">
+  <li class="dwp-timeline__item">
+    <p class="dwp-timeline__datetime">9 Janurary 2025 at 3:14pm</p>
+    <h2 class="dwp-timeline__heading">Pension credit application processed</h2>
+    <p class="dwp-timeline__by-line">by Michael Smith</p>
+    <a href="timeline-details-pc-application-processed" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 9 Janurary 2025 at 3:14pm</span></a>
+  </li>
+  <li class="dwp-timeline__item">
+    <p class="dwp-timeline__datetime">9 Janurary 2025 at 1:20am</p>
+    <h2 class="dwp-timeline__heading">State Pension claim received</h2>
+    <p class="dwp-timeline__by-line">by System</p>
+   <!-- <a href="#" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 12 Janurary 2024 at 1:20am</span></a>-->
+  </li>
+</ol>
+</div>
+<p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+</div>
+
+</div>
+
+{% endblock %}
