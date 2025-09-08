@@ -35,31 +35,33 @@
 
       <h1 class="govuk-heading-l">Current Pension Credit award</h1>
 
-      <div title="Award details" class="govuk-!-padding-bottom-5">
+      <div title="Award details">
         <dl class="govuk-summary-list">
-          <h2 class="govuk-heading-m">Award details</h2>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Award amount
+              Total
             </dt>
-            <dd class="govuk-summary-list__value">
-              &pound;15.44
+            <dd class="govuk-summary-list__key">
+              &pound;15.44 a week
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              From
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2 June 2025
+            </dd>
+          </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Decision date
             </dt>
             <dd class="govuk-summary-list__value">
               19 June 2025
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Award effective date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              2 June 2025
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -73,20 +75,20 @@
         </dl>
       </div>
 
-      <div> 
+      <div>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
               <h2 class="govuk-heading-m">Guarantee Credit</h2>
             </div>
             <div class="govuk-grid-column-one-half govuk-!-text-align-right">
-              <span class="govuk-body">&pound; 15.44</span>
+              <span class="govuk-heading-m">&pound; 15.44 a week</span>
             </div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-2">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Appropriate minimum guarantee
+              Appropriate minimum guarantee (AMG)
             </dt>
             <dd class="govuk-summary-list__actions govuk-!-text-align-right"">
               &pound;475.90
@@ -96,7 +98,7 @@
         <details class="govuk-details govuk-!-margin-top-1" >
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Show appropriate minimum guarantee details
+              AMG details
             </span>
           </summary>
           <div class="govuk-details__text">
@@ -111,7 +113,7 @@
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Extra amount for severe disability
+                    Disability addition
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
                     &pound;82.90
@@ -119,7 +121,7 @@
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Carer's premium
+                    Carer's addition
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
                     &pound;46.40
@@ -142,7 +144,7 @@
         <details class="govuk-details govuk-!-margin-top-1" >
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Show income details
+              Income details
             </span>
           </summary>
           <div class="govuk-details__text">
@@ -198,14 +200,14 @@
                   &pound;63.34
                 </dd>
               </div>
-            </dl>     
+            </dl>
           </div>
         </details>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-2">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Deemed income
+              Income from savings
             </dt>
             <dd class="govuk-summary-list__actions govuk-!-text-align-right">
               &pound;3.00
@@ -215,7 +217,7 @@
         <details class="govuk-details govuk-!-margin-top-1" >
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Show deemed income details
+              Income from savings details
             </span>
           </summary>
           <div class="govuk-details__text ">
@@ -228,12 +230,12 @@
                   &pound;11557.33
                 </dd>
               </div>
-            </dl>              
+            </dl>
           </div>
         </details>
         
-      </div> 
+      </div>
     </div>
   </div>
-      
+
 {% endblock %}
