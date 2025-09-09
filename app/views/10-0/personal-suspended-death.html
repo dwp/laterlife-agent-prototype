@@ -1,0 +1,197 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Personal – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Death reported
+    </h3>
+  </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+<strong class="govuk-tag govuk-tag--grey">
+  Dead
+</strong>
+<br><br>
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" aria-current="page" href="personal">Personal</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="contact">Contact</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="award">Award</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="payment">Payment</a>
+    </li>
+
+    <!-- <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="history">Full history</a>
+    </li>-->
+  </ul>
+
+</nav>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    Charlotte has died so Pension Credit and State Pension payments have been stopped. You must complete the next steps offline.
+ 
+  </strong>
+</div>
+
+        <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Full name
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Charlotte Mudd
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">    <span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      National Insurance number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ 12 34 56 C
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> customer reference</span></a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      5 January 1958
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">    <span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      State Pension date
+    </dt>
+    <dd class="govuk-summary-list__value">
+       5 January 2024
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> address</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Marital status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Never been married</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> contact details</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Lived or worked abroad
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">No</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden">No</span></a>
+    </dd>
+  </div>
+</dl>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      <div class="dwp-timeline">
+      <h1 class="govuk-heading-m">Action history</h1>
+      <ol class="dwp-timeline__events">
+  
+  
+
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Death reported, payments stopped</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
+        </li>
+
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">State Pension suspended for investigation</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
+        </li>
+
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pension Credit suspended for investigation</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Agent</p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">1 July 2024</p>
+          <p class="govuk-caption-m"><a href="#" class="govuk-link govuk-link--no-visited-state"></a></p>
+        </li>
+
+        <li class="dwp-timeline__events--entry">
+          <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+          </li>
+
+      </div>
+  
+  
+  
+    </div>
+  
+  {% endblock %}
