@@ -6,7 +6,13 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-let version = '9-0';
+
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
+
+let version = '10-0';
+
+
 
 // Manage payments - confirm recall in CPS. HTML page: payment-recall-cps-local.html
 
@@ -26,6 +32,8 @@ router.post('/'+version+'/confirm-recall', function (req, res) {
   }
 
 });
+
+
 
 
 
