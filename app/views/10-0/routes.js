@@ -57,6 +57,22 @@ router.post('/'+version+'/confirm-return', function (req, res) {
 
 });
 
+router.post('/'+version+'/others-manage/age', function (req, res) {
+
+  // Make a variable and give it the value from 'confirm-bank'
+  var dobUnder18 = req.session.data['dob-year']
+
+  // Check whether the variable matches a condition
+  if (dobUnder18 == "2012"){
+    // Send user to confirm page
+    res.redirect('leave-service')
+  } else {
+    // Send user back to other confirm page 
+    res.redirect('relation-to-claimant')
+  }
+
+});
+
 
 
 // MVP versionION 5

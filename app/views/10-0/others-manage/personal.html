@@ -11,7 +11,7 @@
 <div class="dwp-header__service-name">
   <a href="/index" class="dwp-header__link">{{serviceName}}</a>
 </div>
-          {% include './_nav.html' %}
+          {% include '.././_nav.html' %}
 </div>
 </header>
 
@@ -24,8 +24,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include './_namebar.html' %}
-      {% include './_remove-link.html' %}
+      {% include '.././_namebar.html' %}
+      {% include '.././_remove-link.html' %}
       
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
@@ -153,23 +153,13 @@
     Other people living with the claimant
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if data['first-other'] == 'yes'%}
+     
       <p class="govuk-body">No</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="others-manage/age">Add</a>
+      <a class="govuk-link" href="age">Add</a>
     </dd>
-    {% else %}
-     <p class="govuk-body">2</p>
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      {% if data['changeable'] =='yes' %}
-      <a class="govuk-link" href="others-manage/others-living-with-claimant-editable">Details</a>
-      {% else %}
-      <a class="govuk-link" href="others-living-with-claimant">Details</a>
-      {% endif %}
-    </dd>
-    {% endif %}
+   
   </div>
 </dl>
 
@@ -188,7 +178,7 @@
     <div class="dwp-timeline">
       <ol class="dwp-timeline__items">
         <li class="dwp-timeline__item">
-          <p class="dwp-timeline__datetime">9 January 2025 at 3:14pm</p>
+          <p class="dwp-timeline__datetime">9 Janurary 2025 at 3:14pm</p>
           <h2 class="dwp-timeline__heading">No changes</h2>
         </li>
       </ol>

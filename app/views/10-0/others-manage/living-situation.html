@@ -47,7 +47,11 @@
     </legend><br>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
+       {% if data['tasklist'] !='yes' %}
         <input class="govuk-radios__input" id="whereDoYouLive" name="living-situation" type="radio" value="joint~personal-details">
+        {% else %}
+         <input class="govuk-radios__input" id="whereDoYouLive" name="living-situation" type="radio" value="joint~tasklist">
+        {% endif %}
         <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
           They are joint owners or joint tenants
         </label>
