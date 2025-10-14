@@ -35,28 +35,17 @@
       }}
       <br>  <br>
 
-  <h1 class="govuk-heading-l">Details of others living at this address</h1>
-   
- <p class="govuk-body">
-  <a href="others-living-list" class="govuk-link govuk-link--no-visited-state">Make changes to people at this address</a>
-</p>
+  <h1 class="govuk-heading-l">Details of others living with the claimant</h1>
+      
+
+
 
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
-       {% if data['first-other'] == 'yes' %}
-       {{ data['first-name'] }} {{ data['last-name'] }}
-       {% else %}
-       Jimmy Erikson
-       {% endif %}
+     Jack Erikson
     </h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action">
-       
-      </li>
-     
-    </ul>
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
@@ -64,16 +53,8 @@
         <dt class="govuk-summary-list__key">
           Name
         </dt>
-        {% if data['first-other'] == 'yes' %}
         <dd class="govuk-summary-list__value">
-          {{ data['first-name'] }} {{ data['last-name'] }}
-        </dd>
-        {% else %}
-         <dd class="govuk-summary-list__value">
-          Jimmy Erikson
-        </dd>
-        {% endif %}
-        <dd class="govuk-summary-list__actions">
+          Jack Erikson
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -83,8 +64,6 @@
         <dd class="govuk-summary-list__value">
           Eric is their parent
         </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -93,8 +72,6 @@
         <dd class="govuk-summary-list__value">
           30 March 2018
         </dd> 
-        <dd class="govuk-summary-list__actions">
-        </dd>
       </div>
        <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -103,7 +80,13 @@
         <dd class="govuk-summary-list__value">
           28 June 1972
         </dd>
-        <dd class="govuk-summary-list__actions">
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Age
+        </dt>
+        <dd class="govuk-summary-list__value">
+          53
         </dd>
       </div>
        <div class="govuk-summary-list__row">
@@ -113,27 +96,15 @@
         <dd class="govuk-summary-list__value">
           No
         </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
       </div>
     </dl>
   </div>
 </div>
-
-
-
-{% if data['first-other'] !='yes' %}
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
-    Hannah Erikson
+     Jane Ella Erikson
     </h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action">
-        
-      </li>
-     
-    </ul>
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
@@ -142,9 +113,7 @@
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          Hannah Erikson
-        </dd>
-        <dd class="govuk-summary-list__actions">
+          Jane Ella Erikson
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -154,8 +123,6 @@
         <dd class="govuk-summary-list__value">
           Eric is their grandparent
         </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -164,17 +131,21 @@
         <dd class="govuk-summary-list__value">
           30 March 2018
         </dd> 
-        <dd class="govuk-summary-list__actions">
-        </dd>
       </div>
        <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          21 February 2006
+          30 August 2003
         </dd>
-        <dd class="govuk-summary-list__actions">
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Age
+        </dt>
+        <dd class="govuk-summary-list__value">
+          22
         </dd>
       </div>
        <div class="govuk-summary-list__row">
@@ -184,20 +155,12 @@
         <dd class="govuk-summary-list__value">
           No
         </dd>
-        <dd class="govuk-summary-list__actions">
-         
-        </dd>
       </div>
     </dl>
   </div>
 </div>
-{% endif %}<br>
+    </div>
 
-
-
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Back
-</button>
 
   </div>
 
