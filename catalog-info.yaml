@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: prototype.interface.laterlife-agent-prototype
-  title: laterlife-agent-prototype
+  name: laterlife.agent.prototype
+  title: Laterlife.Agent.Prototype
   description: |
-    TODO: add description for laterlife-agent-prototype.
+   laterlife-agent-prototype.
 
   annotations:
     gitlab.com/project-slug: dwp/user-centred-design/laterlife-agent-prototype
@@ -13,7 +13,7 @@ metadata:
     dwp.gov.uk/version: 1.0.0
     dwp.gov.uk/license: unknown
 
-    dwp.gov.uk/last-verified.by: ben raine
+    dwp.gov.uk/last-verified.by: Ben Raine
     dwp.gov.uk/last-verified.on: 2025-10-14
 
     dwp.gov.uk/open-source.approved: "false"
