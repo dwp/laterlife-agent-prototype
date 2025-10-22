@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+{% include './back-to-top.html' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+   
+        <h1 class="govuk-heading-xl">{{serviceName}}<strong class="govuk-tag govuk-phase-banner__content__tag" style="padding-top:5px;padding-bottom:0px;margin-left:15px">
+      <sup>Alpha</sup>
+    </strong></h1>
+
+
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="../index">
+              Main prototype
+            </a>
+          </li>
+          
+      
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-versions">
+              Previous versions
+            </a>
+          </li>
+         
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-personal">
+              'Personal'
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">'Contact'</strong>
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-award">
+              'Award'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-payment">
+              'Payment'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-others">
+              Others
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-our-team">
+              Our team
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+
+    <br><br>
+<h3 class="govuk-heading-m">Change address - none found</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/change-address-none-found" target="_blank">Change residential address - none found</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">No addresses are found during the change address journey.</p>
+          </td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/change-corr-address-none-found" target="_blank">Change correspondence address - none found</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">No addresses are found during the change correspondence journey.</p>
+          </td>
+        </tr>
+
+      </table>
+
+
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

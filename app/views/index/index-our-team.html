@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+{% include './back-to-top.html' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+   
+        <h1 class="govuk-heading-xl">{{serviceName}}<strong class="govuk-tag govuk-phase-banner__content__tag" style="padding-top:5px;padding-bottom:0px;margin-left:15px">
+      <sup>Alpha</sup>
+    </strong></h1>
+
+
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="../index">
+              Main prototype
+            </a>
+          </li>
+          
+      
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-versions">
+              Previous versions
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-personal">
+              'Personal'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-contact">
+              'Contact'
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-award">
+             'Award'
+            </a>
+          </li>
+          
+          
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-payment">
+              'Payment'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-others">
+              Others
+            </a>
+          </li>
+          
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Our team</strong>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+
+    <br><br>
+ <p>If you have any questions please contact:
+        <br>
+          <a href="mailto:john.davidson5@dwp.gov.uk">John Davidson</a> (Delivery Manager)<br>
+          <a href="mailto:thomas.moore3@dwp.gov.uk">Thomas Moore</a> (Product Manager)
+        </p>  
+       
+        <p>UCD team:
+          <br>
+          <ul class="govuk-list govuk-list--bullet">
+          <li><a href="mailto:jonathan.inch1@engineering.digital.dwp.gov.uk">Jonathan Inch (Interaction Designer)</a></li>
+          <li><a href="mailto:alice.williams@engineering.digital.dwp.gov.uk">Alice Williams (Content Designer)</a></li>
+          <li><a href="mailto:catherine.hoult1@dwp.gov.uk">Catherine Hoult (User Researcher)</a></li>
+         </ul>
+        </p>
+      
+
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+{% include './back-to-top.html' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+   
+        <h1 class="govuk-heading-xl">{{serviceName}}<strong class="govuk-tag govuk-phase-banner__content__tag" style="padding-top:5px;padding-bottom:0px;margin-left:15px">
+      <sup>Alpha</sup>
+    </strong></h1>
+
+
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="../index">
+              Main prototype
+            </a>
+          </li>
+          
+      
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-versions">
+              Previous versions
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-personal">
+              'Personal'
+            </a>
+          </li>
+         
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-contact">
+              'Contact'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-award">
+              'Award'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-payment">
+              'Payment'
+            </a>
+          </li>
+           
+           <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">'Others'</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-our-team">
+              Our team
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+<br><br>
+
+   <h3 class="govuk-heading-m">Quick reference and status tags</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+    
+         
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/6-0/find-result-status-tag-dead.html" target="_blank">Find someone - dead tag</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">April 2025</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">This page shows an example of a citizen who has died. A grey status tag is included in the Quick Reference component.</p>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/6-0/find-result-status-tag-prison.html" target="_blank">Find someone - prison tag</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">April 2025</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">This page shows an example of a citizen who is in prison. A blue status tag is included in the Quick Reference component.</p>
+          </td>
+        </tr>
+     
+      </table>
+      <br>
+      <h3 class="govuk-heading-m">Search Citizen - For Later Life Agent</h3>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+      <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+      <th scope="col" class="govuk-table__header">Details</th>
+    </tr>
+  </thead>
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <a class="govuk-link" href="/5-0/find-result-sp-pc-v2" target="_blank">The record is managed in the LL service</a><br><p>(opens in a new tab)</p>
+    </td>
+    <td class="govuk-table__cell">November 2024</td>
+    <td class="govuk-table__cell">
+      <p class="govuk-body">The citizen is an 'Eric' and agents have access to the LL service. There is also an option to access GySP, as to qualify as an Eric they must have a GySP record.</p>
+    </td>
+  </tr>
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <a class="govuk-link" href="/5-0/find-result-non-eric" target="_blank">The record is not managed in the Later Life service</a><br><p>(opens in a new tab)</p>
+    </td>
+    <td class="govuk-table__cell">November 2024</td>
+    <td class="govuk-table__cell">
+      <p class="govuk-body">The citizen is not an 'Eric' and they don't have access to the LL service.</p>
+    </td>
+  </tr>
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <a class="govuk-link" href="5-0/find-result-none-found" target="_blank">No results found</a><br><p>(opens in a new tab)</p>
+    </td>
+    <td class="govuk-table__cell">November 2024</td>
+    <td class="govuk-table__cell">
+      <p class="govuk-body">This page displays when there are no results found for the NINO entered. The agent is prompted to search again.</p>
+    </td>
+  </tr>
+</table><br>
+<h3 class="govuk-heading-m">Error pages</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+
+
+        <tr class="govuk-table__row">
+         <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/error-problem-with-service" target="_blank">Problem with the service page</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">This is a generic error page used when there is a problem with the service, such as a technical error when retrieving data e.g. bank details or pension credit award information.</p>
+          </td>
+        </tr> 
+      </table>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

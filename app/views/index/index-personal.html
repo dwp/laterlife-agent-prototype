@@ -1,0 +1,232 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+{% include './back-to-top.html' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+   
+        <h1 class="govuk-heading-xl">{{serviceName}}<strong class="govuk-tag govuk-phase-banner__content__tag" style="padding-top:5px;padding-bottom:0px;margin-left:15px">
+      <sup>Alpha</sup>
+    </strong></h1>
+
+
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="../index">
+              Main prototype
+            </a>
+          </li>
+          
+      
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-versions">
+              Previous versions
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">'Personal'</strong>
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-contact">
+              'Contact'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-award">
+              'Award'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-payment">
+              'Payment'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-others">
+              Others
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-our-team">
+              Our team
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+
+    <br><br>
+
+
+      <h3 class="govuk-heading-m">Others living at same address and details pages</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/10-0/personal-other-added.html?view-only=no" target="_blank">Other living at this address (with Change link)</a><br><p>(opens in a new tab)</p><a class="govuk-link" href="/10-0/personal-other-added.html?view-only=yes" target="_blank">Other living at this address (view only)</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">October 2025</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">This page shows the record view when a non-partner has been added to a claimant's record, and the details view that follows.</p>
+          </td>
+        </tr>
+      
+        
+      </table><br>
+
+      <h3 class="govuk-heading-m">Quick reference and status tags</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+       <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/8-0/personal-dead.html" target="_blank">Personal details - dead tag</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">April 2025</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">This page shows an example of a citizen who has died and who's death has already been verified. A grey status tag is included in the Quick Reference component.</p>
+          </td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/8-0/personal-dead-not-verified.html" target="_blank">Personal details - dead tag - not verified</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">April 2025</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">This page shows an example of a citizen who has died but who's death has not yet been verified. A grey status tag is included in the Quick Reference component.</p>
+          </td>
+        </tr>
+        
+      </table>
+      <br>
+      <h3 class="govuk-heading-m">Marital status and details pages</h3>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/personal-never-married.html" target="_blank">Never been married</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">December 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">You can see the marriage status 'never been married' in the summary list. A 'details' page is not required in this scenario.</p>
+          </td>
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/personal-married" target="_blank">Married</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">December 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">You can see the marriage status 'married' in the summary list. In this scenario a details page is not required.</p>
+          </td>
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/personal-civil-partnership" target="_blank">In a civil partnership </a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">December 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">You can see the marriage status 'in a civil partnership' in the summary list. There is a 'details' page available to view in this scenario.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/personal-divorced" target="_blank">Divorced</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">December 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">You can see the marriage status 'divorced' in the summary list.  There is a 'details' page available to view in this scenario.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/personal-dissolved-civil-partnership" target="_blank">Dissolved civil partnership</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">December 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">You can see the marriage status 'dissolved civil partnership' in the summary list.  There is a 'details' page available to view in this scenario.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/5-0/personal-widowed" target="_blank">Widowed</a><br><p>(opens in a new tab)</p>
+          </td>
+          <td class="govuk-table__cell">December 2024</td>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">You can see the marriage status 'widowed' in the summary list.  There is a 'details' page available to view in this scenario.</p>
+          </td>
+        </tr>
+        
+      </table>
+<br>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

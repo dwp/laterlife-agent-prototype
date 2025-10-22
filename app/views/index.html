@@ -5,64 +5,121 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl">{{serviceName}}</h1>
-  
-        <p>The project is currently in Alpha.</p>
-  
-        <p>If you have any questions please contact:
-        <br>
-          <a href="mailto:john.davidson5@dwp.gov.uk">John Davidson</a> (Delivery Manager)<br>
-          <a href="mailto:thomas.moore3@dwp.gov.uk">Thomas Moore</a> (Product Manager)
-        </p>  
-       
-        <p>UCD team:
-          <br>
-          <ul class="govuk-list govuk-list--bullet">
-          <li>Jonathan Inch (Interaction Designer) (previously Jen Weston-Charles)</li>
-          <li>Alice Williams (Content Designer)</li>
-          <li>Catherine Hoult (User Researcher)</li>
-         </ul>
-        </p>
+   
+        <h1 class="govuk-heading-xl">{{serviceName}}<strong class="govuk-tag govuk-phase-banner__content__tag" style="padding-top:5px;padding-bottom:0px;margin-left:15px">
+      <sup>Alpha</sup>
+    </strong></h1>
 
-    <h2 class="govuk-heading-l">
-    Current prototype
-    </h2>
-    <p>We are currently designing iteration 10.</p>
 
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Main prototype</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-versions">
+              Previous versions
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-personal">
+              'Personal'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-contact">
+              'Contact'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-award">
+              'Award'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-payment">
+              'Payment'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-others">
+              Others
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-our-team">
+              Our team
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+<br><br>
+<h2 class="govuk-heading-l">
+   We are currently designing iteration 10</h2>
+
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Important
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
-    <p>
-      The following button links to work in progress - it may be unstable, have broken links or frequently change as we develop the prototype.<br><br>
-      Use a <a class="govuk-notification-banner__link" href="index-versions">previous prototype iteration</a> for a stable version.
+    <p class="govuk-body" style="max-width: none;">
+      <strong>The following button links to work in progress</strong> - it may be unstable, have broken links or frequently change as we develop the prototype.<br><br>
+      Use a <a class="govuk-notification-banner__link" href="/index/index-versions">previous version</a> for a stable version.
     </p>
   </div>
 </div>
 
+ 
+
 <a href="/10-0/find.html" class="govuk-button govuk-button--start">Start prototype</a>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
 
-<br> <br>
-<h3 class="govuk-heading-m">Standalone pages </h3>
-<p class="govuk-body">There are various scenarios for the user journeys that we are designing, that don't fit into the typical 'happy path' such as the various 'citizen search' results.</p>
-<p class="govuk-body">
-  Go to <a href="index-standalone" class="govuk-link">standalone pages</a>.
-</p>
+<br><br>
 
-<br>
-<h3 class="govuk-heading-m">Previous prototype iterations</h3>
-<p class="govuk-body">There are several iterations of the prototype that can be accessed along with topline details of what's changed.</p>
-<p class="govuk-body">
-  Go to <a href="index-versions" class="govuk-link">previous prototype iterations</a>.
-</p>
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1" style="border-left-color:#a4bacd;">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Designs outside of the main prototype</h2>
+    <p class="govuk-body">Use the nav at the top of the page to see other designs and journeys that sit outside of the main prototype flow.<br><br>These are divided up into designs that sit on each of the record view tabs, or that have no obvious tab placement.</p>
+    
+  </section>
+</article>
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1" style="border-left-color:#a4bacd;">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Previous versions</h2>
+    <p class="govuk-body">Previous iterations of the main prototype are available to view, along with design notes explaining what changes were made in each iteration.</p>
+    <a href="index/index-versions" class="govuk-link govuk-link--no-visited-state">View previous versions</a>
+  </section>
+</article>
 
 </div>
+  </div>
+</div>
+
+
 
 {% endblock %}
 

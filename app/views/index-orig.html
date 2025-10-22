@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">{{serviceName}}</h1>
+  
+        <p>The project is currently in Alpha.</p>
+  
+        <p>If you have any questions please contact:
+        <br>
+          <a href="mailto:john.davidson5@dwp.gov.uk">John Davidson</a> (Delivery Manager)<br>
+          <a href="mailto:thomas.moore3@dwp.gov.uk">Thomas Moore</a> (Product Manager)
+        </p>  
+       
+        <p>UCD team:
+          <br>
+          <ul class="govuk-list govuk-list--bullet">
+          <li>Jonathan Inch (Interaction Designer) (previously Jen Weston-Charles)</li>
+          <li>Alice Williams (Content Designer)</li>
+          <li>Catherine Hoult (User Researcher)</li>
+         </ul>
+        </p>
+
+    <h2 class="govuk-heading-l">
+    Current prototype
+    </h2>
+    <p>We are currently designing iteration 10.</p>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p>
+      The following button links to work in progress - it may be unstable, have broken links or frequently change as we develop the prototype.<br><br>
+      Use a <a class="govuk-notification-banner__link" href="index-versions">previous prototype iteration</a> for a stable version.
+    </p>
+  </div>
+</div>
+
+<a href="/10-0/find.html" class="govuk-button govuk-button--start">Start prototype</a>
+
+<br> <br>
+<h3 class="govuk-heading-m">Standalone pages </h3>
+<p class="govuk-body">There are various scenarios for the user journeys that we are designing, that don't fit into the typical 'happy path' such as the various 'citizen search' results.</p>
+<p class="govuk-body">
+  Go to <a href="index-standalone" class="govuk-link">standalone pages</a>.
+</p>
+
+<br>
+<h3 class="govuk-heading-m">Previous prototype iterations</h3>
+<p class="govuk-body">There are several iterations of the prototype that can be accessed along with topline details of what's changed.</p>
+<p class="govuk-body">
+  Go to <a href="index-versions" class="govuk-link">previous prototype iterations</a>.
+</p>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "Navigation options",
+            text: "nav-links"
+          },
+          {
+            href: "manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "manage-prototype/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

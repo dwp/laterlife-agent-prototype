@@ -4,21 +4,77 @@
 
 {% block content %}
 
+{% include './back-to-top.html' %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+   
+        <h1 class="govuk-heading-xl">{{serviceName}}<strong class="govuk-tag govuk-phase-banner__content__tag" style="padding-top:5px;padding-bottom:0px;margin-left:15px">
+      <sup>Alpha</sup>
+    </strong></h1>
 
 
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="../index">
+              Main prototype
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Previous versions</strong>
+            </a>
+          </li>
       
-      <h1 class="govuk-heading-xl">Previous versions of the main prototype</h1>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-personal">
+              'Personal'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-contact">
+              'Contact'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-award">
+              'Award'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-payment">
+              'Payment'
+            </a>
+          </li>
+           <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-others">
+              Others
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/index/index-our-team">
+              Our team
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
 
-        
-      {{ govukBackLink({
-        "text": "Back",
-        "href": "javascript: window.history.go(-1)"
-      })
-    }}
+<div class="govuk-grid-row">
+
+
     <br><br>
 
 
@@ -187,115 +243,9 @@
             </ul>
           </td>
         </tr>
-      </table>
-
-<!--       
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">More prototype iterations</span>
-
-        </summary>
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Version</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date created</th>
-              <th scope="col" class="govuk-table__header">Updates made</th>
-            </tr>
-          </thead>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <a href="v1/start">Version 1</a>
-            </td>
-            <td class="govuk-table__cell">February 2024</td>
-            <td class="govuk-table__cell">
-              Prototype standard payment user journey. 
-              Pages include:
-              <ul class="govuk-list govuk-list--bullet">
-                <br>
-                <li>GOV.UK page</li>
-                <li>Temporary sign in page</li>
-                <li>Calculation breakdown</li>
-                <li>Make a decision page</li>
-                <li>Accept or decline</li>
-                <li>Bank details</li>
-                <li>Check your answers</li>
-                <li>Confirmation pages</li>
-              </ul>
-            </td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <a href="v2/start">Version 2</a>
-            </td>
-            <td class="govuk-table__cell">March 2024</td>
-            <td class="govuk-table__cell">
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Mockup are you sure page</li>
-                <li>Check you answers: layout change to split account details into its own section</li>
-                <li>Check you answers: add field name for each field for account details section</li>
-                <li>Confirmation page: remove reference number</li>
-                <li>Iterated content on the calculation breakdown, make a decision and confirmation pages</li>
-              </ul>
-            </td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <a class="govuk-link" href="/v3">Version 3</a>
-            </td>
-            <td class="govuk-table__cell">March - April 2024</td>
-            <td class="govuk-table__cell">
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Split into 3 journeys standard payment, underpaid and overpaid</li>
-                <li>Underpaid: updated content on the calculation breakdown</li>
-                <li>Updated content on the make a decision page and the decline confirmation page to say the payment is still available</li>
-              </ul>
-            </td>
-          </tr> -->
-
-        </table>
-      </details>
-
-  <!-- <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Navigation
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-2" class="govuk-accordion__section-content">
-      <h2 class="govuk-heading-m">
-        Navigation option 1
-      </h2>
-      {{ govukButton({
-        text: "Start now - option 1",
-        href: "mvp/0/nav-options/option-1-full/find",
-        isStartButton: true
-      }) }}
-
-      <h2 class="govuk-heading-m">
-        Navigation option 2
-      </h2>
-      {{ govukButton({
-        text: "Start now - option 2",
-        href: "mvp/0/find",
-        isStartButton: true
-      }) }}
-
-    </div>
-  </div>
-
-</div> -->
+      </table></div>
 
 
-
-</div>
 
 {% endblock %}
 
