@@ -24,10 +24,3 @@
     "ws": "^8.18.3"
   }
 }
-
-{
-  "name": "laterlife-agent-prototype",
-  "engines": {
-    "node": "24.1.0"
-  }
-}
