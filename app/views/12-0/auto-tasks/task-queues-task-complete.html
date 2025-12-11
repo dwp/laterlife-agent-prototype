@@ -89,14 +89,25 @@
 
 </div>
 <div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">28
+  {% if data['task'] == 'death' %}
+   <h3 class="govuk-heading-l">6
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
 <div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">28
+   <h3 class="govuk-heading-l">6
      <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
    </h3>
+  {% else %}
+<h3 class="govuk-heading-l">7
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
+</div>
+<div class="govuk-grid-column-one-quarter">
+   <h3 class="govuk-heading-l">7
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% endif %}
 </div>
 
 </div>
@@ -111,15 +122,25 @@
 </div>
 
 <div class="govuk-grid-column-one-quarter">
-<h3 class="govuk-heading-l">28
-<p class="govuk-body govuk-!-font-size-24">total tasks</p>
-</h3>
+{% if data['task'] == 'address' %}
+   <h3 class="govuk-heading-l">27
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
 </div>
-
 <div class="govuk-grid-column-one-quarter">
-<h3 class="govuk-heading-l">28
-<p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-</h3>
+   <h3 class="govuk-heading-l">27
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% else %}
+  <h3 class="govuk-heading-l">28
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
+</div>
+<div class="govuk-grid-column-one-quarter">
+   <h3 class="govuk-heading-l">28
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% endif %}
 </div>
 
 </div>
@@ -134,15 +155,25 @@
 </div>
 
 <div class="govuk-grid-column-one-quarter">
-<h3 class="govuk-heading-l">28
-<p class="govuk-body govuk-!-font-size-24">total tasks</p>
-</h3>
+{% if data['task'] == 'dob' %}
+   <h3 class="govuk-heading-l">1
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
 </div>
-
 <div class="govuk-grid-column-one-quarter">
-<h3 class="govuk-heading-l">28
-<p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-</h3>
+   <h3 class="govuk-heading-l">1
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% else %}
+  <h3 class="govuk-heading-l">2
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
+</div>
+<div class="govuk-grid-column-one-quarter">
+   <h3 class="govuk-heading-l">2
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% endif %}
 </div>
 
 </div>
@@ -159,14 +190,25 @@
 
 </div>
 <div class="govuk-grid-column-one-quarter">
-<h3 class="govuk-heading-l">28
-<p class="govuk-body govuk-!-font-size-24">total tasks</p>
-</h3>
+{% if data['task'] == 'name' %}
+   <h3 class="govuk-heading-l">5
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
 </div>
 <div class="govuk-grid-column-one-quarter">
-<h3 class="govuk-heading-l">28
-<p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-</h3>
+   <h3 class="govuk-heading-l">5
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% else %}
+  <h3 class="govuk-heading-l">6
+     <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+   </h3>
+</div>
+<div class="govuk-grid-column-one-quarter">
+   <h3 class="govuk-heading-l">6
+     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+   </h3>
+  {% endif %}
 </div>
 
 </div>

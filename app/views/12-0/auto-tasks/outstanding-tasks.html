@@ -47,7 +47,7 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           {% if data['task-type'] == 'death'%}
-          <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-death">Death task</a></td>
+          <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-death?task=death">Death task</a></td>
           <td class="govuk-table__cell">Bereavement</td>
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
@@ -55,7 +55,7 @@
               </strong>
           </td>
           {% elif data['task-type'] == 'address' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-address">Address task</a></td>
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-address?task=address">Address task</a></td>
           <td class="govuk-table__cell">Change of circs</td>
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
@@ -63,7 +63,7 @@
               </strong>
           </td>
           {% elif data['task-type'] == 'date-of-birth' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-date-of-birth">DOB task</a></td>
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-date-of-birth?task=dob">DOB task</a></td>
           <td class="govuk-table__cell">Change of circs</td>
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
@@ -71,7 +71,7 @@
               </strong>
           </td>
           {% elif data['task-type'] == 'name' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-name">Name task</a></td>
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-name?task=name">Name task</a></td>
           <td class="govuk-table__cell">Change of circs</td>
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
