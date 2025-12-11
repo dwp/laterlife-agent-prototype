@@ -27,16 +27,55 @@
     "href": "javascript: window.history.go(-1)"
   })
 }}
+<br><br>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Details</caption>
+  
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date of death</th>
+      <td class="govuk-table__cell">15 February 2025</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment status</th>
+      <td class="govuk-table__cell">Stopped</td>
+    </tr>
+  </tbody>
+</table><br>
 
-<p class="govuk-body">This record is managed in the Later Life service.</p>
+<form method="post">
 
-      <a href="personal" button type="submit" class="govuk-button">
-        Continue into Later Life
-    </a>
-    <br>
-    <p class="govuk-body">
-     <a href="#" class="govuk-link">View the record in Get your State Pension</a>.
-    </p>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="stayInLL-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Can Eric stay in the Later Life service?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="stayInLL" name="stayInLL" type="radio" value="yes~task-queues-task-complete">
+        <label class="govuk-label govuk-radios__label" for="stayInLL">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~return-to-bau">
+        <label class="govuk-label govuk-radios__label" for="stayInLL-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
 
     </div>
 

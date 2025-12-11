@@ -20,8 +20,6 @@
 {% block content %}
 
 
-{% include '../_namebar.html' %}
-
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -33,30 +31,29 @@
         <h1 class="govuk-heading-xl">Task</h1>
 
 
-        <nav class="navigation-secondary">
-          <ul>
-            <li>
-              <a href="get-a-task-claims">New claims</a>
-            </li>
-
-            <li>
-              <a href="get-a-task-award">Award changes</a>
-            </li>
-
-            <li>
-              <a href="get-a-task-death">Death</a>
-            </li>
-
-            <li>
-              <a class="active" href="get-a-task">International</a>
-            </li>
-
-            <li>
-              <a href="get-a-task-other">Other</a>
-            </li>
-
-          </ul>
-        </nav>
+       <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Navigation item 1
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Navigation item 2</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Navigation item 3
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <hr class="govuk-section-break govuk-section-break--visible">
 
 
 <br>
@@ -73,8 +70,8 @@
 
      <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-half">
-<h1 class="govuk-heading-m">ANZaC
-<p class="govuk-body-l"><a href="/international-task/iteration-1/task-details" class="govuk-link"><b>Get next task</b></a></p></h1>
+<h1 class="govuk-heading-m">Death
+<p class="govuk-body-l"><a href="task-death" class="govuk-link"><b>Get next task</b></a></p></h1>
 
 </div>
 <div class="govuk-grid-column-one-quarter">
@@ -95,8 +92,8 @@
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-half">
-<h1 class="govuk-heading-m">EEA: Check for increase to award
-<p class="govuk-body-l"><a href="/international-task/eea-fir-iteration-1/task-details" class="govuk-link"><b>Get next task</b></a></p></h1>
+<h1 class="govuk-heading-m">Address
+<p class="govuk-body-l"><a href="task-address" class="govuk-link"><b>Get next task</b></a></p></h1>
 </div>
 
 <div class="govuk-grid-column-one-quarter">
@@ -118,8 +115,8 @@
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-half">
-<h1 class="govuk-heading-m">EEA: Process claim for EEA pensions
-<p class="govuk-body-l"><a href="/international-task/eea-cfn901-iteration-1/task-details-cfn901" class="govuk-link"><b>Get next task</b></a></p></h1>
+<h1 class="govuk-heading-m">Date of birth
+<p class="govuk-body-l"><a href="task-date-of-birth" class="govuk-link"><b>Get next task</b></a></p></h1>
 </div>
 
 <div class="govuk-grid-column-one-quarter">
@@ -143,8 +140,8 @@
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-half">
-<h1 class="govuk-heading-m">RA
-<p class="govuk-body-l"><a href="/international-task/iteration-1/task-details" class="govuk-link"><b>Get next task</b></a></p></h1>
+<h1 class="govuk-heading-m">Name
+<p class="govuk-body-l"><a href="task-name" class="govuk-link"><b>Get next task</b></a></p></h1>
 
 </div>
 <div class="govuk-grid-column-one-quarter">
