@@ -8,6 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 router.use('/retirement-showcase', require('./views/retirement-showcase/routes'))
+router.use('/12-0', require('./views/12-0/routes'))
 router.use('/11-0', require('./views/11-0/routes'))
 router.use('/10-0', require('./views/10-0/routes'))
 router.use('/9-0', require('./views/9-0/routes'))

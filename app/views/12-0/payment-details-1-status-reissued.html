@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Bank account name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+
+    <form method="post" action="payment">
+
+
+      <span class="govuk-caption-l">Pension Credit</span>
+<h1 class="govuk-heading-l">Payment details</h1>
+
+      <div class="govuk-form-group">
+
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            <tr class="govuk-table__row">
+            <tr class="govuk-table__row" style="width: 20%"></tr>
+            <th class="govuk-table__header" scope="col" style="width: 43%">Total</th>
+            <th class="govuk-table__header" scope="col">£112.64</th>
+            <th class="govuk-table__header" scope="col"></th>
+          </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" scope="row">Period</td>
+              <td class="govuk-table__cell">16 Jan 2025 to 12 Feb 2025</td>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" scope="row">Status</td>
+              <td class="govuk-table__cell">Reissued</td>
+              <td class="govuk-table__cell"><a href="#">Mark as returned</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Account the payment was sent to</h2>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+            <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" scope="row" style="width: 43%">Account holder </td>
+                  <td class="govuk-table__cell">Mr E Erikson</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Account number</td>
+                    <td class="govuk-table__cell">42678914</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" scope="row">Sort code</td>
+                      <td class="govuk-table__cell">48 00 24</td>
+                    </tr>
+              </tbody>
+            </table>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">Payment details changes</h1>
+    <div class="dwp-timeline">
+    <ol class="dwp-timeline__items">
+      <li class="dwp-timeline__item">
+        <p class="dwp-timeline__datetime">17 February 2025 at 1:35pm</p>
+        <h2 class="dwp-timeline__heading">Reissued in CPS Local</h2>
+        <p class="dwp-timeline__by-line">by John Smith</p>
+        <!--<a href="#" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 17 February 2025 at 1:35pm</span></a> -->
+      </li>
+      <li class="dwp-timeline__item">
+        <p class="dwp-timeline__datetime">14 February 2025 at 4:12pm</p>
+        <h2 class="dwp-timeline__heading">Returned</h2>
+        <p class="dwp-timeline__by-line">by Jane Doe</p>
+        <!--<a href="#" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 14 February 2025 at 4:12pm</span></a> -->
+      </li>
+      <li class="dwp-timeline__item">
+        <p class="dwp-timeline__datetime">12 February 2025 at 7:15am</p>
+        <h2 class="dwp-timeline__heading">Paid</h2>
+        <p class="dwp-timeline__by-line">by system</p>
+        <!--<a href="#" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 12 February 2025 at 7:15am</span></a> -->
+      </li>
+      <li class="dwp-timeline__item">
+        <p class="dwp-timeline__datetime">10 February 2025 at 4:07pm</p>
+        <h2 class="dwp-timeline__heading">Sent</h2>
+        <p class="dwp-timeline__by-line">by system</p>
+        <!--<a href="#" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 10 February 2025 at 4:07pm</span></a> -->
+      </li>
+    </ol>
+    </div>
+      </div>
+      </div>
+
+
+</div>
+
+{% endblock %}

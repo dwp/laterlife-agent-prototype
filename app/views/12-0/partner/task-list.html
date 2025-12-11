@@ -1,0 +1,254 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include '../_namebar.html' %}
+
+
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
+      <h1 class="govuk-heading-l">Add a partner</h1>
+
+        <h1 class="govuk-heading-m" style="margin-bottom:5px">Check Eric's details</h1>
+        <div id="event-name-hint" class="govuk-hint" style="margin-bottom:25px">
+          Check if any of the information we hold about Eric has changed.
+        </div>
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+                Personal details
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="before-you-start-1-status">
+               <strong class="govuk-tag govuk-tag--blue">
+                Check needed
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+                Contact preferences
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="before-you-start-1-status">
+               <strong class="govuk-tag govuk-tag--blue">
+                Check needed
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+                Blind or severely sight impaired
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="before-you-start-1-status">
+               <strong class="govuk-tag govuk-tag--blue">
+                Check needed
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+                Hospital stays
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="before-you-start-1-status">
+               <strong class="govuk-tag govuk-tag--blue">
+                Check needed
+              </strong>
+            </div>
+          </li>
+        </ul>
+        <h2 class="govuk-heading-m govuk-!-margin-top-5">About {{ data['first-name'] }}</h2>
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-1-status">
+                Personal details
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="prepare-application-1-status">
+              Completed
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+                Immigration status
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+                Blind or severely sight impaired
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+                Hospital stays
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+        </ul>
+         <h2 class="govuk-heading-m govuk-!-margin-top-5">The home and household</h2>
+        <ul class="govuk-task-list">
+         
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+                Housing costs
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+               Other people who live with you
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+        </ul>
+         <h2 class="govuk-heading-m govuk-!-margin-top-5">Income, money and investments</h2>
+        <ul class="govuk-task-list">
+         
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+                Income from benefits
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+               Income from pensions
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+           <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              Other income
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+           <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+               Money and investments
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+           <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+               Other payments and payouts
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+
+<div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">Add partner</h1>
+    <div class="dwp-timeline">
+      <ol class="dwp-timeline__items">
+        <li class="dwp-timeline__item">
+          <p class="dwp-timeline__datetime">9 Janurary 2025 at 3:14pm</p>
+          <h2 class="dwp-timeline__heading">No changes</h2>
+        </li>
+      </ol>
+    </div>
+    <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+  </div>
+
+
+{% endblock %}
+
+
+
