@@ -36,11 +36,43 @@
       <br>  <br>
       <h1 class="govuk-heading-l">Add a partner</h1>
 
-        <h1 class="govuk-heading-m" style="margin-bottom:5px">Check Eric's details</h1>
-        <div id="event-name-hint" class="govuk-hint" style="margin-bottom:25px">
-          Check if any of the information we hold about Eric has changed.
-        </div>
+        <h2 class="govuk-heading-m govuk-!-margin-top-5" style="margin-bottom:5px">Eric's details</h2>
+        
         <ul class="govuk-task-list">
+           {% if data['blind'] == 'i-am' or data['blind'] == 'both-blind' %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+                Blind or severely sight impaired
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="before-you-start-1-status">
+              {% if data['we-know-blind'] == 'yes' %}
+               <strong class="govuk-tag govuk-tag--blue">
+                Check needed
+              </strong>
+              {% else %}
+               <strong class="govuk-tag govuk-tag--blue">
+                To do
+              </strong>
+              {% endif %}
+            </div>
+          </li>
+          {% endif %}
+          {% if data['hospital'] == 'i-have' or data['hospital'] == 'both-in-hospital' %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+                Hospital stays
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="before-you-start-1-status">
+               <strong class="govuk-tag govuk-tag--blue">
+                Check needed
+              </strong>
+            </div>
+          </li>
+           {% endif %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
@@ -65,30 +97,7 @@
               </strong>
             </div>
           </li>
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
-                Blind or severely sight impaired
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="before-you-start-1-status">
-               <strong class="govuk-tag govuk-tag--blue">
-                Check needed
-              </strong>
-            </div>
-          </li>
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
-                Hospital stays
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="before-you-start-1-status">
-               <strong class="govuk-tag govuk-tag--blue">
-                Check needed
-              </strong>
-            </div>
-          </li>
+         
         </ul>
         <h2 class="govuk-heading-m govuk-!-margin-top-5">About {{ data['first-name'] }}</h2>
         <ul class="govuk-task-list">
@@ -114,6 +123,7 @@
               </strong>
             </div>
           </li>
+          {% if data['blind'] == 'partner-is' or data['blind'] == 'both-blind' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
@@ -126,6 +136,8 @@
               </strong>
             </div>
           </li>
+          {% endif %}
+          {% if data['hospital'] == 'partner-has' or data['hospital'] == 'both-in-hospital' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
@@ -138,6 +150,7 @@
               </strong>
             </div>
           </li>
+            {% endif %}
         </ul>
          <h2 class="govuk-heading-m govuk-!-margin-top-5">The home and household</h2>
         <ul class="govuk-task-list">

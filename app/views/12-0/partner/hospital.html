@@ -33,7 +33,7 @@
   })
 }}
 
-   <form method="post">   
+   <form method="post" action="spinner">   
 
       <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
@@ -45,25 +45,25 @@
     
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hospital" name="hospital" type="radio" value="no~?">
+        <input class="govuk-radios__input" id="hospital" name="hospital" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="changedName">
           Neither of us have
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="i-have~hospital-details-you?both-in-hospital=no">
+        <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="i-have">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
           I have
         </label>
       </div>
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hospital-3" name="hospital" type="radio" value="partner-has~hospital-details-partner">
+        <input class="govuk-radios__input" id="hospital-3" name="hospital" type="radio" value="partner-has">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
           {{ data['first-name'] }} has
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hospital-4" name="hospital" type="radio" value="both-in-hospital~hospital-details-you?both-in-hospital=yes">
+        <input class="govuk-radios__input" id="hospital-4" name="hospital" type="radio" value="both-in-hospital">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
           We both have
         </label>

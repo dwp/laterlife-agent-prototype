@@ -33,7 +33,7 @@
   })
 }}
 
-   <form method="post">   
+   <form method="post" action="hospital">   
 
       <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
@@ -45,25 +45,25 @@
     
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind" name="blind" type="radio" value="no~hospital">
+        <input class="govuk-radios__input" id="blind" name="blind" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="changedName">
           Neither of us is
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind-2" name="blind" type="radio" value="i-am~date-blind-you?both-blind=no">
+        <input class="govuk-radios__input" id="blind-2" name="blind" type="radio" value="i-am">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
           I am
         </label>
       </div>
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind-3" name="blind" type="radio" value="partner-is~date-blind-partner">
+        <input class="govuk-radios__input" id="blind-3" name="blind" type="radio" value="partner-is">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
           {{ data['first-name'] }} is
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind-4" name="blind" type="radio" value="both-blind~date-blind-you?both-blind=yes">
+        <input class="govuk-radios__input" id="blind-4" name="blind" type="radio" value="both-blind">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
           We both are
         </label>
