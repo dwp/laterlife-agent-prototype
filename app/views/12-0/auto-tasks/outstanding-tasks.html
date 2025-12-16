@@ -21,7 +21,17 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-{% include '../_namebar.html' %}
+       {% if data['task-type'] == 'death'%}
+        <h1 class="govuk-heading-xl">
+          Eric Erikson<br>
+          <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+          <strong class="govuk-tag govuk-tag--grey">
+          Dead
+        </strong>
+          </h1>
+      {% else %}
+        {% include '../_namebar.html' %}
+      {% endif %}
 
 {{ govukBackLink({
     "text": "Back",
@@ -39,7 +49,6 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Task name</th>
-          <th scope="col" class="govuk-table__header">Agent group</th>
           <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
         </tr>
       </thead>
@@ -48,7 +57,7 @@
         <tr class="govuk-table__row">
           {% if data['task-type'] == 'death'%}
           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-death?task=death">Death: confirm account status</a></td>
-          <td class="govuk-table__cell">Bereavement</td>
+          
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
                 To do
@@ -56,7 +65,7 @@
           </td>
           {% elif data['task-type'] == 'address' %}
            <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-address?task=address">Address: confirm account status</a></td>
-          <td class="govuk-table__cell">Change of circs</td>
+         
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
                 To do
@@ -64,7 +73,7 @@
           </td>
           {% elif data['task-type'] == 'date-of-birth' %}
            <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-date-of-birth?task=dob">Date of birth: confirm account status</a></td>
-          <td class="govuk-table__cell">Change of circs</td>
+         
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
                 To do
@@ -72,7 +81,7 @@
           </td>
           {% elif data['task-type'] == 'name' %}
            <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-name?task=name">Name: confirm account status</a></td>
-          <td class="govuk-table__cell">Change of circs</td>
+         
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
                 To do

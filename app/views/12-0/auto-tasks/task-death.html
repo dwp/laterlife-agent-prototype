@@ -21,7 +21,13 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
 
-{% include '../_namebar.html' %}
+<h1 class="govuk-heading-xl">
+  Eric Erikson<br>
+  <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+  <strong class="govuk-tag govuk-tag--grey">
+  Dead
+</strong>
+  </h1>
 
 {{ govukBackLink({
     "text": "Back",
@@ -33,6 +39,8 @@
 
 <form method="post">
 
+  <p class="govuk-body">Check the Standard Working Instructions (SWI) to find out what tasks should have been completed.</p>
+
 
 <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="stayInLL-hint">
@@ -43,14 +51,14 @@
       </legend>
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="stayInLL" name="stayInLL" type="radio" value="yes~return-to-bau">
+          <input class="govuk-radios__input" id="stayInLL" name="stayInLL" type="radio" value="yes~remove-reason">
           <label class="govuk-label govuk-radios__label" for="stayInLL">
             Yes, remove this record
           </label>
         </div>
         <div class="govuk-radios__item">
            {% if data['start'] == 'personal-tab' %}
-          <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~personal-task-complete">
+          <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~personal">
           {% else %}
           <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~task-queues">
           {% endif %}

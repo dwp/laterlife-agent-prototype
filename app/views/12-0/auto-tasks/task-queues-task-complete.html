@@ -42,32 +42,8 @@
 
 
 
-        <h1 class="govuk-heading-xl">Task</h1>
+        <h1 class="govuk-heading-xl">Tasks</h1>
 
-
-       <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
-        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
-          Menu
-        </button>
-        <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item">
-            <a class="govuk-service-navigation__link" href="#">
-              Navigation item 1
-            </a>
-          </li>
-          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#" aria-current="true">
-              <strong class="govuk-service-navigation__active-fallback">Navigation item 2</strong>
-            </a>
-          </li>
-          <li class="govuk-service-navigation__item">
-            <a class="govuk-service-navigation__link" href="#">
-              Navigation item 3
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <hr class="govuk-section-break govuk-section-break--visible">
 
 
 <br>
@@ -75,7 +51,7 @@
 
         <form method="post">
 
-          <h1 class="govuk-heading-l">International</h1>
+         
 
 
 
@@ -94,23 +70,14 @@
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">6
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
   {% else %}
 <h3 class="govuk-heading-l">7
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">7
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
   {% endif %}
 </div>
 
-</div>
 
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 <br>
@@ -121,29 +88,20 @@
 <p class="govuk-body-l"><a href="task-address" class="govuk-link"><b>Get next task</b></a></p></h1>
 </div>
 
-<div class="govuk-grid-column-one-quarter">
+<div class="govuk-grid-column-one-half">
 {% if data['task'] == 'address' %}
    <h3 class="govuk-heading-l">27
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">27
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
   {% else %}
   <h3 class="govuk-heading-l">28
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">28
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
   {% endif %}
 </div>
 
-</div>
 
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 <br>
@@ -154,31 +112,21 @@
 <p class="govuk-body-l"><a href="task-date-of-birth" class="govuk-link"><b>Get next task</b></a></p></h1>
 </div>
 
-<div class="govuk-grid-column-one-quarter">
+<div class="govuk-grid-column-one-half">
 {% if data['task'] == 'dob' %}
    <h3 class="govuk-heading-l">1
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">1
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
+
   {% else %}
   <h3 class="govuk-heading-l">2
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">2
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
+
   {% endif %}
 </div>
-
-</div>
-
-
 
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 <br>
@@ -189,25 +137,19 @@
 <p class="govuk-body-l"><a href="task-name" class="govuk-link"><b>Get next task</b></a></p></h1>
 
 </div>
-<div class="govuk-grid-column-one-quarter">
+<div class="govuk-grid-column-one-half">
 {% if data['task'] == 'name' %}
    <h3 class="govuk-heading-l">5
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">5
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
+
   {% else %}
   <h3 class="govuk-heading-l">6
      <p class="govuk-body govuk-!-font-size-24">total tasks</p>
    </h3>
 </div>
-<div class="govuk-grid-column-one-quarter">
-   <h3 class="govuk-heading-l">6
-     <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
-   </h3>
+
   {% endif %}
 </div>
 
