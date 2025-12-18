@@ -1,0 +1,240 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Mobile phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+    <h1 class="govuk-heading-l">
+      Pension Credit Answers
+    </h1>
+
+    <h2 class="govuk-heading-m">Applicant details</h2>
+    <p class="govuk-body">
+      <strong>Which country do you live in?</strong><br>
+      England
+    </p>
+    <p class="govuk-body">
+      <strong>What is your date of birth?</strong><br>
+      1 January 1956
+    </p>
+    <p class="govuk-body">
+      <strong>Your nationality</strong><br>
+      British
+    </p>
+    <p class="govuk-body">
+      <strong>Do you have a partner?</strong><br>
+      No, I do not have a partner
+    </p>
+    <p class="govuk-body">
+      <strong>Tell us about your UK State Pension</strong><br>
+      I am receiving my UK State Pension
+    </p>
+    <p class="govuk-body">
+      <strong>Which account do we pay your State Pension into?</strong><br>
+      12 34 56<br>
+      12345678
+    </p>
+    <p class="govuk-body">
+      <strong>Have you been outside the UK for a period of more than four weeks since 19 September 2025?</strong><br>
+      No
+    </p>
+    <p class="govuk-body">
+      <strong>Backdate your application</strong><br>
+      Yes, I want to apply from the earliest possible date
+    </p>
+    <p class="govuk-body">
+      <strong>What is your National Insurance number?</strong><br>
+      QQ 12 34 56 C
+    </p>
+    <p class="govuk-body">
+      <strong>What is your name?</strong><br>
+      Eric Ericson
+    </p>
+    <p class="govuk-body">
+      <strong>Are you registered blind or severely sight impaired?</strong><br>
+      No
+    </p>
+
+    <hr>
+
+    <h2 class="govuk-heading-m ">Time spent in hospital</h2>
+    <tbody class="govuk-table__body">
+      <p class="govuk-body">
+        <strong>Are you currently staying in hospital as an inpatient?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Have you had any overnight stays in hospital between 19 September 2025 and 18 December
+          2025?</strong><br>
+        No
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Housing details</h2>
+      <p class="govuk-body">
+        <strong>Do you live permanently in a care home?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Your home address</strong><br>
+
+        3 ABBOTS QUAY<br>
+        MONKS FERRY<br>
+        BIRKENHEAD<br>
+        CH41 5LH
+
+      </p>
+      <p class="govuk-body">
+        <strong>
+          Are you responsible for paying the rent or Council Tax for the place where you live?
+        </strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Which best describes the place where you live?</strong><br>
+        You own it
+      </p>
+      <p class="govuk-body">
+        <strong>Do you pay any service charges?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Do you pay ground rent?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Do you have a mortgage or loan secured against your home?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Do you have any money or income from an equity release scheme?</strong><br>
+        No
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Other people that live with you</h2>
+    <tbody class="govuk-table__body">
+      <p class="govuk-body">
+        <strong>Are you responsible for any children or qualifying young people who live with you?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Does anyone else who is over 18 live with you?</strong><br>
+        No
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Benefits</h2>
+      <p class="govuk-body">
+        <strong> Does anyone get Carer Support Payment or the Carer’s Element of Universal Credit for looking after
+          you?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Have you applied for any benefits that you are waiting to hear about?</strong><br>
+        No
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Employment and income</h2>
+      <p class="govuk-body">
+        <strong>Do you have any income from employment?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Have you had any income from self-employment since 19 June 2025?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Have you paid into any non-UK pensions?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Have you paid into any UK personal pensions that you have not taken yet?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>Do you receive any other regular income or payments?</strong><br>
+        No
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Money</h2>
+      <p class="govuk-body">
+        <strong>Do you have money in any of these?</strong><br>
+        Bank or building society accounts
+      </p>
+      <p class="govuk-body">
+        <strong>How much money do you have today?</strong><br>
+        £1,224.23
+      </p>
+      <p class="govuk-body">
+        <strong>How much money did you have on 19 September 2025?</strong><br>
+        £984.13
+      </p>
+      <p class="govuk-body">
+        <strong>Do you own any property or land other than the home you live in?</strong><br>
+        No
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Applicant&apos;s residency in the UK</h2>
+      <p class="govuk-body">
+        <strong>Do you have the right to live or work in the UK without any immigration restrictions?</strong><br>
+        Yes
+      </p>
+      <p class="govuk-body">
+        <strong>Have you lived permanently in the UK for the last 6 months?</strong><br>
+        Yes
+      </p>
+
+      <hr>
+
+      <h2 class="govuk-heading-m ">Contact details</h2>
+      <p class="govuk-body">
+        <strong>Which of these best describes you?</strong><br>
+        You are claiming Pension Credit for yourself
+      </p>
+      <p class="govuk-body">
+        <strong>What language do you want us to speak to you in?</strong><br>
+        English
+      </p>
+      <p class="govuk-body">
+        <strong>Do you need us to use any different formats when we contact you by letter or phone?</strong><br>
+        No
+      </p>
+      <p class="govuk-body">
+        <strong>What address should we send letters to?</strong><br>
+        Your home address
+      </p>
+      <p class="govuk-body">
+        <strong>Should we send an email to confirm you have submitted an application?</strong><br>
+        No
+      </p>
+  </div>
+</div>
+{% endblock %}
