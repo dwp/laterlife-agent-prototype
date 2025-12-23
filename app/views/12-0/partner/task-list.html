@@ -42,12 +42,14 @@
            {% if data['blind'] == 'i-am' or data['blind'] == 'both-blind' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-blind-claimant" aria-describedby="before-you-start-1-status">
                 Blind or severely sight impaired
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-1-status">
-              {% if data['we-know-blind'] == 'yes' %}
+             {% if data['blind-you'] == 'completed'%}
+              Completed
+              {% elif data['we-know-blind'] == 'yes' %}
                <strong class="govuk-tag govuk-tag--blue">
                 Check needed
               </strong>
@@ -61,40 +63,58 @@
           {% endif %}
           {% if data['hospital'] == 'i-have' or data['hospital'] == 'both-in-hospital' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+           <div class="govuk-task-list__name-and-hint">
+              {% if data['hospital-claimant'] == 'completed'%}
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="hospital-details-claimant-summary" aria-describedby="prepare-application-3-status">
                 Hospital stays
               </a>
+               {% else %} 
+                <a class="govuk-link--no-visited-state govuk-task-list__link" href="hospital-details-claimant" aria-describedby="prepare-application-3-status">
+                Hospital stays
+              </a>
+                 {% endif %}
             </div>
             <div class="govuk-task-list__status" id="before-you-start-1-status">
+              {% if data['hospital-claimant'] == 'completed'%}
+               Completed
+              {% else %}
                <strong class="govuk-tag govuk-tag--blue">
                 Check needed
               </strong>
+              {% endif %}
             </div>
           </li>
            {% endif %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="personal-details-claimant" aria-describedby="before-you-start-1-status">
                 Personal details
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-1-status">
+              {% if data['personal-details-claimant'] == 'completed'%}
+               Completed
+              {% else %}
                <strong class="govuk-tag govuk-tag--blue">
                 Check needed
               </strong>
+              {% endif %}
             </div>
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="personal-details-basics" aria-describedby="before-you-start-1-status">
-                Contact preferences
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="contact" aria-describedby="before-you-start-1-status">
+                Contact details
               </a>
             </div>
             <div class="govuk-task-list__status" id="before-you-start-1-status">
+               {% if data['contact'] == 'completed'%}
+                  Completed
+               {% else %}
                <strong class="govuk-tag govuk-tag--blue">
                 Check needed
               </strong>
+              {% endif %}
             </div>
           </li>
          
@@ -103,7 +123,7 @@
         <ul class="govuk-task-list">
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-1-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-1-status">
                 Personal details
               </a>
             </div>
@@ -113,7 +133,7 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
                 Immigration status
               </a>
             </div>
@@ -126,38 +146,63 @@
           {% if data['blind'] == 'partner-is' or data['blind'] == 'both-blind' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-blind-partner" aria-describedby="prepare-application-3-status">
                 Blind or severely sight impaired
               </a>
             </div>
            <div class="govuk-task-list__status" id="prepare-application-2-status">
+             {% if data['blind-partner'] == 'completed'%}
+              Completed
+             {% else %} 
               <strong class="govuk-tag govuk-tag--blue">
                 To do
               </strong>
+              {% endif %}
             </div>
           </li>
           {% endif %}
           {% if data['hospital'] == 'partner-has' or data['hospital'] == 'both-in-hospital' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              {% if data['hospital-partner'] == 'completed'%}
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="hospital-details-partner-summary" aria-describedby="prepare-application-3-status">
                 Hospital stays
               </a>
+               {% else %} 
+                <a class="govuk-link--no-visited-state govuk-task-list__link" href="hospital-details-partner" aria-describedby="prepare-application-3-status">
+                Hospital stays
+              </a>
+                 {% endif %}
             </div>
            <div class="govuk-task-list__status" id="prepare-application-2-status">
+             {% if data['hospital-partner'] == 'completed'%}
+              Completed
+             {% else %} 
               <strong class="govuk-tag govuk-tag--blue">
                 To do
               </strong>
+              {% endif %}
             </div>
           </li>
             {% endif %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-moved-in-task" aria-describedby="prepare-application-3-status">
+                Date moved in
+              </a>
+            </div>
+           <div class="govuk-task-list__status" id="prepare-application-2-status">
+              Completed       
+            </div>
+          </li>
+         
         </ul>
          <h2 class="govuk-heading-m govuk-!-margin-top-5">The home and household</h2>
         <ul class="govuk-task-list">
          
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
                 Housing costs
               </a>
             </div>
@@ -169,7 +214,7 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
                Other people who live with you
               </a>
             </div>
@@ -185,7 +230,7 @@
          
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
                 Income from benefits
               </a>
             </div>
@@ -197,7 +242,7 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
                Income from pensions
               </a>
             </div>
@@ -209,7 +254,7 @@
           </li>
            <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
               Other income
               </a>
             </div>
@@ -221,7 +266,7 @@
           </li>
            <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
                Money and investments
               </a>
             </div>
@@ -233,7 +278,7 @@
           </li>
            <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-3-status">
                Other payments and payouts
               </a>
             </div>
@@ -257,7 +302,7 @@
         </li>
       </ol>
     </div>
-    <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+    <p><a href="full-history" class="govuk-link--no-visited-state govuk-link--no-visited-state--no-visited-state">Full history</a></p>
   </div>
 
 

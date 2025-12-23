@@ -32,16 +32,14 @@
   })
 }}
 
-    {% if data['both-hospital'] =='yes' %}
-     <form method="post" action="hospital-details-partner"><br>
-    {% else %}
-       <form method="post" action="hospital-details-you-cya"><br>
-    {% endif %}
+  
+     <form method="post" action="task-list?blind-you=completed"><br>
+   
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-heading-l">
-             [hospital details for claimant]
+              What date were you registered blind or severely sight impaired?
             </h2>
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">

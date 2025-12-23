@@ -39,36 +39,26 @@
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Are either you or {{ data['first-name'] }} registered blind or severely sight impaired?
+        Do you have an expected date of discharge yet?
       </h1>
     </legend>
     
-    <div class="govuk-radios" data-module="govuk-radios">
+   
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind" name="blind" type="radio" value="no~hospital">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes~hospital-discharge-details-partner">
         <label class="govuk-label govuk-radios__label" for="changedName">
-          Neither of us is
+          Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind-2" name="blind" type="radio" value="i-am~date-blind-you?both-blind=no">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no~hospital-details-partner-cya">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
-          I am
-        </label>
-      </div>
-       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind-3" name="blind" type="radio" value="partner-is~date-blind-partner">
-        <label class="govuk-label govuk-radios__label" for="changedName-2">
-          {{ data['first-name'] }} is
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="blind-4" name="blind" type="radio" value="both-blind~date-blind-you?both-blind=yes">
-        <label class="govuk-label govuk-radios__label" for="changedName-2">
-          We both are
+          No
         </label>
       </div>
     </div>
+  
   </fieldset>
 </div>
 
