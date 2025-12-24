@@ -42,9 +42,15 @@
            {% if data['blind'] == 'i-am' or data['blind'] == 'both-blind' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-blind-claimant" aria-describedby="before-you-start-1-status">
+              {% if data['blind-you'] == 'completed'%}
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="blind-claimant-cya" aria-describedby="prepare-application-3-status">
                 Blind or severely sight impaired
               </a>
+               {% else %} 
+                <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-blind-claimant" aria-describedby="prepare-application-3-status">
+                Blind or severely sight impaired
+              </a>
+                 {% endif %}
             </div>
             <div class="govuk-task-list__status" id="before-you-start-1-status">
              {% if data['blind-you'] == 'completed'%}
@@ -87,7 +93,7 @@
            {% endif %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="personal-details-claimant" aria-describedby="before-you-start-1-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="personal-details-claimant-cya" aria-describedby="before-you-start-1-status">
                 Personal details
               </a>
             </div>
@@ -123,7 +129,7 @@
         <ul class="govuk-task-list">
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-1-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="personal-details-partner-cya" aria-describedby="prepare-application-1-status">
                 Personal details
               </a>
             </div>
@@ -146,9 +152,15 @@
           {% if data['blind'] == 'partner-is' or data['blind'] == 'both-blind' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-blind-partner" aria-describedby="prepare-application-3-status">
+              {% if data['blind-partner'] == 'completed'%}
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="blind-partner-cya" aria-describedby="prepare-application-3-status">
                 Blind or severely sight impaired
               </a>
+               {% else %} 
+                <a class="govuk-link--no-visited-state govuk-task-list__link" href="date-blind-partner" aria-describedby="prepare-application-3-status">
+                Blind or severely sight impaired
+              </a>
+                 {% endif %}
             </div>
            <div class="govuk-task-list__status" id="prepare-application-2-status">
              {% if data['blind-partner'] == 'completed'%}
