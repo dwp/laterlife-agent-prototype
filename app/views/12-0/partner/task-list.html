@@ -139,14 +139,18 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="#" aria-describedby="prepare-application-2-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="immigration-partner" aria-describedby="prepare-application-2-status">
                 Immigration status
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
+             {% if data['immigration-partner'] == 'completed'%}
+                  Completed
+               {% else %}
+               <strong class="govuk-tag govuk-tag--blue">
                 To do
               </strong>
+              {% endif %}
             </div>
           </li>
           {% if data['blind'] == 'partner-is' or data['blind'] == 'both-blind' %}

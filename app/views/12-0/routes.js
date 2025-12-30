@@ -35,27 +35,19 @@ router.post('/'+version+'/confirm-recall', function (req, res) {
 
 
 
+router.post('/immigration-rights-answer', function(request, response) {
+
+	var immigrationRight = request.session.data['immigration-live-work']
+  var immigrationSixMonths = request.session.data['immigration-six-months']
+	if (immigrationRight == "Yes" && immigrationSixMonths == "Yes"){
+		response.redirect("/"+version+"/partner/immigration-partner-cya")
+	} else {
+		response.redirect("/"+version+"/partner/immigration-abroad-partner")
+	}
+})
 
 
-// Move to CAM or GySP journey
 
-
-// Run this code when you are sure the change of circ is a date in the future
-router.post('/'+version+'/confirm-return', function (req, res) {
-
-  // Make a variable and give it the value from 'confirm-bank'
-  var confirmReturn = req.session.data['confirm-return']
-
-  // Check whether the variable matches a condition
-  if (confirmReturn == "yes"){
-    // Send user to confirm page
-    res.redirect('payment-success-returned')
-  } else {
-    // Send user back to other confirm page 
-    res.redirect('payment-details-1')
-  }
-
-});
 
 router.post('/'+version+'/age', function (req, res) {
 
