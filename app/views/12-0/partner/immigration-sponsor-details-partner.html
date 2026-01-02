@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Mobile phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include '../_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}<br><br><br>
+
+   
+    <h2 class="govuk-heading-l">
+      Your partner's sponsorship details
+    </h2>
+    
+   
+
+<form method="post" action="immigration-sponsor-postcode-partner">  
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        
+          <h2 class="govuk-heading-m">
+             What is the name of your partner's sponsor?
+            </h2>
+      
+      
+        <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-20" id="other-names" name="hosp-claimant-hosp-name" type="text">
+          </div>
+      </fieldset>
+    </div><br>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        
+          <h2 class="govuk-heading-m">
+             What is your partner's Home Office reference number?
+            </h2>
+      
+      
+        <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-20" id="other-names" name="hosp-claimant-hosp-location" type="text">
+          </div>
+      </fieldset>
+    </div><br>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+           <legend class="govuk-fieldset__legend">
+              <h2 class="govuk-heading-m">What date was your partner's sponsorship undertaking signed?</h2>
+            </legend>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="hosp-claimant-enter-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="hosp-claimant-enter-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="hosp-claimant-enter-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>  
+      </div><br>
+
+
+      
+
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+       Continue
+      </button>
+
+ </form> 
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}

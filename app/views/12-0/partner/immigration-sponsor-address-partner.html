@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Mobile phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include '../_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}<br><br><br>
+
+  
+    
+   
+
+<form method="post" action="immigration-asylum-partner">  
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        
+          <h2 class="govuk-heading-l">
+             Select your partner's address
+            </h2>
+
+            <h2 class="govuk-heading-m">
+             Postcode: {{ data['sponsor-postcode'] }} <span style="font-weight: normal; font-size:large; padding-left:10px"><a href="immigration-sponsor-postcode-partner" class="govuk-link">Change</a></span>
+            </h2>
+      
+      
+       <div class="govuk-form-group">
+  <label class="govuk-label" for="location">
+    Select address
+  </label>
+  
+  <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+    <option value="choose" selected>3 addresses found</option>
+    <option value="eastmidlands">16 East Avenue, Chapleigh, North Yorks</option>
+    <option value="eastofengland">18 East Avenue, Chapleigh, North Yorks</option>
+    <option value="london">20 East Avenue, Chapleigh, North Yorks</option>
+   
+  </select>
+</div><br><br>
+  
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+       Continue
+      </button>
+
+ </form> 
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
