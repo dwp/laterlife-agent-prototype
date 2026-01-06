@@ -30,21 +30,15 @@
 <br><br>
 <h1 class="govuk-heading-l">Confirm you want to remove Eric's record from Later Life</h1>
 <p class="govuk-body">You will no longer be able to manage Eric's record in this system.</p>
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-visually-hidden">Warning</span>
-      This action cannot be undone
-    </strong>
-  </div>
+ 
 
 {% if data['start'] == 'personal-tab' %}
   <a href="personal-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
-    Remove this record          
+    Move this record to CAM        
   </a>
 {% elif data['start'] != 'personal-tab' %}
  <a href="task-queues-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
-    Remove this record          
+    Move this record to CAM         
   </a>
 {% endif %}
 
