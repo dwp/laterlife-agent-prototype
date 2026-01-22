@@ -47,9 +47,16 @@
 <p class="govuk-body">To stop State Pension payments you must update this record in GySP.</p>
 
 
-  <a href="task-queues-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
-    Remove record
+
+  {% if data['start'] == 'personal-tab' %}
+  <a href="personal-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Remove record       
   </a>
+{% elif data['start'] != 'personal-tab' %}
+ <a href="task-queues-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Remove record        
+  </a>
+{% endif %}
 
 
 
