@@ -34,7 +34,7 @@
 
    
     <h2 class="govuk-heading-l">
-      Your partner's sponsorship details
+      {{ data['first-name'] }}'s sponsorship details
     </h2>
     
    
@@ -44,7 +44,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
         
           <h2 class="govuk-heading-m">
-             What is the name of your partner's sponsor?
+             What is the name of {{ data['first-name'] }}'s sponsor?
             </h2>
       
       
@@ -57,7 +57,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
         
           <h2 class="govuk-heading-m">
-             What is your partner's Home Office reference number?
+             What is {{ data['first-name'] }}'s Home Office reference number?
             </h2>
       
       
@@ -69,7 +69,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
            <legend class="govuk-fieldset__legend">
-              <h2 class="govuk-heading-m">What date was your partner's sponsorship undertaking signed?</h2>
+              <h2 class="govuk-heading-m">What date was {{ data['first-name'] }}'s sponsorship undertaking signed?</h2>
             </legend>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">

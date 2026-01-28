@@ -34,7 +34,7 @@
 
    
     <h2 class="govuk-heading-l">
-      Your partner living in the UK
+      {{ data['first-name'] }} living in the UK
     </h2><br>
     
     
@@ -43,7 +43,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
         
           <h2 class="govuk-heading-m">
-             Which country did your partner come from?
+             Which country did {{ data['first-name'] }} come from?
             </h2>
       
       
@@ -56,7 +56,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
            <legend class="govuk-fieldset__legend">
-              <h2 class="govuk-heading-m">When did your partner last come to the UK?</h2>
+              <h2 class="govuk-heading-m">When did {{ data['first-name'] }} last come to the UK?</h2>
             </legend>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
@@ -91,7 +91,7 @@
   <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
        <h2 class="govuk-heading-m">
-        Did your partner come to the UK to work?
+        Did {{ data['first-name'] }} come to the UK to work?
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
@@ -117,7 +117,7 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
        <h2 class="govuk-heading-m">
-        Does your partner's passport say they have no recourse to public funds?
+        Does {{ data['first-name'] }}'s passport say they have no recourse to public funds?
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
@@ -142,7 +142,7 @@
   <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-        Has your partner lived in the UK before?
+        Has {{ data['first-name'] }} lived in the UK before?
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
@@ -156,7 +156,7 @@
        <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
            <legend class="govuk-fieldset__legend">
-              <h2 class="govuk-heading-m">What date did your partner last leave the UK?</h2>
+              <h2 class="govuk-heading-m">What date did {{ data['first-name'] }} last leave the UK?</h2>
             </legend>
           <div class="govuk-date-input" id="left-hospital">
             <div class="govuk-date-input__item">
@@ -205,7 +205,7 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
        <h2 class="govuk-heading-m">
-        Did your partner come to the UK under the Family Reunion Scheme?
+        Did {{ data['first-name'] }} come to the UK under the Family Reunion Scheme?
       </h2>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
