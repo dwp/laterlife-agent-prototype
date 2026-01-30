@@ -34,24 +34,35 @@
 
    
     <h2 class="govuk-heading-l">
-      About your discharge from hospital
+      Does Hannah have an expected date of discharge?
     </h2>
     
     
-<form method="post" action="hospital-details-partner-cya">  
+<form method="post" action="hospital-discharge-details-2-partner">  
    
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+           
+          <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="still-in-hosp-claimant" type="radio" value="Yes" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
            <legend class="govuk-fieldset__legend">
-              <h2 class="govuk-heading-m">What is your expected date of discharge?</h2>
+              <h2 class="govuk-heading-m">What is Hannah's expected date of discharge?</h2>
             </legend>
-          <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input" id="left-hospital">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                   Day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="hosp-claimant-enter-day" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="left-day" name="hosp-claimant-enter-day" type="text" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -59,7 +70,7 @@
                 <label class="govuk-label govuk-date-input__label" for="dob-issued-month">
                   Month
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="hosp-claimant-enter-month" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="left-month" name="hosp-claimant-enter-month" type="text" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -67,48 +78,29 @@
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="hosp-claimant-enter-year" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="left-year" name="hosp-claimant-enter-year" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
         </fieldset>  
+      </div>
+      </div>
+     
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="still-in-hosp-claimant" type="radio" value="No" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          No
+        </label>
+      </div>
+       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        
+      </div>
+     
+    </div>
+        </fieldset>  
       </div><br>
 
-      <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-       <h2 class="govuk-heading-m">
-        Where are you being discharged to?
-      </h2>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-          A care home
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-          A community hospital
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-          My own home
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-         Somewhere else
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+    
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
        Continue

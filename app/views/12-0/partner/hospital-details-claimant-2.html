@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Mobile phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include '../_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}<br><br><br>
+
+     {% if data['still-in-hosp-claimant'] == 'No'%}
+    <h2 class="govuk-heading-l">
+      Tell us about the hospital you stayed in
+    </h2>
+    {% else %}
+    <h2 class="govuk-heading-l">
+      Tell us about the hospital you're staying in
+    </h2>
+    {% endif %}
+   <br>
+
+   {% if data['still-in-hosp-claimant'] == 'No'%}
+      <form method="post" action="hospital-details-claimant-cya">
+    {% else %}
+      <form method="post" action="hospital-discharge-details-claimant">
+    {% endif %}
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        
+          <h2 class="govuk-heading-m">
+             Hospital name
+            </h2>
+      
+      
+        <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-20" id="other-names" name="hosp-claimant-hosp-name" type="text">
+          </div>
+      </fieldset>
+    </div><br>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        
+          <h2 class="govuk-heading-m">
+             Town, city or area the hospital is in
+            </h2>
+      
+      
+        <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-20" id="other-names" name="hosp-claimant-hosp-location" type="text">
+          </div>
+      </fieldset>
+    </div><br>
+   
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      {% if data['still-in-hosp-claimant'] == 'No'%}
+      <h2 class="govuk-heading-m">
+        Was your hospital treatment provided by the NHS?
+      </h2>
+      {% else %}
+       <h2 class="govuk-heading-m">
+        Is your hospital treatment being provided by the NHS?
+      </h2>
+      {% endif %}
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+          No
+        </label>
+      </div>
+     
+    </div>
+  </fieldset>
+</div>
+
+      
+
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+       Continue
+      </button>
+
+ </form> 
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
