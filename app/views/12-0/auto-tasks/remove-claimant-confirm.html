@@ -39,22 +39,31 @@
   })
 }}
 
-<h1 class="govuk-heading-l">Confirm you want to remove Eric Erikson from Later Life</h1>
+<h1 class="govuk-heading-l">Confirm you want to move Eric Erikson to GySP</h1>
+
+{% if data['removeReason'} == 'entitled' %}
 <p class="govuk-body">You will no longer be able to manage Eric's record in this system.</p>
 <h2 class="govuk-heading-m">Pension Credit</h2>
-<p class="govuk-body">Eric died on 10 December 2025. You must work out when their entitlement ended and process any underpayment or overpayment.</p> 
+<p class="govuk-body">Payments will stop. You must follow the steps to rebuild this case in CAM.</p><br>
 <h2 class="govuk-heading-m">State Pension</h2>
-<p class="govuk-body">To stop State Pension payments you must update this record in GySP.</p>
-
+<p class="govuk-body">State Pension payments will continue. You will need to manage State Pension in GySP.</p>
+{% else %}
+<p class="govuk-body">This will end Eric's entitlement to Pension Credit. You will no longer be able to manage Eric's record in this system.</p>
+<h2 class="govuk-heading-m">Pension Credit</h2>
+<p class="govuk-body">The change of circumstance happened on 5 February 2025. We will work out when the entitlement ends and stop the payments.</p><br>
+<h2 class="govuk-heading-m">State Pension</h2>
+<p class="govuk-body">State Pension payments will continue. You will need to manage State Pension in GySP.</p>
+   
+{% endif %}<br>
 
 
   {% if data['start'] == 'personal-tab' %}
   <a href="personal-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
-    Remove record       
+    Move record       
   </a>
 {% elif data['start'] != 'personal-tab' %}
  <a href="task-queues-task-complete" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
-    Remove record        
+    Move record        
   </a>
 {% endif %}
 
