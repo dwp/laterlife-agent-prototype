@@ -1,21 +1,56 @@
-//
-// For guidance on how to create routes see:
-// https://prototype-kit.service.gov.uk/docs/create-routes
-//
+// ---------------------------------------------
+// GOV.UK Prototype Kit - Safe Routing
+// ---------------------------------------------
+const govukPrototypeKit = require('govuk-prototype-kit');
+const router = govukPrototypeKit.requests.setupRouter();
 
-const govukPrototypeKit = require('govuk-prototype-kit')
-const router = govukPrototypeKit.requests.setupRouter()
+// ---------------------------------------------
+// Allowlist setup
+// ---------------------------------------------
+const allowedTasks = [
+  'abroad-preview',
+  'abroad-evidence',
+  'capital-preview',
+  'capital-evidence',
+  'disregarded',
+  'suspended',
+  'terminated'
+];
 
-// Add your routes here
+const allowedValues = [
+  'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
+  'suspended', 'terminated', 'disregarded26', 'disregarded52',
+  'disregarded2y', 'next', 'overpayment', 'underpayment'
+];
+
+// ---------------------------------------------
+// Helper to validate redirect parameters
+// ---------------------------------------------
+function safeRedirect(res, task, value) {
+  if (!allowedTasks.includes(task)) {
+    return res.status(400).send('Invalid task');
+  }
+
+  if (!allowedValues.includes(value)) {
+    return res.status(400).send('Invalid value');
+  }
+
+  return res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
+}
+
+// ---------------------------------------------
+// Confirmation screen route
+// ---------------------------------------------
 router.get('/EVS/confirmation', function (req, res) {
 
   const task = req.query.task;
   const value = req.query.value;
 
+  // Lookup table for text
   const lookup = {
     none: {
       heading: "You are about to record that the case is closed",
-      paragraph: "For 6 months no {spending abroad/capital over threshold} tasks will be created for this person.",
+      paragraph: "For 6 months no spending abroad/capital over threshold tasks will be created for this person.",
       button: "Case is closed"
     },
     died: {
@@ -84,98 +119,53 @@ router.get('/EVS/confirmation', function (req, res) {
   });
 });
 
-router.post('/abroad-preview', function (req, res) {
-  const value = req.session.data['abroadPreview'];
 
-  if (value === 'postpone') {
-    return res.redirect('/EVS/postpone');
-  } else if (value === 'postpone') {
-    return res.redirect('/EVS/postpone');
-  } else if (value === 'next') {
-    return res.redirect('/EVS/tasks-success-2');
-  }
+// ---------------------------------------------
+// Shared redirect route creator
+// ---------------------------------------------
+function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
+  router.post(path, function (req, res) {
+    const value = req.session.data[sessionKey];
 
-  const task = 'abroad-preview';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
+    if (redirects[value]) {
+      return res.redirect(redirects[value]);
+    }
+
+    return safeRedirect(res, fixedTask, value);
+  });
+}
+
+// ---------------------------------------------
+// All POST routes (clean + safe)
+// ---------------------------------------------
+
+createPostRoute('/abroad-preview', 'abroadPreview', 'abroad-preview', {
+  postpone: '/EVS/postpone',
+  next: '/EVS/tasks-success-2'
 });
 
-
-
-
-router.post('/abroad-evidence', function (req, res) {
-  const value = req.session.data['abroadEvidence'];
-
-  if (value === 'postpone') {
-    return res.redirect('/EVS/postpone');
-  } else if (value === 'terminated') {
-    return res.redirect('/EVS/stop-benefit');
-  } else if (value === 'suspend') {
-    return res.redirect('/EVS/suspend');
-  }
-  const task = 'abroad-evidence';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
+createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
+  postpone: '/EVS/postpone',
+  terminated: '/EVS/stop-benefit',
+  suspend: '/EVS/suspend'
 });
 
-
-router.post('/capital-preview', function (req, res) {
-  const value = req.session.data['capitalPreview'];
-
-  if (value === 'postpone') {
-    return res.redirect('/EVS/postpone');
-  } else if (value === 'disregarded') {
-    return res.redirect('/EVS/disregarded');
-  } else if (value === 'next') {
-    return res.redirect('/EVS/tasks-success-2');
-  }
-
-  const task = 'capital-preview';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
+createPostRoute('/capital-preview', 'capitalPreview', 'capital-preview', {
+  postpone: '/EVS/postpone',
+  disregarded: '/EVS/disregarded',
+  next: '/EVS/tasks-success-2'
 });
 
-router.post('/capital-evidence', function (req, res) {
-  const value = req.session.data['capitalEvidence'];
-
-  if (value === 'postpone') {
-    return res.redirect('/EVS/postpone');
-  } else if (value === 'overpayment') {
-    return res.redirect('/EVS/overpayment');
-  } else if (value === 'underpayment') {
-    return res.redirect('/EVS/underpayment');
-  } else if (value === 'disregarded') {
-    return res.redirect('/EVS/disregarded');
-  }
-
-  const task = 'capital-evidence';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
+createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
+  postpone: '/EVS/postpone',
+  overpayment: '/EVS/overpayment',
+  underpayment: '/EVS/underpayment',
+  disregarded: '/EVS/disregarded'
 });
 
+createPostRoute('/disregarded', 'disregarded', 'disregarded');
+createPostRoute('/suspend', 'suspend', 'suspended');
+createPostRoute('/terminated', 'terminated', 'terminated');
 
-router.post('/disregarded', function (req, res) {
-  const value = req.session.data['disregarded'];
-
-  const task = 'disregarded';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
-});
-
-router.post('/suspend', function (req, res) {
-  const value = req.session.data['suspend'];
-
-  const task = 'suspended';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
-});
-
-router.post('/terminated', function (req, res) {
-  const value = req.session.data['terminated'];
-
-  const task = 'terminated';
-  res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
-});
-
-
-
-
-
-
-
-
-module.exports = router
+// ---------------------------------------------
+module.exports = router;
