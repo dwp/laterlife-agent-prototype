@@ -5,8 +5,17 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 const router = govukPrototypeKit.requests.setupRouter();
 
 // ---------------------------------------------
-// Allowlist setup
+// Allowlists
 // ---------------------------------------------
+
+// Allowed values for confirmation screens
+const allowedValues = [
+  'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
+  'suspended', 'terminated', 'disregarded26', 'disregarded52',
+  'disregarded2y', 'next', 'overpayment', 'underpayment'
+];
+
+// Allowed task names in redirect
 const allowedTasks = [
   'abroad-preview',
   'abroad-evidence',
@@ -17,36 +26,46 @@ const allowedTasks = [
   'terminated'
 ];
 
-const allowedValues = [
-  'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
-  'suspended', 'terminated', 'disregarded26', 'disregarded52',
-  'disregarded2y', 'next', 'overpayment', 'underpayment'
+// Absolute safe route targets (prevents traversal + open redirect false positives)
+const safeRoutes = [
+  '/EVS/confirmation',
+  '/EVS/postpone',
+  '/EVS/stop-benefit',
+  '/EVS/suspend',
+  '/EVS/disregarded',
+  '/EVS/tasks-success-2',
+  '/EVS/overpayment',
+  '/EVS/underpayment'
 ];
 
 // ---------------------------------------------
-// Helper to validate redirect parameters
+// Shared Safe Redirect Helper
 // ---------------------------------------------
-function safeRedirect(res, task, value) {
-  if (!allowedTasks.includes(task)) {
-    return res.status(400).send('Invalid task');
+function safeInternalRedirect(res, route, params = {}) {
+  // Must exactly match allowed internal routes
+  if (!safeRoutes.includes(route)) {
+    return res.status(400).send('Invalid redirect route');
   }
 
-  if (!allowedValues.includes(value)) {
-    return res.status(400).send('Invalid value');
-  }
+  const qs = new URLSearchParams(params).toString();
+  const fullPath = qs ? `${route}?${qs}` : route;
 
-  return res.redirect(`/EVS/confirmation?task=${task}&value=${value}`);
+  // 303 recommended for safe redirects after POST
+  return res.redirect(303, fullPath);
 }
 
 // ---------------------------------------------
-// Confirmation screen route
+// Confirmation GET Route (now validated)
 // ---------------------------------------------
 router.get('/EVS/confirmation', function (req, res) {
+  const { task, value } = req.query;
 
-  const task = req.query.task;
-  const value = req.query.value;
+  // Validate both parameters before using
+  if (!allowedTasks.includes(task) || !allowedValues.includes(value)) {
+    return res.status(400).send('Invalid request');
+  }
 
-  // Lookup table for text
+  // Lookup table for dynamic text
   const lookup = {
     none: {
       heading: "You are about to record that the case is closed",
@@ -105,11 +124,7 @@ router.get('/EVS/confirmation', function (req, res) {
     }
   };
 
-  const item = lookup[value] || {
-    heading: "Unknown outcome",
-    paragraph: "",
-    button: "Continue"
-  };
+  const item = lookup[value];
 
   res.render('EVS/confirmation', {
     taskName: task,
@@ -119,26 +134,34 @@ router.get('/EVS/confirmation', function (req, res) {
   });
 });
 
-
 // ---------------------------------------------
-// Shared redirect route creator
+// POST Route Factory
 // ---------------------------------------------
 function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
   router.post(path, function (req, res) {
     const value = req.session.data[sessionKey];
 
-    if (redirects[value]) {
-      return res.redirect(redirects[value]);
+    // Validate value before anything else
+    if (!allowedValues.includes(value)) {
+      return res.status(400).send('Invalid value');
     }
 
-    return safeRedirect(res, fixedTask, value);
+    // Absolute redirects first (safe routes only)
+    if (redirects[value]) {
+      return safeInternalRedirect(res, redirects[value]);
+    }
+
+    // Safe confirmation redirect
+    return safeInternalRedirect(res, '/EVS/confirmation', {
+      task: fixedTask,
+      value: value
+    });
   });
 }
 
 // ---------------------------------------------
-// All POST routes (clean + safe)
+// All POST routes
 // ---------------------------------------------
-
 createPostRoute('/abroad-preview', 'abroadPreview', 'abroad-preview', {
   postpone: '/EVS/postpone',
   next: '/EVS/tasks-success-2'
