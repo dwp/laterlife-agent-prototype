@@ -1,0 +1,123 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+{% include './_namebar.html' %}
+
+{{ govukBackLink({
+"text": "Back",
+"href": "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-l">
+  Record overpayment details
+</h1>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="current-weekly-payment">
+    Current weekly award
+  </label>
+  <div id="current-weekly-payment-hint" class="govuk-hint">
+    For example 123.45
+  </div>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="current-weekly-payment" name="current-weekly-payment"
+      type="text" inputmode="decimal">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="new-weekly-payment">
+    New weekly award
+  </label>
+  <div id="new-weekly-payment-hint" class="govuk-hint">
+    For example 123.45
+  </div>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="new-weekly-payment" type="text"
+      inputmode="decimal">
+  </div>
+</div>
+
+<div class="govuk-!-margin-bottom-9"></div>
+
+<form action="/EVS/tasks-success" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Why are we changing their payment?
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reason-1" name="change-reason" type="radio" value="officialError">
+          <label class="govuk-label govuk-radios__label" for="reason-1">
+            Official error
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reason-2" name="change-reason" type="radio" value="claimantError">
+          <label class="govuk-label govuk-radios__label" for="reason-2">
+            Claimant error
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reason-3" name="change-reason" type="radio" value="fraud">
+          <label class="govuk-label govuk-radios__label" for="reason-3">
+            Fraud
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="govuk-!-margin-bottom-6"></div>
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Has this overpayment been referred to debt management?
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reason-1" name="debtmanagement" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="reason-1">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reason-2" name="debtmanagement" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="reason-2">
+            No
+          </label>
+        </div>
+    </fieldset>
+
+  </div>
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Confirm
+  </button>
+</form>
+
+{% endblock %}

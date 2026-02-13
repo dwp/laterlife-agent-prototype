@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+"text": "Back",
+"href": "javascript: window.history.go(-1)"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Charlotte Mudd<br>
+      <span class="govuk-caption-xl">XX 12 34 56</span>
+      <!-- {% if data['stopbenefit'] === 'death' %}
+      <strong class="govuk-tag govuk-tag--grey">
+        Dead
+      </strong>
+      {% elseif data['stopbenefit'] === 'prison' %}
+      <strong class="govuk-tag govuk-tag--red">
+      In Prison
+      </strong>
+      {% elseif data['suspension'] === 'both' %}
+      <strong class="govuk-tag govuk-tag--orange">
+      State Pension and Pension Credit suspended
+      </strong>
+      {% elseif data['suspension'] === 'sp' %}
+      <strong class="govuk-tag govuk-tag--orange">
+      State Pension suspended
+      </strong>
+      {% elseif data['suspension'] === 'pc' %}
+      <strong class="govuk-tag govuk-tag--orange">
+      Pension Credit suspended
+      </strong>
+      {% else %}
+      <strong class="govuk-tag">
+        Receiving State Pension and Pension Credit
+      </strong>
+      {% endif %} -->
+    </h1>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">EVS - Abroad</th>
+          <td class="govuk-table__cell">Preview</td>
+          <td class="govuk-table__cell">Pending</td>
+          <td class="govuk-table__cell"><a href="abroad-preview-task">Details</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">EVS - Capital</th>
+          <td class="govuk-table__cell">Evidence gathering</td>
+          <td class="govuk-table__cell "> <strong class="govuk-tag govuk-tag--blue">Active</strong></td>
+          <td class="govuk-table__cell"><a href="capital-evidence">Details</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+
+
+
+</div>
+
+{% endblock %}

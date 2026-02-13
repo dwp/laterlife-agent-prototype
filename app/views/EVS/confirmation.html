@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Underpayment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+        <div class="dwp-header__service-name">
+            <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+        </div>
+        {% include './_nav.html' %}
+    </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% include './_namebar.html' %}
+
+        {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+        }) }}
+
+        <form class="form" action="/EVS/tasks-success" rm-group">
+            <fieldset class="govuk-fieldset" aria-describedby="confirmation-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        {{ readableText }}
+                    </h1>
+                </legend>
+
+                {# NEW — Insert dynamic paragraph text #}
+                <p class="govuk-body">
+                    {{ paragraphText }}
+                </p>
+
+
+
+            </fieldset>
+            {# NEW — dynamic button text #}
+            <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+                {{ buttonText }}
+            </button>
+    </div>
+
+
+
+    </form>
+
+</div>
+</div>
+
+{% endblock %}

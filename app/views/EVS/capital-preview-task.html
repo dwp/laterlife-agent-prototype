@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Capital over threshold: Preview – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar.html' %}
+
+    <h1 class="govuk-heading-l">Capital over threshold:
+      preview</h1>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          There is an abroad spending task associated with this National Insurance number. You can
+          <a class="govuk-notification-banner__link" href="/EVS/postpone">postpone this task</a>
+        </p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Details</h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--short">
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row" style="width: 43%">Date of breach</td>
+            <td class="govuk-table__cell">12 July 2025</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">Total holdings</td>
+            <td class="govuk-table__cell">£35,716</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">Account number</td>
+            <td class="govuk-table__cell">XXXX 2354</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">Bank name</td>
+            <td class="govuk-table__cell">HSBC</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="govuk-!-margin-bottom-9"></div>
+      <form method="post" action="/capital-preview">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" id="capitalPreview">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                What is the outcome of this task?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capitalPreview-1" name="capitalPreview" type="radio"
+                  value="none">
+                <label class="govuk-label govuk-radios__label" for="capitalPreview-1">
+                  Case closed as no action required
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capitalPreview-2" name="capitalPreview" type="radio"
+                  value="died">
+                <label class="govuk-label govuk-radios__label" for="capitalPreview-2">
+                  Customer has died
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capitalPreview-3" name="capitalPreview" type="radio"
+                  value="cfcd">
+                <label class="govuk-label govuk-radios__label" for="capitalPreview-3">
+                  Case referred to CFCD
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capitalPreview-4" name="capitalPreview" type="radio"
+                  value="disregarded">
+                <label class="govuk-label govuk-radios__label" for="capitalPreview-4">
+                  Breaches can be disregarded
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capitalPreview-4" name="capitalPreview" type="radio"
+                  value="next">
+                <label class="govuk-label govuk-radios__label" for="capitalPreview-5">
+                  Create evidence gathering task
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capitalPreview-6" name="capitalPreview" type="radio"
+                  value="postpone">
+                <label class="govuk-label govuk-radios__label" for="capitalPreview-6">
+                  Postpone task
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+        <div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <a href="tasks" class="govuk-button govuk-button--secondary govuk-!-margin-left-2"
+            data-module="govuk-buttone-exit">Return task to
+            queue</a>
+        </div>
+      </form>
+
+      {% endblock %}
