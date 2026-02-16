@@ -12,7 +12,7 @@ const router = govukPrototypeKit.requests.setupRouter();
 const allowedValues = [
   'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
   'suspended', 'terminated', 'disregarded26', 'disregarded52',
-  'disregarded2y', 'next', 'overpayment', 'underpayment'
+  'disregarded2y', 'next', 'overpayment', 'underpayment', '0'
 ];
 
 // Allowed task names in redirect
@@ -24,7 +24,8 @@ const allowedTasks = [
   'disregarded',
   'suspended',
   'terminated',
-  'recordOver'
+  'recordOver',
+  'recordUnder'
 ];
 
 // Absolute safe route targets (prevents traversal + open redirect false positives)
@@ -37,7 +38,8 @@ const safeRoutes = [
   '/EVS/tasks-success-2',
   '/EVS/overpayment',
   '/EVS/underpayment',
-  '/EVS/recordOver'
+  '/EVS/recordOver',
+  '/EVS/recordUnder'
   
 ];
 
@@ -129,6 +131,11 @@ router.get('/EVS/confirmation', function (req, res) {
       heading: "You are about to record an overpayment of Pension Credit",
       paragraph: "For 6 months no capital over threshold tasks will be created for this person.",
       button: "Record overpayment"
+    },
+    underpayment: {
+      heading: "You are about to record an underpayment of Pension Credit",
+      paragraph: "For 6 months no capital over threshold tasks will be created for this person.",
+      button: "Record underpayment"
     }
   };
 
@@ -199,6 +206,7 @@ createPostRoute('/suspend', 'suspend', 'suspended');
 createPostRoute('/terminated', 'terminated', 'terminated');
 
 createPostRoute('/recordOver', 'over', 'recordOver');
+createPostRoute('/recordUnder', 'under', 'recordUnder');
 
 // ---------------------------------------------
 module.exports = router;
