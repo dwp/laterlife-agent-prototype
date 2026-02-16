@@ -15,6 +15,7 @@ const allowedValues = [
   'disregarded2y', 'next', 'overpayment', 'underpayment', 'suspend'
 ];
 
+
 // Allowed task names in redirect
 const allowedTasks = [
   'abroad-preview',
