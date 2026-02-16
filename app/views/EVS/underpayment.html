@@ -39,7 +39,7 @@ Underpayment – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="current-weekly-payment" name="current-weekly-payment"
+    <input class="govuk-input govuk-input--width-5" id="current-weekly-payment" name="under
       type="text" inputmode="decimal">
   </div>
 </div>
@@ -53,12 +53,12 @@ Underpayment – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="new-weekly-payment" type="text"
+    <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="under" type="text"
       inputmode="decimal">
   </div>
 </div>
 
-<form action="/evs/tasks-success" method="post">
+<form action="/EVS/recordUnder" method="post">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="underpayment-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -74,14 +74,14 @@ Underpayment – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-radios" data-module="govuk-radios">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="underpayment" name="underpayment" type="radio" value="abatement">
+          <input class="govuk-radios__input" id="underpayment" name="under" type="radio" value="underpayment">
           <label class="govuk-label govuk-radios__label" for="underpayment">
             Completed abatement process
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="underpayment-2" name="underpayment" type="radio" value="arrears"
+          <input class="govuk-radios__input" id="underpayment-2" name="under" type="radio" value="underpayment"
             data-aria-controls="conditional-underpayment-2">
           <label class="govuk-label govuk-radios__label" for="underpayment-2">
             Paid customer arrears
@@ -100,8 +100,8 @@ Underpayment – {{ serviceName }} – GOV.UK Prototype Kit
 
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="new-weekly-payment"
-              type="text" inputmode="decimal">
+            <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="under2"
+              type="text" value="0" inputmode="decimal">
           </div>
         </div>
 
