@@ -23,7 +23,8 @@ const allowedTasks = [
   'capital-evidence',
   'disregarded',
   'suspended',
-  'terminated'
+  'terminated',
+  'recordOver'
 ];
 
 // Absolute safe route targets (prevents traversal + open redirect false positives)
@@ -35,7 +36,9 @@ const safeRoutes = [
   '/EVS/disregarded',
   '/EVS/tasks-success-2',
   '/EVS/overpayment',
-  '/EVS/underpayment'
+  '/EVS/underpayment',
+  '/EVS/recordOver'
+  
 ];
 
 // ---------------------------------------------
@@ -121,6 +124,11 @@ router.get('/EVS/confirmation', function (req, res) {
       heading: "You are about to disregard breaches for 2 years",
       paragraph: "For 2 years no capital over threshold tasks will be created for this person.",
       button: "Confirm disregard"
+    },
+    overpayment: {
+      heading: "You are about to record an overpayment of Pension Credit",
+      paragraph: "For 6 months no capital over threshold tasks will be created for this person.",
+      button: "Record overpayment"
     }
   };
 
@@ -189,6 +197,8 @@ createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
 createPostRoute('/disregarded', 'disregarded', 'disregarded');
 createPostRoute('/suspend', 'suspend', 'suspended');
 createPostRoute('/terminated', 'terminated', 'terminated');
+
+createPostRoute('/recordOver', 'over', 'recordOver');
 
 // ---------------------------------------------
 module.exports = router;

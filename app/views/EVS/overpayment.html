@@ -60,7 +60,7 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-!-margin-bottom-9"></div>
 
-<form action="/EVS/tasks-success" method="post">
+<form action="/EVS/recordOver" method="post">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -70,21 +70,21 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-radios" data-module="govuk-radios">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="reason-1" name="change-reason" type="radio" value="officialError">
+          <input class="govuk-radios__input" id="reason-1" name="over" type="radio" value="overpayment">
           <label class="govuk-label govuk-radios__label" for="reason-1">
             Official error
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="reason-2" name="change-reason" type="radio" value="claimantError">
+          <input class="govuk-radios__input" id="reason-2" name="over" type="radio" value="overpayment">
           <label class="govuk-label govuk-radios__label" for="reason-2">
             Claimant error
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="reason-3" name="change-reason" type="radio" value="fraud">
+          <input class="govuk-radios__input" id="reason-3" name="over" type="radio" value="overpayment">
           <label class="govuk-label govuk-radios__label" for="reason-3">
             Fraud
           </label>
@@ -100,15 +100,15 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-radios" data-module="govuk-radios">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="reason-1" name="debtmanagement" type="radio" value="yes">
-          <label class="govuk-label govuk-radios__label" for="reason-1">
+          <input class="govuk-radios__input" id="reason-4" name="over2" type="radio" value="overpayment">
+          <label class="govuk-label govuk-radios__label" for="reason-4">
             Yes
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="reason-2" name="debtmanagement" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="reason-2">
+          <input class="govuk-radios__input" id="reason-5" name="over2" type="radio" value="overpayment">
+          <label class="govuk-label govuk-radios__label" for="reason-5">
             No
           </label>
         </div>
