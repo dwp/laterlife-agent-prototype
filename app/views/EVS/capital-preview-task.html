@@ -67,62 +67,71 @@ Capital over threshold: Preview – {{ serviceName }} – GOV.UK Prototype Kit
         </tbody>
       </table>
 
-      <h2 class="govuk-heading-m">Linked accounts</h2>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Linked accounts
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Marks & Spencer
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Account number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    XXXX 2553
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Account holder
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Mrs Bibi Khan
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Yorkshire Building Society
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Account number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    XXXX 2446
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Account holder
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Mr Nick Simpson <br> Mrs Bibi Khan
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </details>
 
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">
-            Marks & Spencer
-          </h2>
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Account number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                XXXX 2553
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Account holder
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Mrs Bibi Khan
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">
-            Yorkshire Building Society
-          </h2>
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Account number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                XXXX 2446
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Account holder
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Mr Nick Simpson <br> Mrs Bibi Khan
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
+
 
       <div class="govuk-!-margin-bottom-9"></div>
       <form method="post" action="/capital-preview">
