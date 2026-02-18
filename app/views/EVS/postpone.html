@@ -31,7 +31,7 @@ Postpone – {{ serviceName }} – GOV.UK Prototype Kit
     "href": "javascript: window.history.go(-1)"
     })
     }}
-    <form action="/EVS/tasks-important" method="post"> 
+    <form action="/postpone-date" method="aption-l"> </span>
       <h1 class="govuk-heading-l">When should the task be postponed to?</h1>
 
       <div id="postpone-date-hint" class="govuk-hint">
@@ -45,7 +45,7 @@ Postpone – {{ serviceName }} – GOV.UK Prototype Kit
               Day
             </label>
             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="postpone-date-day"
-              name="postpone-date" type="text" inputmode="numeric">
+              name="postpone-date-day" type="text" inputmode="numeric">
           </div>
         </div>
 
@@ -55,7 +55,7 @@ Postpone – {{ serviceName }} – GOV.UK Prototype Kit
               Month
             </label>
             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="postpone-date-month"
-              name="postpone-date" type="text" inputmode="numeric">
+              name="postpone-date-month" type="text" inputmode="numeric">
           </div>
         </div>
 
@@ -65,14 +65,15 @@ Postpone – {{ serviceName }} – GOV.UK Prototype Kit
               Year
             </label>
             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="postpone-date-year"
-              name="postpone-date" type="text" inputmode="numeric">
+              name="postpone-date-year" type="text" inputmode="numeric">
           </div>
         </div>
       </div>
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-  Confirm
-</button>
     </form>
-    
+    <div class="govuk-button-group">
+      <a href="tasks-success.html" class="govuk-button" data-module="govuk-buttone-exit"
+        data-module="govukk-grid-column-one-third">Confirm</a>
+
+    </div>
 
     {% endblock %}
