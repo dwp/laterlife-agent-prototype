@@ -53,7 +53,7 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="new-weekly-payment" type="number"
+    <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="weekly-payment" type="number"
       inputmode="decimal">
   </div>
 </div>
@@ -63,8 +63,7 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
 
 <form action="/EVS/recordOver" method="post">
 
-
-
+  <!-- Overpayment -->
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="overpayment-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -76,31 +75,31 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
       <div id="overpayment-hint" class="govuk-hint">
         Select all options that apply
       </div>
-
+      <!-- Offical error -->
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="overpayment" name="overpayment" type="checkbox" value="Offical"
-            data-aria-controls="conditional-overpayment">
-          <label class="govuk-label govuk-checkboxes__label" for="overpayment">
+          <input class="govuk-checkboxes__input" id="offical-error" name="over" type="checkbox" value="overpayment"
+            data-aria-controls="conditional-offical-error">
+          <label class="govuk-label govuk-checkboxes__label" for="offical-error">
             Offical error
           </label>
         </div>
-        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-overpayment">
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-offical-error">
           <div class="govuk-form-group">
-            <label class="govuk-label" for="overpayment-offical">
+            <label class="govuk-label" for="conditional-offical-error">
               Amount
             </label>
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
-              <input class="govuk-input govuk-input--width-5" id="overpayment-offical" name="overpaymentOffical"
-                type="number">
+              <input class="govuk-input govuk-input--width-5" id="conditional-offical-error-value"
+                name="overpaymentValue" type="number">
             </div>
-
           </div>
         </div>
+
+        <!-- Claimant error -->
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="overpayment" name="overpayment" type="checkbox" value="claimant"
+          <input class="govuk-checkboxes__input" id="overpayment" name="over" type="checkbox" value="claimant"
             data-aria-controls="conditional-claimant">
           <label class="govuk-label govuk-checkboxes__label" for="overpayment">
             Claimant error
@@ -113,14 +112,15 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
             </label>
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
-              <input class="govuk-input govuk-input--width-5" id="overpayment-claimant" name="overpaymentclaimant"
+              <input class="govuk-input govuk-input--width-5" id="overpayment-claimant" name="overpaymentValue"
                 type="number">
             </div>
-
           </div>
         </div>
+
+        <!-- Fraud -->
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="fraud" name="overpayment" type="checkbox" value="fraud"
+          <input class="govuk-checkboxes__input" id="fraud" name="over" type="checkbox" value="fraud"
             data-aria-controls="conditional-fraud">
           <label class="govuk-label govuk-checkboxes__label" for="fraud">
             Fraud
@@ -133,12 +133,13 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
             </label>
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
-              <input class="govuk-input govuk-input--width-5" id="overpayment-fraud" name="overpaymentFraud"
+              <input class="govuk-input govuk-input--width-5" id="overpayment-fraud" name="overpaymentValue"
                 type="number">
             </div>
 
           </div>
         </div>
+        <!-- Total error -->
         <br>
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="new-weekly-payment">
@@ -149,13 +150,16 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="new-weekly-payment"
+            <input class="govuk-input govuk-input--width-5" id="new-weekly-payment" name="overpaymentValue"
               type="number" inputmode="decimal">
           </div>
         </div>
       </div>
     </fieldset>
   </div>
+
+  <!-- Debt managment -->
+
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -180,6 +184,8 @@ Overpayment – {{ serviceName }} – GOV.UK Prototype Kit
     </fieldset>
 
   </div>
+
+  <!-- Submit form -->
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Confirm
   </button>

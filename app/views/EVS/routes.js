@@ -156,9 +156,10 @@ router.get('/EVS/confirmation', function (req, res) {
 function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
   router.post(path, function (req, res) {
     const value = req.session.data[sessionKey];
+    const first = Array.isArray(value) ? value[0] : value;
 
     // Validate value before anything else
-    if (!allowedValues.includes(value)) {
+    if (!allowedValues.includes(first)) {
       return res.status(400).send('Invalid value');
     }
 
@@ -174,6 +175,11 @@ function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
     });
   });
 }
+
+
+
+
+
 
 // ---------------------------------------------
 // All POST routes
@@ -206,8 +212,30 @@ createPostRoute('/disregarded', 'disregarded', 'disregarded');
 createPostRoute('/suspend', 'suspend', 'suspended');
 createPostRoute('/terminated', 'terminated', 'terminated');
 
-createPostRoute('/recordOver', 'over', 'recordOver');
-createPostRoute('/recordUnder', 'under', 'recordUnder');
+
+
+router.post('/EVS/recordOver', function (req, res) {
+  const raw = req.session.data['over'];
+  const value = allowedValues.includes(raw) ? raw : 'overpayment';
+
+  return safeInternalRedirect(res, '/EVS/confirmation', {
+    task: 'recordOver',
+    value
+  });
+});
+
+
+router.post('/EVS/recordUnder', function (req, res) {
+  const raw = req.session.data['under'];
+  const value = allowedValues.includes(raw) ? raw : 'underpayment';
+
+  return safeInternalRedirect(res, '/EVS/confirmation', {
+    task: 'recordUnder',
+    value
+  });
+});
+
+
 
 // ---------------------------------------------
 module.exports = router;
