@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Home phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+         {% include '../_nav-auto-cis.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<form class="form" method="post" action="personal-task-complete">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <h1 class="govuk-heading-xl">
+  Eric Erikson<br>
+  <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+  {% if data['task'] == 'death'%}
+  <strong class="govuk-tag govuk-tag--grey">
+  Dead
+</strong>
+{% endif %}
+  </h1>
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+<h1 class="govuk-heading-l">Confirm you want to move Eric's record</h1>
+<p class="govuk-body">You will no longer be able to manage Eric's record in this system.</p>
+<h2 class="govuk-heading-m">Pension Credit</h2>
+<p class="govuk-body">Pension Credit payments will stop. You must follow the steps to rebuild this case in CAM.</p> 
+<h2 class="govuk-heading-m">State Pension</h2>
+<p class="govuk-body">State Pension payments will continue. To stop or manage State Pension payments you must update this record in GySP.</p><br><br>
+
+
+
+  
+
+
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Move record
+  </button>
+  <a class="govuk-link" href="personal">Return to record view</a>
+</div>
+
+
+
+
+  </div>
+</form>
+{% endblock %}

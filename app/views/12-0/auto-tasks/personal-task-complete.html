@@ -11,7 +11,7 @@
 <div class="dwp-header__service-name">
   <a href="/index" class="dwp-header__link">{{serviceName}}</a>
 </div>
-          {% include '../_nav.html' %}
+        {% include '../_nav-auto-cis.html' %}
 </div>
 </header>
 
@@ -27,9 +27,15 @@
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
+      {% if data['endEntitlement'] == 'end' %}
         <h3 class="govuk-notification-banner__heading">
-          Task complete
+          Entitlement ended
         </h3>
+      {% else %}
+      <h3 class="govuk-notification-banner__heading">
+          Claimant moved
+        </h3>
+      {% endif %}
       </div>
     </div>
 </div>
@@ -40,12 +46,13 @@
      <h1 class="govuk-heading-xl">
   Eric Erikson<br>
   <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+  {% if data['dead'] == 'yes' %}
   <strong class="govuk-tag govuk-tag--grey">
   Dead
 </strong>
   </h1>
-      {% include '../_remove-link.html' %}
-
+       {% include '../_move-or-end-link.html' %}
+  {% endif %}
       
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
 

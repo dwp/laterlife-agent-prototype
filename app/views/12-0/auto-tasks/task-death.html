@@ -11,7 +11,7 @@
 <div class="dwp-header__service-name">
   <a href="/index" class="dwp-header__link">{{serviceName}}</a>
 </div>
-          {% include '../_nav.html' %}
+        {% include '../_nav-auto-cis.html' %}
 </div>
 </header>
 
@@ -36,43 +36,20 @@
 }}
 <br><br>
 <p class="govuk-body-l" style="margin-bottom: 10px;">Eric died on 10 December 2025.</p><br>
-
-<h2 class="govuk-heading-m">Do you want to remove Eric's record from Later Life?</h2>
      
 
-  <form method="post">
+  <form method="post" action="personal?dead=yes">
 
-  <p class="govuk-body">Check the Standard Working Instructions (SWI) to find out what tasks should be completed before you remove this record.</p>
-
-
-<div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="stayInLL-hint">
-    
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="stayInLL" name="stayInLL" type="radio" value="yes~remove-claimant-confirm">
-          <label class="govuk-label govuk-radios__label" for="stayInLL">
-            Yes, remove this record
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-           {% if data['start'] == 'personal-tab' %}
-          <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~personal">
-          {% else %}
-          <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~task-queues">
-          {% endif %}
-          <label class="govuk-label govuk-radios__label" for="stayInLL-2">
-            No
-          </label>
-        </div>
-      </div>
-    </fieldset>
-  </div>
+  <p class="govuk-body">In order to end Eric's entitlement to Pension Credit, you must now check:</p>
 
 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Eric's Pension Credit record</li>
+    <li>the Standard Working Instructions (SWI)</li>
+  </ul><br><br>
 
   <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
+        View the record
       </button>
 
     </form>

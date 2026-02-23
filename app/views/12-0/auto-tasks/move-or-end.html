@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Home phone number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+        {% include '../_nav-auto-cis.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+  Eric Erikson<br>
+  <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+  {% if data['dead'] == 'yes' %}
+  <strong class="govuk-tag govuk-tag--grey">
+  Dead
+</strong>
+  {% endif %}
+  </h1>
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+{% if data['dead'] == 'yes' %}
+<form class="form" method="post">
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to end Eric's Pension credit entitlement?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="endEntitlement" name="endEntitlement" type="radio" value="end~confirm-end-entitlement">
+        <label class="govuk-label govuk-radios__label" for="removeReason">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="endEntitlement-2" name="endEntitlement" type="radio" value="no~?">
+        <label class="govuk-label govuk-radios__label" for="removeReason-2">
+          No
+        </label>
+    </div>
+  </fieldset>
+</div>
+{% else %}
+<form class="form" method="post">
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What do you want to do with this record?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="endEntitlement" name="endEntitlement" type="radio" value="end~confirm-end-entitlement">
+        <label class="govuk-label govuk-radios__label" for="removeReason">
+          End the entitlement
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="endEntitlement-2" name="endEntitlement" type="radio" value="move~confirm-move">
+        <label class="govuk-label govuk-radios__label" for="removeReason-2">
+          Move the record to legacy services
+        </label>
+    </div>
+     <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="endEntitlement-2" name="endEntitlement" type="radio" value="end-and-move~?">
+        <label class="govuk-label govuk-radios__label" for="removeReason-2">
+          End the entitlement and move the record to legacy services
+        </label>
+    </div>
+  </fieldset>
+</div>
+{% endif %}
+
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  <a class="govuk-link" href="personal">Return to record view</a>
+</div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

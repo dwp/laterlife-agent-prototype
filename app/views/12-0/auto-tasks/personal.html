@@ -11,7 +11,7 @@
 <div class="dwp-header__service-name">
   <a href="/index" class="dwp-header__link">{{serviceName}}</a>
 </div>
-          {% include '../_nav.html' %}
+        {% include '../_nav-auto-cis.html' %}
 </div>
 </header>
 
@@ -28,15 +28,15 @@
       <h1 class="govuk-heading-xl">
   Eric Erikson<br>
   <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+  {% if data ['dead'] == 'yes' %}
   <strong class="govuk-tag govuk-tag--grey">
   Dead
 </strong>
+  {% endif %}
   </h1>
-      {% include '../_remove-link.html' %}
+      {% include '../_move-or-end-link.html' %}
 
-      <div class="govuk-inset-text" style="border-left: 10px solid #1d70b8;">
-        There are tasks outstanding for this account. <a href="outstanding-tasks?task-type=death&start=personal-tab" class="govuk-link govuk-link--no-visited-state">View tasks</a>.
-      </div>
+     
       
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
 

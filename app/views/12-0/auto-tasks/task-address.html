@@ -11,7 +11,7 @@
 <div class="dwp-header__service-name">
   <a href="/index" class="dwp-header__link">{{serviceName}}</a>
 </div>
-          {% include '../_nav.html' %}
+        {% include '../_nav-auto-cis.html' %}
 
 </header>
 
@@ -31,40 +31,20 @@
 <br><br>
 
 <p class="govuk-body-l" style="margin-bottom: 10px;">Eric's address was updated on 10 January 2026</p>
-<h2 class="govuk-heading-s" style="margin-bottom:5px">New address</h2>
-<p class="govuk-body">14 Stray Road, Harrogate, North Yorkshire, HG1 LPV</p><br><br>
 
-<h2 class="govuk-heading-m">Do you want to remove Eric's record from Later Life?</h2>
+<p class="govuk-body">New address: 14 Stray Road, Harrogate, North Yorkshire, HG1 LPV</p><br>
      
 
-  <form method="post">
+  <form method="post" action="personal?dead=no">
 
-  <p class="govuk-body">Check the Standard Working Instructions (SWI) to find out what tasks should be completed before you remove this record.</p>
-
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="stayInLL-hint">
-  
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="stayInLL" name="stayInLL" type="radio" value="yes~return-to-bau">
-          <label class="govuk-label govuk-radios__label" for="stayInLL">
-            Yes, move this record to CAM
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="stayInLL-2" name="stayInLL" type="radio" value="no~task-queues-task-complete">
-          <label class="govuk-label govuk-radios__label" for="stayInLL-2">
-            No
-          </label>
-        </div>
-      </div>
-    </fieldset>
-  </div>
-
-
+  <p class="govuk-body">You need to check Eric's Pension Credit record, and the Standard Working Instructions (SWI), to find out if:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Eric is still entitled to Pension Credit</li>
+    <li>the record can remain in this system</li>
+  </ul><br><br>
 
   <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
+        View this record
       </button>
 
     </form>
