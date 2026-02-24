@@ -29,111 +29,49 @@ Spending abroad: Evidence gathering – {{ serviceName }} – GOV.UK Prototype K
 
     <div class="govuk-!-margin-bottom-9"></div>
 
-    <h2 class="govuk-heading-m">Primary account</h2>
+    <h2 class="govuk-heading-m">Overview</h2>
+<p><strong>Total spending period:</strong> 19 January to 23 February 2026</p>
+<br><br>
 
     <div class="app-check-your-answers app-check-your-answers--short">
       <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Bank name</td>
-            <td class="govuk-table__cell">HSBC</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Account number</td>
-            <td class="govuk-table__cell">XXXX 2354</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Account holders</td>
-            <td class="govuk-table__cell">Mr Bob Khan <br> Mrs Bibi Khan</td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Spending period</td>
-            <td class="govuk-table__cell">1 Jan 2024 to 1 Jul 2024</td>
-          </tr>
-        </tbody>
-      </table>
+  <caption class="govuk-table__caption govuk-table__caption--m">Bank accounts</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Bank name</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Type</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Account holder/s</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Account number</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Spending activity</th>
+      
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">M&S Bank</th>
+      <td class="govuk-table__cell">Primary</td>
+      <td class="govuk-table__cell">Mr Khan</td>
+      <td class="govuk-table__cell">XXXX6746</td>
+      <td class="govuk-table__cell">18 February 2026</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First Direct</th>
+       <td class="govuk-table__cell">Other</td>
+      <td class="govuk-table__cell">Mrs Khan</td>
+      <td class="govuk-table__cell">XXXX8725</td>
+      <td class="govuk-table__cell">N/A</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">HSBC</th>
+      <td class="govuk-table__cell">Other</td>
+      <td class="govuk-table__cell">Mr Khan, Mrs Khan</td>
+      <td class="govuk-table__cell">XXXX9000</td>
+      <td class="govuk-table__cell">19 January to 23 February 2026</td>
+    </tr>
+  </tbody>
+</table>
     </div>
-
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Linked accounts
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Marks & Spencer
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Account number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  XXXX 2553
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Account holder
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Mrs Bibi Khan
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Spending period
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  4 Nov 2024 to 16 Nov 2024
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Yorkshire Building Society
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Account number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  XXXX 2446
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Account holder
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Mr A Khan <br> Mrs Bibi Khan
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Spending period
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  16 Nov 2024 to 1 Dec 2024
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </div>
-    </details>
+    
 
     <div class="govuk-!-margin-bottom-9"></div>
     <form method="post" action="/abroad-evidence">
