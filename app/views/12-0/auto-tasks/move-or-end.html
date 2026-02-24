@@ -50,7 +50,7 @@
         Do you want to end Eric's Pension credit entitlement?
       </h1>
     </legend>
-    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="endEntitlement" name="endEntitlement" type="radio" value="end~confirm-end-entitlement">
         <label class="govuk-label govuk-radios__label" for="removeReason">
@@ -58,13 +58,20 @@
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="endEntitlement-2" name="endEntitlement" type="radio" value="no~?">
+        <input class="govuk-radios__input" id="endEntitlement-2" name="endEntitlement" type="radio" value="no~personal">
         <label class="govuk-label govuk-radios__label" for="removeReason-2">
-          No
+          No, return to the record view
         </label>
     </div>
   </fieldset>
 </div>
+
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</div>
+
 {% else %}
 <form class="form" method="post">
   <div class="govuk-form-group">
@@ -95,7 +102,6 @@
     </div>
   </fieldset>
 </div>
-{% endif %}
 
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
@@ -103,6 +109,10 @@
   </button>
   <a class="govuk-link" href="personal">Return to record view</a>
 </div>
+
+{% endif %}
+
+
 
     </form>
 
