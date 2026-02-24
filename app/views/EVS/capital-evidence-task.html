@@ -27,99 +27,61 @@ Capital over threshold: Evidence gathering – {{ serviceName }} – GOV.UK Prot
     <h1 class="govuk-heading-l">Capital over threshold:
       evidence gathering</h1>
 
+    <h2 class="govuk-heading-m">Overview</h2>
+    
+    <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of breach
+    </dt>
+    <dd class="govuk-summary-list__value">
+      23 February 2026
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Total holdings
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £35,716
+    </dd>
+  </div>
+</dl>
 
-    <h2 class="govuk-heading-m">Primary account</h2>
-
-    <dl class="app-check-your-answers app-check-your-answers--short">
+    <div class="app-check-your-answers app-check-your-answers--short">
       <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row" style="width: 43%">Date of breach</td>
-            <td class="govuk-table__cell">12 July 2025</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row" style="width: 43%">Bank name</td>
-            <td class="govuk-table__cell">HSBC Plc</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Account number</td>
-            <td class="govuk-table__cell">XXXX 2354</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Account holders</td>
-            <td class="govuk-table__cell">Mr Bob Khan<br>Mrs Bibi Khan</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Total holdings</td>
-            <td class="govuk-table__cell">£35,716</td>
-          </tr>
-
-        </tbody>
-      </table>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Linked accounts
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h2 class="govuk-summary-card__title">
-                Marks & Spencer
-              </h2>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Account number
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    XXXX 2553
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Account holder
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Mrs Bibi Khan
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-          <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h2 class="govuk-summary-card__title">
-                Yorkshire Building Society
-              </h2>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Account number
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    XXXX 2446
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Account holder
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Mr Nick Simpson <br> Mrs Bibi Khan
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </div>
-      </details>
+  <caption class="govuk-table__caption govuk-table__caption--m">Bank accounts</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Bank name</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Type</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Account holder/s</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Account number</th>
+      
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">M&S Bank</th>
+      <td class="govuk-table__cell">Primary</td>
+      <td class="govuk-table__cell">Mr Khan</td>
+      <td class="govuk-table__cell">XXXX6746</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First Direct</th>
+       <td class="govuk-table__cell">Other</td>
+      <td class="govuk-table__cell">Mrs Khan</td>
+      <td class="govuk-table__cell">XXXX8725</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">HSBC</th>
+      <td class="govuk-table__cell">Other</td>
+      <td class="govuk-table__cell">Mr Khan, Mrs Khan</td>
+      <td class="govuk-table__cell">XXXX9000</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
 
       <div class="govuk-!-margin-bottom-9"></div>
       <form method="post" action="/capital-evidence">
