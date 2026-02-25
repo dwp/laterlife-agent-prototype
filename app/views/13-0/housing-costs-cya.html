@@ -36,11 +36,11 @@
      <form method="post" action="spinner"><br>
    
 
-        <h2 class="govuk-heading-m">Eligible costs</h2>
+        <h2 class="govuk-heading-m">Summary of costs</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Use of furniture and household equipment
+             Rents or ground rents on long tenancies
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['el-cost1'] %}
@@ -55,7 +55,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Common area cleaning
+              Service charges
             </dt>
             <dd class="govuk-summary-list__value">
              {% if data['el-cost2'] %}
@@ -70,7 +70,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Communal gardens
+              Payments by way of rent charges (annual fee)
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['el-cost3'] %}
@@ -85,7 +85,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Communal phone charges
+              Payments under co-ownership schemes
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['el-cost4'] %}
@@ -100,7 +100,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Communal fuel charges e.g. for heating, lighting, cooking
+              Payments for tenancies or licenses of Crown rents
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['el-cost5'] %}
@@ -115,7 +115,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Communal cable and satellite TV
+              Payments for tents and their sites 
             </dt>
             <dd class="govuk-summary-list__value">
              {% if data['el-cost6'] %}
@@ -128,311 +128,12 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Communal cleaning
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['el-cost7'] %}
-                £{{ data['el-cost7'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Entry phones
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['el-cost8'] %}
-                £{{ data['el-cost8'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              General management costs e.g. postage and stationary
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['el-cost9'] %}
-                £{{ data['el-cost9'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Insurance charges for building
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['el-cost10'] %}
-                £{{ data['el-cost10'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Lifts
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {% if data['el-cost11'] %}
-                £{{ data['el-cost11'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
+          
+          
         </dl>
       
 
-        <h2 class="govuk-heading-m">Ineligible costs</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Fuel charges if not communal
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost1'] %}
-                £{{ data['inel-cost1'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Meals
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost2'] %}
-                £{{ data['inel-cost2'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Water rates
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost3'] %}
-                £{{ data['inel-cost3'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Window cleaning
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost4'] %}
-                £{{ data['inel-cost4'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Cable and satellite TV if not communal
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost5'] %}
-                £{{ data['inel-cost5'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>  <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Cleaning if not communal
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost6'] %}
-                £{{ data['inel-cost6'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Counselling and support services
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost7'] %}
-                £{{ data['inel-cost7'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Emergency alarm system
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost8'] %}
-                £{{ data['inel-cost8'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Laundry e.g. washing sheets for claimant
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost9'] %}
-                £{{ data['inel-cost9'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Medical expenses
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost10'] %}
-                £{{ data['inel-cost10'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Nursing and personal care
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {% if data['inel-cost11'] %}
-                £{{ data['inel-cost11'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Sports facilities
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {% if data['inel-cost12'] %}
-                £{{ data['inel-cost12'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Transport
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost13'] %}
-                £{{ data['inel-cost13'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             TV license
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost14'] %}
-                £{{ data['inel-cost14'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              TV rental
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['inel-cost15'] %}
-                £{{ data['inel-cost15'] }}
-              {% else %}
-                None
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-        </dl>
+        
 <br>
 
       
