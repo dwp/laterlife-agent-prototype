@@ -31,6 +31,10 @@
         <h3 class="govuk-notification-banner__heading">
           Entitlement ended
         </h3>
+      {% elif data['endEntitlement'] == 'end-and-move'%}
+        <h3 class="govuk-notification-banner__heading">
+          Entitlement ended and record moved
+        </h3>
       {% else %}
       <h3 class="govuk-notification-banner__heading">
           Claimant moved
