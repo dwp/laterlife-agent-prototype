@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Disregard – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar.html' %}
+
+    {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    })
+    }}
+
+
+    <h2 class="govuk-heading-l">What update has been made to the customer's Pension Credit?</h2>
+
+    <form class="form" action="/updateReason" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="disregarded-2" name="updateReason" type="radio"
+                value="overpayment">
+              <label class="govuk-label govuk-radios__label" for="disregarded-2">
+                Overpayment of Pension Credit identified
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="disregarded-3" name="updateReason" type="radio"
+                value="underpayment">
+              <label class="govuk-label govuk-radios__label" for="disregarded-3">
+                Underpayment of Pension Credit identified
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="disregarded-4" name="updateReason" type="radio" value="suspend">
+              <label class="govuk-label govuk-radios__label" for="disregarded-4">
+                Claim suspended
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="disregarded-4" name="updateReason" type="radio" value="terminated">
+              <label class="govuk-label govuk-radios__label" for="disregarded-4">
+                Claim terminated
+              </label>
+            </div>
+          </div>
+
+      </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+  </div>
+
+  </form>
+
+</div>
+
+
+
+
+
+</div>
+
+{% endblock %}

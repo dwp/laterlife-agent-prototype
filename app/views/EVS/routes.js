@@ -11,8 +11,7 @@ const router = govukPrototypeKit.requests.setupRouter();
 // Allowed values for confirmation screens
 const allowedValues = [
   'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
-  'suspended', 'terminated', 'disregarded', 'disregarded26', 'disregarded52',
-  'disregarded2y', 'next', 'overpayment', 'underpayment', 'suspend'
+  'suspended', 'terminated', 'disregarded', 'next', 'overpayment', 'underpayment', 'suspend', 'update', 'recordPostpone', 'createEvidenceTask'
 ];
 
 
@@ -26,7 +25,9 @@ const allowedTasks = [
   'suspended',
   'terminated',
   'recordOver',
-  'recordUnder'
+  'recordUnder',
+  'updateReason',
+  'recordPostpone'
 ];
 
 // Absolute safe route targets (prevents traversal + open redirect false positives)
@@ -36,11 +37,14 @@ const safeRoutes = [
   '/EVS/stop-benefit',
   '/EVS/suspend',
   '/EVS/disregarded',
-  '/EVS/tasks-success-2',
   '/EVS/overpayment',
   '/EVS/underpayment',
   '/EVS/recordOver',
-  '/EVS/recordUnder'
+  '/EVS/recordUnder',
+  '/EVS/update-to-pc',
+  '/EVS/updateReason',
+  '/EVS/tasks-success',
+  '/EVS/recordPostpone'
   
 ];
 
@@ -75,68 +79,64 @@ router.get('/EVS/confirmation', function (req, res) {
   const lookup = {
     none: {
       heading: "You are about to record that the case is closed",
-      paragraph: "For 6 months no spending abroad/capital over threshold tasks will be created for this person.",
-      button: "Case is closed"
+      paragraph: "For 6 months no spending { abroad/capital over threshold } tasks will be created for this person.",
+      button: "Case is closed",
+      style: "govuk-button--warning"
     },
     died: {
-      heading: "You are about to record that this customer has died",
-      paragraph: "No new tasks will be created for this person.",
-      button: "Customer has died"
+      heading: "The customer has died",
+      paragraph: "This case will be closed.",
+      button: "End task"
     },
     cfcd: {
       heading: "You are about to record that the case is referred to CFCD",
       paragraph: "No new tasks will be created for this person.",
-      button: "Case referred to CFCD"
+      button: "Case referred to CFCD",
+      style: "govuk-button--warning"
     },
-    postpone: {
+    recordPostpone: {
       heading: "Postpone task",
-      paragraph: "You can come back to this task later. It will move to your postponed list.",
-      button: "Confirm postpone"
-    },
-    forward: {
-      heading: "Continue to evidence gathering task",
-      paragraph: "We’ll move you to the next evidence gathering step.",
-      button: "Continue"
+      paragraph: "This case will be postponed utill { selected date }.",
+      button: "Postpone task"
     },
     absence: {
-      heading: "You are about to record that the spending period was a temporary absence",
-      paragraph: "For 4 weeks no spending abroad tasks will be created for this person.",
-      button: "It was a temporary absence"
+      heading: "The spending period was a temporary absence",
+      paragraph: "This case will be closed.",
+      button: "End task"
     },
     suspended: {
       heading: "You are about to record that this claim is suspended",
       paragraph: "For 4 weeks no new tasks will be created for this person.",
-      button: "Claim suspended"
+      button: "Claim suspended",
+      style: "govuk-button--warning"
     },
     terminated: {
       heading: "You are about to record that this claim is terminated",
-      paragraph: "For 6 months no new tasks will be created for this person.",
+      paragraph: "This case will be closed.",
       button: "Claim terminated"
     },
-    disregarded26: {
-      heading: "You are about to disregard breaches for 26 weeks",
-      paragraph: "For 26 weeks no capital over threshold tasks will be created for this person.",
-      button: "Confirm disregard"
-    },
-    disregarded52: {
-      heading: "You are about to disregard breaches for 52 weeks",
-      paragraph: "For 52 weeks no capital over threshold tasks will be created for this person.",
-      button: "Confirm disregard"
-    },
-    disregarded2y: {
-      heading: "You are about to disregard breaches for 2 years",
-      paragraph: "For 2 years no capital over threshold tasks will be created for this person.",
-      button: "Confirm disregard"
+    disregarded: {
+      heading: "You are about to disregard breaches",
+      paragraph: "For 6 months no capital over threshold tasks will be created for this person.",
+      button: "Disregard breaches",
+      style: "govuk-button--warning"
     },
     overpayment: {
       heading: "You are about to record an overpayment of Pension Credit",
       paragraph: "For 6 months no capital over threshold tasks will be created for this person.",
-      button: "Record overpayment"
+      button: "Record overpayment",
+      style: "govuk-button--warning"
     },
     underpayment: {
       heading: "You are about to record an underpayment of Pension Credit",
       paragraph: "For 6 months no capital over threshold tasks will be created for this person.",
-      button: "Record underpayment"
+      button: "Record underpayment",
+      style: "govuk-button--warning"
+    },
+    createEvidenceTask: {
+      heading: "Create evidence gathering task",
+      paragraph: "This task will be closed and a new evidence gathering task will be created",
+      button: "Create evidence task"
     }
   };
 
@@ -146,7 +146,8 @@ router.get('/EVS/confirmation', function (req, res) {
     taskName: task,
     readableText: item.heading,
     paragraphText: item.paragraph,
-    buttonText: item.button
+    buttonText: item.button,
+    buttonStyle: item.style
   });
 });
 
@@ -185,8 +186,7 @@ function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
 // All POST routes
 // ---------------------------------------------
 createPostRoute('/abroad-preview', 'abroadPreview', 'abroad-preview', {
-  postpone: '/EVS/postpone',
-  next: '/EVS/tasks-success-2'
+  postpone: '/EVS/postpone'
 });
 
 createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
@@ -196,22 +196,24 @@ createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
 });
 
 createPostRoute('/capital-preview', 'capitalPreview', 'capital-preview', {
-  postpone: '/EVS/postpone',
-  disregarded: '/EVS/disregarded',
-  next: '/EVS/tasks-success-2'
+  postpone: '/EVS/postpone'
 });
 
 createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
   postpone: '/EVS/postpone',
+  update: '/EVS/update-to-pc'
+});
+
+createPostRoute('/updateReason', 'updateReason', 'updateReason', {
   overpayment: '/EVS/overpayment',
   underpayment: '/EVS/underpayment',
-  disregarded: '/EVS/disregarded'
+  suspend: '/EVS/suspend',
+  terminated: '/EVS/stop-benefit'
 });
 
 createPostRoute('/disregarded', 'disregarded', 'disregarded');
 createPostRoute('/suspend', 'suspend', 'suspended');
 createPostRoute('/terminated', 'terminated', 'terminated');
-
 
 
 router.post('/EVS/recordOver', function (req, res) {
@@ -220,6 +222,16 @@ router.post('/EVS/recordOver', function (req, res) {
 
   return safeInternalRedirect(res, '/EVS/confirmation', {
     task: 'recordOver',
+    value
+  });
+});
+
+router.post('/EVS/recordPostpone', function (req, res) {
+  const raw = req.session.data['recordPostpone'];
+  const value = allowedValues.includes(raw) ? raw : 'recordPostpone';
+
+  return safeInternalRedirect(res, '/EVS/confirmation', {
+    task: 'recordPostpone',
     value
   });
 });
