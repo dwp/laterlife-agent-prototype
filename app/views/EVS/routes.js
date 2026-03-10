@@ -90,9 +90,8 @@ router.get('/EVS/confirmation', function (req, res) {
     },
     cfcd: {
       heading: "You are about to record that the case is referred to CFCD",
-      paragraph: "No new tasks will be created for this person.",
-      button: "Case referred to CFCD",
-      style: "govuk-button--warning"
+      paragraph: "Postpone task for four weeks to ensure CFEMS flag is correctly applied",
+      button: "Postpone task"
     },
     recordPostpone: {
       heading: "Postpone task",
