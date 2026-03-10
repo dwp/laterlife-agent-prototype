@@ -106,9 +106,8 @@ router.get('/EVS/confirmation', function (req, res) {
     },
     suspended: {
       heading: "You are about to record that this claim is suspended",
-      paragraph: "For 4 weeks no new tasks will be created for this person.",
-      button: "Claim suspended",
-      style: "govuk-button--warning"
+      paragraph: "Postpone task for 4 weeks before making a final descion.",
+      button: "Postpone task"
     },
     terminated: {
       heading: "You are about to record that this claim is terminated",
