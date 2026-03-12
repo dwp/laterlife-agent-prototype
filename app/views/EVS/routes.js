@@ -11,7 +11,7 @@ const router = govukPrototypeKit.requests.setupRouter();
 // Allowed values for confirmation screens
 const allowedValues = [
   'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
-  'suspended', 'terminated', 'disregarded', 'next', 'overpayment', 'underpayment', 'suspend', 'update', 'recordPostpone', 'createEvidenceTask'
+  'suspended', 'terminated', 'disregarded', 'next', 'overpayment', 'underpayment', 'suspend', 'update', 'recordPostpone', 'createEvidenceTask', 'cfcd_none'
 ];
 
 
@@ -44,8 +44,8 @@ const safeRoutes = [
   '/EVS/update-to-pc',
   '/EVS/updateReason',
   '/EVS/tasks-success',
-  '/EVS/recordPostpone'
-  
+  '/EVS/recordPostpone',
+  '/EVS/cfcd'
 ];
 
 // ---------------------------------------------
@@ -83,14 +83,20 @@ router.get('/EVS/confirmation', function (req, res) {
       button: "Case is closed",
       style: "govuk-button--warning"
     },
+    cfcd_none: {
+      heading: "You are about to record that the task is referred to CFCD and close the task.",
+      paragraph: "You confirmed a CFEMS flag is present for this customer.",
+      button: "Case is closed",
+      style: "govuk-button--warning"
+    },
     died: {
       heading: "The customer has died",
       paragraph: "This case will be closed.",
       button: "End task"
     },
     cfcd: {
-      heading: "You are about to record that the case is referred to CFCD",
-      paragraph: "Postpone task for four weeks to ensure CFEMS flag is correctly applied",
+      heading: "You are about to record that the task is referred to CFCD and postpone the task.",
+      paragraph: "Task will be postponed for 4 weeks to allow time for a CFEMS flag to be set for this customer.",
       button: "Postpone task"
     },
     recordPostpone: {
@@ -188,6 +194,7 @@ createPostRoute('/abroad-preview', 'abroadPreview', 'abroad-preview', {
 });
 
 createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
+  cfcd: '/EVS/cfcd',
   postpone: '/EVS/postpone',
   terminated: '/EVS/stop-benefit',
   suspend: '/EVS/suspend'
