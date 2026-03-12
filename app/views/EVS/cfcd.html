@@ -35,20 +35,20 @@ Reason for stopping benefit – {{ serviceName }} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Has a CFEMS flag been set against this citizen?</h2>
 
-    <form class="form" action="/terminated" method="post">
+    <form class="form" action="/cfcd" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-2" name="terminated" type="radio" value="cfcd_none">
-              <label class="govuk-label govuk-radios__label" for="stopbenefit-2">
+              <input class="govuk-radios__input" id="cfcd-yes" name="cfcd" type="radio" value="cfcd_close">
+              <label class="govuk-label govuk-radios__label" for="cfcd-yes">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit" name="terminated" type="radio" value="cfcd">
-              <label class="govuk-label govuk-radios__label" for="stopbenefit">
+              <input class="govuk-radios__input" id="cfcd-no" name="cfcd" type="radio" value="cfcd">
+              <label class="govuk-label govuk-radios__label" for="cfcd-no">
                 No
               </label>
             </div>
@@ -60,9 +60,6 @@ Reason for stopping benefit – {{ serviceName }} – GOV.UK Prototype Kit
       </button>
     </form>
   </div>
-
-
-
 
 
 </div>

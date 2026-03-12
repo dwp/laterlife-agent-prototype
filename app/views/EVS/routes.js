@@ -13,7 +13,7 @@ const allowedValues = [
   'none',
   'died',
   'cfcd',
-  'cfcd_none',
+  'cfcd_close',
   'postpone',
   'forward',
   'absence',
@@ -41,7 +41,8 @@ const allowedTasks = [
   'recordOver',
   'recordUnder',
   'updateReason',
-  'recordPostpone'
+  'recordPostpone',
+  'cfcd'
 ];
 
 // Absolute safe route targets (prevents traversal + open redirect false positives)
@@ -97,7 +98,7 @@ router.get('/EVS/confirmation', function (req, res) {
       button: "Case is closed",
       style: "govuk-button--warning"
     },
-    cfcd_none: {
+    cfcd_close: {
       heading: "You are about to record that the task is referred to CFCD and close the task.",
       paragraph: "You confirmed a CFEMS flag is present for this customer.",
       button: "Case is closed",
@@ -229,6 +230,7 @@ createPostRoute('/updateReason', 'updateReason', 'updateReason', {
 createPostRoute('/disregarded', 'disregarded', 'disregarded');
 createPostRoute('/suspend', 'suspend', 'suspended');
 createPostRoute('/terminated', 'terminated', 'terminated');
+createPostRoute('/cfcd', 'cfcd', 'cfcd');
 
 
 router.post('/EVS/recordOver', function (req, res) {
