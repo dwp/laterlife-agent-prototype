@@ -10,8 +10,22 @@ const router = govukPrototypeKit.requests.setupRouter();
 
 // Allowed values for confirmation screens
 const allowedValues = [
-  'none', 'died', 'cfcd', 'postpone', 'forward', 'absence',
-  'suspended', 'terminated', 'disregarded', 'next', 'overpayment', 'underpayment', 'suspend', 'update', 'recordPostpone', 'createEvidenceTask', 'cfcd_none'
+  'none',
+  'died',
+  'cfcd',
+  'cfcd_none',
+  'postpone',
+  'forward',
+  'absence',
+  'suspended',
+  'terminated',
+  'disregarded', 
+  'overpayment',
+  'underpayment',
+  'suspend',
+  'update',
+  'recordPostpone',
+  'createEvidenceTask'
 ];
 
 
@@ -65,7 +79,7 @@ function safeInternalRedirect(res, route, params = {}) {
 }
 
 // ---------------------------------------------
-// Confirmation GET Route (now validated)
+// Confirmation GET Route
 // ---------------------------------------------
 router.get('/EVS/confirmation', function (req, res) {
   const { task, value } = req.query;
@@ -75,7 +89,7 @@ router.get('/EVS/confirmation', function (req, res) {
     return res.status(400).send('Invalid request');
   }
 
-  // Lookup table for dynamic text
+  // Lookup table for dynamic text for confirmation pages
   const lookup = {
     none: {
       heading: "You are about to record that the case is closed",
@@ -156,7 +170,7 @@ router.get('/EVS/confirmation', function (req, res) {
 });
 
 // ---------------------------------------------
-// POST Route Factory
+// POST Route Factory checks if routes and values are safe and routs to confirmations.
 // ---------------------------------------------
 function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
   router.post(path, function (req, res) {
@@ -180,10 +194,6 @@ function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
     });
   });
 }
-
-
-
-
 
 
 // ---------------------------------------------
