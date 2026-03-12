@@ -26,35 +26,40 @@ Underpayment – {{ serviceName }} – GOV.UK Prototype Kit
 
         {{ govukBackLink({
         "text": "Back",
-        "href": "javascript: window.history.go(-1)"
+        "href": "javascript: window.history.go(-1)",
+        classes: "govuk-!-margin-bottom-6"
         }) }}
 
-        <form class="form" action="/EVS/tasks-success" rm-group">
-            <fieldset class="govuk-fieldset" aria-describedby="confirmation-hint">
+        <form class="form" action="/EVS/tasks-success">
 
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">
-                        {{ readableText }}
-                    </h1>
-                </legend>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
 
-                {# NEW — Insert dynamic paragraph text #}
-                <p class="govuk-body">
-                    {{ paragraphText }}
-                </p>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            {{ readableText }}
+                        </h1>
+                    </legend>
+
+                    {# NEW — Insert dynamic paragraph text #}
+                    <p class="govuk-body">
+                        {{ paragraphText }}
+                    </p>
 
 
 
-            </fieldset>
-            {# NEW — dynamic button text #}
-            <button class="govuk-button {{ buttonStyle }}" data-module="govuk-button">
-                {{ buttonText }}
-            </button>
+                </fieldset>
+                {# NEW — dynamic button text #}
+                <button class="govuk-button {{ buttonStyle }}" data-module="govuk-button">
+                    {{ buttonText }}
+                </button>
+            </div>
+        </form>
     </div>
 
 
 
-    </form>
+
 
 </div>
 </div>
