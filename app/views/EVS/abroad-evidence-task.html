@@ -24,10 +24,7 @@ Spending abroad: Evidence gathering – {{ serviceName }} – GOV.UK Prototype K
 
     {% include './_namebar.html' %}
 
-    <h1 class="govuk-heading-l">Spending abroad:
-      evidence gathering</h1>
-
-    <div class="govuk-!-margin-bottom-9"></div>
+    <h1 class="govuk-heading-l">Spending abroad: evidence gathering</h1>
 
     <h2 class="govuk-heading-m">Overview</h2>
     <dl class="govuk-summary-list">
@@ -40,19 +37,17 @@ Spending abroad: Evidence gathering – {{ serviceName }} – GOV.UK Prototype K
         </dd>
       </div>
     </dl>
-    <br>
 
-    <div class="app-check-your-answers app-check-your-answers--short">
-      <table class="govuk-table">
+    <div>
+      <table class="govuk-table govuk-!-margin-top-9">
         <caption class="govuk-table__caption govuk-table__caption--m">Bank accounts</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class">Bank</th>
-            <th scope="col" class="govuk-table__header app-custom-class">Type</th>
-            <th scope="col" class="govuk-table__header app-custom-class">Account holders</th>
-            <th scope="col" class="govuk-table__header app-custom-class">Account number</th>
-            <th scope="col" class="govuk-table__header app-custom-class">Spending activity</th>
-
+            <th scope="col" class="govuk-table__header">Bank</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header">Account holders</th>
+            <th scope="col" class="govuk-table__header">Account number</th>
+            <th scope="col" class="govuk-table__header">Spending activity</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -82,14 +77,14 @@ Spending abroad: Evidence gathering – {{ serviceName }} – GOV.UK Prototype K
     </div>
 
 
-    <div class="govuk-!-margin-bottom-9"></div>
+
     <form method="post" action="/abroad-evidence">
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-table govuk-!-margin-top-9">
         <fieldset class="govuk-fieldset" id="abroadEvidence">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
+            <h3 class="govuk-fieldset__heading">
               What is the outcome of this task?
-            </h1>
+            </h3>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -148,7 +143,7 @@ Spending abroad: Evidence gathering – {{ serviceName }} – GOV.UK Prototype K
           Continue
         </button>
         <a href="tasks" class="govuk-button govuk-button--secondary govuk-!-margin-left-2"
-          data-module="govuk-buttone-exit">Return task to
+          data-module="govuk-button-exit">Return task to
           queue</a>
       </div>
     </form>
