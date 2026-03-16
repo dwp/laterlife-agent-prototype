@@ -211,6 +211,10 @@ createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
   suspend: '/EVS/suspend'
 });
 
+createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
+  cfcd: '/EVS/cfcd',
+});
+
 createPostRoute('/capital-preview', 'capitalPreview', 'capital-preview', {
   postpone: '/EVS/postpone'
 });
