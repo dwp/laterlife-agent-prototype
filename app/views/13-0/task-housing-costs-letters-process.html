@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Pension Credit</a>
+</div>
+          {% include './_nav-pc.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
+<h1 class="govuk-heading-l">Send (whatever) letter</h1>
+     
+<p class="govuk-body">You need to send the claimant the (whatever) letter requesting evidence of their housing costs and mark this section as completed once you have posted the (whatever)</p>
+
+<br>
+
+  <form method="post">
+
+  
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      Have you completed this section?
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes~task-list-process?send-letters=complete">
+        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+          Yes, I’ve completed this section
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no~task-list-process?send-letters=incomplete">
+        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+          No, I’ll come back to it later
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </form>
+
+   </div>
+
+ 
+    </div>
+
+
+{% endblock %}
+
