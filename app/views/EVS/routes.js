@@ -212,13 +212,13 @@ createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
 });
 
 createPostRoute('/capital-preview', 'capitalPreview', 'capital-preview', {
-  postpone: '/EVS/postpone'
+  postpone: '/EVS/postpone',
+  cfcd: '/EVS/cfcd'
 });
 
 createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
   postpone: '/EVS/postpone',
-  update: '/EVS/update-to-pc',
-  cfcd: '/EVS/cfcd',
+  update: '/EVS/update-to-pc'
 });
 
 createPostRoute('/updateReason', 'updateReason', 'updateReason', {
