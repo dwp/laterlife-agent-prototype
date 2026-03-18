@@ -34,7 +34,7 @@
       })
       }}
 
-      {% if data['add-costs'] == 'complete' or data['send-letters'] == 'complete' %}
+      {% if data['add-costs'] == 'complete' or data['send-hc-letter'] == 'complete' or data['send-smi-letter'] == 'complete' %}
       <!-- Task Success Banner start - Please note the task complete banner should be the only diferance from that standard tasks page -->
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -178,14 +178,14 @@
          
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-housing-costs-letters-process" aria-describedby="prepare-application-2-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-hc-letter-process" aria-describedby="prepare-application-2-status">
                 Housing Cost evidence letter
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
-              {% if data['send-letters'] == 'complete' %}
+              {% if data['send-hc-letter'] == 'complete' %}
                Completed
-              {% elif data['send-letters'] == 'incomplete' %}
+              {% elif data['send-hc-letter'] == 'incomplete' %}
               <strong class="govuk-tag govuk-tag--blue">
                 Incomplete
               </strong>
@@ -198,14 +198,14 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="" aria-describedby="prepare-application-2-status">
-               Mortgage Interest support letter
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-smi-letter-process" aria-describedby="prepare-application-2-status">
+               Support for Mortgage Interest letter
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
-              {% if data['send-letters'] == 'complete' %}
+              {% if data['send-smi-letter'] == 'complete' %}
                Completed
-              {% elif data['send-letters'] == 'incomplete' %}
+              {% elif data['send-smi-letter'] == 'incomplete' %}
               <strong class="govuk-tag govuk-tag--blue">
                 Incomplete
               </strong>
@@ -224,16 +224,32 @@
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-housing-costs-process" aria-describedby="prepare-application-2-status">
-                Enter costs
+                Claimant's details
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
                {% if data['add-costs'] == 'complete' %}
              Completed
               {% else %}
-             
+              <strong class="govuk-tag govuk-tag--grey">
                 Optional
-        
+              </strong>
+              {% endif %}
+            </div>
+          </li>
+           <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-housing-costs-others-process" aria-describedby="prepare-application-2-status">
+                Details for others living at this address
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="prepare-application-2-status">
+               {% if data['add-costs'] == 'complete' %}
+             Completed
+              {% else %}
+             <strong class="govuk-tag govuk-tag--grey">
+                Optional
+              </strong>
               {% endif %}
             </div>
           </li>
