@@ -116,7 +116,7 @@ router.get('/EVS/confirmation', function (req, res) {
     },
     recordPostpone: {
       heading: "Postpone task",
-      paragraph: "This case will be postponed utill { selected date }.",
+      paragraph: "This case will be postponed until { selected date }.",
       button: "Postpone task"
     },
     absence: {
@@ -218,7 +218,8 @@ createPostRoute('/capital-preview', 'capitalPreview', 'capital-preview', {
 
 createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
   postpone: '/EVS/postpone',
-  update: '/EVS/update-to-pc'
+  update: '/EVS/update-to-pc',
+  cfcd: '/EVS/cfcd'
 });
 
 createPostRoute('/updateReason', 'updateReason', 'updateReason', {
