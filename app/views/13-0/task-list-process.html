@@ -185,10 +185,6 @@
             <div class="govuk-task-list__status" id="prepare-application-2-status">
               {% if data['send-hc-letter'] == 'complete' %}
                Completed
-              {% elif data['send-hc-letter'] == 'incomplete' %}
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--blue">
                 To do
@@ -205,10 +201,6 @@
             <div class="govuk-task-list__status" id="prepare-application-2-status">
               {% if data['send-smi-letter'] == 'complete' %}
                Completed
-              {% elif data['send-smi-letter'] == 'incomplete' %}
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--blue">
                 To do
@@ -228,7 +220,7 @@
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
-               {% if data['add-costs'] == 'complete' %}
+               {% if data['add-costs-claimant'] == 'complete' %}
              Completed
               {% else %}
               <strong class="govuk-tag govuk-tag--grey">
@@ -239,13 +231,17 @@
           </li>
            <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-housing-costs-others-process" aria-describedby="prepare-application-2-status">
+              <a class="govuk-link--no-visited-state govuk-task-list__link" href="task-hc-lwo-list" aria-describedby="prepare-application-2-status">
                 Details for others living at this address
               </a>
             </div>
             <div class="govuk-task-list__status" id="prepare-application-2-status">
-               {% if data['add-costs'] == 'complete' %}
+               {% if data['lwo-complete'] == 'yes' %}
              Completed
+             {% elif data['lwo-complete'] == 'no' %}
+             <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
               {% else %}
              <strong class="govuk-tag govuk-tag--grey">
                 Optional

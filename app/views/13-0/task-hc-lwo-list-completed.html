@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Pension Credit</a>
+</div>
+          {% include './_nav-pc.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      
+<h1 class="govuk-heading-l">People living at this address who affect housing costs</h1>
+
+<div class="govuk-form-group">
+
+  <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+        Jimmy Erikson
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="task-hc-lwo-partner"><span aria-hidden="true">Change housing cost details</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+        </ul>
+      </dd>
+    </div>
+  
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+         Hannah Erikson
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change housing cost details</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+        </ul>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+         Lisa Harper
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change housing cost details</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+        </ul>
+      </dd>
+    </div>
+  
+  </dl>
+
+  
+
+</div><br>
+ <form method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      Have you completed this section?
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes~task-list-process?lwo-complete=yes">
+        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+          Yes, I’ve completed this section
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no~task-list-process?lwo-complete=no">
+        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+          No, I’ll come back to it later
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
+
