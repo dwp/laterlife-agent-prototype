@@ -23,7 +23,19 @@
 
         {% include './_namebar.html' %}
 
-        
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Task complete
+    </h3>
+    
+  </div>
+</div>
     
 
 {{ govukBackLink({
@@ -48,14 +60,6 @@
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="tor-hc-claimant">Housing costs: enter costs for Erik Erikson</a></td> 
-          <td class="govuk-table__cell">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td> 
-        </tr>
-        <tr class="govuk-table__row">
           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="tor-hc-lwo-partner">Housing costs: enter costs for Jimmy Erikson</a></td> 
           <td class="govuk-table__cell">
               <strong class="govuk-tag">
@@ -63,6 +67,7 @@
               </strong>
           </td> 
         </tr>
+      
         <tr class="govuk-table__row">
           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="task-housing-costs">Housing costs: enter costs for Hannah Harper</a></td> 
           <td class="govuk-table__cell">
