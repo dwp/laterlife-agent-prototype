@@ -1,0 +1,210 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar-savita.html' %}
+
+
+    {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    })
+    }}
+
+    <h1 class="govuk-heading-l">Previous Pension Credit award</h1>
+
+    <div title="Award details">
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <span class="govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Total</span>
+          </dt>
+          <dd class="govuk-summary-list__key">
+            <span class="govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">&pound;10.12 a week</span>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            From
+          </dt>
+          <dd class="govuk-summary-list__value">
+            19 January 2026
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            To
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 April 2026
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22 February 2026
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason
+            </dt>
+            <dd class="govuk-summary-list__value">
+              First award
+            </dd>
+      </dl>
+    </div>
+    <div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-m">Guarantee Credit</h2>
+        </div>
+        <div class="govuk-grid-column-one-half govuk-!-text-align-right">
+          <span class="govuk-heading-m">&pound;10.12 a week</span>
+        </div>
+      </div>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Applicable amounts
+          </dt>
+          <dd class="govuk-summary-list__actions govuk-!-text-align-right"">
+              &pound;227.10
+            </dd>
+          </div>
+        </dl>
+        <details class=" govuk-details govuk-!-margin-top-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                <span class="govuk-body govuk-visually-hidden">Applicable amount</span> Details
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Standard guarantee
+                  </dt>
+                  <dd class="govuk-summary-list__actions govuk-!-text-align-right">
+                    &pound;227.10
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Disability extra amount
+                  </dt>
+                  <dd class="govuk-summary-list__actions govuk-!-text-align-right">
+                    &pound;0.00
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Carer's extra amount
+                  </dt>
+                  <dd class="govuk-summary-list__actions govuk-!-text-align-right">
+                    &pound;0.00
+                  </dd>
+                </div>
+                 <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Housing cost amount
+                  </dt>
+                  <dd class="govuk-summary-list__actions govuk-!-text-align-right">
+                    &pound;0.00
+                  </dd>
+                </div>
+                </div>
+              </dl>
+            </div>
+            </details>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Income
+                </dt>
+                <dd class="govuk-summary-list__actions govuk-!-text-align-right"">
+              &pound;216.98
+            </dd>
+          </div>
+        </dl>
+        <details class=" govuk-details govuk-!-margin-top-1">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      <span class="govuk-body govuk-visually-hidden">Income</span> Details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <div class="govuk-summary-card">
+                      <div class="govuk-summary-card__title-wrapper">
+                        <h2 class="govuk-summary-card__title">
+                          Claimant
+                        </h2>
+                      </div>
+                      <div class="govuk-summary-card__content">
+                        <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              State Pension
+                            </dt>
+                            <dd class="govuk-summary-list__actions">
+                              &pound;162.68
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              SUNLIFE pension (paid monthly)<br>
+                              <span class="govuk-body">
+                                The payment used to calculate is income was £235.30 on 14 February 2025.
+                              </span>
+                            </dt>
+                            <dd class="govuk-summary-list__ govuk-!-text-align-right"">
+                      &pound;54.30
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+          </div> </details>
+
+
+              </div>
+
+
+
+
+
+      <div class="govuk-form-group">
+        <p><a href="pdf-viewer">View claim details</a></p>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

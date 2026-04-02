@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Pension Credit</a>
+</div>
+          {% include './_nav-pc.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
+      <span class="govuk-caption-l">About Jimmy Erikson</span>
+<h1 class="govuk-heading-l">Is Jimmy related to your partner?</h1>
+     
+<p class="govuk-body">They could be related by blood, marriage or adoption.</p>
+
+<br>
+
+  <form method="post">
+
+  
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+   
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes~task-hc-lwo-how-related">
+        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no~task-hc-lwo-pc">
+        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </form>
+
+   </div>
+
+ 
+    </div>
+
+
+{% endblock %}
+

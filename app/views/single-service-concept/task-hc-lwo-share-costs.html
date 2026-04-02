@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Pension Credit</a>
+</div>
+          {% include './_nav-pc.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
+      <span class="govuk-caption-l">About Jimmy Erikson</span>
+<h1 class="govuk-heading-l">Does Jimmy share the costs of your home?</h1>
+
+  <form method="post" action="task-hc-lwo-check-partner">
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+   
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-s">What percentage of the costs does Jimmy pay?</h3>
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-3" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">%</div>
+  </div>
+</div><br>
+<p class="govuk-body">
+  <a href="task-hc-lwo-check-partner" class="govuk-link govuk-link--no-visited-state">I'm not sure what percentage Jimmy pays</a>
+</p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+      
+      </div>
+     
+    </div>
+  </fieldset>
+</div>
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </form>
+
+   </div>
+
+ 
+    </div>
+
+
+{% endblock %}
+

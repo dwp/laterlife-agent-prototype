@@ -1,0 +1,408 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Payment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+{% if data['successBanner'] == 'true'%}
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          {% if data.paymentTimelineArray[0].benefits == 'SPPC' %}
+          Payments
+          {% elseif data.paymentTimelineArray[0].benefits == 'SP' %}
+          State Pension payments
+          {% elseif data.paymentTimelineArray[0].benefits == 'PC' %}
+          Pension Credit payments
+          {% endif %}
+
+          {% if data.paymentTimelineArray[0].title.includes('stopped')%}
+            stopped
+          {% else %}
+            restarted
+          {% endif %}
+        </h3>
+      </div>
+    </div>
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include './_namebar-savita.html' %}
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="personal">Personal</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="money">Money</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="contact">Contact</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="award">Award</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="payment">Payment</a>
+        </li>
+
+        <!-- <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="history">Full history</a>
+        </li>-->
+      </ul>
+
+
+<br><br>
+
+<h3 class="govuk-heading-m">Payment details</h3>
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+<h2 class="govuk-tabs__title">
+Contents
+</h2>
+<ul class="govuk-tabs__list">
+<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+<a class="govuk-tabs__tab" href="#pension-credit-payment-details">
+Pension Credit
+</a>
+</li>
+<li class="govuk-tabs__list-item">
+<a class="govuk-tabs__tab" href="#state-pension-payment-details">
+State Pension
+</a>
+</li>
+</ul>
+<div class="govuk-tabs__panel" id="pension-credit-payment-details">
+<table class="govuk-table">
+<tbody class="govuk-table__body">
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__header">Payment frequency</td>
+  <td class="govuk-table__cell">
+{% if data['pcfrequency'] === 'weekly' %}
+      Every week
+    {% elseif data['pcfrequency'] === '2weeks' %}
+        Every 2 weeks
+        {% else %}
+    Every 4 weeks
+        {% endif %}
+    </td>
+  <td class="govuk-table__cell"> <a href="payment-change-pc-frequency" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+</tr>
+<tr>
+  <td class="govuk-table__header">Status</td>
+  <td class="govuk-table__cell">
+   <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+
+  </td>
+  <td class="govuk-table__cell">
+    <a href="payment-suspend?successBanner=false">Stop</a>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="state-pension-payment-details">
+<table class="govuk-table">
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+  <td class="govuk-table__header">Payment frequency</td>
+  <td class="govuk-table__cell">
+   {% if data['spfrequency'] === 'weekly' %}
+      Every week
+    {% elseif data['spfrequency'] === '2weeks' %}
+        Every 2 weeks
+        {% else %}
+    Every 4 weeks
+        {% endif %}</td>
+  <td class="govuk-table__cell"><a href="payment-change-sp-frequency?successBanner=false" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__header">Status</td>
+  <td class="govuk-table__cell">
+   <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+  </td>
+  <td class="govuk-table__cell">
+    <a href="payment-suspend?successBanner=false">Stop</a>
+  </td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</div>
+
+        {% if data['changebank'] === 'pc' %}
+        {% include './_bank.html' %}
+        {% elseif data['changebank'] === 'sp' %}
+        {% include './_bank.html' %}
+        {% else %}
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Bank or building society details</h2>
+            <a href="change-bank" class="govuk-link govuk-!-font-size-19" style="margin-left: 30%">Change</span>
+            </a>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Account holder
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data.accountname %}
+                  {{data.accountname}}
+                  {% else %}
+                  Savita Kaur
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Sort code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data.sortcode %}
+                  {{data.sortcode}}
+                  {% else %}
+                  12 54 37
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Account number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data.accountnumber %}
+                  {{data.accountnumber}}
+                  {% else %}
+                  32874523
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                  </a>
+                </dd>
+              </div>
+              {% if data.rollnumber %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+              Building society roll or reference number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data.rollnumber}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                  </a>
+                </dd>
+              </div>
+              {% else %}
+              {% endif %}
+
+            </dl>
+          </div>
+        </div>
+
+        {% endif %}
+
+
+
+    </div>
+
+    <!--- SUSPEND TIMELINE -->
+    <div class="govuk-grid-column-one-third">
+        {% if data['paymentTimelineArray'] %}<h2 class="govuk-heading-m">Payment changes</h2>
+        <div class="dwp-timeline">
+          <ol class="dwp-timeline__items">
+            {% for event in data['paymentTimelineArray'] %}
+                <li class="dwp-timeline__item">
+                <p class="dwp-timeline__datetime">{{event.date | govukDateTime}}</p>
+                <h2 class="dwp-timeline__heading">{{event.title}}</h2>
+                <p class="dwp-timeline__by-line">by {{event.person}}</p>
+                {% if event.reason %}
+                <a href="payment-suspend-details?index={{loop.index0}}&successBanner=false" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on </span></a>
+                {% endif %}
+                </li>
+            {% endfor %}
+          </ol>
+          <p><a href="#" class="govuk-link govuk-link--no-visited-state">Full history</a></p> </div>{% endif %}
+
+
+    </div>
+    <!--- END OF SUSPEND TIMELINE -->
+
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-m">Upcoming payments</h2>
+
+      <table class="govuk-table">
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width: 20%">Benefit</th>
+                <th class="govuk-table__header" scope="col" style="width: 15%">Payment date</th>
+                <th class="govuk-table__header" scope="col" style="width:25%">Period</th>
+                <th class="govuk-table__header" scope="col" style="width: 7%">Amount</th>
+
+              </tr>
+            </thead>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">17 Apr 2026</td>
+          <td class="govuk-table__cell">21 Mar 2026 to 17 Apr 2026</td>
+            <td class="govuk-table__cell">£124.68 </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">17 Apr 2026</td>
+            <td class="govuk-table__cell">21 Mar 2026 to 17 Apr 2026</td>
+            <td class="govuk-table__cell">£827.32</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">15 May 2026</td>
+            <td class="govuk-table__cell">18 Apr 2026 to 15 May 2026</td>
+            <td class="govuk-table__cell">£124.68 </td>
+                    </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">15 May 2026</td>
+              <td class="govuk-table__cell">18 Apr 2026 to 15 May 2026</td>
+            <td class="govuk-table__cell">£827.32</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">12 Jun 2026</td>
+            <td class="govuk-table__cell">16 May 2026 to 12 Jun 2026</td>
+            <td class="govuk-table__cell">£124.68 </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">12 Jun 2026</td>
+            <td class="govuk-table__cell">16 May 2026 to 12 Jun 2026</td>
+              <td class="govuk-table__cell">£827.32</td>
+          </tr>
+
+
+          </tbody>
+          </table>
+
+
+      <h2 class="govuk-heading-m">Payment history</h2>
+      <table class="govuk-table">
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width: 20%">Benefit</th>
+                <th class="govuk-table__header" scope="col" style="width: 15%">Payment date</th>
+                <th class="govuk-table__header" scope="col" style="width:25%">Period</th>
+                <th class="govuk-table__header" scope="col" style="width: 7%">Amount</th>
+                <th class="govuk-table__header" scope="col" style="width: 5%">Status</th>
+                <th class="govuk-table__header" scope="col" style="width: 5%;"></th>
+              </tr>
+            </thead>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">20 Mar 2026</td>
+            <td class="govuk-table__cell">19 Feb 2026 to 18 Mar 2026</td>
+            <td class="govuk-table__cell">£40.48 </td>
+            <td class="govuk-table__cell" class="govuk-orange">Sent
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-6">Details</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">18 Mar 2026</td>
+            <td class="govuk-table__cell">19 Feb 2026 to 18 Mar 2026</td>
+            <td class="govuk-table__cell">£650.72</td>
+            <td class="govuk-table__cell" class="govuk-orange">Sent
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+          <td class="govuk-table__cell">24 Feb 2026</td>
+            <td class="govuk-table__cell">21 Jan 2026 to 19 Feb 2026</td>
+            <td class="govuk-table__cell">£40.48 </td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-1">Details</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">18 Feb 2026</td>
+            <td class="govuk-table__cell">22 Jan 2026 to 18 Feb 2026</td>
+            <td class="govuk-table__cell">£650.72</td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-2">Details</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">21 Jan 2026</td>
+            <td class="govuk-table__cell">19 Jan 2026 to 21 Jan 2026</td>
+            <td class="govuk-table__cell">£54.23</td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-4">Details</a></td>
+          </tr>
+
+
+          </tbody>
+          </table>
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Award {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Pension Credit</a>
+</div>
+          {% include './_nav-pc.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+
+
+      {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+      })
+      }}
+      <br>  <br>
+      <span class="govuk-caption-l">About Jimmy Erikson</span>
+<h1 class="govuk-heading-l">How much money does Jimmy have coming in each week?</h1>
+
+
+  <form method="post" action="task-hc-lwo-share-costs">
+<div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="el-cost1" name="el-cost1" type="text" spellcheck="false">
+  </div>
+</div><br>
+<p class="govuk-body">
+  <a href="task-hc-lwo-share-costs" class="govuk-link govuk-link--no-visited-state">I'm not sure how much money Jimmy has coming in</a>
+</p><br>
+ 
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </form>
+
+   </div>
+
+ 
+    </div>
+
+
+{% endblock %}
+

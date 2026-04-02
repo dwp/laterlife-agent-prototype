@@ -6,7 +6,8 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-
+router.use('/single-service-concept', require('./views/single-service-concept/routes'))
+router.use('/EVS', require('./views/EVS/routes'))
 router.use('/retirement-showcase', require('./views/retirement-showcase/routes'))
 router.use('/12-0', require('./views/12-0/routes'))
 router.use('/11-0', require('./views/11-0/routes'))
@@ -20,21 +21,22 @@ router.use('/4-0', require('./views/4-0/routes'))
 router.use('/3-0', require('./views/3-0/routes'))
 router.use('/2-0', require('./views/2-0/routes'))
 router.use('/1-0', require('./views/1-0/routes'))
-router.use('/EVS', require('./views/EVS/routes'))
 
 
-// Logging session data  
-  
-  router.use((req, res, next) => {    
-      const log = {  
-        method: req.method,  
-        url: req.originalUrl,  
-        data: req.session.data  
-      }  
-      console.log(JSON.stringify(log, null, 2))  
-     
-    next()  
-  }) 
+
+
+// Logging session data
+
+  router.use((req, res, next) => {
+      const log = {
+        method: req.method,
+        url: req.originalUrl,
+        data: req.session.data
+      }
+      console.log(JSON.stringify(log, null, 2))
+
+    next()
+  })
 
 
 
