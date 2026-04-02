@@ -333,7 +333,7 @@ router.post('/find', function(request, response) {
           response.redirect('/'+version+ '/find-result-sp-pc-apply')
       }
       else {
-          response.redirect('/'+version+ '/find')
+          response.redirect('/'+version+ '/find-result-none-found')
       }
   })
 
