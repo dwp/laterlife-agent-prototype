@@ -77,37 +77,51 @@
 <h3 class="govuk-heading-m">Payment details</h3>
 
 
-<table class="govuk-table">
-<tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <td class="govuk-table__header">Status</td>
-    <td class="govuk-table__cell">
-      {% if data.SPpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
-      {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
-      {% else %}<strong class="govuk-tag govuk-tag--green"> In payment </strong>
-      {% endif %}
-    </td>
-    <td class="govuk-table__cell">
-      {% if data.SPpaymentStatus == "In payment" %}<a href="payment-suspend?successBanner=false">Stop</a>
-      {% elseif data.SPpaymentStatus == "Suspended"%} <a href="payment-suspend-resume?benefitSuspend=SP&successBanner=false">Restart</a>
-      {% else %}<a href="payment-suspend?successBanner=false">Stop</a>
-      {% endif %}
-    </td>
-  </tr>
-<tr class="govuk-table__row">
-  <td class="govuk-table__header">Frequency</td>
-  <td class="govuk-table__cell">
-   {% if data['spfrequency'] === 'weekly' %}
-      Every week
-    {% elseif data['spfrequency'] === '2weeks' %}
-        Every 2 weeks
-        {% else %}
-    Every 4 weeks
-        {% endif %}</td>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Status and frequency</h2>
+  
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Status        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.SPpaymentStatus == "In payment" %} <strong class="govuk-tag govuk-tag--green"> In payment </strong>
+          {% elseif data.SPpaymentStatus == "Suspended"%} <strong class="govuk-tag govuk-tag--red"> Stopped </strong>
+          {% else %}<strong class="govuk-tag govuk-tag--green"> In payment </strong>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="payment-suspend?successBanner=false">Stop</a>
+            <span class="govuk-visually-hidden"></span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['spfrequency'] === 'weekly' %}
+             Every week
+           {% elseif data['spfrequency'] === '2weeks' %}
+               Every 2 weeks
+               {% else %}
+           Every 4 weeks
+               {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+<a href="payment-change-sp-frequency?successBanner=false" class="govuk-link govuk-!-font-size-19">Change</span>            <span class="govuk-visually-hidden"></span>
+          </a>
+        </dd>
+      </div>
 
-  <td class="govuk-table__cell"><a href="payment-change-sp-frequency?successBanner=false" class="govuk-link govuk-!-font-size-19">Change</span></a></td>
-</tr>
 
+    </dl>
+  </div>
+</div>
 
       </tbody>
     </table>
@@ -238,31 +252,48 @@
               </tr>
             </thead>
         <tbody class="govuk-table__body">
-
-
-
-
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">State Pension</td>
-            <td class="govuk-table__cell">  {% if data['spfrequency'] === 'weekly' %}
-              Wed 19 Mar 2025
-              {% elseif data['spfrequency'] === '2weeks' %}
-              Wed 26 Mar 2025
-                {% else %}
-              Wed 6 Jun 2025
-                {% endif %}</td>
-            <td class="govuk-table__cell">9 May 2025 to 6 Jun 2025</td>
-            <td class="govuk-table__cell">  {% if data['spfrequency'] === 'weekly' %}
-              £189.99
-              {% elseif data['spfrequency'] === '2weeks' %}
-              £379.98
-                {% else %}
-                £759.96
-                {% endif %}</td>
+            <td class="govuk-table__cell">
+              Wed 26 Aug 2026
+              </td>
+            <td class="govuk-table__cell">30 Jul 2026 to 26 Aug 2026</td>
+            <td class="govuk-table__cell">
+                £791.04
+                </td>
             <td class="govuk-table__cell" class="govuk-orange">
             </td>
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
           </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">
+              Wed 29 Jul 2026
+              </td>
+            <td class="govuk-table__cell">2 Jul 2026 to 29 Jul 2026</td>
+            <td class="govuk-table__cell">
+                £791.04
+                </td>
+            <td class="govuk-table__cell" class="govuk-orange">
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
+          </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+            <td class="govuk-table__cell">
+              Wed 1 Jul 2026
+              </td>
+            <td class="govuk-table__cell">4 Jun 2026 to 1 Jul 2026</td>
+            <td class="govuk-table__cell">
+                £791.04
+                </td>
+            <td class="govuk-table__cell" class="govuk-orange">
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
+          </tr>
+
 
         </tbody>
         </table>
@@ -283,21 +314,46 @@
               </tr>
             </thead>
         <tbody class="govuk-table__body">
-
-
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+            <td class="govuk-table__cell">Wed 3 Jun 2026</td>
+            <td class="govuk-table__cell">6 May 2026 to 3 Jun 2026</td>
+            <td class="govuk-table__cell">£50.76</td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
+          </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">State Pension</td>
-          <td class="govuk-table__cell">Wed 8 May 2025</td>
-            <td class="govuk-table__cell">11 Apr 2025 to 8 May 2025</td>
-            <td class="govuk-table__cell">£759.96 </td>
-            <td class="govuk-table__cell" class="govuk-orange">Sent
+          <td class="govuk-table__cell">Wed 3 Jun 2026</td>
+          <td class="govuk-table__cell">6 May 2026 to 3 Jun 2026</td>
+            <td class="govuk-table__cell">£791.04 </td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
             <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-6">Details</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
-            <td class="govuk-table__cell">Wed 8 Apr 2025</td>
-              <td class="govuk-table__cell">12 Mar 2025 to 8 Apr 2025</td>
+            <td class="govuk-table__cell">Wed 5 May 2026</td>
+            <td class="govuk-table__cell">9 Apr 2026 to 5 May 2026</td>
+            <td class="govuk-table__cell">£50.76</td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-5">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">State Pension</td>
+          <td class="govuk-table__cell">Wed 5 May 2026</td>
+            <td class="govuk-table__cell">9 Apr 2026 to 5 May 2026</td>
+            <td class="govuk-table__cell">£791.04 </td>
+            <td class="govuk-table__cell" class="govuk-orange">Paid
+            </td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href="payment-details-6">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pension Credit</td>
+            <td class="govuk-table__cell">Wed 8 Apr 2026</td>
+              <td class="govuk-table__cell">12 Mar 2026 to 8 Apr 2026</td>
             <td class="govuk-table__cell">£38.24</td>
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
@@ -305,8 +361,8 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">State Pension</td>
-          <td class="govuk-table__cell">Wed 8 Apr 2025</td>
-            <td class="govuk-table__cell">12 Mar 2025 to 8 Apr 2025</td>
+          <td class="govuk-table__cell">Wed 8 Apr 2026</td>
+            <td class="govuk-table__cell">12 Mar 2026 to 8 Apr 2026</td>
             <td class="govuk-table__cell">£759.96 </td>
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
@@ -314,8 +370,8 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
-            <td class="govuk-table__cell">Wed 11 Mar 2025</td>
-            <td class="govuk-table__cell">12 Feb 2025 to 11 Mar 2025</td>
+            <td class="govuk-table__cell">Wed 11 Mar 2026</td>
+            <td class="govuk-table__cell">12 Feb 2026 to 11 Mar 2026</td>
             <td class="govuk-table__cell">£38.24</td>
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
@@ -323,8 +379,8 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">State Pension</td>
-            <td class="govuk-table__cell">Wed 11 Mar 2025</td>
-            <td class="govuk-table__cell">12 Feb 2025 to 11 Mar 2025</td>
+            <td class="govuk-table__cell">Wed 11 Mar 2026</td>
+            <td class="govuk-table__cell">12 Feb 2026 to 11 Mar 2026</td>
             <td class="govuk-table__cell">£759.96</td>
             <td class="govuk-table__cell" class="govuk-orange">Paid
             </td>
@@ -333,7 +389,7 @@
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pension Credit</td>
-          <td class="govuk-table__cell">Wed 25 Feb 2025</td>
+          <td class="govuk-table__cell">Wed 25 Feb 2026</td>
             <td class="govuk-table__cell">13 Nov 2025 to 25 Feb 2026</td>
             <td class="govuk-table__cell">£143.40 </td>
             <td class="govuk-table__cell" class="govuk-orange">Paid
