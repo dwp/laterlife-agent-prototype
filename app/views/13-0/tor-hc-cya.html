@@ -70,7 +70,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Payments by way of rent charges (annual fee)
+              Insurance
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['el-cost3'] %}
@@ -115,13 +115,43 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Payments for tents and their sites 
+              Major works
             </dt>
             <dd class="govuk-summary-list__value">
              {% if data['el-cost6'] %}
                 £{{ data['el-cost6'] }}
               {% else %}
                 None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Percentage Eric pays towards these costs
+            </dt>
+            <dd class="govuk-summary-list__value">
+             {% if data['el-cost7'] %}
+                £{{ data['el-cost7'] }}
+              {% else %}
+                100%
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of next housing cost review
+            </dt>
+            <dd class="govuk-summary-list__value">
+             {% if data['el-cost8'] %}
+                £{{ data['el-cost8'] }}
+              {% else %}
+                21 February 2027
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
