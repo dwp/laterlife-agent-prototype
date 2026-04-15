@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Find someone – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+      Find someone
+      </h1>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Information to enter
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Type these National Insurance numbers into the text box to start the corresponding journey:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>QQ123456A – State Pension only</li>
+  <li>QQ123456B – State Pension (SP) and Pension Credit (PC)</li>
+  <li>QQ123456D – SP and PC nil award</li>
+  <li>QQ123456F – PC application in progress</li>
+  <li>QQ123456J – PC in legacy systems</li>
+ <li>QQ123456X – PC application in processing</li>
+<li>QQ123456Y – SP and PC but no representative</li></ul>
+        </div>
+      </details>
+
+<form class="form" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="find-someone">
+          National Insurance number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="findSomeone" name="findSomeone" type="text">
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Find
+    </button>
+</form>
+
+    </div></div>
+
+
+
+
+
+  </div>
+
+{% endblock %}

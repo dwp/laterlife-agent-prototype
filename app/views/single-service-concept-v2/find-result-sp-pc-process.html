@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">Support for pension services</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+{% include './_namebar.html' %}
+
+
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+})
+}}<br><br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+  <h1 class="govuk-heading-m">Representatives</h1>
+
+  <h2 class="govuk-heading-s">John Smith is the claimant's Personal Acting Body</h2>
+
+  <p class="govuk-body">You can <a href="#" class="govuk-link">view John Smith's details</a></p>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+   <h1 class="govuk-heading-m">Benefits</h1>
+
+   <p class="govuk-body"><strong style="margin-right:20px">State Pension</strong><strong class="govuk-tag govuk-tag--green" > In payment </strong></p>
+   <p class="govuk-body">You can <a href="#" class="govuk-link">view the record in GySP</a></p>
+   <br><br>
+   <p class="govuk-body"><strong style="margin-right:20px">Pension Credit</strong><strong class="govuk-tag govuk-tag--purple" > Application received </strong></p>
+   <p class="govuk-body">You can  <a href="#" class="govuk-link">view the outstanding tasks</a></p>
+
+
+
+<br><br>
+
+      </div>  </div>
+
+
+
+
+
+
+
+{% endblock %}
