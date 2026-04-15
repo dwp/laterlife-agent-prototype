@@ -70,7 +70,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Insurance
+              Payments by way of rent charges (annual fee)
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['el-cost3'] %}
@@ -115,7 +115,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Major works
+             Insurance (separate to service charges)
             </dt>
             <dd class="govuk-summary-list__value">
              {% if data['el-cost6'] %}
@@ -130,11 +130,25 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Percentage Eric pays towards these costs
+             Major works (separate to service charges)
             </dt>
             <dd class="govuk-summary-list__value">
              {% if data['el-cost7'] %}
                 £{{ data['el-cost7'] }}
+              {% else %}
+                None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Percentage of housing costs Eric is liable for
+            <dd class="govuk-summary-list__value">
+             {% if data['el-cost8'] %}
+                £{{ data['el-cost8'] }}
               {% else %}
                 100%
               {% endif %}
@@ -148,11 +162,9 @@
               Date of next housing cost review
             </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['el-cost8'] %}
-                £{{ data['el-cost8'] }}
-              {% else %}
+            
                 21 February 2027
-              {% endif %}
+            
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
@@ -168,7 +180,7 @@
 
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
-       Submit costs
+       Confirm
       </button>
 
     </form>
