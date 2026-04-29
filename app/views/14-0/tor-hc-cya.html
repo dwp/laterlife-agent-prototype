@@ -37,14 +37,32 @@
    
 
         <h2 class="govuk-heading-m">Summary of costs</h2>
+       
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
+           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Rents or ground rents on long tenancies
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['el-cost1'] %}
-                £{{ data['el-cost1'] }}
+              Payable
+            </dd>
+            <dd class="govuk-summary-list__value">
+             Rejected
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Ground rents on long tenancies
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['cost1p'] %}
+                £{{ data['cost1p'] }}
+              {% else %}
+                None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__value">
+              {% if data['cost1r'] %}
+                £{{ data['cost1r'] }}
               {% else %}
                 None
               {% endif %}
@@ -58,23 +76,15 @@
               Service charges
             </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['el-cost2'] %}
-                £{{ data['el-cost2'] }}
+             {% if data['cost2p'] %}
+                £{{ data['cost2p'] }}
               {% else %}
                 None
               {% endif %}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Payments by way of rent charges (annual fee)
-            </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['el-cost3'] %}
-                £{{ data['el-cost3'] }}
+             {% if data['cost2r'] %}
+                £{{ data['cost2r'] }}
               {% else %}
                 None
               {% endif %}
@@ -83,13 +93,21 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
+         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Payments under co-ownership schemes
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['el-cost4'] %}
-                £{{ data['el-cost4'] }}
+              {% if data['cost3p'] %}
+                £{{ data['cost3p'] }}
+              {% else %}
+                None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__value">
+              {% if  data['cost3r'] %}
+                £{{  data['cost3r'] }}
               {% else %}
                 None
               {% endif %}
@@ -103,8 +121,15 @@
               Payments for tenancies or licenses of Crown rents
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['el-cost5'] %}
-                £{{ data['el-cost5'] }}
+              {% if  data['cost4p'] %}
+                £{{  data['cost4p'] }}
+              {% else %}
+                None
+              {% endif %}
+            </dd>
+             <dd class="govuk-summary-list__value">
+              {% if  data['cost4r'] %}
+                £{{  data['cost4r'] }}
               {% else %}
                 None
               {% endif %}
@@ -118,8 +143,15 @@
              Insurance (separate to service charges)
             </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['el-cost6'] %}
-                £{{ data['el-cost6'] }}
+             {% if  data['cost5p'] %}
+                £{{  data['cost5p'] }}
+              {% else %}
+                None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__value">
+             {% if  data['cost5r'] %}
+                £{{  data['cost5r'] }}
               {% else %}
                 None
               {% endif %}
@@ -133,8 +165,15 @@
              Major works (separate to service charges)
             </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['el-cost7'] %}
-                £{{ data['el-cost7'] }}
+             {% if  data['cost6p'] %}
+                £{{  data['cost6p'] }}
+              {% else %}
+                None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__value">
+             {% if  data['cost6r'] %}
+                £{{  data['cost6r'] }}
               {% else %}
                 None
               {% endif %}
@@ -147,11 +186,28 @@
             <dt class="govuk-summary-list__key">
               Share of housing costs Eric is liable for
             <dd class="govuk-summary-list__value">
-             {% if data['el-cost8'] %}
-                £{{ data['el-cost8'] }}
+             {% if  data['share1'] %}
+                {{  data['share1'] }}/{{  data['share2'] }}
               {% else %}
                 1/2
               {% endif %}
+            </dd>
+             <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date housing costs changes should start from
+            </dt>
+            <dd class="govuk-summary-list__value">
+            
+                9 March 2026
+            
+            </dd>
+            <dd class="govuk-summary-list__value">
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
@@ -165,6 +221,8 @@
             
                 21 February 2027
             
+            </dd>
+            <dd class="govuk-summary-list__value">
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
