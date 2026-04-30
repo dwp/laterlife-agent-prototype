@@ -151,11 +151,19 @@
    Housing costs
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if data['v'] == 'add' %} 
       <p class="govuk-body">No</p>
+      {% else %}
+       <p class="govuk-body">Yes</p>
+      {% endif %}
     </dd>
     
     <dd class="govuk-summary-list__actions">
+      {% if data['v'] == 'add' %} 
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-add"> Add</a>
+      {% else %}
+      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
+      {% endif %}
     </dd>
   </div>
 
