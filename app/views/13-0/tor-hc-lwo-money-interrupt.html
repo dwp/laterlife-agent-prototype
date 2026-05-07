@@ -31,35 +31,37 @@
 }}
       <br>  <br>
       <span class="govuk-caption-l">About Jimmy Erikson</span>
-<h1 class="govuk-heading-l">Does Eric want to find out what Jimmy earns?</h1>
-<p class="govuk-body">Something about Eric needing to go away and find out how much Jimmy earns, otherwise they'll MAY BE ineligible for help with housing costs, based on Jimmy's earnings.</p>
+<h1 class="govuk-heading-l">Eric may be ineligible for Pension Credit or housing costs without Jimmy's earning information</h1>
+<p class="govuk-body">Jimmy's earnings will be automatically recorded as the highest amount if Eric chooses to proceed without providing the correct information. This may make Eric ineligible for Pension Credit or help with housing costs.</p><br>
 
 
   <form method="post" action="tor-hc-lwo-cya">
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
-    
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h3 class="govuk-fieldset__heading">
+        Does Eric want to complete their housing costs application now?
+      </h3>
+    </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
         <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-          Yes Eric is going to ask Jimmy and enter the info now
+          Yes, complete the application
         </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Eric must contact us later with the correct information.
+        </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
         <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-          Yes but Eric is going to find out later so CLOSE APPLICATION
+          No, close the application
         </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Eric can start this application again at a later date.
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-          No, apply code 10
-        </label>
-      </div>
-     
-    
        
     </div>
   </fieldset>
