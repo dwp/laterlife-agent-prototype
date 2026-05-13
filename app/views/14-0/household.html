@@ -19,7 +19,21 @@
 
 {% block content %}
 
-
+{% if data ['award-changed'] == 'yes' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Award changed
+    </h3>
+    
+  </div>
+</div>
+{% endif %}
 
 
   <div class="govuk-grid-row">
@@ -151,7 +165,9 @@
    Housing costs
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if data['v'] == 'add' %} 
+      {% if data['award-changed'] == 'yes' %} 
+       <p class="govuk-body">Yes</p>
+      {% elif data['v'] == 'add' %} 
       <p class="govuk-body">No</p>
       {% else %}
        <p class="govuk-body">Yes</p>
@@ -159,7 +175,9 @@
     </dd>
     
     <dd class="govuk-summary-list__actions">
-      {% if data['v'] == 'add' %} 
+       {% if data['award-changed'] == 'yes'%}
+       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
+      {% elif data['v'] == 'add' %} 
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-add"> Add</a>
       {% else %}
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>

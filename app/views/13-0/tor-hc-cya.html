@@ -32,9 +32,11 @@
   })
 }}
 
-  
+   {% if data['lwo'] == 'yes'%}
      <form method="post" action="outstanding-tasks-hc-claimant"><br>
-     
+      {% else %}
+    <form method="post" action="award-change"><br>
+      {% endif %}
 
         <h2 class="govuk-heading-m">Summary of costs</h2>
        
@@ -42,15 +44,13 @@
            <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
             </dt>
-            <dd class="govuk-summary-list__value" style="width:10%">
-              Eligible
+            <dd class="govuk-summary-list__value" style="width:20%">
+              Cost amount
             </dd>
-            <dd class="govuk-summary-list__value" style="width:15%">
+            <dd class="govuk-summary-list__value" style="width:20%">
              Frequency
             </dd>
-             <dd class="govuk-summary-list__value">
-             Ineligible
-            </dd>
+
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -70,15 +70,14 @@
                 n/a
               {% endif %}
             </dd>
-             <dd class="govuk-summary-list__value">n/a
-            </dd>
+           
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Service charges
+              Eligible service charges
             </dt>
             <dd class="govuk-summary-list__value">
              {% if data['cost2p'] %}
@@ -94,13 +93,28 @@
                 n/a
               {% endif %}
             </dd>
+         
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ineligible service charges
+            </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['cost2r'] %}
-                £{{ data['cost2r'] }}
+             {% if data['cost2p'] %}
+                £{{ data['cost2p'] }}
               {% else %}
                 None
               {% endif %}
             </dd>
+            <dd class="govuk-summary-list__value">
+             
+                n/a
+         
+            </dd>
+         
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
@@ -124,8 +138,7 @@
                 n/a
               {% endif %}
             </dd>
-            <dd class="govuk-summary-list__value">n/a
-            </dd>
+          
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
@@ -148,8 +161,7 @@
                 n/a
               {% endif %}
             </dd>
-            <dd class="govuk-summary-list__value">n/a
-            </dd>
+            
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
@@ -172,8 +184,7 @@
                 n/a
               {% endif %}
             </dd>
-            <dd class="govuk-summary-list__value">n/a
-            </dd>
+            
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
@@ -196,8 +207,7 @@
                 n/a
               {% endif %}
             </dd>
-            <dd class="govuk-summary-list__value">n/a
-            </dd>
+            
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
@@ -214,8 +224,7 @@
             </dd>
             <dd class="govuk-summary-list__value">
             </dd>
-             <dd class="govuk-summary-list__value">
-            </dd>
+            
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
