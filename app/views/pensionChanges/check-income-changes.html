@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Decide if income from SUNLIFE pension has changed – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% include './_namebar.html' %}
+
+
+
+    <h1 class="govuk-heading-l">Decide if income from SUNLIFE pension has changed</h1>
+
+    <p class="govuk-body">You should identify if the income from this pension has changed. Take into consideration
+      payment patterns and pension stability.</p>
+
+
+    <h2 class="govuk-heading-m">Previous information used to calculate income</h2>
+
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payments used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £93.43 on 28 May 2025 <br>
+          £93.41 on 28 April 2025 <br>
+          £89.97 on 28 March 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Calculated amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £92.27 per month
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last review date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          [DD Month YYYY]
+        </dd>
+      </div>
+    </dl>
+
+    <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="check-income-changes">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Has income from this pension changed?
+            </h1>
+          </legend>
+          <div id="changedName-hint" class="govuk-hint">
+            If yes, you will choose payments to calculate the new income.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="check-income-changes-1" name="check-income-changes" type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="check-income-changes-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="check-income-changes-2" name="check-income-changes" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="check-income-changes-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+      <div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+    <p class="govuk-body">Prototype page <a href="change-not-possible" class="govuk-link">Iteration 1: Change cannot be
+        managed</a></p>
+
+    {% endblock %}
