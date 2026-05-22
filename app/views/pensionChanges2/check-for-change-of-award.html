@@ -1,0 +1,161 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebarNoProvider.html' %}
+
+    <h2 class="govuk-heading-l">Check for change of award</h2>
+
+    <h2 class="govuk-heading-m">Assess income</h2>
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="check-payment-changes">
+            Review income from SUNLIFE pension
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data['review1'] == 'done' %}
+          Done
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            To do
+          </strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Tasks after award calculation</h2>
+
+    <ul class="govuk-task-list">
+
+      {% if data['review1'] == 'done' %}
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          {% if data['check-payment-changes'] == 'no' or data['check-income-changes'] == 'no' %}
+          <a class="govuk-link govuk-task-list__link" href="PC-award-no-change.html">
+            Confirm award outcome
+          </a>
+          {% else %}
+          <a class="govuk-link govuk-task-list__link" href="PC-award-changed.html">
+            Confirm award outcome
+          </a>
+          {% endif %}
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data['changeStatus'] == 'none' or data['changeStatus'] == 'true' or data['changeStatus'] == 'notEntitled'  %}
+          Done
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            To do
+          </strong>
+          {% endif %}
+        </div>
+      </li>
+      {% else %}
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          Confirm award outcome
+        </div>
+        <div class="govuk-task-list__status">
+          Cannot start yet
+        </div>
+      </li>
+      {% endif %}
+
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        {% if data['debt'] == "true" or data['debt'] == "done"  %}
+           <a class="govuk-link govuk-task-list__link" href="debt-referral-possible">
+           Overpayment action
+          </a>
+         {% else %}
+        <div class="govuk-task-list__name-and-hint">
+          Overpayment action
+        </div>
+        {% endif %}
+
+        <div class="govuk-task-list__status">
+          {% if data['changeStatus'] == 'none' or data['changeStatus'] == 'notEntitled' or data['arrears'] == 'true' %}
+          Not needed
+          {% elseif data['debt'] == "true" %}
+          <strong class="govuk-tag govuk-tag--blue">
+            To do
+          </strong>
+          {% elseif data['debt'] == "done" %}
+          Done
+          {% else %}
+          Cannot start yet
+          {% endif %}
+        </div>
+      </li>
+
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+
+          {% if data['changeStatus'] == 'true' or data['changeStatus'] == 'none' %}
+          <a class="govuk-link govuk-task-list__link" href="decide-review-needed.html">
+            Set pension review dates
+          </a>
+          {% else %}
+          Set pension review dates
+          {% endif %}
+
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data['changeStatus'] == 'notEntitled' %}
+          Not needed
+          {% elseif data['review'] == 'done' %}
+            Done
+          {% elseif data['changeStatus'] == 'true' or data['changeStatus'] == 'none' %}
+          <strong class="govuk-tag govuk-tag--blue">
+            To do
+          </strong>
+          {% else %}
+          Cannot start yet
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+
+  {% if data['review'] == 'done' %}
+  <form method="post">
+    <div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        End task
+      </button>
+    </div>
+  </form>
+  {% endif %}
+
+
+  </div>
+
+
+
+</div>
+
+{% endblock %}

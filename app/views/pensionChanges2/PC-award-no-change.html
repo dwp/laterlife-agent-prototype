@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
+Pension Credit award has not changed – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -22,10 +22,10 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './_namebar.html' %}
+    {% include './_namebarNoProvider.html' %}
 
 
-    <h1 class="govuk-heading-l">Pension Credit award has changed</h1>
+    <h1 class="govuk-heading-l">Pension Credit award has not changed</h1>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -55,8 +55,6 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
     </dl>
 
     <h2 class="govuk-heading-m">Income change details</h2>
-
-
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -90,7 +88,6 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
       <a href="check-payment-changes" class="govuk-link">Change pension information</a>
     </p>
 
-
     <!-- CONDITIONAL ARREARS INFO -->
     {% if data['arrears'] == 'true' %}
     <h2 class="govuk-heading-m">Arrears payment</h2>
@@ -113,9 +110,6 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
       </div>
     </dl>
     {% endif %}
-
-
-
 
     <form method="post">
       <div>

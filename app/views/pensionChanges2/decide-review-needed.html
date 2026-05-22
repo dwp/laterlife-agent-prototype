@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Decide if a review date is needed for SUNLIFE pension – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar.html' %}
+
+
+    <h1 class="govuk-heading-l">Decide if a review date is needed for SUNLIFE pension</h1>
+
+    <p class="govuk-body">A review date will be set in the future to check for any changes to the pension.</p>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payments used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £93.43 on 28 May 2025 <br>
+          £93.41 on 28 April 2025 <br>
+          £89.97 on 28 March 2025 
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Calculated amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £92.27 per month
+        </dd>
+      </div>
+    </dl>
+
+    <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="decide-review-needed">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Does this pension need a review date?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decide-review-needed-1" name="decide-review-needed" type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="decide-review-needed-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decide-review-needed-2" name="decide-review-needed" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="decide-review-needed-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+      <div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
+    </form>
+
+    {% endblock %}

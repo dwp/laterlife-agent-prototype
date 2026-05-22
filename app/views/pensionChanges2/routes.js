@@ -4,25 +4,27 @@
 const govukPrototypeKit = require('govuk-prototype-kit');
 const router = govukPrototypeKit.requests.setupRouter();
 
-router.post('/pensionChanges/check-payment-changes', function (req, res) {
+router.post('/check-payment-changes', function (req, res) {
   if (req.session.data['check-payment-changes'] == "no") {
-    res.redirect("decide-review-needed")
+    req.session.data['review1'] = "done"
+    res.redirect("check-for-change-of-award")
   }
   else {
     res.redirect("check-income-changes")
   }
 });
 
-router.post('/pensionChanges/check-income-changes', function (req, res) {
+router.post('/check-income-changes', function (req, res) {
   if (req.session.data['check-income-changes'] == "yes") {
     res.redirect("use-previous-payments")
   }
   else {
-    res.redirect("decide-review-needed")
+    req.session.data['review1'] = "done"
+    res.redirect("check-for-change-of-award")
   }
 });
 
-router.post('/pensionChanges/use-previous-payments', function (req, res) {
+router.post('/use-previous-payments', function (req, res) {
   if (req.body.action === 'information') {
     res.redirect("change-not-possible")
   } else {
@@ -34,11 +36,11 @@ router.post('/pensionChanges/use-previous-payments', function (req, res) {
   }
 });
 
-router.post('/pensionChanges/add-pension-payment', function (req, res) {
+router.post('/add-pension-payment', function (req, res) {
   res.redirect("payment-list")
 });
 
-router.post('/pensionChanges/payment-list', function (req, res) {
+router.post('/payment-list', function (req, res) {
   if (req.body.action === 'information') {
     res.redirect("change-not-possible")
   }
@@ -54,7 +56,8 @@ router.post('/check-calculated-amount', function (req, res) {
   else if (req.session.data['check-calculated-amount'] == "no") {
     res.redirect("payment-list")
   } else {
-    res.redirect("PC-award-changed")
+    req.session.data['review1'] = "done"
+    res.redirect("check-for-change-of-award")
   }
 });
 
@@ -71,43 +74,42 @@ router.post('/single-payment-check', function (req, res) {
 });
 
 router.post('/PC-award-changed', function (req, res) {
-    req.session.data['changeStatus'] = "true"
-    if (req.session.data['arrears'] == "true") {
-      res.redirect("decide-review-needed")
-    } else {
-      res.redirect("debt-referral-possible")
-    }
+  req.session.data['changeStatus'] = "true"
+    if (req.session.data['arrears'] !== "true") {
+      req.session.data['debt'] = "true"
+    } 
+    res.redirect("check-for-change-of-award")
+  
+});
+
+router.post('/PC-award-no-change', function (req, res) {
+    req.session.data['changeStatus'] = "none"
+    res.redirect("check-for-change-of-award")
 });
 
 router.post('/PC-not-entitled', function (req, res) {
     req.session.data['changeStatus'] = "notEntitled"
-    res.redirect("review-CYA")
+    res.redirect("check-for-change-of-award")
 });
 
 // DEBT / OVERPAYMENT
-router.post('/pensionChanges/debt-referral-possible', function (req, res) {
+router.post('/debt-referral-possible', function (req, res) {
   if (req.session.data['debt-referral-possible'] == "no") {
-    if (req.session.data['changeStatus'] == "notEntitled") {
-        res.redirect("review-CYA")
-    } else {
-      res.redirect("decide-review-needed?changeStatus=true")
-    } 
+      req.session.data['debt'] = "done"
+      res.redirect("check-for-change-of-award")
   } else {
     res.redirect("debt-referral-data")
   }
 });
 
-router.post('/pensionChanges/debt-referral-data', function (req, res) {
-  if (req.session.data['changeStatus'] == "notEntitled") {
-        res.redirect("review-CYA")
-    } else {
-      res.redirect("decide-review-needed?changeStatus=true")
-    } 
+router.post('/debt-referral-data', function (req, res) {
+    req.session.data['debt'] = "done"
+    res.redirect("check-for-change-of-award")
 });
 
 
 // MOVE CLAIMANT
-router.post('/pensionChanges/change-not-possible', function (req, res) {
+router.post('/change-not-possible', function (req, res) {
   res.redirect("confirm-claimant-move1")
 });
 
@@ -117,7 +119,7 @@ router.post('/confirm-claimant-move1', function (req, res) {
 
 
 // SET NEW REVIEW DATE
-router.post('/pensionChanges/decide-review-needed', function (req, res) {
+router.post('/decide-review-needed', function (req, res) {
   if (req.session.data['decide-review-needed'] == "yes") {
     res.redirect("set-review-date")
   }
@@ -126,11 +128,16 @@ router.post('/pensionChanges/decide-review-needed', function (req, res) {
   }
 });
 
-router.post('/pensionChanges/set-review-date', function (req, res) {
+router.post('/set-review-date', function (req, res) {
   res.redirect("review-CYA")
 });
 
-router.post('/pensionChanges/review-CYA', function (req, res) {
+router.post('/review-CYA', function (req, res) {
+  req.session.data['review'] = "done"
+  res.redirect("check-for-change-of-award")
+});
+
+router.post('/check-for-change-of-award', function (req, res) {
   res.redirect("tasks?pensionReviewComplete=true")
 });
 
