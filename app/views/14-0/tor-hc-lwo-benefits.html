@@ -31,44 +31,54 @@
 }}
       <br>  <br>
       <span class="govuk-caption-l">About Jimmy Erikson</span>
-<h1 class="govuk-heading-l">Does Jimmy get any of the following?</h1>
-<ul class="govuk-list govuk-list--bullet">
-  <li>Income Support</li>
-  <li>income-based Jobseeker's Allowance</li>
-  <li>income-related Employment and Support Allowance</li>
-  <li>Universal Credit</li>
-</ul>
-<br>
-
-
-  <form method="post" action="tor-hc-lwo-money">
-
-  
+<h1 class="govuk-heading-l">Current benefits</h1>
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
    
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
-          Yes
+    <div id="countries-hint" class="govuk-hint">
+      Select all the benefits that Jimmy currently gets.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+        <label class="govuk-label govuk-checkboxes__label" for="countries">
+          Income Support
         </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
-          No
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+          Income-based Jobseeker's Allowance
         </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="not-sure">
-        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
-          I'm not sure
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+          Income-related Employment and Support Allowance
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+          Universal Credit
+        </label>
+      </div>
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+        Jimmy does not get any of these benefits
         </label>
       </div>
     </div>
   </fieldset>
 </div>
+<br>
+
+
+  <form method="post" action="tor-hc-lwo-money">
+
+
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
 </button>
