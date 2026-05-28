@@ -25,14 +25,18 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Check for change of award</h2>
 
-    <h2 class="govuk-heading-m">Assess income</h2>
+    <h2 class="govuk-heading-m">Pension income</h2>
 
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
+          {% if data['changeStatus'] == 'none' or data['changeStatus'] == 'true' or data['changeStatus'] == 'notEntitled'  %}
+          Review SUNLIFE pension
+          {% else %}
           <a class="govuk-link govuk-task-list__link" href="check-payment-changes">
-            Review income from SUNLIFE pension
+            Review SUNLIFE pension
           </a>
+          {% endif %}
         </div>
         <div class="govuk-task-list__status">
           {% if data['review1'] == 'done' %}
@@ -46,7 +50,7 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
       </li>
     </ul>
 
-    <h2 class="govuk-heading-m">Tasks after award calculation</h2>
+    <h2 class="govuk-heading-m">What to do next</h2>
 
     <ul class="govuk-task-list">
 
@@ -55,11 +59,11 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-task-list__name-and-hint">
           {% if data['check-payment-changes'] == 'no' or data['check-income-changes'] == 'no' %}
           <a class="govuk-link govuk-task-list__link" href="PC-award-no-change.html">
-            Confirm award outcome
+            Confirm award decision
           </a>
           {% else %}
           <a class="govuk-link govuk-task-list__link" href="PC-award-changed.html">
-            Confirm award outcome
+            Confirm award decision
           </a>
           {% endif %}
         </div>
@@ -76,7 +80,7 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
       {% else %}
       <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          Confirm award outcome
+          Confirm award decision
         </div>
         <div class="govuk-task-list__status">
           Cannot start yet
@@ -88,11 +92,11 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
       <li class="govuk-task-list__item govuk-task-list__item--with-link">
         {% if data['debt'] == "true" or data['debt'] == "done"  %}
            <a class="govuk-link govuk-task-list__link" href="debt-referral-possible">
-           Overpayment action
+           Refer overpayment
           </a>
          {% else %}
         <div class="govuk-task-list__name-and-hint">
-          Overpayment action
+          Refer overpayment
         </div>
         {% endif %}
 
@@ -141,7 +145,7 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
     </ul>
 
 
-  {% if data['review'] == 'done' %}
+  {% if data['review'] == 'done' or data['changeStatus'] == 'notEntitled' %}
   <form method="post">
     <div>
       <button type="submit" class="govuk-button" data-module="govuk-button">

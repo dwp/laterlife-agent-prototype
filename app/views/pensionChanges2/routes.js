@@ -26,6 +26,7 @@ router.post('/check-income-changes', function (req, res) {
 
 router.post('/use-previous-payments', function (req, res) {
   if (req.body.action === 'information') {
+    req.session.data['moveReason'] = "contact"
     res.redirect("change-not-possible")
   } else {
     if (req.session.data['use-previous-payments'] == "none") {
@@ -42,6 +43,7 @@ router.post('/add-pension-payment', function (req, res) {
 
 router.post('/payment-list', function (req, res) {
   if (req.body.action === 'information') {
+    req.session.data['moveReason'] = "contact"
     res.redirect("change-not-possible")
   }
   else {
@@ -49,8 +51,13 @@ router.post('/payment-list', function (req, res) {
   }
 });
 
+router.post('/deleteYN', function (req, res) {
+    res.redirect("payment-list")
+});
+
 router.post('/check-calculated-amount', function (req, res) {
   if (req.session.data['check-calculated-amount'] == "moreInfo") {
+    req.session.data['moveReason'] = "contact"
     res.redirect("change-not-possible")
   }
   else if (req.session.data['check-calculated-amount'] == "no") {
@@ -65,6 +72,7 @@ router.post('/single-payment-check', function (req, res) {
   if (req.session.data['single-payment-check'] == "yesRepresentative") {
     res.redirect("check-calculated-amount?single-payment=true")
   } else if (req.session.data['single-payment-check'] == "no") {
+    req.session.data['moveReason'] = "singlePayment"
     res.redirect("change-not-possible")
   } else if (req.session.data['single-payment-check'] == "yesMore") {
     res.redirect("payment-list")

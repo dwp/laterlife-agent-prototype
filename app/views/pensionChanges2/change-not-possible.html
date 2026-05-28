@@ -22,15 +22,30 @@ Changes to the claimant's record cannot be managed in the system– {{ serviceNa
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './_namebar.html' %}
+    {% include './_namebarNoProvider.html' %}
+        {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    }) }}
 
 
 
-    <h1 class="govuk-heading-l">Changes to the claimant's record cannot be managed in the system</h1>
+    <h1 class="govuk-heading-l">Move record to legacy services</h1>
 
-    <p class="govuk-body">The record will need to be rebuilt in CAM for the change to be processed.</p>
+    {% if data['moveReason'] == 'contact' %}
+    <p class="govuk-body">More information is needed from the claimant.</p>
+    {% elseif data['moveReason'] == 'singlePayment' %}
+    <p class="govuk-body">Only single payments paid yearly or twice a year can be processed in this system.</p>
+    {% elseif data['moveReason'] == 'multipleReviews' %}
+    <p class="govuk-body">Only one review in a benefit week can be processed in this system.</p>
+    {% elseif data['moveReason'] == 'iteration1' %}
+    <p class="govuk-body">You cannot process the change in this system.</p>
+    {% endif %}
 
-    <p class="govuk-body">The next payment is due to be [amount] on [date]. This is for the period of [date] to [date].</p>
+    <p class="govuk-body">You must rebuild the record in legacy services to process the change.</p>
+
+    <p class="govuk-body">The next payment is due to be [amount] on [date]. This is for the period of [date] to [date].
+    </p>
 
     <form method="post">
       <div class="govuk-form-group">
@@ -65,5 +80,20 @@ Changes to the claimant's record cannot be managed in the system– {{ serviceNa
         </button>
       </div>
     </form>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+    <p class="govuk-body">Prototype page:
+      <a href="change-not-possible?moveReason=contact" class="govuk-link">More information needed</a>
+    </p>
+    <p class="govuk-body">Prototype page:
+      <a href="change-not-possible?moveReason=singlePayment" class="govuk-link">Only single annual or biannual payments</a>
+    </p>
+        <p class="govuk-body">Prototype page:
+      <a href="change-not-possible?moveReason=multipleReviews" class="govuk-link">No multiple reviews in a benefit week</a>
+    </p>
+        </p>
+        <p class="govuk-body">Prototype page:
+      <a href="change-not-possible?moveReason=iteration1" class="govuk-link">Iteration 1 - cannot process a change</a>
+    </p>
 
     {% endblock %}

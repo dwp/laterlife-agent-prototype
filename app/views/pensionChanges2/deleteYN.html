@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you sure you want to delete this payment?  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar.html' %}
+
+    <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="deleteYN">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to delete this payment?         
+            </h1>
+          </legend>
+          <p class="govuk-body">£94.41 on 28 May 2025</p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="deleteYN-1" name="deleteYN" type="radio"
+                value="yesRepresentative">
+              <label class="govuk-label govuk-radios__label" for="deleteYN-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="deleteYN-2" name="deleteYN" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="deleteYN-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+      <div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
+    </form>
+
+
+    {% endblock %}

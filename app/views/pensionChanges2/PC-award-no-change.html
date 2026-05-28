@@ -25,7 +25,7 @@ Pension Credit award has not changed – {{ serviceName }} – GOV.UK Prototype 
     {% include './_namebarNoProvider.html' %}
 
 
-    <h1 class="govuk-heading-l">Pension Credit award has not changed</h1>
+    <h1 class="govuk-heading-l">Confirm Pension Credit award has not changed</h1>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -53,41 +53,7 @@ Pension Credit award has not changed – {{ serviceName }} – GOV.UK Prototype 
         </dd>
       </div>
     </dl>
-
-    <h2 class="govuk-heading-m">Income change details</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Provider
-        </dt>
-        <dd class="govuk-summary-list__value">
-          SUNLIFE pension
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Payments used
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £93.43 on 28 May 2025 <br>
-          £93.41 on 28 April 2025 <br>
-          £89.97 on 28 March 2025
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Calculated amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £92.27 per month
-        </dd>
-      </div>
-    </dl>
-
-    <p class="govuk-body">
-      <a href="check-payment-changes" class="govuk-link">Change pension information</a>
-    </p>
-
+    
     <!-- CONDITIONAL ARREARS INFO -->
     {% if data['arrears'] == 'true' %}
     <h2 class="govuk-heading-m">Arrears payment</h2>
