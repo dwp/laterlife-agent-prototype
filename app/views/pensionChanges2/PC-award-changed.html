@@ -23,6 +23,10 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     {% include './_namebarNoProvider.html' %}
+            {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    }) }}
 
 
     <h1 class="govuk-heading-l">Confirm Pension Credit award change</h1>
@@ -41,7 +45,7 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
           From
         </dt>
         <dd class="govuk-summary-list__value">
-          2 June 2025
+          4 May 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -49,7 +53,7 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
           Decision date
         </dt>
         <dd class="govuk-summary-list__value">
-          [DD Month YYYY]
+          10 May 2026
         </dd>
       </div>
     </dl>
@@ -101,6 +105,14 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
     </dl>
     {% endif %}
 
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You cannot undo this action. Confirming will change Pension Credit payments.
+  </strong>
+</div>
+
 
 
 
@@ -117,7 +129,7 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
       {% if data['arrears'] == 'true' %}
       <a href="PC-award-changed?arrears=false" class="govuk-link">No arrears</a>
       {% else %}
-      <a href="PC-award-changed?arrears=true" class="govuk-link">Change results in arrears</a>
+      <a href="PC-award-changed?arrears=true&debt=false" class="govuk-link">Change results in arrears</a>
       {% endif %}  
     </p>
 
@@ -126,6 +138,10 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
     </p>
     <p class="govuk-body">Prototype page: 
       <a href="PC-award-no-change.html" class="govuk-link">No change result</a>
+    </p>
+
+        <p class="govuk-body">Prototype page: 
+      <a href="PC-award-changed?arrears=false&debt=true" class="govuk-link">Change results in overpayment</a>
     </p>
 
 

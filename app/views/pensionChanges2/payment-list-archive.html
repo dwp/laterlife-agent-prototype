@@ -1,0 +1,158 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You are using [number] payments – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar.html' %}
+
+    {% if data['add'] == 'true' %}
+    <h1 class="govuk-heading-l">You are using 6 payments</h1>
+    {% else %}
+    <h1 class="govuk-heading-l">You are using 3 payments</h1>
+    {% endif %}
+
+    <p class="govuk-body">You can use up to 6 payments to calculate income.</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Payment Date</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+       {% if data['add'] == 'true' %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">28 August 2025</th>
+          <td class="govuk-table__cell">£94.10</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="add-pension-payment">Change<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">28 July 2025</th>
+          <td class="govuk-table__cell">£93.89</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="add-pension-payment">Change<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">28 June 2025</th>
+          <td class="govuk-table__cell">£90.20</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="add-pension-payment">Change<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        {% endif %}
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">28 May 2025</th>
+          <td class="govuk-table__cell">£94.41</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="add-pension-payment">Change<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">28 April 2025</th>
+          <td class="govuk-table__cell">£93.41</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="add-pension-payment">Change<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">28 March 2025</th>
+          <td class="govuk-table__cell">£89.97</td>
+          <td class="govuk-table__cell">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="add-pension-payment?add=true">Change<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+
+ 
+      </tbody>
+    </table>
+
+
+    {% if data['add'] !== 'true' %}
+    <p class="govuk-body govuk-!-padding-bottom-4">
+      <a href="add-pension-payment?add=true" class="govuk-link">Add another pension payment</a>
+    </p>
+    {% endif %}
+
+    <form method="post">
+      <div class="govuk-button-group">
+        <button type="submit" name="action" value="continue" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <button type="submit" name="action" value="information" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          More information needed
+        </button>
+      </div>
+    </form>
+
+    {% endblock %}

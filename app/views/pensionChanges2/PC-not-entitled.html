@@ -23,6 +23,10 @@ Erik Erikson is no longer entitled to Pension Credit – {{ serviceName }} – G
   <div class="govuk-grid-column-two-thirds">
 
     {% include './_namebarNoProvider.html' %}
+            {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    }) }}
 
 
     <h1 class="govuk-heading-l">Confirm end of Pension Credit entitlement</h1>
@@ -31,15 +35,23 @@ Erik Erikson is no longer entitled to Pension Credit – {{ serviceName }} – G
 
     <h2 class="govuk-heading-m">What happens next</h2>
 
-    <p class="govuk-body">You cannot make changes to the Pension Credit record in this system.</p>
+    <p class="govuk-body">You will no longer be able to manage the record in this system.</p>
 
-    <p class="govuk-body">Use CAM for any further action on this case.</p>
+    <p class="govuk-body">To restart payments or make a new decision, follow the steps to rebuild the record in legacy services. You will need the claimant's National Insurance number to do this.</p>
 
-    <p class="govuk-body">Follow the steps to record this decision in CAM</p>
+    <p class="govuk-body">You must record this decision in legacy services.</p>
 
     <h2 class="govuk-heading-m">State Pension</h2>
 
     <p class="govuk-body">State Pension payments will continue. Payments are managed in GySP.</p>
+
+        <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You cannot undo this action. Confirming will stop Pension Credit payments.
+  </strong>
+</div>
 
     <form method="post">
       <div>

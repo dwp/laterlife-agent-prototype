@@ -23,6 +23,10 @@ Pension Credit award has not changed – {{ serviceName }} – GOV.UK Prototype 
   <div class="govuk-grid-column-two-thirds">
 
     {% include './_namebarNoProvider.html' %}
+            {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    }) }}
 
 
     <h1 class="govuk-heading-l">Confirm Pension Credit award has not changed</h1>
@@ -76,6 +80,14 @@ Pension Credit award has not changed – {{ serviceName }} – GOV.UK Prototype 
       </div>
     </dl>
     {% endif %}
+
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You cannot undo this action. Confirming will continue Pension Credit payments.
+  </strong>
+</div>
 
     <form method="post">
       <div>

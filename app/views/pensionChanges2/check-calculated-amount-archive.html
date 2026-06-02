@@ -24,7 +24,7 @@ Check calculated amount – {{ serviceName }} – GOV.UK Prototype Kit
     {% include './_namebar.html' %}
 
 
-    <h1 class="govuk-heading-l">Choose income amount to use from <br> 10 May 2026</h1>
+    <h1 class="govuk-heading-l">Choose income amount to use</h1>
 
     <h2 class="govuk-heading-m">New income amount</h2>
     <dl class="govuk-summary-list">
@@ -33,20 +33,14 @@ Check calculated amount – {{ serviceName }} – GOV.UK Prototype Kit
           Payments used
         </dt>
         <dd class="govuk-summary-list__value">
-        {% if data['single-payment'] == 'true' %}
-
-  {% if data['payments'] and data['payments'].length > 0 %}
-    {% set lastPayment = data['payments'][data['payments'].length - 1] %}
-    {{ lastPayment.amount | govukCurrency }} on {{ lastPayment.paymentDate | govukDate }}
-  {% endif %}
-
-  {% else %}
-
-         {% for payment in data['payments'] | reverse %}
-          {{ payment.amount | govukCurrency }} on {{payment.paymentDate | govukDate }} <br>
-          {% endfor %} 
-
-  {% endif %}    
+          £94.10 on 28 August 2025 <br>
+          {% if data['single-payment'] !== 'true' %}
+          £93.89 on 28 July 2025 <br>
+          £90.20 on 28 June 2025 <br>
+          £93.43 on 28 May 2025 <br>
+          £93.41 on 28 April 2025 <br>
+          £89.97 on 28 March 2025
+          {% endif %}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -55,10 +49,11 @@ Check calculated amount – {{ serviceName }} – GOV.UK Prototype Kit
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['single-payment'] == 'true' %}
-            {{ lastPayment.amount | govukCurrency }} per month
-            {% else %}
-            £{{ data['averagePayment'] }} per month
-            {% endif %}  
+          £94.10 per month
+          {% else %}
+          £92.50 per month
+          {% endif %}
+
         </dd>
       </div>
     </dl>
@@ -70,10 +65,10 @@ Check calculated amount – {{ serviceName }} – GOV.UK Prototype Kit
           Payments used
         </dt>
         <dd class="govuk-summary-list__value">
-          £89.97 on 1 Feb 2026 <br>
+          £93.43 on 28 May 2025 <br>
           {% if data['single-payment'] !== 'true' %}
-          £93.41 on 1 Jan 2026 <br>
-          £94.41 on 1 Dec 2025
+          £93.41 on 28 April 2025 <br>
+          £89.97 on 28 March 2025
           {% endif %}
         </dd>
       </div>
@@ -83,7 +78,7 @@ Check calculated amount – {{ serviceName }} – GOV.UK Prototype Kit
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['single-payment'] == 'true' %}
-          £89.97 per month
+          £93.43 per month
           {% else %}
           £92.27 per month
           {% endif %}

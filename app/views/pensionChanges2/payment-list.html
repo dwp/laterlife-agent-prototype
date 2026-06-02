@@ -24,9 +24,9 @@ You are using [number] payments – {{ serviceName }} – GOV.UK Prototype Kit
 
     {% include './_namebar.html' %}
 
-    <h1 class="govuk-heading-l">You are using 2 payments</h1>
+    <h1 class="govuk-heading-l">You are using {{ data['payments'].length | plural("payment")}}</h1>
 
-    <p class="govuk-body">You can use up to 6 payments to calculate income.</p>
+    <p class="govuk-body">You can use up to 6 payments to calculate income amount.</p>
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
@@ -37,10 +37,11 @@ You are using [number] payments – {{ serviceName }} – GOV.UK Prototype Kit
         </tr>
       </thead>
 
-      <tbody class="govuk-table__body">
+
+        {% for payment in data['payments']%} 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">28 May 2025</th>
-          <td class="govuk-table__cell">£94.41</td>
+          <th scope="row" class="govuk-table__header">{{payment.paymentDate | govukDate }}</th>
+          <td class="govuk-table__cell">{{ payment.amount | govukCurrency }}</td>
           <td class="govuk-table__cell">
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item">
@@ -52,26 +53,17 @@ You are using [number] payments – {{ serviceName }} – GOV.UK Prototype Kit
             </ul>
           </td>
         </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">28 April 2025</th>
-          <td class="govuk-table__cell">£93.41</td>
-          <td class="govuk-table__cell">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="add-pension-payment">Change<span class="govuk-visually-hidden"> payment</span></a>
-              </li>
-              <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="deleteYN">Delete<span class="govuk-visually-hidden"> payment</span></a>
-              </li>
-            </ul>
-          </td>
-        </tr>
+        {% endfor %}
+    
       </tbody>
     </table>
 
+
+    {% if data['payments'].length < 6 %}
     <p class="govuk-body govuk-!-padding-bottom-4">
       <a href="add-pension-payment" class="govuk-link">Add another pension payment</a>
     </p>
+    {% endif %}
 
     <form method="post">
       <div class="govuk-button-group">

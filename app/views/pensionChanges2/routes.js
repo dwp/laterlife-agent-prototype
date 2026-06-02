@@ -10,17 +10,7 @@ router.post('/check-payment-changes', function (req, res) {
     res.redirect("check-for-change-of-award")
   }
   else {
-    res.redirect("check-income-changes")
-  }
-});
-
-router.post('/check-income-changes', function (req, res) {
-  if (req.session.data['check-income-changes'] == "yes") {
     res.redirect("use-previous-payments")
-  }
-  else {
-    req.session.data['review1'] = "done"
-    res.redirect("check-for-change-of-award")
   }
 });
 
@@ -37,9 +27,65 @@ router.post('/use-previous-payments', function (req, res) {
   }
 });
 
+
+// create ARRAY
+
+// router.post('/add-pension-payment', function (req, res) {
+//   let temporaryArray = []
+//   if (req.session.data['payments']) {
+//     temporaryArray = req.session.data['payments'];
+//   }
+
+//   let createdDate = new Date(req.session.data['payment-date-year'] + "-" + req.session.data['payment-date-month'] + "-" + req.session.data['payment-date-day']);
+//   let temporaryObject = { amount: req.session.data['paymentAmount'], paymentDate: createdDate };
+//   temporaryArray.push(temporaryObject);
+//   req.session.data['payments'] = temporaryArray;
+//   res.redirect("payment-list")
+// });
+
+
+
 router.post('/add-pension-payment', function (req, res) {
-  res.redirect("payment-list")
+  let temporaryArray = [];
+
+  if (req.session.data['payments']) {
+    temporaryArray = req.session.data['payments'];
+  }
+
+  let createdDate = new Date(
+    req.session.data['payment-date-year'],
+    req.session.data['payment-date-month'] - 1, // JS months are 0-based
+    req.session.data['payment-date-day']
+  );
+
+  let amount = Number(req.session.data['paymentAmount']);
+
+  let temporaryObject = {
+    amount: amount,
+    paymentDate: createdDate
+  };
+
+  temporaryArray.push(temporaryObject);
+
+  // Calculate total
+  let total = temporaryArray.reduce((sum, payment) => {
+    return sum + Number(payment.amount);
+  }, 0);
+
+  // Calculate and round average to 2 decimal places (as a number)
+  let average = temporaryArray.length > 0
+    ? Math.round((total / temporaryArray.length) * 100) / 100
+    : 0;
+
+  // Store results
+  req.session.data['payments'] = temporaryArray;
+  req.session.data['averagePayment'] = average;
+
+  res.redirect("payment-list");
 });
+
+
+
 
 router.post('/payment-list', function (req, res) {
   if (req.body.action === 'information') {
@@ -56,11 +102,11 @@ router.post('/deleteYN', function (req, res) {
 });
 
 router.post('/check-calculated-amount', function (req, res) {
-  if (req.session.data['check-calculated-amount'] == "moreInfo") {
+if (req.body.action === 'information') {
     req.session.data['moveReason'] = "contact"
     res.redirect("change-not-possible")
   }
-  else if (req.session.data['check-calculated-amount'] == "no") {
+  else if (req.session.data['check-calculated-amount'] == "change") {
     res.redirect("payment-list")
   } else {
     req.session.data['review1'] = "done"
