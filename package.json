@@ -17,10 +17,11 @@
     "cross-spawn": "^2.2.3",
     "eazy-logger": "^4.0.0",
     "govuk-frontend": "^5.13.0",
+    "govuk-prototype-kit": "13.16.2",
     "hmrc-frontend": "6.104.0",
     "moment": "^2.30.1",
     "radio-button-redirect": "^1.2.0",
-    "ws": "^8.18.3",
-    "govuk-prototype-kit": "13.16.2"
+    "uuid": "^14.0.0",
+    "ws": "^8.18.3"
   }
 }
