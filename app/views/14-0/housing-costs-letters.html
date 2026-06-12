@@ -50,8 +50,8 @@
          
        
 
-          {% if data ['letter'] != 'done' %}
-           <td scope="row" class="govuk-table__cell" style="padding-bottom: 20px;"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Housing costs: send Housing Costs evidence letter</a></td> 
+          {% if data ['letter-sent'] != 'yes' %}
+           <td scope="row" class="govuk-table__cell" style="padding-bottom: 20px;"><a class="govuk-link--no-visited-state" href="housing-costs-letter-task">Housing costs: send Housing Costs evidence letter</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
                 To do
@@ -69,6 +69,17 @@
        
       </tbody>
     </table><br>
+
+ {% if data ['letter-sent'] == 'yes' %}
+     <form method="post" action="household">
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Return to record view
+</button>
+
+    </form>
+{% endif %}
 
    
 
