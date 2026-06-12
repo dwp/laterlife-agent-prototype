@@ -37,9 +37,9 @@
 
 
 
-    <h2 class="govuk-heading-l">Check for change of award</h2>
+    <h2 class="govuk-heading-l">Housing costs</h2>
 
-    <h2 class="govuk-heading-m">Housing costs</h2>
+    <h2 class="govuk-heading-m">Letters to claimant</h2>
 
     <table class="govuk-table">
       <tbody class="govuk-table__body">
@@ -50,15 +50,15 @@
          
        
 
-          {% if data ['eric'] != 'done' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Housing costs: enter information for Eric Erikson</a></td> 
+          {% if data ['letter'] != 'done' %}
+           <td scope="row" class="govuk-table__cell" style="padding-bottom: 20px;"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Housing costs: send Housing Costs evidence letter</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
                 To do
               </strong>
           </td> 
           {% else %}
-           <td scope="row" class="govuk-table__cell">Housing costs: enter information for Eric Erikson</td> 
+           <td scope="row" class="govuk-table__cell">Housing costs: send Housing Costs evidence letter</td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
@@ -70,28 +70,7 @@
       </tbody>
     </table><br>
 
-    <h2 class="govuk-heading-m">What to do next</h2>
-     <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-         
-         
-          {% if data ['eric'] == 'done' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="award-change">Confirm award decision</a></td> 
-          <td class="govuk-table__cell" style="text-align: right;">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td> 
-          {% else %}
-           <td scope="row" class="govuk-table__cell">Confirm award decision</td> 
-           <td class="govuk-table__cell" style="text-align: right;">
-              Cannot start yet
-          </td>
-          {% endif %}
-        </tr>
-      </tbody>
-    </table>
+   
 
     </div>
 
