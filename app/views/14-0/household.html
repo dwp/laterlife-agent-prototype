@@ -46,12 +46,15 @@
   </h1>
       {% include './_remove-link.html' %}
 
-       {% if data['letter-sent'] == 'yes' %} 
+      
+
+       {% if data['award-changed'] != 'yes' and data['letter-sent'] == 'yes' %} 
 
        <div class="govuk-inset-text" style="border-left: 10px solid #1d70b8;">
         There are tasks outstanding for this record. <a href="housing-costs-check-change-award" class="govuk-link govuk-link--no-visited-state">View tasks</a>.
       </div>
       {% endif %}
+    
 
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
