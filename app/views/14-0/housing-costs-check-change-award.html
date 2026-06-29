@@ -46,19 +46,19 @@
 
       <tr class="govuk-table__row">
          {% if data ['award-changed'] == 'yes' %}
-          <td scope="row" class="govuk-table__cell">Housing costs: send Housing Costs evidence letter</td> 
+          <td scope="row" class="govuk-table__cell">Send Housing Costs evidence letter</td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
          {% elif data ['letter-sent'] != 'yes' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-letter-task">Housing costs: send Housing Costs evidence letter</a></td> 
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-letter-task">Send Housing Costs evidence letter</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
                 To do
               </strong>
           </td> 
           {% else %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-letter-task">Housing costs: send Housing Costs evidence letter</a></td> 
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-letter-task">Send Housing Costs evidence letter</a></td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
@@ -67,19 +67,40 @@
        
          <tr class="govuk-table__row">
            {% if data ['award-changed'] == 'yes' %}
-           <td scope="row" class="govuk-table__cell">Housing costs: enter information for Eric Erikson</td> 
+           <td scope="row" class="govuk-table__cell">Enter information for Eric Erikson</td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
           {% elif data ['eric'] != 'done' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Housing costs: enter information for Eric Erikson</a></td> 
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Enter information for Eric Erikson</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
                 To do
               </strong>
           </td> 
           {% else %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Housing costs: enter information for Eric Erikson</a></td> 
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Enter information for Eric Erikson</a></td> 
+           <td class="govuk-table__cell" style="text-align: right;">
+              Done
+          </td>
+          {% endif %}
+        </tr>
+
+         <tr class="govuk-table__row">
+           {% if data ['award-changed'] == 'yes' %}
+           <td scope="row" class="govuk-table__cell">Enter information for Eric Erikson</td> 
+           <td class="govuk-table__cell" style="text-align: right;">
+              Done
+          </td>
+          {% elif data ['eric'] != 'done' %}
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Enter information for Eric Erikson</a></td> 
+          <td class="govuk-table__cell" style="text-align: right;">
+              <strong class="govuk-tag">
+                To do
+              </strong>
+          </td> 
+          {% else %}
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Enter information for Eric Erikson</a></td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
