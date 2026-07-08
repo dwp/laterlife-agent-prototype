@@ -39,12 +39,12 @@
       {% endif %}
 
         <h2 class="govuk-heading-l">Check your answers for Eric Erikson</h2><br>
-         <h2 class="govuk-heading-m">Housing costs you've entered </h2><br>
+         <h2 class="govuk-heading-m">Housing costs you selected to enter</h2><br>
           <dl class="govuk-summary-list" style="margin-bottom:0px">
            
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Housing costs entered
+             Housing costs selected
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
@@ -67,7 +67,7 @@
         </dl><br><br><br><br><br><br>
 
 
-        <h2 class="govuk-heading-m">Housing costs included in the service charges</h2>
+        <h2 class="govuk-heading-m">Housing costs totals</h2>
        
         <dl class="govuk-summary-list" style="margin-bottom:0px">
            <div class="govuk-summary-list__row">
@@ -191,12 +191,35 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Insurance costs not included in the service charges
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if  data['cost20p'] %}
+                £{{  data['cost20p'] }}
+              {% else %}
+                 £0
+              {% endif %}
+            </dd>
+             <dd class="govuk-summary-list__value">
+               {% if data['sort-20'] %}
+                {{ data['sort-20'] }}
+              {% else %}
+                Monthly
+              {% endif %}
+            </dd>
+            
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
         
            
         </dl><br><br><br><br><br><br>
 
-         <h2 class="govuk-heading-m">Housing costs not included in the service charges</h2><br><br>
-         <h2 class="govuk-heading-s" style="margin-bottom:0px">Insurance and major works costs</h2>
+         <h2 class="govuk-heading-m">Major works totals</h2><br><br>
+         <h2 class="govuk-heading-s" style="margin-bottom:0px">TBC</h2>
        
         <dl class="govuk-summary-list" style="margin-bottom:0px">
            <div class="govuk-summary-list__row">
@@ -213,21 +236,6 @@
           
          
          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Insurance
-            </dt>
-            <dd class="govuk-summary-list__value">
-            £0
-            </dd>
-            <dd class="govuk-summary-list__value">
-             Six months
-            </dd>
-            
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Major works
@@ -252,47 +260,6 @@
             </dd>
           </div>
            
-        </dl><br><br><br>
-          <h2 class="govuk-heading-s" style="margin-bottom:0px">Insurance and major works end dates</h2>
-
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            </dt>
-          </div>
-        
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Insurance
-            </dt>
-            <dd class="govuk-summary-list__value">
-            
-               12 August 2026
-            
-            </dd>
-           
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Major works
-            </dt>
-            <dd class="govuk-summary-list__value">
-            
-               13 September
-            
-            </dd>
-           
-           
-           
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          
-          
         </dl><br><br><br><br>
 
 

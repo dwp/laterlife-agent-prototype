@@ -43,7 +43,7 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Eligible major works costs
+              Total major works amount
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
@@ -60,19 +60,53 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Major works end date
+              Major works start date
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
-            21 February 2027
+            21 Feb 2027
             </dd>
              {% else %}
             <dd class="govuk-summary-list__value">
-               11 October 2026
+               11 Oct 2026
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Major works end date
+            </dt>
+            {% if data['major-works'] !='2' %}
+            <dd class="govuk-summary-list__value">
+            25 Feb 2027
+            </dd>
+             {% else %}
+            <dd class="govuk-summary-list__value">
+               11 Oct 2026
+            </dd>
+            {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Liable amount
+            </dt>
+            {% if data['major-works'] !='2' %}
+            <dd class="govuk-summary-list__value">
+               £500
+            </dd>
+            {% else %}
+            <dd class="govuk-summary-list__value">
+               £750
+            </dd>
+            {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           
