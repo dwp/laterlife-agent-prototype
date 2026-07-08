@@ -41,18 +41,6 @@ router.use('/1-0', require('./views/1-0/routes'))
     next()
   })
 
-  // Logging session data  
-  
-  router.use((req, res, next) => {    
-      const log = {  
-        method: req.method,  
-        url: req.originalUrl,  
-        data: req.session.data  
-      }  
-      console.log(JSON.stringify(log, null, 2))  
-     
-    next()  
-  })
 
 
 module.exports = router

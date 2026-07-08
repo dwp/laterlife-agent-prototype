@@ -1,130 +1,126 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
+  Mobile phone number – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
 
 <header data-module="govuk-header" class="dwp-header">
-  <div class="dwp-header__content govuk-width-container">
-    <div class="dwp-header__service-name">
-      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
-    </div>
-    {% include './_nav.html' %}
-  </div>
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
 </header>
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-   
-            {{ govukBackLink({
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({
     "text": "Back",
     "href": "javascript: window.history.go(-1)"
-    }) }}
-
-
-    <h1 class="govuk-heading-l">Confirm Pension Credit award change</h1>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
-          Total
-        </dt>
-        <dd class="govuk-summary-list__value govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
-          £27.58 per week
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          From
-        </dt>
-        <dd class="govuk-summary-list__value">
-          4 May 2026
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Decision date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          10 May 2026
-        </dd>
-      </div>
-    </dl>
-
-    <!-- CONDITIONAL ARREARS INFO -->
-    {% if data['arrears'] == 'true' %}
-    <h2 class="govuk-heading-m">Arrears payment</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £100.00
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Period
-        </dt>
-        <dd class="govuk-summary-list__value">
-          DD Month YYYY to DD Month YYYY
-        </dd>
-      </div>
-    </dl>
-    {% endif %}
-
-        <!-- CONDITIONAL DEBT INFO -->
-    {% if data['debt'] == 'true' %}
-    <h2 class="govuk-heading-m">Overpayment</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £1.97
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Period
-        </dt>
-        <dd class="govuk-summary-list__value">
-          DD Month YYYY to DD Month YYYY <br>
-          DD Month YYYY to DD Month YYYY
-        </dd>
-      </div>
-    </dl>
-    {% endif %}
-
-    <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    You cannot undo this action. Confirming will change Pension Credit payments.
-  </strong>
-</div>
-
-
-
-
-    <form method="post" action="housing-costs-check-change-award?award-changed=yes">
-      <div>
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Confirm
-        </button>
-      </div>
-    </form>
+  })
+}}
 
    
+     <form method="post" action="household?award-changed=yes"><br>
+   
+
+        <h2 class="govuk-heading-m">Confirm change to Pension Credit award</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              From
+            </dt>
+            <dd class="govuk-summary-list__value">
+              21 February 2026
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Housing costs added
+            </dd> 
+          </div>
+        </dl>
+      
+
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total
+            </dt>
+            <dd class="govuk-summary-list__value"><strong>
+              £29.34 a week</strong>
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="font-weight: normal;">
+             Guarantee credit
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £29.34
+            </dd>
+          </div> 
+        </dl>
+
+        <h2 class="govuk-heading-s">Arrears payment</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount
+            </dt>
+            <dd class="govuk-summary-list__value">£82.30
+            </dd>
+           
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Period
+            </dt>
+            <dd class="govuk-summary-list__value">
+             11 December 2025 to 20 February 2026
+            </dd>
+          </div> 
+        </dl>
+        <div class="govuk-inset-text">
+          A new award letter will be sent to the claimant.
+        </div>
+<br>
+
+      
 
 
-    {% endblock %}
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+       Confirm and send award letter
+      </button>
+
+    </form>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+{% endblock %}
