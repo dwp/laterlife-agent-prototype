@@ -19,21 +19,7 @@
 
 {% block content %}
 
-{% if data ['award-changed'] == 'yes' %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      Award changed
-    </h3>
-    
-  </div>
-</div>
-{% endif %}
+
 
 
   <div class="govuk-grid-row">
@@ -47,23 +33,15 @@
       {% include './_remove-link.html' %}
 
       
-
-       {% if data['award-changed'] != 'yes' and data['letter-sent'] == 'yes' %} 
-
-       <div class="govuk-inset-text" style="border-left: 10px solid #1d70b8;">
-        There are tasks outstanding for this record. <a href="housing-costs-check-change-award" class="govuk-link govuk-link--no-visited-state">View tasks</a>.
-      </div>
-      {% endif %}
-    
-
+      
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
   <ul class="moj-sub-navigation__list">
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="personal">Personal</a>
+      <a class="moj-sub-navigation__link" aria-current="page" href="personal">Personal</a>
     </li>
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" aria-current="page" href="household">Household</a>
+      <a class="moj-sub-navigation__link" href="household">Household</a>
     </li>
 
     <li class="moj-sub-navigation__item">
@@ -90,115 +68,113 @@
 </nav>
 
 
-<h2 class="govuk-heading-m">Household details</h2>
+<h2 class="govuk-heading-m">Personal details</h2>
   <dl class="govuk-summary-list govuk-!-margin-bottom-7">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Residential address
+      Full name
     </dt>
     <dd class="govuk-summary-list__value">
-   	12 Park Place<br>
-    Carron<br>
-    AB38 6HB
+    Eric Erikson
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link govuk-link--no-visited-state" href=""> Change</a>
+      <a class="govuk-link" href="#"><span class="govuk-visually-hidden">name</span></a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Type of address
+      National Insurance number
     </dt>
     <dd class="govuk-summary-list__value">
-      Own home
+      QQ 12 34 56 C
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link govuk-link--no-visited-state" href=""> Change</a>
+      <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> customer reference</span></a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Correspondence address
+      Date of birth
     </dt>
     <dd class="govuk-summary-list__value">
-   	12 Park Place<br>
-    Carron<br>
-    AB38 6HB
+      9 January 1959
     </dd>
-   <dd class="govuk-summary-list__actions">
-      <a class="govuk-link govuk-link--no-visited-state" href=""> Change</a>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">    <span class="govuk-visually-hidden"> date of birth</span></a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Dependents
+      State Pension date
     </dt>
     <dd class="govuk-summary-list__value">
-       No
+       9 January 2025
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link govuk-link--no-visited-state" href=""> Add</a>
-    </dd>  
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> address</span></a>
+    </dd>
   </div>
-
+  <!-- Removing marital status for MVP
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Non-dependents
+      Marital status
     </dt>
     <dd class="govuk-summary-list__value">
-       Yes
+      <p class="govuk-body">Never been married</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link govuk-link--no-visited-state" href=""> Details</a>
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> marital details</span></a>
     </dd>
-  </div>
-
-<div class="govuk-summary-list__row">
+  </div>-->
+  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-   Housing benefit
+    Lived or worked abroad
     </dt>
     <dd class="govuk-summary-list__value">
       <p class="govuk-body">No</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Add</a>
+      <a class="govuk-link" href="#">  <span class="govuk-visually-hidden"> worked abroad</span></a>
     </dd>
   </div>
- 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-   Housing costs
+    Marital status
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if data['letter-sent'] == 'yes' %} 
+      <p class="govuk-body">Married</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="marital-details"> Details</a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Partner
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">No</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="./partner/live-with-you"> Add</a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Other people living at this address
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
       <p class="govuk-body">Yes</p>
-      {% elif data['award-changed'] == 'yes' %} 
-       <p class="govuk-body">Yes</p>
-      {% elif data['v'] == 'add' %} 
-      <p class="govuk-body">No</p>
-      {% else %}
-       <p class="govuk-body">Yes</p>
-      {% endif %}
     </dd>
-    
     <dd class="govuk-summary-list__actions">
-      {% if data['letter-sent'] == 'yes' %} 
-      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-check-change-award"> Details</a>
-       {% elif data['award-changed'] == 'yes'%}
-       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
-      {% elif data['v'] == 'add' %} 
-      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-check-change-award"> Add</a>
-      {% else %}
-      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
-      {% endif %}
+      <a class="govuk-link" href="age?first-other=yes">Details</a>
     </dd>
+   
   </div>
-
- 
-  
 </dl>
 
 
@@ -212,12 +188,12 @@
 
 {% if data['others'] != 'none' %}
   <div class="govuk-grid-column-one-third">
-    <h1 class="govuk-heading-m">Household changes</h1>
+    <h1 class="govuk-heading-m">Personal changes</h1>
     <div class="dwp-timeline">
       <ol class="dwp-timeline__items">
         <li class="dwp-timeline__item">
           <p class="dwp-timeline__datetime">9 January 2025 at 3:14pm</p>
-          <h2 class="dwp-timeline__heading">Claim received</h2>
+          <h2 class="dwp-timeline__heading">State Pension claim received</h2>
         </li>
       </ol>
     </div>

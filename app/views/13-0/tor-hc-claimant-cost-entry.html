@@ -38,9 +38,10 @@
 
 
 <br>
-  <form method="post" action="tor-hc-claimant-insurance-major">
-
   
+
+ {% for costType in data['nationality'] %}
+ {% if costType.includes('long-tenancies') %}
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--s" for="cost">
@@ -66,7 +67,11 @@
       </select>
     </div>
   </div>
-</div><br>
+</div>
+{% endif %}
+
+
+{% if costType.includes('eligible-sc') and costType.includes('ineligible-sc') %}
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--s" for="cost">
@@ -76,17 +81,21 @@
   <div id="event-name-hint" class="govuk-hint" style="margin-bottom:5px">
     Include insurance if listed in the breakdown. You can tell us on the next page about insurance invoiced separately.
   </div><br>
+  
+ 
   <div class="govuk-grid-column-one-half">
     <h2 class="govuk-heading-s" style="font-weight:normal">Eligible</h2>
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
     <input class="govuk-input govuk-input--width-5" id="cost2p" name="cost2p" type="text" spellcheck="false">
   </div><br><br>
+  
   <h2 class="govuk-heading-s" style="font-weight:normal">Ineligible</h2>
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
     <input class="govuk-input govuk-input--width-5" id="cost2r" name="cost2r" type="text" spellcheck="false">
   </div>
+  
   </div>
   <div class="govuk-grid-column-one-half">
     <h2 class="govuk-heading-s" style="font-weight:normal">Frequency</h2>
@@ -101,8 +110,12 @@
     </div>
   </div>
   
-</div><br>
 
+  
+</div><br>
+{% endif %}
+
+{% if costType.includes('co-ownership') %}
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--s" for="cost">
@@ -130,6 +143,9 @@
     </div>
   </div>
 </div><br>
+{% endif %}
+
+{% if costType.includes('crown-rents') %}
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--s" for="cost">
@@ -156,14 +172,74 @@
       </select>
     </div>
   </div>
-</div><br><br><br><br>
+</div>
+{% endif %}
 
+{% if costType.includes('separate-insurance') %}
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="cost">
+      Separate insurance
+    </label>
+  </h1>
+ <br>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-s" style="font-weight:normal">Eligible</h2><br>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="cost4p" name="cost4p" type="text" spellcheck="false">
+  </div>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+   <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s"  style="font-weight:normal" for="cost">
+      Insurance end date   
+    </label>
+  </h1>
+   
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+  </div>
+</div>
+{% endif %}<br>
 
+{% endfor %}
+
+<form method="post" action="tor-hc-claimant-major-works-details"> 
   <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+    Continue
+  </button>
+<br>
+</form>
 
-    </form>
 
    </div>
 

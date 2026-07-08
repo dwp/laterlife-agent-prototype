@@ -46,15 +46,12 @@
   </h1>
       {% include './_remove-link.html' %}
 
-      
-
-       {% if data['award-changed'] != 'yes' and data['letter-sent'] == 'yes' %} 
+       {% if data['letter-sent'] == 'yes' %} 
 
        <div class="govuk-inset-text" style="border-left: 10px solid #1d70b8;">
         There are tasks outstanding for this record. <a href="housing-costs-check-change-award" class="govuk-link govuk-link--no-visited-state">View tasks</a>.
       </div>
       {% endif %}
-    
 
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
@@ -190,7 +187,7 @@
        {% elif data['award-changed'] == 'yes'%}
        <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
       {% elif data['v'] == 'add' %} 
-      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-check-change-award"> Add</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-letters"> Add</a>
       {% else %}
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
       {% endif %}
@@ -201,17 +198,10 @@
   
 </dl>
 
-
-<!--Suspend benefits de-scoped for MVP (this link take your into the suspend journey)
-<p class="govuk-body">
-  <a href="suspend-benefit" class="govuk-link govuk-link--no-visited-state">Suspend payments</a>
-</p>-->
-
-
   </div>
 
 {% if data['others'] != 'none' %}
-  <div class="govuk-grid-column-one-third">
+  <!-- <div class="govuk-grid-column-one-third">
     <h1 class="govuk-heading-m">Household changes</h1>
     <div class="dwp-timeline">
       <ol class="dwp-timeline__items">
@@ -222,7 +212,7 @@
       </ol>
     </div>
     <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
-  </div>
+  </div> -->
 {% endif %}
 
 </div>
