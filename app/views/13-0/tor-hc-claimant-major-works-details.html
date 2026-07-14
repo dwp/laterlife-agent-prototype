@@ -40,56 +40,36 @@
  <form method="post" action="tor-hc-claimant-major-works-cya">
 
 
-<div id="event-name-hint" class="govuk-hint" style="margin-bottom:5px">
-   Major works costs are invoiced separately from the service charges. You can add more major works costs later, if needed.
-  </div><br><br>
+<p class="govuk-body">
+   Major works costs are invoiced separately from the service charges. If there is more than one major works cost, you can add more on the next page.
+</p><br><br>
 
 <div class="govuk-form-group">
   
-    <h2 class="govuk-heading-s">Total major works amount</h2>
+    <h2 class="govuk-heading-s">Total major works cost</h2>
+   
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
     <input class="govuk-input govuk-input--width-5" id="cost2p" name="cost2p" type="text" spellcheck="false">
-  </div><br>
+  </div><br><br>
    
 </div>
 
-<h2 class="govuk-heading-s">Does the claimant live in a shared building?</h2>
+
+
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-        <label class="govuk-label govuk-radios__label" for="contact">
-          No
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-        
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-        <label class="govuk-label govuk-radios__label" for="contact-2">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-       <div class="govuk-form-group">
-        
-        <h2 class="govuk-heading-s">Enter the amount of the major works cost payable for the claimant's home</h2>
-        <div id="event-name-hint" class="govuk-hint" style="margin-bottom:5px">
-        This should be a share of the total major works cost amount.
-        </div><br>
-        <div class="govuk-input__wrapper">
-        <div class="govuk-input__prefix" aria-hidden="true">£</div>
-        <input class="govuk-input govuk-input--width-5" id="cost2p" name="cost2p" type="text" spellcheck="false">
-      </div><br>
-      </div>
-      </div>
-     
-    </div>
-  </fieldset>
-</div><br>
+  
+    <h2 class="govuk-heading-s">Enter how much of the total major works cost the claimant's home is liable for</h2>
+    <div id="event-name-hint" class="govuk-hint" style="margin-bottom:5px">
+   If the claimant's home is part of a larger building (for example, a flat in a block of flats, or a room in a shared property) this should be a share of the total major works cost.
+  </div><br>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="cost2p" name="cost2p" type="text" spellcheck="false">
+  </div>
+  <br><br>
+   
+</div>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">

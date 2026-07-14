@@ -41,10 +41,13 @@
 
   <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
-        £1,500 ending on 21 February 2027
+      <dt class="govuk-summary-list__key  hmrc-summary-list__key">
+        Major works cost 01
       </dt>
-      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
+        £1500 total from 21 Feb 2027 to 27 Feb 2027
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions" style="width:40%">
         <ul class="govuk-summary-list__actions-list">
           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
@@ -52,18 +55,23 @@
       </dd>
     </div>
     {% if data['major-works']=='2' %}
-     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-         £2,000 ending on 11 October 2026
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key  hmrc-summary-list__key">
+        Major works cost 02
       </dt>
-      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
+        £2000 total from 11 Oct 2026 to 11 Oct 2026
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions" style="width:40%">
         <ul class="govuk-summary-list__actions-list">
           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="tor-hc-claimant-major-works-remove"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
         </ul>
       </dd>
     </div>
+  
     {% endif %}
+    
   </dl>
 
   
@@ -79,9 +87,11 @@
 <a href="tor-hc-claimant-dates" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
+</div>
 
-
-      </div>
+<p class="govuk-body">
+  <a href="tor-hc-claimant-major-works-list-empty" class="govuk-link">-</a>
+</p><br>
 
   </div>
 
