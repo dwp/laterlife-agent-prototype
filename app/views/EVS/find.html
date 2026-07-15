@@ -20,32 +20,50 @@ Find someone – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 
 
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
+
+      <h1 class="govuk-heading-xl">
       Find someone
-    </h1>
+      </h1>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Information to enter
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Type these National Insurance numbers into the text box to start the corresponding journey:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>QQ123456A – One result found</li>
+  <li>QQ123456B – Two results found</li>
+  <li>QQ123456D – No results found</li>
+  <li>QQ123456F – No outstanding tasks found</li>
+  <li>QQ123456J – Another agent is in the task</li>
+ </ul>
+        </div>
+      </details>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="width-20">
-        National Insurance number
-      </label>
-      <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
-    </div>
+<form class="form" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="find-someone">
+          National Insurance number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="findSomeone" name="findSomeone" type="text">
+      </div>
 
-    <div class="govuk-button-group">
-      <a href="find-result" class="govuk-button" data-module="govuk-buttone-exit"
-        data-module="govukk-grid-column-one-third">Find</a>
-    </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Find
+    </button>
+</form>
+
+    </div></div>
+
+
+
+
 
   </div>
-
-
-
-
-
-</div>
 
 {% endblock %}

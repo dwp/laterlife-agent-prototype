@@ -270,3 +270,36 @@ router.post('/EVS/recordUnder', function (req, res) {
 
 // ---------------------------------------------
 module.exports = router;
+
+
+// Routes for the find someone page
+
+router.post('/find', function(request, response) {
+  var findSomeone = request.session.data['findSomeone']
+      if (findSomeone == 'QQ123456A'){
+          response.redirect('/EVS/tasks')
+      }
+      if (findSomeone == 'QQ123456B'){
+          response.redirect('/'+version+ '/find-result-sp-pc')
+      }
+      if (findSomeone == 'QQ123456D'){
+          response.redirect('/'+version+ '/find-result-sp-nil-pc')
+      }
+      if (findSomeone == 'QQ123456J'){
+          response.redirect('find-result-sp-pc-legacy')
+      }
+      if (findSomeone == 'QQ123456X'){
+          response.redirect('find-result-sp-pc-process')
+      }
+      if (findSomeone == 'QQ123456F'){
+          response.redirect('/'+version+ '/find-result-sp-pc-apply')
+      }
+      if (findSomeone == 'QQ123456Y'){
+          response.redirect('/'+version+ '/find-result-sp-pc-no-rep')
+      }
+      else {
+          response.redirect('/'+version+ '/find-result-none-found')
+      }
+  })
+
+module.exports = router

@@ -19,11 +19,6 @@ Result – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-{{ govukBackLink({
-"text": "Back",
-"href": "javascript: window.history.go(-1)"
-}) }}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -57,24 +52,21 @@ Result – {{ serviceName }} – GOV.UK Prototype Kit
       {% endif %} -->
     </h1>
 
-    <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">EVS - Abroad</th>
-          <td class="govuk-table__cell">Preview</td>
-          <td class="govuk-table__cell">Pending</td>
-          <td class="govuk-table__cell"><a href="abroad-preview-task">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">EVS - Capital</th>
-          <td class="govuk-table__cell">Evidence gathering</td>
-          <td class="govuk-table__cell "> <strong class="govuk-tag govuk-tag--blue">Active</strong></td>
-          <td class="govuk-table__cell"><a href="capital-evidence">Details</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Outstanding tasks</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Task name</th>
+      <th scope="col" class="govuk-table__header">Date created</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="/abroad-evidence-task">Spending abroad: evidence gathering</a></th>
+      <td class="govuk-table__cell">12 July 2026</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
