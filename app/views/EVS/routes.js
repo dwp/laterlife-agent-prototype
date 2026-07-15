@@ -336,3 +336,9 @@ router.post('/EVS/find-case-closed-confirm', function (req, res) {
   res.redirect('/EVS/find-result-zero-banner'); 
 
 });
+
+router.post('/EVS/find-result-not-found', function (req, res) { 
+
+  res.redirect('/EVS/find'); 
+
+});
