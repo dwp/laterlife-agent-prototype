@@ -294,3 +294,45 @@ router.post('/find', function(request, response) {
   })
 
 module.exports = router
+
+
+
+router.post('/EVS/find-abroad', function (req, res) {
+
+  const outcome = req.body.abroadEvidence
+
+  if (outcome === 'none') {
+    res.redirect('/EVS/find-case-closed-confirm')
+  } else if (outcome === 'postpone') {
+    res.redirect('/EVS/find-postpone')
+  } else {
+    res.redirect('/abroad-evidence')
+  }
+
+})
+
+ 
+router.post('/EVS/find-postpone', function (req, res) { 
+
+  res.redirect('/EVS/find-postpone-confirm'); 
+
+});
+
+router.post('/EVS/find-postpone-confirm', function (req, res) { 
+
+  res.redirect('/EVS/find-result-one-banner-postpone'); 
+
+});
+
+router.post('/EVS/find-case-closed-confirm', function (req, res) { 
+
+  res.redirect('/EVS/find-result-zero-banner'); 
+
+});
+
+
+router.post('/EVS/find-case-closed-confirm', function (req, res) { 
+
+  res.redirect('/EVS/find-result-zero-banner'); 
+
+});
