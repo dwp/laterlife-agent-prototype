@@ -274,21 +274,21 @@ module.exports = router;
 
 // Routes for the find someone
 
-router.post('/find', function(request, response) {
-  var findSomeone = request.session.data['findSomeone']
-      if (findSomeone == 'QQ123456A'){
+router.post('/EVS/find', function(request, response) {
+  var EVSfindSomeone = request.session.data['EVSfindSomeone']
+      if (EVSfindSomeone == 'QQ101011A'){
           response.redirect('/EVS/find-result-one')
       }
-      if (findSomeone == 'QQ123456B'){
+      if (EVSfindSomeone == 'QQ101012B'){
           response.redirect('/EVS/find-result-two')
       }
-      if (findSomeone == 'QQ123456C'){
+      if (EVSfindSomeone == 'QQ101013C'){
           response.redirect('/EVS/find-result-zero')
       }
-      if (findSomeone == 'QQ123456D'){
+      if (EVSfindSomeone == 'QQ101014D'){
           response.redirect('/EVS/find-result-not-found')
       }
-      if (findSomeone == 'QQ123456E'){
+      if (EVSfindSomeone == 'QQ101015E'){
           response.redirect('/EVS/find-result-one-occupied')
       }
   })

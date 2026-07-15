@@ -37,35 +37,7 @@ Result – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 
-    <h1 class="govuk-heading-xl">
-      Charlotte Mudd<br>
-      <span class="govuk-caption-xl">XX 12 34 56</span>
-      <!-- {% if data['stopbenefit'] === 'death' %}
-      <strong class="govuk-tag govuk-tag--grey">
-        Dead
-      </strong>
-      {% elseif data['stopbenefit'] === 'prison' %}
-      <strong class="govuk-tag govuk-tag--red">
-      In Prison
-      </strong>
-      {% elseif data['suspension'] === 'both' %}
-      <strong class="govuk-tag govuk-tag--orange">
-      State Pension and Pension Credit suspended
-      </strong>
-      {% elseif data['suspension'] === 'sp' %}
-      <strong class="govuk-tag govuk-tag--orange">
-      State Pension suspended
-      </strong>
-      {% elseif data['suspension'] === 'pc' %}
-      <strong class="govuk-tag govuk-tag--orange">
-      Pension Credit suspended
-      </strong>
-      {% else %}
-      <strong class="govuk-tag">
-        Receiving State Pension and Pension Credit
-      </strong>
-      {% endif %} -->
-    </h1>
+    {% include './_namebar-find.html' %}
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Outstanding tasks</caption>

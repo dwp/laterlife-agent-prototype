@@ -22,6 +22,7 @@ Result – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
+ {% include './_namebar-find.html' %}
 
     {{ govukBackLink({
     "text": "Back",
@@ -33,9 +34,6 @@ Result – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
    <form action="/EVS/find-case-closed-confirm" method="post">
 
-          <h1 class="govuk-heading-xl">
-      Charlotte Mudd<br>
-      <span class="govuk-caption-xl">XX 12 34 56</span>
 
  <h1 class="govuk-heading-l">You are about to record that the case is closed</h1>
                     <p class="govuk-body">
