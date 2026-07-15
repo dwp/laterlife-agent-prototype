@@ -272,7 +272,7 @@ router.post('/EVS/recordUnder', function (req, res) {
 module.exports = router;
 
 
-// Routes for the find someone page
+// Routes for the find someone
 
 router.post('/find', function(request, response) {
   var findSomeone = request.session.data['findSomeone']
@@ -340,5 +340,26 @@ router.post('/EVS/find-case-closed-confirm', function (req, res) {
 router.post('/EVS/find-result-not-found', function (req, res) { 
 
   res.redirect('/EVS/find'); 
+
+});
+
+
+router.post('/EVS/find-abroad-2', function (req, res) {
+
+  const outcome = req.body.abroadEvidence
+
+  if (outcome === 'none') {
+    res.redirect('/EVS/find-case-closed-confirm-2')
+  } else if (outcome === 'postpone') {
+    res.redirect('/EVS/find-postpone-2')
+  } else {
+    res.redirect('/abroad-evidence')
+  }
+
+})
+
+router.post('/EVS/find-postpone-2', function (req, res) { 
+
+  res.redirect('/EVS/find-postpone-confirm-2'); 
 
 });
