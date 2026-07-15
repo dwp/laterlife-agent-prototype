@@ -277,28 +277,19 @@ module.exports = router;
 router.post('/find', function(request, response) {
   var findSomeone = request.session.data['findSomeone']
       if (findSomeone == 'QQ123456A'){
-          response.redirect('/EVS/tasks')
+          response.redirect('/EVS/find-result-one')
       }
       if (findSomeone == 'QQ123456B'){
-          response.redirect('/'+version+ '/find-result-sp-pc')
+          response.redirect('/EVS/find-result-two')
+      }
+      if (findSomeone == 'QQ123456C'){
+          response.redirect('/EVS/find-result-zero')
       }
       if (findSomeone == 'QQ123456D'){
-          response.redirect('/'+version+ '/find-result-sp-nil-pc')
+          response.redirect('/EVS/find-result-not-found')
       }
-      if (findSomeone == 'QQ123456J'){
-          response.redirect('find-result-sp-pc-legacy')
-      }
-      if (findSomeone == 'QQ123456X'){
-          response.redirect('find-result-sp-pc-process')
-      }
-      if (findSomeone == 'QQ123456F'){
-          response.redirect('/'+version+ '/find-result-sp-pc-apply')
-      }
-      if (findSomeone == 'QQ123456Y'){
-          response.redirect('/'+version+ '/find-result-sp-pc-no-rep')
-      }
-      else {
-          response.redirect('/'+version+ '/find-result-none-found')
+      if (findSomeone == 'QQ123456E'){
+          response.redirect('/EVS/find-result-one-occupied')
       }
   })
 
