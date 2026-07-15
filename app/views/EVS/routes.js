@@ -363,3 +363,15 @@ router.post('/EVS/find-postpone-2', function (req, res) {
   res.redirect('/EVS/find-postpone-confirm-2'); 
 
 });
+
+router.post('/EVS/find-case-closed-confirm-2', function (req, res) { 
+
+  res.redirect('/EVS/find-result-two-banner'); 
+
+});
+
+router.post('/EVS/find-postpone-confirm-2', function (req, res) { 
+
+  res.redirect('/EVS/find-result-two-banner-postpone'); 
+
+});
