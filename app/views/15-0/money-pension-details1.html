@@ -36,25 +36,27 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
     <br> <br>
     <h1 class="govuk-heading-l">Royal London pension</h1>
 
-    <p class="govuk-body">The claimant receives a monthly pension payment.</p>
-    <p class="govuk-body">The next review is due on 12 Jun 2026.</p>
+    <p class="govuk-body">Next review is due on 12 Sep 2026.</p>
+   
+  {% if data['adhoc'] == 'true' %}
     <p class="govuk-body">
-      You can <a href="#" class="govuk-link">review this pension now</a>.
+     <a href="#" class="govuk-link">Review this pension now</a>.
     </p>
+  {% endif %}
   </div>
 
   <!-- Close two thirds, open full width -->
 
     <div class="govuk-grid-column-full">
-      <h2 class="govuk-heading-m">Pension history</h2>
+      <h2 class="govuk-heading-m">Pension review history</h2>
       <table class="govuk-table">
           <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col" style="width: 15%">Calculated income</th>
+                <th class="govuk-table__header" scope="col" style="width: 12%">Calculated income</th>
                 <th class="govuk-table__header" scope="col" style="width: 15%">Representative amount</th>
                 <th class="govuk-table__header" scope="col" style="width: 20%">Payments used</th>
-                <th class="govuk-table__header" scope="col" style="width: 15%">Decision date</th>
-                <th class="govuk-table__header" scope="col" style="width: 20%">Change description</th>
+                <th class="govuk-table__header" scope="col" style="width: 20%">Review date</th>
+                <th class="govuk-table__header" scope="col" style="width: 13%">Effective from</th>
               </tr>
             </thead>
         <tbody class="govuk-table__body">
@@ -72,10 +74,32 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
               £94.41 on 1 Mar 2026 <br>
             </td>
             <td class="govuk-table__cell">
-              12 Mar 2026
+              Done: 12 June 2026 <br>
+              Due: 12 June 2026
             </td>
             <td class="govuk-table__cell">
-              Increased by £0.27
+              No change
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              £21.36
+            </td>
+            <td class="govuk-table__cell">
+              £92.59 paid monthly
+            </td>
+            <td class="govuk-table__cell">
+              £89.97 on 1 Jan 2026 <br>
+              £93.41 on 1 Feb 2026 <br>
+              £94.41 on 1 Mar 2026 <br>
+            </td>
+            <td class="govuk-table__cell">
+              Done: 12 Mar 2026 <br>
+              Due: 11 Mar 2026
+            </td>
+            <td class="govuk-table__cell">
+              13 Mar 2026
             </td>
           </tr>
 
@@ -92,10 +116,11 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
               £90.30 on 1 Dec 2025 <br>
             </td>
             <td class="govuk-table__cell">
+              Application processed: <br>
               12 Dec 2025
             </td>
             <td class="govuk-table__cell">
-              Application processed
+              5 Dec 2025
             </td>
           </tr>
 

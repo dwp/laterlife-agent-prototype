@@ -151,7 +151,7 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
           {% if data['review-due'] == 'yes' %}
        <!--   <a class="govuk-link" href="#">Get task<span class="govuk-visually-hidden"> royal london pension</span></a> -->
           {% else %}
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> review date</span></a>
+          <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> review date</span></a> -->
           {% endif %}
         </dd>
       </div>
@@ -261,6 +261,8 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- Page divs -->
   </div>
 
+
+{% if data['timeline'] == 'true' %}
 <!-- TIMELINE -->
 <div class="govuk-grid-column-one-third">
   <h1 class="govuk-heading-m">Financial changes</h1>
@@ -278,8 +280,16 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
     <a href="timeline-details-pc-application-processed" class="dwp-timeline__link">View details<span class="govuk-visually-hidden"> of the event on 12 December 2025 at 3:14pm</span></a>
   </li>
 </ol>
-</div>
+
+
+{% else %}
+<h1 class="govuk-heading-m">Record history</h1>
+{% endif %}
 <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+
+</div>
+
+
 </div>
 
 

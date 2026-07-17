@@ -106,6 +106,8 @@
 </table>
 </div>   
 
+
+{% if data['timeline'] == 'true' %}
 <!-- TIMELINE -->
 <div class="govuk-grid-column-one-third">
   <h1 class="govuk-heading-m">Award changes</h1>
@@ -136,6 +138,9 @@
   </li>
 </ol>
 </div>
+{% else %}
+<h1 class="govuk-heading-m">Record history</h1>
+{% endif %}
 <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
 </div>
 
