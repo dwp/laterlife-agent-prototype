@@ -58,6 +58,23 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Liable amount
+            </dt>
+            {% if data['major-works'] !='2' %}
+            <dd class="govuk-summary-list__value">
+               £500
+            </dd>
+            {% else %}
+            <dd class="govuk-summary-list__value">
+               £750
+            </dd>
+            {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Major works start date
@@ -92,23 +109,7 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Liable amount
-            </dt>
-            {% if data['major-works'] !='2' %}
-            <dd class="govuk-summary-list__value">
-               £500
-            </dd>
-            {% else %}
-            <dd class="govuk-summary-list__value">
-               £750
-            </dd>
-            {% endif %}
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
+         
           
         </dl>
        
