@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include './_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% include './_namebar.html' %}
+    
+
+{{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+
+<form method="post" action="housing-costs-claimant-cost-entry">
+<br><br> 
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Select the housing costs you want to enter
+      </h1>
+    </legend>
+    <div id="nationality-hint" class="govuk-hint">
+      Select which housing costs are present on the claimant's invoices. They may be wholly or partially liable for these costs.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="long-tenancies" aria-describedby="nationality-item-hint">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality">
+          Ground rents on long tenancies
+        </label>
+        
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="eligible-sc">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+          Eligible service charges
+        </label>
+      
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="ineligible-sc">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Ineligible service charges
+        </label>
+        
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="co-ownership">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Payments under co-ownership schemes
+        </label>
+        
+      
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="crown-rents">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Payments for tenancies or licenses of Crown rents
+        </label>
+        
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="separate-insurance">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Insurance not included in the service charges
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          These are one-off costs that have been invoiced separately.
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="major-works">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Major works
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          One or more major works invoices for which the claimant's home is wholly or partially liable.
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+  
+
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+   </div>
+
+ 
+    </div>
+
+
+{% endblock %}
+
+

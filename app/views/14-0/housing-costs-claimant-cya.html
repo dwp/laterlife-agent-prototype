@@ -32,11 +32,42 @@
   })
 }}
 
-    <form method="post" action="housing-costs-check-change-award?eric=done"><br>
-  
+   {% if data['lwo'] == 'yes'%}
+     <form method="post" action="housing-costs-check-change-award"><br>
+      {% else %}
+    <form method="post" action="housing-costs-check-change-award?claimant-done=yes&tasks-done=yes"><br>
+      {% endif %}
 
         <h2 class="govuk-heading-l">Check your answers for Eric Erikson</h2><br>
-        <h2 class="govuk-heading-m">Housing costs included in the service charges</h2>
+         <h2 class="govuk-heading-m">Housing costs you selected to enter</h2><br>
+          <dl class="govuk-summary-list" style="margin-bottom:0px">
+           
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Housing costs selected
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>eligible service charges</li>
+                <li>ineligible service charges</li>
+                <li>major works</li>
+              </ul>
+          
+            </dd>
+           
+           
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          
+         
+        
+           
+        </dl><br><br><br><br><br><br>
+
+
+        <h2 class="govuk-heading-m">Housing costs totals</h2>
        
         <dl class="govuk-summary-list" style="margin-bottom:0px">
            <div class="govuk-summary-list__row">
@@ -160,13 +191,35 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Insurance costs not included in the service charges
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if  data['cost20p'] %}
+                £{{  data['cost20p'] }}
+              {% else %}
+                 £0
+              {% endif %}
+            </dd>
+             <dd class="govuk-summary-list__value">
+               {% if data['sort-20'] %}
+                {{ data['sort-20'] }}
+              {% else %}
+                Monthly
+              {% endif %}
+            </dd>
+            
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
         
            
         </dl><br><br><br><br><br><br>
 
-         <h2 class="govuk-heading-m">Housing costs not included in the service charges</h2><br><br>
-         <h2 class="govuk-heading-s" style="margin-bottom:0px">Insurance and major works costs</h2>
-       
+        <h2 class="govuk-heading-m">Insurance not included in the service charges</h2>
+
         <dl class="govuk-summary-list" style="margin-bottom:0px">
            <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -175,93 +228,75 @@
               Cost amount
             </dd>
             <dd class="govuk-summary-list__value" style="width:20%">
-             Payment period
+             End date
             </dd>
 
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Insurance not included in the service charges
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+                £0
           
-         
-         
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Insurance
-            </dt>
-            <dd class="govuk-summary-list__value">
-            £0
             </dd>
             <dd class="govuk-summary-list__value">
-             Six months
-            </dd>
             
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Major works
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {% if  data['cost6p'] %}
-                £{{  data['cost6p'] }}
-              {% else %}
-               £0
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__value">
-              {% if data['sort-6'] %}
-                {{ data['sort-6'] }}
-              {% else %}
-                Five weeks
-              {% endif %}
-            </dd>
+                12 July 2028
             
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
-          </div>
            
-        </dl><br><br><br>
-          <h2 class="govuk-heading-s" style="margin-bottom:0px">Insurance and major works end dates</h2>
-
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
           </div>
+         
+          
         
+           
+        </dl><br><br><br><br><br><br>
+
+         <h2 class="govuk-heading-m">Major works costs</h2><br>
+       
+       
+        <dl class="govuk-summary-list" style="margin-bottom:0px">
+         
+          
+         <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:30%">
+      Liable share for claimant's home
+    </dt>
+    
+  </div>
+         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Insurance
+            £500
             </dt>
-            <dd class="govuk-summary-list__value">
-            
-               12 August 2026
-            
+            <dd class="govuk-summary-list__value" style="width:60%">
+             21 Feb 2027 to 27 Feb 2027
             </dd>
-           
+            
+            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link" href="tor-hc-claimant-major-works-list">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Major works
+            £750
             </dt>
             <dd class="govuk-summary-list__value">
-            
-               13 September
-            
+             11 Oct 2026 to 11 Oct 2026
             </dd>
-           
-           
-           
+            
+            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link" href="tor-hc-claimant-major-works-list">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
-          
-          
+           
         </dl><br><br><br><br>
 
 
@@ -335,7 +370,7 @@
 
 
 
-        <h2 class="govuk-heading-m">Share of housing costs</h2>
+        <h2 class="govuk-heading-m">Claimant's personal share of housing costs</h2>
        
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
            <div class="govuk-summary-list__row">
@@ -348,7 +383,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
             
-                1/3
+                1/4
             
             </dd>
            

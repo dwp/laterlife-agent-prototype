@@ -71,15 +71,15 @@
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
-          {% elif data ['eric'] != 'done' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Enter information for Eric Erikson</a></td> 
+          {% elif data ['claimant-done'] != 'yes' %}
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant-checklist">Enter information for Eric Erikson</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
                 To do
               </strong>
           </td> 
           {% else %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant">Enter information for Eric Erikson</a></td> 
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="housing-costs-claimant-checklist">Enter information for Eric Erikson</a></td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
@@ -100,7 +100,7 @@
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
-          {% elif data ['eric'] == 'done' %}
+          {% elif data ['claimant-done'] == 'yes' %}
            <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="award-change">Confirm award decision</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
