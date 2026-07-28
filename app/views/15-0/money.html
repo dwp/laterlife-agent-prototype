@@ -62,10 +62,10 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Total income
+          Total income amount
         </dt>
         <dd class="govuk-summary-list__actions govuk-!-text-align-right"">
-              &pound;117.78
+              &pound;117.78 a week
         </dd>
       </div>
     </dl>
@@ -74,7 +74,7 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Income details
+      <span class="govuk-visually-hidden"> Income</span> Details
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -93,7 +93,7 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
           Income amount
         </dt>
         <dd class="govuk-summary-list__value">
-          £96.42
+          £96.42 a week
         </dd>
       </div>
     </dl>
@@ -119,11 +119,11 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key" >
           Income amount
         </dt>
         <dd class="govuk-summary-list__value">
-          £21.36
+          £21.36 a week
         </dd>
       </div>
          <div class="govuk-summary-list__row">
@@ -134,26 +134,20 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
           12 Mar 2026
         </dd>
       </div>
-         <div class="govuk-summary-list__row">
+         <div class="govuk-summary-list__row" >
         <dt class="govuk-summary-list__key">
           Next review due
         </dt>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value ">
         {% if data['review-due'] == 'yes' %}
-        <strong class="govuk-tag govuk-tag--red">
-          12 Jun 2026
-        </strong>
+          Overdue: 12 Jun 2026
         {% else %}
           12 Sep 2026
         {% endif %}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          {% if data['review-due'] == 'yes' %}
-       <!--   <a class="govuk-link" href="#">Get task<span class="govuk-visually-hidden"> royal london pension</span></a> -->
-          {% else %}
-          <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> review date</span></a> -->
-          {% endif %}
-        </dd>
+        <!-- <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> review date</span></a>
+        </dd> -->
       </div>
     </dl>
   </div>
@@ -245,7 +239,7 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
     <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Savings and investments details
+      <span class="govuk-visually-hidden"> Savings and investments</span> Details
     </span>
   </summary>
   <div class="govuk-details__text">

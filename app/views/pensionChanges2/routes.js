@@ -147,16 +147,16 @@ router.post('/PC-not-entitled', function (req, res) {
 });
 
 // DEBT / OVERPAYMENT
-router.post('/debt-referral-possible', function (req, res) {
-  if (req.session.data['debt-referral-possible'] == "no") {
+router.post('/debt-referral-data', function (req, res) {
+  if (req.session.data['debt-referral-data'] == "no") {
       req.session.data['debt'] = "done"
       res.redirect("check-for-change-of-award")
   } else {
-    res.redirect("debt-referral-data")
+    res.redirect("debt-referral-moreInfo")
   }
 });
 
-router.post('/debt-referral-data', function (req, res) {
+router.post('/debt-referral-moreInfo', function (req, res) {
     req.session.data['debt'] = "done"
     res.redirect("check-for-change-of-award")
 });

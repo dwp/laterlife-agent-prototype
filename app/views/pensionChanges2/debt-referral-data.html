@@ -24,9 +24,9 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
 
     {% include './_namebarNoProvider.html' %}
 
-    <h1 class="govuk-heading-l">Refer the overpayment to the debt management service</h1>
+    <h1 class="govuk-heading-l">Start the overpayment process</h1>
 
-    <p class="govuk-body">Use these details to refer the overpayment to the debt management service through the e-referral tool.</p>
+    <p class="govuk-body">Send a referral to start the overpayment process or choose another way to continue.</p>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -35,6 +35,14 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
         </dt>
         <dd class="govuk-summary-list__value govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
           £1.97
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-body govuk-body govuk-!-font-weight-bold">
+          Reason
+        </dt>
+        <dd class="govuk-summary-list__value govuk-body govuk-body">
+          Pension review
         </dd>
       </div>
     </dl>
@@ -52,25 +60,55 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">  DD Month YYY Y to DD Month YYYY</th>
-      <td class="govuk-table__cell">£150.70 per week</td>
-      <td class="govuk-table__cell">£148.67 per week</td>
+      <td class="govuk-table__cell">£150.70</td>
+      <td class="govuk-table__cell">£148.67</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">  DD Month YYY Y to DD Month YYYY</th>
-      <td class="govuk-table__cell">£155.27 per week</td>
-      <td class="govuk-table__cell">£152.07 per week</td>
+      <td class="govuk-table__cell">£155.27</td>
+      <td class="govuk-table__cell">£152.07</td>
     </tr>
   </tbody>
 </table>
 
     <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="check-payment-changes">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Have you started the overpayment process?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="check-payment-changes-1" name="check-payment-changes" type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="check-payment-changes-1">
+                Yes, referral sent
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="check-payment-changes-2" name="check-payment-changes" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="check-payment-changes-2">
+                No, postpone the task for 24 hours
+              </label>
+            </div>
+                  <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="check-payment-changes-2" name="check-payment-changes" type="radio"
+                value="moreInfo">
+              <label class="govuk-label govuk-radios__label" for="check-payment-changes-2">
+                I need more information
+              </label>
+            </div>
+          </div>
+        </fieldset>
 
-
-
-
+      </div>
       <div>
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Confirm referral has been made
+          Continue
         </button>
       </div>
     </form>

@@ -124,25 +124,13 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
       </div>
     </form>
 
-    <hr class="govuk-section-break govuk-section-break--l">
-    <p class="govuk-body">Prototype page:
-      {% if data['arrears'] == 'true' %}
-      <a href="PC-award-changed?arrears=false" class="govuk-link">No arrears</a>
-      {% else %}
-      <a href="PC-award-changed?arrears=true&debt=false" class="govuk-link">Change results in arrears</a>
-      {% endif %}  
-    </p>
+      <hr class="govuk-section-break govuk-section-break--l">
 
-    <p class="govuk-body">Prototype page: 
-      <a href="PC-not-entitled" class="govuk-link">Not entitled result</a>
-    </p>
-    <p class="govuk-body">Prototype page: 
-      <a href="PC-award-no-change.html" class="govuk-link">No change result</a>
-    </p>
+      <p class="govuk-body">Prototype page variations:    </p>
+            <p class="govuk-body"> <a href="PC-award-no-change.html" class="govuk-link">Scenario 1:</a> No change to award</p>
+            <p class="govuk-body"> <a href="PC-award-changed.html" class="govuk-link">Scenario 2:</a> Change of award</p>
+            <p class="govuk-body"> <a href="PC-not-entitled" class="govuk-link">Scenario 3:</a> Change of award: Not entitled</p>
 
-        <p class="govuk-body">Prototype page: 
-      <a href="PC-award-changed?arrears=false&debt=true" class="govuk-link">Change results in overpayment</a>
-    </p>
 
 
     {% endblock %}

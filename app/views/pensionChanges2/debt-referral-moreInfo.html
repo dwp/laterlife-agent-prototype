@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Were there any other payments for this pension?  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebarNoProvider.html' %}
+
+    <form method="post">
+    <h1 class="govuk-heading-l">Manage this overpayment in legacy</h1>
+
+    <p class="govuk-body">If you need to contact the claimant for more information, you will need to manage this overpayment in legacy.</p>
+    <br>
+      <div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Confirm process started in legacy
+        </button>
+      </div>
+    </form>
+
+
+    {% endblock %}

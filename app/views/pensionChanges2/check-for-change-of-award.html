@@ -91,12 +91,12 @@ Check for change of award – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item govuk-task-list__item--with-link">
         {% if data['debt'] == "true" or data['debt'] == "done"  %}
-           <a class="govuk-link govuk-task-list__link" href="debt-referral-possible">
-           Refer overpayment
+           <a class="govuk-link govuk-task-list__link" href="debt-referral-data">
+           Start overpayment process
           </a>
          {% else %}
         <div class="govuk-task-list__name-and-hint">
-          Refer overpayment
+          Start overpayment process
         </div>
         {% endif %}
 

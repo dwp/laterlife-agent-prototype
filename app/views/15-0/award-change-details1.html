@@ -24,11 +24,39 @@
 
       {% include './_namebar.html' %}
 
-      {{ govukBackLink({
-    "text": "Back",
-    "href": "javascript: window.history.go(-1)"
-  })
-}}
+{% if data['via'] == 'award' %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award">Award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award-details-pension-change?breadcrumbs=yes">Current Pension Credit award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Award change details
+    </li>
+  </ol>
+</nav>
+
+{% else %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award.html">Award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="full-history">Full history</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Award change details
+    </li>
+  </ol>
+</nav>
+
+{% endif %}
 
 <br><br>
 
@@ -42,6 +70,9 @@
 <ul class="govuk-list govuk-list--bullet">
   <li>Claimant's Royal London pension income changed</li>
 </ul>
+
+
+<hr class="govuk-section-break govuk-section-break--m">
 
 
     <div title="Award details">
@@ -79,7 +110,7 @@
             £1.97
           </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="timeline-details-debt-referral-data.html">Details<span class="govuk-visually-hidden"> overpayment</span></a>
+          <a class="govuk-link" href="overpayment-referral-details?via=changeDetails">Details<span class="govuk-visually-hidden"> overpayment</span></a>
         </dd>
         </div>
       </dl>
@@ -116,7 +147,8 @@
       </dl> -->
 
 
-<h2 class="govuk-heading-m">Income</h2>
+      <hr class="govuk-section-break govuk-section-break--m">
+<h2 class="govuk-heading-m">Income changes</h2>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">

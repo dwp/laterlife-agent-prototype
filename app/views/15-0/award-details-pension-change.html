@@ -26,12 +26,19 @@ Award {{ serviceName }} – GOV.UK Prototype Kit
 
     {% include './_namebar.html' %}
 
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award">Award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Current Pension Credit award
+    </li>
+  </ol>
+</nav>
 
-    {{ govukBackLink({
-    "text": "Back",
-    "href": "javascript: window.history.go(-1)"
-    })
-    }}
+
+
 
     <h1 class="govuk-heading-l">Current Pension Credit award</h1>
 
@@ -77,13 +84,11 @@ Award {{ serviceName }} – GOV.UK Prototype Kit
 </ul>
 
     <p class="govuk-body">
-      <a href="timeline-award-changed" class="govuk-link">View change details</a>
+      <a href="award-change-details1?via=award" class="govuk-link">More information on this change</a>
     </p>
-
-    <br>
-
-
     <div>
+
+      <hr class="govuk-section-break govuk-section-break--m">
 
 
 
