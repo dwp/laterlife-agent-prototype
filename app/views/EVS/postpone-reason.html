@@ -1,0 +1,334 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Postpone – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/later-life-patterns" class="dwp-header__link">Later life</a>
+    </div>
+    {% include './_nav.html' %}
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include './_namebar.html' %}
+
+    {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    })
+    }}
+<form class="form" action="/EVS/confirmation-postpone">
+<fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Why are you postponing this task?
+      </h1>
+    </legend>
+
+    <div class="govuk-hint">
+      Select one option
+    </div>
+
+<div class="govuk-radios" data-module="govuk-radios">
+
+  <!-- Awaiting evidence -->
+
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input"
+           id="awaiting-evidence"
+           name="postponed-reason"
+           type="radio"
+           value="Awaiting Evidence"
+           data-aria-controls="conditional-awaiting-evidence">
+
+    <label class="govuk-label govuk-radios__label"
+           for="awaiting-evidence">
+      Awaiting evidence
+    </label>
+  </div>
+
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-awaiting-evidence">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        Has the evidence deadline been extended?
+      </legend>
+
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input"
+                 id="evidence-extended-yes"
+                 name="evidence-extended"
+                 type="radio"
+                 value="Yes">
+
+          <label class="govuk-label govuk-radios__label"
+                 for="evidence-extended-yes">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input"
+                 id="evidence-extended-no"
+                 name="evidence-extended"
+                 type="radio"
+                 value="No">
+
+          <label class="govuk-label govuk-radios__label"
+                 for="evidence-extended-no">
+            No
+          </label>
+        </div>
+
+      </div>
+  </div>
+
+  <!-- Awaiting home visit -->
+
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input"
+           id="awaiting-home-visit"
+           name="postponed-reason"
+           type="radio"
+           value="Awaiting Home Visit"
+           data-aria-controls="conditional-home-visit">
+
+    <label class="govuk-label govuk-radios__label"
+           for="awaiting-home-visit">
+      Awaiting home visit
+    </label>
+  </div>
+
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-home-visit">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      What is the reason for a home visit?
+    </legend>
+
+    <div class="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="home-visit-contact"
+               name="home-visit-reason"
+               type="radio"
+               value="Loss of engagement/contact">
+
+        <label class="govuk-label govuk-radios__label"
+               for="home-visit-contact">
+          Loss of engagement/contact
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="home-visit-vulnerability"
+               name="home-visit-reason"
+               type="radio"
+               value="Vulnerability">
+
+        <label class="govuk-label govuk-radios__label"
+               for="home-visit-vulnerability">
+          Vulnerability
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+      <!-- Disregard -->
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="reason-5"
+               name="postponed-reason"
+               type="radio"
+               value="Disregard"
+               data-aria-controls="conditional-disregard">
+        <label class="govuk-label govuk-radios__label" for="reason-5">
+          Disregard
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disregard">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          How long is it being disregarded?
+        </legend>
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="disregard-2-years"
+                   name="disregard-reason"
+                   type="radio"
+                   value="Disregard 2 years">
+            <label class="govuk-label govuk-radios__label" for="disregard-2-years">
+              Disregard 2 years
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="disregard-52-weeks"
+                   name="disregard-reason"
+                   type="radio"
+                   value="Disregard 52 weeks">
+            <label class="govuk-label govuk-radios__label" for="disregard-52-weeks">
+              Disregard 52 weeks
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="disregard-indefinite"
+                   name="disregard-reason"
+                   type="radio"
+                   value="Disregard indefinite">
+            <label class="govuk-label govuk-radios__label" for="disregard-indefinite">
+              Disregard indefinite
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-6" name="postponed-reason" type="radio" value="Formal Representative required">
+        <label class="govuk-label govuk-radios__label" for="reason-6">
+          Formal Representative required
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-7" name="postponed-reason" type="radio" value="Hospital/Care Home Admission">
+        <label class="govuk-label govuk-radios__label" for="reason-7">
+          Hospital/Care Home Admission
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-8" name="postponed-reason" type="radio" value="Other - G7 approval required (business continuity)">
+        <label class="govuk-label govuk-radios__label" for="reason-8">
+          Other - G7 approval required? (business continuity)
+        </label>
+      </div>
+
+      <!-- Other review in last 6 months -->
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="reason-9"
+               name="postponed-reason"
+               type="radio"
+               value="Other review in last 6 months"
+               data-aria-controls="conditional-other-review">
+        <label class="govuk-label govuk-radios__label" for="reason-9">
+          Other review in last 6 months
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-review">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          What was the previous review?
+        </legend>
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-bau" name="other-review-reason" type="radio" value="BAU">
+            <label class="govuk-label govuk-radios__label" for="review-bau">
+              BAU
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-fraud" name="other-review-reason" type="radio" value="Fraud">
+            <label class="govuk-label govuk-radios__label" for="review-fraud">
+              Fraud
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-gms" name="other-review-reason" type="radio" value="GMS">
+            <label class="govuk-label govuk-radios__label" for="review-gms">
+              GMS
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-pccr" name="other-review-reason" type="radio" value="PCCR">
+            <label class="govuk-label govuk-radios__label" for="review-pccr">
+              PCCR
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-pm" name="other-review-reason" type="radio" value="PM">
+            <label class="govuk-label govuk-radios__label" for="review-pm">
+              PM
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-vep" name="other-review-reason" type="radio" value="VEP">
+            <label class="govuk-label govuk-radios__label" for="review-vep">
+              VEP
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="review-gti" name="other-review-reason" type="radio" value="GTI">
+            <label class="govuk-label govuk-radios__label" for="review-gti">
+              GTI
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-10" name="postponed-reason" type="radio" value="Suspension">
+        <label class="govuk-label govuk-radios__label" for="reason-10">
+          Suspension (if not available as a task status)
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-11" name="postponed-reason" type="radio" value="Vulnerability identified">
+        <label class="govuk-label govuk-radios__label" for="reason-11">
+          Vulnerability identified
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-12" name="postponed-reason" type="radio" value="Customer in Prison">
+        <label class="govuk-label govuk-radios__label" for="reason-12">
+          Customer in Prison
+        </label>
+      </div>
+
+    </div>
+
+  </fieldset>
+
+  <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+    Confirm
+  </button>
+
+</form>
+
+
+
+    {% endblock %}

@@ -32,23 +32,142 @@ Reason for stopping benefit – {{ serviceName }} – GOV.UK Prototype Kit
     })
     }}
 
-
-    <h2 class="govuk-heading-l">Is this claim being terminated following a suspension?</h2>
-
     <form class="form" action="/terminated" method="post">
-
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <div class="govuk-radios" data-module="govuk-radios">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Is this claim being terminated following a suspension?
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-2" name="terminated" type="radio" value="terminated">
-              <label class="govuk-label govuk-radios__label" for="stopbenefit-2">
+              <input class="govuk-radios__input" id="stopbenefit-suspension-yes" name="terminated" type="radio" value="terminated">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-suspension">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit" name="terminated" type="radio" value="terminated">
-              <label class="govuk-label govuk-radios__label" for="stopbenefit">
+              <input class="govuk-radios__input" id="stopbenefit-suspension-no" name="terminated" type="radio" value="terminated">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-suspension">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Why is the claim being terminated?
+            </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-terminated" name="terminated" type="radio" value="Abroad over allowed time limit">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated">
+                Abroad over allowed time limit
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-terminated-2" name="terminated" type="radio" value="Balance of probability">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated-2">
+                Balance of Probability
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-terminated-3" name="terminated" type="radio" value="Customer did not engage">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated-3">
+                Customer did not engage
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-terminated-4" name="terminated" type="radio" value="Loss of contact (DLO)">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated-4">
+                Loss of contact (DLO)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <
+      {% if data['capitalEvidence'] == 'update' %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Has a CFEMS Flag been set against this citizen?
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-suspension-yes" name="suspension" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-suspension">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-suspension-no" name="suspension" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-suspension">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% endif %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="overpayment-categorisation-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Overpayment categorisation
+          </legend>    
+          <div id="overpayment-categorisation-hint" class="govuk-hint">
+            Select all that apply
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="overpayment-categorisation" name="overpayment-categorisation" type="checkbox" value="Oficial error">
+              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation">
+                Official error
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="overpayment-categorisation-2" name="overpayment-categorisation" type="checkbox" value="Claimant error">
+              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation-2">
+                Claimant error
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="overpayment-categorisation-3" name="overpayment-categorisation" type="checkbox" value="Fraud">
+              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation-3">
+                Fraud
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Total overpayment
+        </legend>
+        <div id="waste-hint" class="govuk-hint">
+          For example 123.45
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="overpayment" name="overpayment" type="text" spellcheck="false">
+        </div>
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Has this overpayment been referred to debt management?
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-debt-management" name="stopbenefit-debt-management" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-suspension">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="stopbenefit-debt-management-no" name="stopbenefit-debt-management" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="stopbenefit-debt-management">
                 No
               </label>
             </div>
@@ -56,15 +175,10 @@ Reason for stopping benefit – {{ serviceName }} – GOV.UK Prototype Kit
         </fieldset>
       </div>
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
+        Confirm
       </button>
     </form>
   </div>
-
-
-
-
-
 </div>
 
 {% endblock %}

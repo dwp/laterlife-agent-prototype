@@ -1,0 +1,312 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        {% include './_namebar.html' %}
+
+        {% block beforeContent %}
+          {{ govukBackLink({
+            text: "Back",
+            href: "javascript:window.history.back()"
+          }) }}
+        {% endblock %}
+
+
+    <form class="form" action="/EVS/case-closed-reason"m method="post">
+        <fieldset class="govuk-fieldset" aria-describedby="closure-reason-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Why are you closing the task?
+            </h1>
+          </legend>
+
+          <div id="closure-reason-hint" class="govuk-hint">
+            Select one option
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-1"
+                     name="closure-reason"
+                     type="radio"
+                     value="AIP in place">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-1">
+                AIP in place
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-2"
+                     name="closure-reason"
+                     type="radio"
+                     value="Case already updated">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-2">
+                Case already updated
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-3"
+                     name="closure-reason"
+                     type="radio"
+                     value="Change already notified">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-3">
+                Change already notified
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-4"
+                     name="closure-reason"
+                     type="radio"
+                     value="Claim dormant">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-4">
+                Claim dormant
+              </label>
+            </div>
+
+            <!-- Disregard -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-5"
+                     name="closure-reason"
+                     type="radio"
+                     value="Disregard"
+                     data-aria-controls="conditional-disregard">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-5">
+                Disregard
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disregard">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                How long is it being disregarded?
+              </legend>
+
+              <div class="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="disregard-2-years"
+                         name="disregard-reason"
+                         type="radio"
+                         value="2 years">
+                  <label class="govuk-label govuk-radios__label" for="disregard-2-years">
+                    2 years
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="disregard-52-weeks"
+                         name="disregard-reason"
+                         type="radio"
+                         value="52 weeks">
+                  <label class="govuk-label govuk-radios__label" for="disregard-52-weeks">
+                    52 weeks
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="disregard-indefinite"
+                         name="disregard-reason"
+                         type="radio"
+                         value="Indefinite">
+                  <label class="govuk-label govuk-radios__label" for="disregard-indefinite">
+                     Indefinite
+                  </label>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- G7 Approval -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-6"
+                     name="closure-reason"
+                     type="radio"
+                     value="Other - G7 approval required (business continuity)">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-6">
+                Other - G7 approval required? (business continuity)
+              </label>
+            </div>
+
+            <!-- Other Review -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-7"
+                     name="closure-reason"
+                     type="radio"
+                     value="Other review"
+                     data-aria-controls="conditional-other-review">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-7">
+                Other review
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"id="conditional-other-review">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                What was the previous review?
+              </legend>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-bau"
+                         name="other-review-reason"
+                         type="radio"
+                         value="Change of circumstances BAU">
+                  <label class="govuk-label govuk-radios__label" for="other-review-bau">
+                    Change of circumstances BAU
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-fraud"
+                         name="other-review-reason"
+                         type="radio"
+                         value="Fraud">
+                  <label class="govuk-label govuk-radios__label" for="other-review-fraud">
+                    Fraud
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-gms"
+                         name="other-review-reason"
+                         type="radio"
+                         value="GMS">
+                  <label class="govuk-label govuk-radios__label" for="other-review-gms">
+                    GMS
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-gti"
+                         name="other-review-reason"
+                         type="radio"
+                         value="GTI">
+                  <label class="govuk-label govuk-radios__label" for="other-review-gti">
+                    GTI
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-pccr"
+                         name="other-review-reason"
+                         type="radio"
+                         value="PCCR">
+                  <label class="govuk-label govuk-radios__label" for="other-review-pccr">
+                    PCCR
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-pm"
+                         name="other-review-reason"
+                         type="radio"
+                         value="PM">
+                  <label class="govuk-label govuk-radios__label" for="other-review-pm">
+                    PM
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                         id="other-review-vep"
+                         name="other-review-reason"
+                         type="radio"
+                         value="VEP">
+                  <label class="govuk-label govuk-radios__label" for="other-review-vep">
+                    VEP
+                  </label>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-8"
+                     name="closure-reason"
+                     type="radio"
+                     value="Special rules">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-8">
+                Special rules
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-9"
+                     name="closure-reason"
+                     type="radio"
+                     value="Voluntary relinquishment">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-9">
+                Voluntary relinquishment - consider fraud reference/add notes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-10"
+                     name="closure-reason"
+                     type="radio"
+                     value="Vulnerability identified">
+              <label class="govuk-label govuk-radios__label" for="closure-reason-10">
+                Vulnerability identified
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="closure-reason-11"
+                     name="closure-reason"
+                     type="radio"
+                     value="Customer in Prison">
+              <label class="govuk-label govuk-radios__label" ßfor="closure-reason-11">
+                Customer in Prison
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+      </div>
+
+      <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Confirm
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

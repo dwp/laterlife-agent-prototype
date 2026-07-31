@@ -28,7 +28,6 @@ const allowedValues = [
   'createEvidenceTask'
 ];
 
-
 // Allowed task names in redirect
 const allowedTasks = [
   'abroad-preview',
@@ -60,7 +59,8 @@ const safeRoutes = [
   '/EVS/updateReason',
   '/EVS/tasks-success',
   '/EVS/recordPostpone',
-  '/EVS/cfcd'
+  '/EVS/cfcd',
+  '/EVS/case-closed-reason'
 ];
 
 // ---------------------------------------------
@@ -93,20 +93,20 @@ router.get('/EVS/confirmation', function (req, res) {
   // Lookup table for dynamic text for confirmation pages
   const lookup = {
     none: {
-      heading: "You are about to record that the case is closed",
+      heading: "You are about to record that the task is closed",
       paragraph: "For 6 months no spending { abroad/capital over threshold } tasks will be created for this person.",
-      button: "Case is closed",
+      button: "Task is closed",
       style: "govuk-button--warning"
     },
     cfcd_close: {
       heading: "You are about to record that the task is referred to CFCD and close the task.",
       paragraph: "You confirmed a CFEMS flag is present for this customer.",
-      button: "Case is closed",
+      button: "Task is closed",
       style: "govuk-button--warning"
     },
     died: {
       heading: "The customer has died",
-      paragraph: "This case will be closed.",
+      paragraph: "This task will be closed.",
       button: "End task"
     },
     cfcd: {
@@ -116,12 +116,12 @@ router.get('/EVS/confirmation', function (req, res) {
     },
     recordPostpone: {
       heading: "Postpone task",
-      paragraph: "This case will be postponed until { selected date }.",
+      paragraph: "This task will be postponed until { selected date }.",
       button: "Postpone task"
     },
     absence: {
       heading: "The spending period was a temporary absence",
-      paragraph: "This case will be closed.",
+      paragraph: "This task will be closed.",
       button: "End task"
     },
     suspended: {
@@ -131,7 +131,7 @@ router.get('/EVS/confirmation', function (req, res) {
     },
     terminated: {
       heading: "You are about to record that this claim is terminated",
-      paragraph: "This case will be closed.",
+      paragraph: "This task will be closed.",
       button: "Claim terminated"
     },
     disregarded: {
@@ -170,6 +170,7 @@ router.get('/EVS/confirmation', function (req, res) {
   });
 });
 
+
 // ---------------------------------------------
 // POST Route Factory checks if routes and values are safe and routs to confirmations.
 // ---------------------------------------------
@@ -178,33 +179,38 @@ function createPostRoute(path, sessionKey, fixedTask, redirects = {}) {
     const value = req.session.data[sessionKey];
     const first = Array.isArray(value) ? value[0] : value;
 
-    // Validate value before anything else
     if (!allowedValues.includes(first)) {
       return res.status(400).send('Invalid value');
     }
 
-    // Absolute redirects first (safe routes only)
-    if (redirects[value]) {
-      return safeInternalRedirect(res, redirects[value]);
+    // Case closed journey
+    if (first === 'none') {
+      req.session.data.caseClosedTask = fixedTask;
+      return res.redirect('/EVS/case-closed-reason');
     }
 
-    // Safe confirmation redirect
+    // Other configured redirects
+    if (redirects[first]) {
+      return safeInternalRedirect(res, redirects[first]);
+    }
+
     return safeInternalRedirect(res, '/EVS/confirmation', {
       task: fixedTask,
-      value: value
+      value: first
     });
   });
 }
-
 
 // ---------------------------------------------
 // All POST routes
 // ---------------------------------------------
 createPostRoute('/abroad-preview', 'abroadPreview', 'abroad-preview', {
+  none: '/EVS/case-closed-reason',
   postpone: '/EVS/postpone'
 });
 
 createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
+  none: '/EVS/case-closed-reason',
   cfcd: '/EVS/cfcd',
   postpone: '/EVS/postpone',
   terminated: '/EVS/stop-benefit',
@@ -212,11 +218,13 @@ createPostRoute('/abroad-evidence', 'abroadEvidence', 'abroad-evidence', {
 });
 
 createPostRoute('/capital-preview', 'capitalPreview', 'capital-preview', {
+  none: '/EVS/case-closed-reason',
   postpone: '/EVS/postpone',
   cfcd: '/EVS/cfcd'
 });
 
 createPostRoute('/capital-evidence', 'capitalEvidence', 'capital-evidence', {
+  none: '/EVS/case-closed-reason',
   postpone: '/EVS/postpone',
   update: '/EVS/update-to-pc',
   cfcd: '/EVS/cfcd'
@@ -266,11 +274,8 @@ router.post('/EVS/recordUnder', function (req, res) {
   });
 });
 
-
-
 // ---------------------------------------------
 module.exports = router;
-
 
 // Routes for the find someone
 
@@ -295,8 +300,6 @@ router.post('/EVS/find', function(request, response) {
 
 module.exports = router
 
-
-
 router.post('/EVS/find-abroad', function (req, res) {
 
   const outcome = req.body.abroadEvidence
@@ -311,7 +314,6 @@ router.post('/EVS/find-abroad', function (req, res) {
 
 })
 
- 
 router.post('/EVS/find-postpone', function (req, res) { 
 
   res.redirect('/EVS/find-postpone-confirm'); 
@@ -330,7 +332,6 @@ router.post('/EVS/find-case-closed-confirm', function (req, res) {
 
 });
 
-
 router.post('/EVS/find-case-closed-confirm', function (req, res) { 
 
   res.redirect('/EVS/find-result-zero-banner'); 
@@ -342,7 +343,6 @@ router.post('/EVS/find-result-not-found', function (req, res) {
   res.redirect('/EVS/find'); 
 
 });
-
 
 router.post('/EVS/find-abroad-2', function (req, res) {
 
@@ -374,4 +374,20 @@ router.post('/EVS/find-postpone-confirm-2', function (req, res) {
 
   res.redirect('/EVS/find-result-two-banner-postpone'); 
 
+});
+
+router.post('/EVS/case-closed-reason', function (req, res) {
+
+  req.session.data.caseClosedReason =
+    req.body.caseClosedReason;
+
+  const task = req.session.data.caseClosedTask;
+
+  if (!allowedTasks.includes(task)) {
+    return res.status(400).send('Invalid task');
+  }
+
+  return res.redirect(
+    `/EVS/confirmation?task=${encodeURIComponent(task)}&value=none`
+  );
 });
