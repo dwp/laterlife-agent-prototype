@@ -107,7 +107,7 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
     </h2>
         <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="money-pension-details1">Details<span class="govuk-visually-hidden"> Royal London pension</span></a>
+        <a class="govuk-link" href="money-pension-details1?via=money">Details<span class="govuk-visually-hidden"> Royal London pension</span></a>
       </li>
       {% if data['review-due'] == 'yes' %}
       <li class="govuk-summary-card__action">
@@ -279,7 +279,7 @@ Money – {{ serviceName }} – GOV.UK Prototype Kit
 {% else %}
 <h1 class="govuk-heading-m">Record history</h1>
 {% endif %}
-<p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+<p><a href="full-history?via=money" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
 
 </div>
 

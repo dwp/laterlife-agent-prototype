@@ -22,17 +22,71 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
 
 
 <div class="govuk-grid-row">
+
+ 
   <div class="govuk-grid-column-two-thirds">
 
     {% include './_namebar.html' %}
 
-    <br>
+  </div>
 
-    {{ govukBackLink({
-    "text": "Back",
-    "href": "javascript: window.history.go(-1)"
-    })
-    }}
+     <div class="govuk-grid-column-full">
+
+      {% if data['via'] == 'award' %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award">Award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award-details-pension-change">Current Pension Credit award</a>
+    </li>
+        <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award-change-details1.html">Award change details</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Royal London pension details
+    </li>
+  </ol>
+</nav>
+
+{% elseif data['via'] == 'money' %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="money.html">Money</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Royal London pension details
+    </li>
+  </ol>
+</nav>
+
+{% else %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award.html">Award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="full-history">Full history</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Royal London pension details
+    </li>
+  </ol>
+</nav>
+
+{% endif %}
+
+    
+  </div>
+
+ <div class="govuk-grid-column-two-thirds">
+
     <br> <br>
     <h1 class="govuk-heading-l">Royal London pension details</h1>
 
@@ -62,7 +116,7 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
             </thead>
         <tbody class="govuk-table__body">
 
-          <tr class="govuk-table__row">
+          <!-- <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               Done: 12 Jun 2026 <br>
               Due: 11 Jun 2026
@@ -82,12 +136,12 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
               £95.50 on 1 May 2026 <br>
               £96.32 on 1 Apr 2026 <br>
             </td>
-          </tr>
+          </tr> -->
 
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              Done: 17 Mar 2026 <br>
+              Done: 12 Mar 2026 <br>
               Due: 11 Mar 2026
             </td>
             <td class="govuk-table__cell">
@@ -136,6 +190,12 @@ Pension details {{ serviceName }} – GOV.UK Prototype Kit
 
 
     <hr class="govuk-section-break govuk-section-break--l">
+        <hr class="govuk-section-break govuk-section-break--l">
+            <hr class="govuk-section-break govuk-section-break--l">
+                <hr class="govuk-section-break govuk-section-break--l">
+                    <hr class="govuk-section-break govuk-section-break--l">
+                       <hr class="govuk-section-break govuk-section-break--l">
+
 
       <p class="govuk-body">Prototype page variations:    </p>
             <p class="govuk-body"> <a href="money-pension-details1.html" class="govuk-link">Scenario 1:</a> Payments and representative amounts change</p>

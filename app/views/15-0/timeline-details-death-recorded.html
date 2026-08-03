@@ -33,6 +33,8 @@
     <li class="govuk-breadcrumbs__list-item">
         {% if data['via'] == 'money' %}
       <a class="govuk-breadcrumbs__link" href="money">Money</a>
+              {% elseif data['via'] == 'personal'  %}
+      <a class="govuk-breadcrumbs__link" href="personal">Personal</a>
               {% else %}
       <a class="govuk-breadcrumbs__link" href="award">Award</a>
       {% endif %}
@@ -41,30 +43,30 @@
       <a class="govuk-breadcrumbs__link" href="full-history">Full history</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      Pension Credit application processed
+      Date of death recorded
     </li>
   </ol>
 </nav>
 
 <br><br>
 
-<h1 class="govuk-heading-l">Pension Credit application processed</h1>
+<h1 class="govuk-heading-l">Payments stopped</h1>
 <h2 class="govuk-heading-m">Details</h2>
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Date
+      Date recorded
     </dt>
     <dd class="govuk-summary-list__value">
-      4 Dec 2025
+      31 Jul 2026
     </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Details given in the application
+      Date of death
     </dt>
     <dd class="govuk-summary-list__value">
-      <a href="#" class="govuk-link">View details given in the application (opens a PDF in a new tab)</a>
+      10 Jul 2026
     </dd>
   </div>
 </dl>

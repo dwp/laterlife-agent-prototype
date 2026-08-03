@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Bank account name – {{ serviceName }} – GOV.UK Prototype Kit
+  Full history – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -32,7 +32,19 @@
 <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
+        {% if data['via'] == 'money' %}
+      <a class="govuk-breadcrumbs__link" href="money">Money</a>
+              {% elseif data['via'] == 'personal'  %}
+      <a class="govuk-breadcrumbs__link" href="personal">Personal</a>
+                    {% elseif data['via'] == 'household'  %}
+      <a class="govuk-breadcrumbs__link" href="household">Household</a>
+                    {% elseif data['via'] == 'contact'  %}
+      <a class="govuk-breadcrumbs__link" href="contact">Contact</a>
+                    {% elseif data['via'] == 'payment'  %}
+      <a class="govuk-breadcrumbs__link" href="payment">Payment</a>
+              {% else %}
       <a class="govuk-breadcrumbs__link" href="award">Award</a>
+      {% endif %}
     </li>
     <li class="govuk-breadcrumbs__list-item">
       Full history
@@ -82,27 +94,54 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
+
+            {% if data['death'] == 'true' %}
+         <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2 Aug 2026</th>
+      <td class="govuk-table__cell"><a href="timeline-details-death-recorded.html" class="govuk-link">Date of death recorded</a></td>
+      <td class="govuk-table__cell">System</td>
+    </tr>
+      <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">31 Jul 2026</th>
+      <td class="govuk-table__cell"><a href="timeline-details-payments-stopped.html" class="govuk-link">Pension Credit payments stopped</a></td>
+      <td class="govuk-table__cell">System</td>
+      </tr>
+     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">31 Jul 2026</th>
+      <td class="govuk-table__cell">Unverified death recorded</td>
+      <td class="govuk-table__cell">System</td>
+    </tr>
+    {% endif %}
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">12 Mar 2026</th>
-      <td class="govuk-table__cell"><a href="overpayment-referral-details?via=null" class="govuk-link">Overpayment referral details</a></td>
-      <td class="govuk-table__cell">Michael Smith</td>
+      <td class="govuk-table__cell"><a href="overpayment-referral-details" class="govuk-link">Overpayment referral details</a></td>
+      <td class="govuk-table__cell">Agent</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">12 Mar 2026</th>
       <td class="govuk-table__cell"><a href="award-change-details1?via=history" class="govuk-link">Pension Credit award changed</a></td>
-      <td class="govuk-table__cell">Michael Smith</td>
+      <td class="govuk-table__cell">Agent</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">12 Mar 2026</th>
-      <td class="govuk-table__cell"><a href="money-pension-details1" class="govuk-link">Claimant's income changed: Royal London pension</a></td>
-      <td class="govuk-table__cell">Michael Smith</td>
+      <td class="govuk-table__cell"><a href="money-pension-details1?via=history" class="govuk-link">Claimant's income changed: Royal London pension</a></td>
+      <td class="govuk-table__cell">Agent</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">4 Apr 2025</th>
       <td class="govuk-table__cell">Phone number changed</td>
       <td class="govuk-table__cell">Online</td>
     </tr>
-
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">4 Dec 2025</th>
+      <td class="govuk-table__cell"><a href="timeline-details-pc-application-processed" class="govuk-link">Pension credit application processed</a></td>
+      <td class="govuk-table__cell">System</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">9 Jan 2025</th>
+      <td class="govuk-table__cell">State Pension claim received</td>
+      <td class="govuk-table__cell">System</td>
+    </tr>
     <!-- <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">27 March 2025</th>
       <td class="govuk-table__cell">Bank details changed</td>

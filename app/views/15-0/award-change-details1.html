@@ -40,6 +40,22 @@
   </ol>
 </nav>
 
+{% elseif data['via'] == 'changeDetails' %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award">Award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="award-details-pension-change?breadcrumbs=yes">Current Pension Credit award</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Award change details
+    </li>
+  </ol>
+</nav>
+
 {% else %}
 
 <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
@@ -91,7 +107,7 @@
             Difference
           </dt>
           <dd class="govuk-summary-list__value">
-            Decreased by £0.20
+            Decreased by £0.27
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -102,6 +118,7 @@
             12 Mar 2026
           </dd>
         </div>
+         {% if data['debt'] == 'true' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Overpayment
@@ -113,6 +130,7 @@
           <a class="govuk-link" href="overpayment-referral-details?via=changeDetails">Details<span class="govuk-visually-hidden"> overpayment</span></a>
         </dd>
         </div>
+         {% endif %}
       </dl>
     </div>
 
