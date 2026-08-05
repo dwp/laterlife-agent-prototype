@@ -26,7 +26,12 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
 
     <h1 class="govuk-heading-l">Start the overpayment process</h1>
 
-    <p class="govuk-body">Send a referral to start the overpayment process or choose another way to continue.</p>
+    <p class="govuk-body">This needs referring for overpayment. You can either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+  <li>send a referral now</li>
+  <li>manage the process in legacy if you need more information</li>
+  <li>postpone the task until the next working day</li>
+</ul>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -91,7 +96,7 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
               <input class="govuk-radios__input" id="check-payment-changes-2" name="check-payment-changes" type="radio"
                 value="no">
               <label class="govuk-label govuk-radios__label" for="check-payment-changes-2">
-                No, postpone the task for 24 hours
+                Yes, process started in legacy
               </label>
             </div>
                   <div class="govuk-radios__divider">or</div>
@@ -99,7 +104,7 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
               <input class="govuk-radios__input" id="check-payment-changes-2" name="check-payment-changes" type="radio"
                 value="moreInfo">
               <label class="govuk-label govuk-radios__label" for="check-payment-changes-2">
-                I need more information
+                No, postpone the task until the next working day
               </label>
             </div>
           </div>
