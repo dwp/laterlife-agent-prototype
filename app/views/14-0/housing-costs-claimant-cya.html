@@ -39,18 +39,22 @@
       {% endif %}
 
         <h2 class="govuk-heading-l">Change information for Eric Erikson</h2><br>
-         <h2 class="govuk-heading-m">Housing costs previously selected to enter</h2><br>
+         <h2 class="govuk-heading-m">Housing costs you selected to enter</h2><br>
           <dl class="govuk-summary-list" style="margin-bottom:0px">
            
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
+            <dt class="govuk-summary-list__key" style="width:30%">
              Housing costs selected
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
-                <li>eligible service charges</li>
-                <li>ineligible service charges</li>
-                <li>major works</li>
+                <li>Ground rents on long tenancies</li>
+                <li>Eligible service charges</li>
+                <li>Ineligible service charges</li>
+                <li>Payments under co-ownership schemes</li>
+                <li>Payments for tenancies or licenses of Crown rents</li>
+                <li>Insurance costs not included in the service charges</li>
+                <li>Major works</li>
               </ul>
           
             </dd>
@@ -87,12 +91,12 @@
             </dt>
             <dd class="govuk-summary-list__value">
              
-                £0
+                £9.00
           
             </dd>
             <dd class="govuk-summary-list__value">
             
-                Monthly
+                Yearly
             
             </dd>
            
@@ -105,11 +109,7 @@
               Eligible service charges
             </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['cost2p'] %}
-                £{{ data['cost2p'] }}
-              {% else %}
-                 £0
-              {% endif %}
+             £4,257.39
             </dd>
             <dd class="govuk-summary-list__value">
                {% if data['sort-2'] %}
@@ -128,11 +128,7 @@
               Ineligible service charges
             </dt>
             <dd class="govuk-summary-list__value">
-             {% if data['cost2p'] %}
-                £{{ data['cost2p'] }}
-              {% else %}
-                 £0
-              {% endif %}
+             £107,361.60
             </dd>
             <dd class="govuk-summary-list__value">
              
@@ -150,17 +146,15 @@
               Payments under co-ownership schemes
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['cost3p'] %}
-                £{{ data['cost3p'] }}
-              {% else %}
-                 £0
-              {% endif %}
+             
+                 £375.51
+            
             </dd>
             <dd class="govuk-summary-list__value">
                {% if data['sort-3'] %}
                 {{ data['sort-3'] }}
               {% else %}
-                Yearly
+                Monthly
               {% endif %}
             </dd>
           
@@ -176,7 +170,7 @@
               {% if  data['cost4p'] %}
                 £{{  data['cost4p'] }}
               {% else %}
-                 £0
+                 £945.56
               {% endif %}
             </dd>
              <dd class="govuk-summary-list__value">
@@ -191,29 +185,7 @@
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Insurance costs not included in the service charges
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if  data['cost20p'] %}
-                £{{  data['cost20p'] }}
-              {% else %}
-                 £0
-              {% endif %}
-            </dd>
-             <dd class="govuk-summary-list__value">
-               {% if data['sort-20'] %}
-                {{ data['sort-20'] }}
-              {% else %}
-                Monthly
-              {% endif %}
-            </dd>
-            
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-            </dd>
-          </div>
+          
         
            
         </dl><br><br><br><br><br><br>
@@ -238,12 +210,12 @@
             </dt>
             <dd class="govuk-summary-list__value">
              
-                £0
+                £632.89
           
             </dd>
             <dd class="govuk-summary-list__value">
             
-                12 July 2028
+                12 July 2027
             
             </dd>
            
@@ -272,10 +244,10 @@
          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            £500
+            £205.99
             </dt>
             <dd class="govuk-summary-list__value" style="width:60%">
-             21 Feb 2027 to 27 Feb 2027
+             21 Feb 2027
             </dd>
             
             
@@ -285,10 +257,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            £750
+            £297.41
             </dt>
             <dd class="govuk-summary-list__value">
-             11 Oct 2026 to 11 Oct 2026
+             11 Oct 2026
             </dd>
             
             
@@ -402,7 +374,7 @@
 
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
-       Confirm
+       Confirm changes
       </button>
 
     </form>
