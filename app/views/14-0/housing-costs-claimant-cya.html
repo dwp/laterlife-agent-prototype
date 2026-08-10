@@ -34,6 +34,8 @@
 
    {% if data['lwo'] == 'yes'%}
      <form method="post" action="housing-costs-check-change-award"><br>
+  {% elif data['change'] == 'yes' %}
+  <form method="post" action="housing-costs-change-check-change-award?claimant-done=yes&tasks-done=yes&smi-sent=yes&letter-sent=yes"><br>
       {% else %}
     <form method="post" action="housing-costs-check-change-award?claimant-done=yes&tasks-done=yes"><br>
       {% endif %}
@@ -61,7 +63,7 @@
            
            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           
@@ -71,7 +73,7 @@
         </dl><br><br><br><br><br><br>
 
 
-        <h2 class="govuk-heading-m">Housing costs totals</h2>
+        <h2 class="govuk-heading-m" id="totals">Housing costs totals</h2>
        
         <dl class="govuk-summary-list" style="margin-bottom:0px">
            <div class="govuk-summary-list__row">
@@ -101,7 +103,7 @@
             </dd>
            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -120,7 +122,7 @@
             </dd>
          
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-claimant-change-cost-entry#eligible">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -137,7 +139,7 @@
             </dd>
          
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
          
@@ -159,7 +161,7 @@
             </dd>
           
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -182,7 +184,7 @@
             </dd>
             
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           
@@ -220,7 +222,7 @@
             </dd>
            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
          
@@ -252,7 +254,7 @@
             
             
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="tor-hc-claimant-major-works-list">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="tor-hc-claimant-major-works-list">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -265,7 +267,7 @@
             
             
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="tor-hc-claimant-major-works-list">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="tor-hc-claimant-major-works-list">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
            
@@ -291,7 +293,7 @@
             </dd>
            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
         
@@ -306,7 +308,7 @@
             </dd>
            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           
@@ -321,7 +323,7 @@
             </dd>
             
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -335,7 +337,7 @@
             </dd>
             
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
         </dl><br><br><br><br>
@@ -360,7 +362,7 @@
             </dd>
            
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
         
