@@ -115,7 +115,12 @@
               Eligible service charges
             </dt>
             <dd class="govuk-summary-list__value">
-             £4,257.39
+              {% if data['elig-amount'] %}
+                £{{ data['elig-amount'] }}
+              {% else %}
+                 £4,257.39
+              {% endif %}
+            
             </dd>
             <dd class="govuk-summary-list__value">
                {% if data['sort-2'] %}
@@ -126,7 +131,7 @@
             </dd>
          
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-claimant-change-cost-entry#eligible">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-claimant-change-cost-entry">Change<span class="govuk-visually-hidden"> customer reference</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -173,11 +178,9 @@
               Payments for tenancies or licenses of Crown rents
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if  data['cost4p'] %}
-                £{{  data['cost4p'] }}
-              {% else %}
+             
                  £945.56
-              {% endif %}
+          
             </dd>
              <dd class="govuk-summary-list__value">
                {% if data['sort-4'] %}
