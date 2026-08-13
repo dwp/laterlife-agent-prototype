@@ -387,7 +387,8 @@ router.post('/EVS/case-closed-reason', function (req, res) {
     return res.status(400).send('Invalid task');
   }
 
-  return res.redirect(
-    `/EVS/confirmation?task=${encodeURIComponent(task)}&value=none`
-  );
+  return safeInternalRedirect(res, '/EVS/confirmation', {
+    task,
+    value: 'none'
+  });
 });
