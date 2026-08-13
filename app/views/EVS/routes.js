@@ -130,9 +130,9 @@ router.get('/EVS/confirmation', function (req, res) {
       button: "Postpone task"
     },
     terminated: {
-      heading: "You are about to record that this claim is terminated",
-      paragraph: "This task will be closed.",
-      button: "Claim terminated"
+      heading: "Confirm claim should be terminated",
+      paragraph: "",
+      button: "Confirm and end task"
     },
     disregarded: {
       heading: "You are about to disregard breaches",
