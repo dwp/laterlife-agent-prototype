@@ -61,25 +61,25 @@ Reason for stopping benefit – {{ serviceName }} – GOV.UK Prototype Kit
             </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-terminated" name="terminated" type="radio" value="Abroad over allowed time limit">
+              <input class="govuk-radios__input" id="stopbenefit-terminated" name="terminated-why" type="radio" value="Abroad over allowed time limit">
               <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated">
                 Abroad over allowed time limit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-terminated-2" name="terminated" type="radio" value="Balance of probability">
+              <input class="govuk-radios__input" id="stopbenefit-terminated-2" name="terminated-why" type="radio" value="Balance of probability">
               <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated-2">
                 Balance of Probability
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-terminated-3" name="terminated" type="radio" value="Customer did not engage">
+              <input class="govuk-radios__input" id="stopbenefit-terminated-3" name="terminated-why" type="radio" value="Customer did not engage">
               <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated-3">
                 Customer did not engage
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="stopbenefit-terminated-4" name="terminated" type="radio" value="Loss of contact (DLO)">
+              <input class="govuk-radios__input" id="stopbenefit-terminated-4" name="terminated-why" type="radio" value="Loss of contact (DLO)">
               <label class="govuk-label govuk-radios__label" for="stopbenefit-terminated-4">
                 Loss of contact (DLO)
               </label>
@@ -122,27 +122,67 @@ Reason for stopping benefit – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="overpayment-categorisation" name="overpayment-categorisation" type="checkbox" value="Oficial error">
+              <input class="govuk-checkboxes__input" id="overpayment-categorisation" name="overpayment-categorisation" type="checkbox" value="Oficial error" data-aria-controls="conditional-overpayment">
               <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation">
                 Official error
               </label>
             </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-overpayment">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="overpayment-official-error">
+                    Amount
+                  </label>
+                  <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      <input class="govuk-input govuk-input--width-5" id="cost-officialError" name="cost-officialError" type="text" spellcheck="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="overpayment-categorisation-2" name="overpayment-categorisation" type="checkbox" value="Claimant error">
-              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation-2">
+              <input class="govuk-checkboxes__input" id="overpayment-claimantError" name="overpayment-claimantError" type="checkbox" value="Claimant error" data-aria-controls="conditional-overpayment2">
+              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation">
                 Claimant error
               </label>
             </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-overpayment2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="overpayment-official-error">
+                    Amount
+                  </label>
+                  <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      <input class="govuk-input govuk-input--width-5" id="cost-claimantError" name="cost-claimantError" type="text" spellcheck="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="overpayment-categorisation-3" name="overpayment-categorisation" type="checkbox" value="Fraud">
-              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation-3">
+              <input class="govuk-checkboxes__input" id="overpayment-Fraud" name="overpayment-Fraud" type="checkbox" value="Fraud" data-aria-controls="conditional-overpayment3">
+              <label class="govuk-label govuk-checkboxes__label" for="overpayment-categorisation">
                 Fraud
               </label>
             </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-overpayment3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="overpayment-Fraud">
+                    Amount
+                  </label>
+                  <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      <input class="govuk-input govuk-input--width-5" id="cost-Fraud" name="cost-Fraud" type="text" spellcheck="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </fieldset>
-      </div>
-      <div class="govuk-form-group">
+
+        <div class="govuk-form-group">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           Total overpayment
         </legend>
