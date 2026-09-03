@@ -44,20 +44,22 @@
    Major works costs are invoiced separately from the service charges. If there are multiple major works costs, you can add more later.
 </p>
 
-<p class="govuk-body">
-   Major works payments will end 52 weeks after the start date. This will happen automatically.
-</p><br><br>
+<br><br>
 
 <div class="govuk-form-group">
   
-    <h2 class="govuk-heading-s">Total major works cost</h2>
-   
+    <h2 class="govuk-heading-s">Enter a description of this major works</h2>
+   <div id="event-name-hint" class="govuk-hint" style="margin-bottom:5px">
+   For example, "roof repairs" or "new front door"
+  </div><br>
   <div class="govuk-input__wrapper">
-    <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="cost2p" name="cost2p" type="text" spellcheck="false">
+    
+    <input class="govuk-input govuk-input--width-20" id="cost2p" name="cost2p" type="text" spellcheck="false">
   </div><br><br>
    
 </div>
+
+
 
 
 
@@ -108,9 +110,10 @@
       </div>
     </div>
   </fieldset>
+  <div class="govuk-inset-text">
+  Major works payments will stop 52 weeks after the start date. This will happen automatically.
+</div>
 </div><br><br>
-
-<br><br>
 
 
   <button type="submit" class="govuk-button" data-module="govuk-button">
