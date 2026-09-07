@@ -4,21 +4,18 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-        {% include './_namebar.html' %}
+    {% include './_namebar.html' %}
 
-        {% block beforeContent %}
-          {{ govukBackLink({
-            text: "Back",
-            href: "javascript:window.history.back()"
-          }) }}
-        {% endblock %}
-
+    {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+    })
+    }}
 
     <form class="form" action="/EVS/case-closed-reason"m method="post">
         <fieldset class="govuk-fieldset" aria-describedby="closure-reason-hint">
