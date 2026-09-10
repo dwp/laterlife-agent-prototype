@@ -148,8 +148,12 @@ router.post('/PC-not-entitled', function (req, res) {
 
 // DEBT / OVERPAYMENT
 router.post('/debt-referral-data', function (req, res) {
+   if (req.session.data['postponed'] == "true") {
+    res.redirect("tasks?pensionReviewComplete=true")
+   } else {
     req.session.data['debt'] = "done"
     res.redirect("check-for-change-of-award")
+   }
 });
 
 

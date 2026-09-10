@@ -42,10 +42,10 @@ Tasks – {{ serviceName }} – GOV.UK Prototype Kit
 
     <nav class="dwp-horizontal-navigation" aria-label="Horizontal">
       <ul class="dwp-horizontal-navigation__list">
-        <li class="dwp-horizontal-navigation__item">
+        <!-- <li class="dwp-horizontal-navigation__item">
           <a id="s-item-1" href="#" class="dwp-horizontal-navigation__link" aria-current="false">Eligibility
             verification</a>
-        </li>
+        </li> -->
         <li class="dwp-horizontal-navigation__item">
           <a id="s-item-2" href="#s-item-2" class="dwp-horizontal-navigation__link" aria-current="false">Changes</a>
         </li>
@@ -103,6 +103,35 @@ Tasks – {{ serviceName }} – GOV.UK Prototype Kit
       {% else %}
       99
       {% endif %}
+      <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
+    </h3>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible ">
+
+<div class="govuk-grid-row govuk-!-padding-top-5">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Start overpayment process <br>
+      {% if data['debt-process'] == 'postponed' %}
+      <span class="govuk-body-l">
+        <a href="debt-referral-data?postponed=true" class="govuk-link--no-visited-state"><strong>Get next task</strong></a>
+      </span>
+      {% endif %}
+
+    </h2>
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <h3 class="govuk-heading-l">
+      {% if data['postponed'] == 'true' %}   
+      0
+      {% elseif data['debt-process'] == 'postponed' %}
+      1
+      {% else %}
+      0
+      {% endif %}
+
       <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
     </h3>
   </div>

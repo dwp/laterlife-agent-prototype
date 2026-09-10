@@ -22,24 +22,25 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './_namebarNoProvider.html' %}
+     {% include './_namebarNoProvider.html' %}
 
-    <h1 class="govuk-heading-l">Start the overpayment process</h1>
+    <h1 class="govuk-heading-l">Start the overpayment process</h1>  
 
-    <p class="govuk-body">This needs referring for overpayment. You can either:</p>
+    <p class="govuk-body">An overpayment needs referring following this change of award. You can either:</p>
     <ul class="govuk-list govuk-list--bullet">
   <li>send a referral now</li>
   <li>manage the process in legacy if you need more information</li>
   <li>postpone the task until the next working day</li>
 </ul>
 
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
-          Total overpayment
+          Overpayment amount
         </dt>
         <dd class="govuk-summary-list__value govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
-          £1.97
+          £66.13
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -57,7 +58,7 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
   <caption class="govuk-table__caption govuk-table__caption--m">Overpayment details</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Period</th>
+      <th scope="col" class="govuk-table__header">Payment period</th>
       <th scope="col" class="govuk-table__header">Incorrect weekly amount</th>
       <th scope="col" class="govuk-table__header">Correct weekly amount</th>
     </tr>
@@ -65,20 +66,20 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">  DD Month YYY Y to DD Month YYYY</th>
-      <td class="govuk-table__cell">£150.70</td>
-      <td class="govuk-table__cell">£148.67</td>
+      <td class="govuk-table__cell">£150.70 per week</td>
+      <td class="govuk-table__cell">£148.67 per week</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">  DD Month YYY Y to DD Month YYYY</th>
-      <td class="govuk-table__cell">£155.27</td>
-      <td class="govuk-table__cell">£152.07</td>
+      <td class="govuk-table__cell">£155.27 per week</td>
+      <td class="govuk-table__cell">£152.07 per week</td>
     </tr>
   </tbody>
 </table>
 
     <form method="post">
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" id="check-payment-changes">
+        <fieldset class="govuk-fieldset" id="debt-process">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
               Have you started the overpayment process?
@@ -86,24 +87,24 @@ Refer the overpayment to the debt management service  – {{ serviceName }} – 
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="check-payment-changes-1" name="check-payment-changes" type="radio"
+              <input class="govuk-radios__input" id="debt-process-1" name="debt-process" type="radio"
                 value="yes">
-              <label class="govuk-label govuk-radios__label" for="check-payment-changes-1">
+              <label class="govuk-label govuk-radios__label" for="debt-process-1">
                 Yes, referral sent
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="check-payment-changes-2" name="check-payment-changes" type="radio"
-                value="no">
-              <label class="govuk-label govuk-radios__label" for="check-payment-changes-2">
+              <input class="govuk-radios__input" id="debt-process-2" name="debt-process" type="radio"
+                value="legacy">
+              <label class="govuk-label govuk-radios__label" for="debt-process-2">
                 Yes, process started in legacy
               </label>
             </div>
                   <div class="govuk-radios__divider">or</div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="check-payment-changes-2" name="check-payment-changes" type="radio"
-                value="moreInfo">
-              <label class="govuk-label govuk-radios__label" for="check-payment-changes-2">
+              <input class="govuk-radios__input" id="debt-process-2" name="debt-process" type="radio"
+                value="postponed">
+              <label class="govuk-label govuk-radios__label" for="debt-process-2">
                 No, postpone the task until the next working day
               </label>
             </div>
