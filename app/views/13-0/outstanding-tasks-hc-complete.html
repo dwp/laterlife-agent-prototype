@@ -52,17 +52,11 @@
             <a class="govuk-link--no-visited-state" href="tor-hc-lwo-share-costs">Enter information for Jimmy Erikson</a>
             {% endif %}  
           </td> 
-         {% if data ['jimmy-done'] == 'yes' %}
+       
           <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td> 
-          {% else %}
-          <td class="govuk-table__cell" style="text-align: right;">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td>
-          {% endif %}
+          
         </tr>
         <tr class="govuk-table__row">
           <td scope="row" class="govuk-table__cell">
@@ -72,17 +66,11 @@
                 <a class="govuk-link--no-visited-state" href="">Enter information for Hannah Harper</a>
               {% endif %}
             </td> 
-          {% if data ['others-done'] == 'yes' %}
+         
           <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td> 
-          {% else %}
-          <td class="govuk-table__cell" style="text-align: right;">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td>
-          {% endif %}
+         
         </tr>
         <tr class="govuk-table__row">
           <td scope="row" class="govuk-table__cell">
@@ -91,45 +79,24 @@
             {% else %}
             <a class="govuk-link--no-visited-state" href="">Enter information for Lisa Harper</a>
             {% endif %}</td> 
-          {% if data ['others-done'] == 'yes' %}
+         
           <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td> 
-          {% else %}
-          <td class="govuk-table__cell" style="text-align: right;">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td>
-          {% endif %} 
+          
         </tr>
          <tr class="govuk-table__row">
          
-         
-          {% if data ['claimant-done'] == 'yes' %}
+        
           <td scope="row" class="govuk-table__cell">
-            {% if data ['confirm-award'] == 'yes' %}
-            Housing costs: enter information for Eric Erikson
-          {% else %}
+           
            <a class="govuk-link--no-visited-state" href="tor-hc-claimant-checklist">Enter information for Eric Erikson</a>
-          {% endif %}</td> 
+        </td> 
           <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td> 
            
-          {% elif data ['others-done'] == 'yes' %}
-         <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="tor-hc-claimant-checklist">Enter information for Eric Erikson</a></td> 
-          <td class="govuk-table__cell" style="text-align: right;">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td> 
-          {% else %}
-           <td scope="row" class="govuk-table__cell">Enter information for Eric Erikson</td> 
-           <td class="govuk-table__cell" style="text-align: right;">
-              Cannot start yet
-          </td>
-          {% endif %}
+        
         </tr>
        
        
@@ -140,36 +107,22 @@
      <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-         
-          {% if data ['confirm-award'] == 'yes' %}
+    
             <td scope="row" class="govuk-table__cell">Submit check for change of award</td> 
               <td class="govuk-table__cell" style="text-align: right;">
                   Done
               </td>
-          {% elif data ['tasks-done'] == 'yes' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="award-change">Submit check for change of award</a></td> 
-          <td class="govuk-table__cell" style="text-align: right;">
-              <strong class="govuk-tag">
-                To do
-              </strong>
-          </td> 
-          {% else %}
-           <td scope="row" class="govuk-table__cell">Submit check for change of award</td> 
-           <td class="govuk-table__cell" style="text-align: right;">
-              Cannot start yet
-          </td>
-          {% endif %}
+        
         </tr>
       </tbody>
     </table>
 
-    {% if data ['confirm-award'] == 'yes' %}
     <form method="post" action="outstanding-tasks-hc-new-claim?hc=done">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       End task
     </button>
     </form>
-    {% endif %}
+
 
     </div>
 <div class="govuk-grid-column-one-third">
