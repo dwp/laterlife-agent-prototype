@@ -22,14 +22,24 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+     <h1 class="govuk-heading-xl">
+  Eric Erikson<br>
+  <span class="govuk-caption-xl">QQ 12 34 56 C</span>
+ 
+  </h1>
+
    
             {{ govukBackLink({
     "text": "Back",
     "href": "javascript: window.history.go(-1)"
     }) }}
 
+    
 
-    <h1 class="govuk-heading-l">Confirm Pension Credit award change</h1>
+
+    <h1 class="govuk-heading-l">Submit check for change of award</h1>
+
+    <p class="govuk-body">Eric's Pension Credit award will not change.</p>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -45,7 +55,7 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
           From
         </dt>
         <dd class="govuk-summary-list__value">
-          4 May 2026
+          2 August 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -53,10 +63,11 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
           Decision date
         </dt>
         <dd class="govuk-summary-list__value">
-          10 May 2026
+          29 September 2026
         </dd>
       </div>
     </dl>
+    
 
     <!-- CONDITIONAL ARREARS INFO -->
     {% if data['arrears'] == 'true' %}
@@ -119,12 +130,18 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
     <form method="post" action="housing-costs-check-change-award?award-changed=yes">
       <div>
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Confirm
+          Submit
         </button>
       </div>
     </form>
 
-   
+      <p class="govuk-body"> <a href="housing-costs-check-change-award" class="govuk-link">Go back and view the information</a></p>
+
+   </div>
+   <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">Record history</h1>
+     <p><a href="full-history" class="govuk-link govuk-link--no-visited-state">Full history</a></p>
+  </div>
 
 
     {% endblock %}

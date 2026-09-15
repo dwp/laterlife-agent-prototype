@@ -37,7 +37,7 @@
 
 
 
-    <h2 class="govuk-heading-l">Check for change of award</h2>
+    <h2 class="govuk-heading-l">Add housing costs and check for change of award</h2>
 
     <h2 class="govuk-heading-m">Housing costs</h2>
 
@@ -117,19 +117,19 @@
         <tr class="govuk-table__row">
          
           {% if data ['award-changed'] == 'yes' %}
-          <td scope="row" class="govuk-table__cell">Confirm award decision</td> 
+          <td scope="row" class="govuk-table__cell">Submit check for change of award</td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Done
           </td>
           {% elif data ['claimant-done'] == 'yes' %}
-           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="award-change">Confirm award decision</a></td> 
+           <td scope="row" class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="award-change">Submit check for change of award</a></td> 
           <td class="govuk-table__cell" style="text-align: right;">
               <strong class="govuk-tag">
                 To do
               </strong>
           </td> 
           {% else %}
-           <td scope="row" class="govuk-table__cell">Confirm award decision</td> 
+           <td scope="row" class="govuk-table__cell">Submit check for change of award</td> 
            <td class="govuk-table__cell" style="text-align: right;">
               Cannot start yet
           </td>

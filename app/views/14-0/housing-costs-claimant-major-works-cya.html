@@ -36,22 +36,22 @@
       <br>  <br>
       
 
-  <h1 class="govuk-heading-l">Check your answers</h1>
+  <h1 class="govuk-heading-l">Check your answers for this major works cost</h1>
       
 
         <h2 class="govuk-heading-m">Major works</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Total major works amount
+              Description
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
-               £1,500
+               {{data['mw-description']}}
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">
-               £2,000
+               {{data['mw-description2']}}
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
@@ -64,11 +64,11 @@
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
-               £500
+               £205.99
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">
-               £750
+               £297.41
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
@@ -77,41 +77,26 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Major works start date
+              Start date
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
-            21 Feb 2027
+            21 February 2027
             </dd>
              {% else %}
             <dd class="govuk-summary-list__value">
-               11 Oct 2026
+               11 October 2026
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Major works end date
-            </dt>
-            {% if data['major-works'] !='2' %}
-            <dd class="govuk-summary-list__value">
-            25 Feb 2027
-            </dd>
-             {% else %}
-            <dd class="govuk-summary-list__value">
-               11 Oct 2026
-            </dd>
-            {% endif %}
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-            </dd>
-          </div>
+       
          
           
         </dl>
+       
        
 
  <form method="post" action="housing-costs-claimant-major-works-list">
