@@ -47,11 +47,11 @@
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
-               Roof repair
+               {{data['mw-description']}}
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">
-               New door
+               {{data['mw-description2']}}
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">

@@ -53,8 +53,11 @@
    For example, "roof repairs" or "new front door"
   </div><br>
   <div class="govuk-input__wrapper">
-    
-    <input class="govuk-input govuk-input--width-20" id="cost2p" name="cost2p" type="text" spellcheck="false">
+  {% if data['major-works'] !='2' %}
+    <input class="govuk-input govuk-input--width-20" id="mw-description" name="mw-description" type="text" spellcheck="false">
+  {% else %}
+  <input class="govuk-input govuk-input--width-20" id="mw-description2" name="mw-description2" type="text" spellcheck="false">
+  {% endif %}
   </div><br><br>
    
 </div>

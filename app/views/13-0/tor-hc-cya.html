@@ -50,7 +50,8 @@
               <ul class="govuk-list govuk-list--bullet">
                
                 <li>Eligible service charges</li>
-                <li>Ineligible service charges</li>             
+                <li>Ineligible service charges</li>  
+                <li>Insurance not included in service charges</li>             
                 <li>Major works</li>
               </ul>
           
@@ -160,7 +161,7 @@
          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            Roof repair
+            {{data['mw-description']}}
             </dt>
             <dd class="govuk-summary-list__value" style="width:60%">
              £205.99
@@ -173,7 +174,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            New door
+           {{data['mw-description2']}}
             </dt>
             <dd class="govuk-summary-list__value">
             £297.41
