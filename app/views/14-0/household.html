@@ -185,16 +185,25 @@
     </dd>
     
     <dd class="govuk-summary-list__actions">
-      {% if data['letter-sent'] == 'yes' %} 
+ <!--     {% if data['letter-sent'] == 'yes' %} 
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-check-change-award"> Details</a>
        {% elif data['award-changed'] == 'yes'%}
-       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-landing"> Details</a>
+       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-details"> Details</a>
+      {% elif data['v'] == 'add' %} 
+      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-check-change-award"> Add</a>
+      {% else %}
+      <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-details"> Details</a>
+      {% endif %}-->
+
+       {% if data['award-changed'] == 'yes'%}
+       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-details"> Details</a>
       {% elif data['v'] == 'add' %} 
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-check-change-award"> Add</a>
       {% else %}
       <a class="govuk-link govuk-link--no-visited-state" href="housing-costs-details"> Details</a>
       {% endif %}
     </dd>
+
   </div>
 
  

@@ -37,7 +37,7 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
     
 
 
-    <h1 class="govuk-heading-l">Submit check for change of award</h1>
+     <h1 class="govuk-heading-l">Submit check for change of award</h1>
 
     <p class="govuk-body">Eric's Pension Credit award will not change.</p>
 
@@ -67,65 +67,6 @@ Pension Credit award has changed – {{ serviceName }} – GOV.UK Prototype Kit
         </dd>
       </div>
     </dl>
-    
-
-    <!-- CONDITIONAL ARREARS INFO -->
-    {% if data['arrears'] == 'true' %}
-    <h2 class="govuk-heading-m">Arrears payment</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £100.00
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Period
-        </dt>
-        <dd class="govuk-summary-list__value">
-          DD Month YYYY to DD Month YYYY
-        </dd>
-      </div>
-    </dl>
-    {% endif %}
-
-        <!-- CONDITIONAL DEBT INFO -->
-    {% if data['debt'] == 'true' %}
-    <h2 class="govuk-heading-m">Overpayment</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £1.97
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Period
-        </dt>
-        <dd class="govuk-summary-list__value">
-          DD Month YYYY to DD Month YYYY <br>
-          DD Month YYYY to DD Month YYYY
-        </dd>
-      </div>
-    </dl>
-    {% endif %}
-
-    <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    You cannot undo this action. Confirming will change Pension Credit payments.
-  </strong>
-</div>
-
-
-
 
     <form method="post" action="housing-costs-check-change-award?award-changed=yes">
       <div>
