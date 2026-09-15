@@ -47,11 +47,19 @@
             </dt>
             {% if data['major-works'] !='2' %}
             <dd class="govuk-summary-list__value">
-               {{data['mw-description']}}
+                {% if data['mw-description']%}
+                 {{data['mw-description']}}
+              {% else %}
+              Roof repairs
+              {% endif %}
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">
-               {{data['mw-description2']}}
+                 {% if data['mw-description2']%}
+                 {{data['mw-description2']}}
+              {% else %}
+              Fire doors
+              {% endif %}
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">

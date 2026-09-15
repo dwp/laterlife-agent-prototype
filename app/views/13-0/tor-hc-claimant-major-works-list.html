@@ -46,7 +46,11 @@
   </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  hmrc-summary-list__key">
-       {{data['mw-description']}}
+        {% if data['mw-description']%}
+                 {{data['mw-description']}}
+              {% else %}
+              Roof repairs
+              {% endif %}
       </dt>
        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
         £205.99
@@ -61,7 +65,11 @@
     {% if data['major-works']=='2' %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  hmrc-summary-list__key">
-        {{data['mw-description2']}}
+          {% if data['mw-description2']%}
+                 {{data['mw-description2']}}
+              {% else %}
+              Fire doors
+              {% endif %}
       </dt>
        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
         £297.41

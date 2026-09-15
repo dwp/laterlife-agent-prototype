@@ -161,7 +161,11 @@
          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            {{data['mw-description']}}
+              {% if data['mw-description']%}
+                 {{data['mw-description']}}
+              {% else %}
+              Roof repairs
+              {% endif %}
             </dt>
             <dd class="govuk-summary-list__value" style="width:60%">
              £205.99
@@ -174,7 +178,11 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-           {{data['mw-description2']}}
+            {% if data['mw-description2']%}
+                 {{data['mw-description2']}}
+              {% else %}
+              Fire doors
+              {% endif %}
             </dt>
             <dd class="govuk-summary-list__value">
             £297.41
