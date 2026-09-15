@@ -110,9 +110,9 @@ router.get('/EVS/confirmation', function (req, res) {
       button: "End task"
     },
     cfcd: {
-      heading: "You are about to record that the task is referred to CFCD and postpone the task.",
-      paragraph: "Task will be postponed for 4 weeks to allow time for a CFEMS flag to be set for this customer.",
-      button: "Postpone task"
+      heading: "Confirm the case has been referred to the CFCD",
+      paragraph: "The task will be postponed.",
+      button: "Confirm and postpone task"
     },
     recordPostpone: {
       heading: "Postpone task",
