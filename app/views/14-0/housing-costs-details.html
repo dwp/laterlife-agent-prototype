@@ -57,7 +57,7 @@
              Total eligible costs
            </dt>
            <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-             &pound;2,255.18
+             &pound;3,255.18
            </dd>
          </div>
         
@@ -70,7 +70,7 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                   Rents or ground rents on long tenancies
+                  Ground rents on long tenancies
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
                     &pound;346.60
@@ -78,18 +78,10 @@
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Service charges
+                    Eligible service charges
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
                     &pound;82.90
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Payments by way of rent charges (annual fee)
-                  </dt>
-                  <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-                    &pound;46.40
                   </dd>
                 </div>
 
@@ -98,15 +90,15 @@
                     Payments under co-ownership schemes
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-                    &pound;0.00
+                    &pound;346.60
                   </dd>
                 </div>
                  <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Payments for tenancies or licenses of Crown rents
+                   Crown tenancy or license charges
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-                    &pound;0.00
+                    &pound;10.00
                   </dd>
                 </div>
                  <div class="govuk-summary-list__row">
@@ -114,15 +106,53 @@
                     Insurance not included in the service charges
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-                    &pound;0.00
+                    &pound;645.00
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Major works (total of liable shares for claimant's home)
+                    Major works (total liable amount for claimant's home)<br>
+                    <details class="govuk-details" style="margin:5px 0px 5px 0px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        See major works details
+                      </span>
+                    </summary>
+                   
+                    <div class="govuk-details__text">
+                       <h2 class="govuk-heading-m">List of major works</h2>
+                     <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        {% if data['mw-description']%}
+                          {{data['mw-description']}}
+                        {% else %}
+                        Roof repairs
+                        {% endif %}
+                      </dt>
+                      <dd class="govuk-summary-list__value" style="width:60%">
+                      £205.99
+                      </dd>
+                      
+                      
+                     
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                      {% if data['mw-description2']%}
+                          {{data['mw-description2']}}
+                        {% else %}
+                      Fire doors
+                        {% endif %}
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                      £297.41
+                      </dd>
+          </div>
+                    </div>
+                  </details>
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-                    &pound;7790.28
+                    &pound;503.40
                   </dd>
                 </div>
                 
@@ -140,7 +170,7 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                   Service charges
+                   Ineligible service charges
                   </dt>
                   <dd class="govuk-summary-list__actions govuk-!-text-align-right">
                     &pound;50.80
@@ -157,27 +187,27 @@
               <dl class="govuk-summary-list">
                  <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
-             Frequency
+             Date the claimant became liable for the costs
            </dt>
            <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-             Yearly
+             21 February 2026
            </dd>
          </div>
 
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
-             Next review date
+            Date the claimant told us about the changes
            </dt>
            <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-             21 February 2027
+             3 March 2026
            </dd>
          </div>
           <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
-             Next major works review date
+            Date of the next housing costs review
            </dt>
            <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-             11 October 2026
+             20 February 2027
            </dd>
          </div>
 
@@ -193,17 +223,17 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            <span class="govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Claimant's liable share of housing costs</span>
+            <span class="govuk-body govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Claimant's personal share of housing costs</span>
           </dt>
 
         </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Eric Erikson
+            Eric's liable share
           </dt>
           <dd class="govuk-summary-list__actions govuk-!-text-align-right">
-            1/1
+            1/4
           </dd>
         </div>
 
