@@ -23,43 +23,25 @@ Erik Erikson is no longer entitled to Pension Credit – {{ serviceName }} – G
   <div class="govuk-grid-column-two-thirds">
 
     {% include './_namebarNoProvider.html' %}
-            {{ govukBackLink({
-    "text": "Back",
-    "href": "javascript: window.history.go(-1)"
-    }) }}
 
 
-    <h1 class="govuk-heading-l">Confirm end of Pension Credit entitlement</h1>
 
-    <p class="govuk-body govuk-!-font-weight-bold">Pension Credit payments will stop from [date].</p>
+    <h1 class="govuk-heading-l">Submit check for change of award</h1>
 
-    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">Eric's entitlement to Pension Credit will stop on ((DD Month YYYY)).</p>
 
-    <p class="govuk-body">You will no longer be able to manage the record in this system.</p>
-
-    <p class="govuk-body">To restart payments or make a new decision, follow the steps to rebuild the record in legacy services. You will need the claimant's National Insurance number to do this.</p>
-
-    <p class="govuk-body">You must record this decision in legacy services.</p>
-
-    <h2 class="govuk-heading-m">State Pension</h2>
-
-    <p class="govuk-body">State Pension payments will continue. Payments are managed in GySP.</p>
-
-        <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    You cannot undo this action. Confirming will stop Pension Credit payments.
-  </strong>
-</div>
+<br>
+<br>
 
     <form method="post">
       <div>
-        <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
-          Confirm
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Submit
         </button>
       </div>
     </form>
+
+     <p class="govuk-body"> <a href="check-for-change-of-award" class="govuk-link">Go back and view the information</a></p>
 
       <hr class="govuk-section-break govuk-section-break--l">
 
