@@ -331,6 +331,9 @@ router.post('/find', function(request, response) {
       }
       if (findSomeone == 'QQ123456X'){
           response.redirect('find-result-sp-pc-process')
+        }
+        if (findSomeone == 'QQ123456W'){
+            response.redirect('find-result-sp-pc-process-occupied')
       }
       if (findSomeone == 'QQ123456F'){
           response.redirect('/'+version+ '/find-result-sp-pc-apply')
