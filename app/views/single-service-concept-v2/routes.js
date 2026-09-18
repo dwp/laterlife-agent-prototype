@@ -319,29 +319,21 @@ router.post('/find', function(request, response) {
   var findSomeone = request.session.data['findSomeone']
       if (findSomeone == 'QQ123456A'){
           response.redirect('/'+version+ '/find-result-sp-only')
-      }
-      if (findSomeone == 'QQ123456B'){
+      } else if (findSomeone == 'QQ123456B'){
           response.redirect('/'+version+ '/find-result-sp-pc')
-      }
-      if (findSomeone == 'QQ123456D'){
+      } else if (findSomeone == 'QQ123456D'){
           response.redirect('/'+version+ '/find-result-sp-nil-pc')
-      }
-      if (findSomeone == 'QQ123456J'){
+      } else if (findSomeone == 'QQ123456J'){
           response.redirect('find-result-sp-pc-legacy')
-      }
-      if (findSomeone == 'QQ123456X'){
+      } else if (findSomeone == 'QQ123456X'){
           response.redirect('find-result-sp-pc-process')
-        }
-        if (findSomeone == 'QQ123456W'){
-            response.redirect('find-result-sp-pc-process-occupied')
-      }
-      if (findSomeone == 'QQ123456F'){
+      } else if (findSomeone == 'QQ123456W'){
+          response.redirect('find-result-sp-pc-process-occupied')
+      } else if (findSomeone == 'QQ123456F'){
           response.redirect('/'+version+ '/find-result-sp-pc-apply')
-      }
-      if (findSomeone == 'QQ123456Y'){
+      } else if (findSomeone == 'QQ123456Y'){
           response.redirect('/'+version+ '/find-result-sp-pc-no-rep')
-      }
-      else {
+      } else {
           response.redirect('/'+version+ '/find-result-none-found')
       }
   })
