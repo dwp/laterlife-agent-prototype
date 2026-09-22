@@ -31,75 +31,19 @@
 }}
       <br>  <br>
       
-<h1 class="govuk-heading-l">Confirm the claimant's personal share of housing costs</h1>
+<h1 class="govuk-heading-l">Enter the claimant's personal share of housing costs</h1>
      
-<p class="govuk-body">We have calculated the claimant's personal share of housing costs for the home they live in is 1/4.</p>
 
-  <form method="post" action="housing-costs-claimant-cya">
-
-  <details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-     How we worked this out
-    </span>
-  </summary>
-  <br> <p class="govuk-body">The claimant told us the home they live in is owned by:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>Eric Erikson (the claimant)</li>
-  <li>Eric Erikson</li>
-  <li>Jimmy Erikson and Hannah Harper (partners)</li>
-  <li>Lisa Harper</li>
-</ul>
-</details>
-
-  <br><br>
-
-  <h2 class="govuk-heading-m">Is the claimant liable for 1/4 of the housing costs for their home?</h2>
-  <details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-    Why the claimant's share might be different
-    </span>
-  </summary>
-  <br> <p class="govuk-body">The claimant's share amount may be different if:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>the home they live is owned by more people than they've told us about</li>
-  <li>the claimant is responsible for more than an equal share of the housing costs</li>
-</ul>
-</details>
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-        <label class="govuk-label govuk-radios__label" for="contact">
-          Yes, the claimant is responsible for 1/4 of housing costs for their home
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-       
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-        <label class="govuk-label govuk-radios__label" for="contact-2">
-          No, enter a different liable share
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-        <label class="govuk-label" for="width-20">
-          <strong>Enter the claimant's share of housing costs</strong>
-          </label>
+ <label class="govuk-label" for="width-20">
+          Enter the share as a fraction, for example "1/1" or "1/4"
+          </label><br>
         <div class="govuk-input__wrapper">
           
           <input class="govuk-input govuk-input--width-2" id="share1" name="share1" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true" style="background-color:white;min-width:0.5rem;border:none;">/</div>
           <input class="govuk-input govuk-input--width-2" id="share2" name="share2" type="text" spellcheck="false">
-        </div>
-      </div>
-     
-    </div>
-  </fieldset>
-</div>
+        </div><br><br>
+
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
 </button>
