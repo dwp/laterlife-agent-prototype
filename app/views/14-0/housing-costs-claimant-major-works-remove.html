@@ -33,30 +33,46 @@
       
 <h1 class="govuk-heading-l">Are you sure you want to remove this major works cost?</h1>
 
-<dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
-    <div class="govuk-summary-list__row">
-    
-    
-  </div>
-   
-  
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key  hmrc-summary-list__key">
-         {% if data['mw-description2']%}
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      {% if data['mw-description2']%}
                  {{data['mw-description2']}}
               {% else %}
-              Fire doors
+             Fire doors
               {% endif %}
-      </dt>
-       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
-       £297.41
-      </dt>
-    
-    </div>
-  
+    </h2>
    
-    
-  </dl>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Liable amount for claimant's home
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £297.41
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of invoice
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11 October 2026
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date claimant told us about the major works
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11 October 2026
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
 
 <br>
 

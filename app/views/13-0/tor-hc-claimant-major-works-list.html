@@ -37,64 +37,103 @@
       
 <h1 class="govuk-heading-l">List of major works</h1>
 
-<div class="govuk-form-group">
-
-  <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
-    <div class="govuk-summary-list__row">
-    
-    
-  </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key  hmrc-summary-list__key">
-        {% if data['mw-description']%}
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      {% if data['mw-description']%}
                  {{data['mw-description']}}
               {% else %}
               Roof repairs
               {% endif %}
-      </dt>
-       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
-        £205.99
-      </dt>
-      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-       21 Feb 2027
-      </dt>
-      <dd class="govuk-summary-list__actions hmrc-summary-list__actions" style="width:10%">
-        <ul class="govuk-summary-list__actions-list">
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
-        </ul>
-      </dd>
-    </div>
-    {% if data['major-works']=='2' %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key  hmrc-summary-list__key">
-          {% if data['mw-description2']%}
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Liable amount for claimant's home
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £205.99
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of invoice
+        </dt>
+        <dd class="govuk-summary-list__value">
+          21 February 2027
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date claimant told us about the major works
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 March 2027
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+{% if data['major-works']=='2' %}
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      {% if data['mw-description2']%}
                  {{data['mw-description2']}}
               {% else %}
-              Fire doors
+             Fire doors
               {% endif %}
-      </dt>
-       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style="width:70%">
-        £297.41
-      </dt>
-       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-       11 Oct 2026
-      </dt>
-      <dd class="govuk-summary-list__actions hmrc-summary-list__actions" style="width:40%">
-        <ul class="govuk-summary-list__actions-list">
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="tor-hc-claimant-major-works-remove"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
-        </ul>
-      </dd>
-    </div>
-  
-    {% endif %}
-    
-  </dl>
-
-  
-
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> (University of Bristol)</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="tor-hc-claimant-major-works-remove">Remove<span class="govuk-visually-hidden"> (University of Bristol)</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Liable amount for claimant's home
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £297.41
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of invoice
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11 October 2026
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date claimant told us about the major works
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11 October 2026
+        </dd>
+      </div>
+    </dl>
+  </div>
 </div>
+{% endif %}
 
 <p class="govuk-body">
   <a href="tor-hc-claimant-major-works-details?major-works=2" class="govuk-link">Add another major works cost</a>
