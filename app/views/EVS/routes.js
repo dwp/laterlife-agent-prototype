@@ -99,7 +99,7 @@ router.get('/EVS/confirmation', function (req, res) {
       style: "govuk-button--warning"
     },
     cfcd_close: {
-      heading: "You are about to record that the task is referred to CFCD and close the task.",
+      heading: "You are about to record that the case is referred to CFCD and close the task.",
       paragraph: "You confirmed a CFEMS flag is present for this customer.",
       button: "Task is closed",
       style: "govuk-button--warning"
