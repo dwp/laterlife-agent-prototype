@@ -31,39 +31,64 @@
 }}
       <br>  <br>
       <span class="govuk-caption-l">About Jimmy Erikson</span>
-<h1 class="govuk-heading-l">Working hours</h1>
+
 
 <br>
 
   <form method="post">
 
-  
+ 
+
+
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-   
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Working hours
+      </h1>
+    </legend>
+    <div id="contact-hint" class="govuk-hint">
+      Select one option
+    </div>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes~tor-hc-lwo-money">
-        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes~tor-hc-lwo-money" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
           Jimmy works 16 hours or more per week
         </label>
       </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+       
+      </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no~tor-hc-lwo-benefits">
-        <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
-          Jimmy works less than 16 hours per week
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no~tor-hc-lwo-benefits" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+         Jimmy works less than 16 hours per week
         </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+       
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="dontknow~tor-hc-lwo-money" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+           I do not know how many hours Jimmy works
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <p class="govuk-body">
+            Eric may be ineligible for Pension Credit or support with housing costs if they do not provide this information now or at a later date.
+          </p>
+          
+        </div>
       </div>
     </div>
   </fieldset>
-</div><br>
-<p class="govuk-body">
-  <a href="tor-hc-lwo-money" class="govuk-link govuk-link--no-visited-state">I do not know how many hours Jimmy works</a>
-</p>
-
-<div class="govuk-inset-text">
-  Eric may be ineligible for Pension Credit or support with housing costs if they do not provide this information now or at a later date.
 </div>
+
+
+
 <br>
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
